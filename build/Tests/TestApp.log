@@ -1,0 +1,25 @@
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Logging system initialized. App: TestApp
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Application 'TestApp' starting
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine v0.1.0
+Build:    Debug
+Compiler: GCC 14.2
+Platform: Linux
+Built:    Jul  3 2026 19:15:38
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine v0.1.0
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine — initializing modules
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] ModuleManager — all 0 module(s) initialized
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine — initializing subsystems
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] SubsystemManager — initializing subsystem 'Nop'
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] SubsystemManager — subsystem 'Nop' initialized successfully
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] SubsystemManager — all 1 subsystem(s) initialized
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine — initialization complete
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Application 'TestApp' initialized
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Application — shutting down
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine — shutting down subsystems
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] SubsystemManager — shutting down subsystem 'Nop'
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] SubsystemManager — all subsystems shut down
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine — shutting down modules
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] ModuleManager — all modules shut down
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Engine — shutdown complete
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Application — shutdown complete
+[2026-07-03 20:26:50.412] [ENGINE] [info] [thread 26907] Logging system shutting down.
