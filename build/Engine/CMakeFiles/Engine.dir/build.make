@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -184,10 +184,52 @@ Engine/CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.s"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Diagnostics/PerformanceCounters.cpp -o CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.s
 
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o: /home/z/my-project/Engine/Source/Diagnostics/StackTrace.cpp
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o -MF CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o.d -o CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/StackTrace.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Diagnostics/StackTrace.cpp > CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Diagnostics/StackTrace.cpp -o CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.s
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o: /home/z/my-project/Engine/Source/Diagnostics/CrashHandler.cpp
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o -MF CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o.d -o CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/CrashHandler.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Diagnostics/CrashHandler.cpp > CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Diagnostics/CrashHandler.cpp -o CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.s
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o: /home/z/my-project/Engine/Source/Diagnostics/MemoryStats.cpp
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o -MF CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o.d -o CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/MemoryStats.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Diagnostics/MemoryStats.cpp > CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Diagnostics/MemoryStats.cpp -o CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.s
+
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o: /home/z/my-project/Engine/Source/Filesystem/Path.cpp
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o -MF CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o.d -o CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o -c /home/z/my-project/Engine/Source/Filesystem/Path.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.i: cmake_force
@@ -201,7 +243,7 @@ Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o: /home/z/my-project/Engine/Source/Filesystem/File.cpp
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o -MF CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o.d -o CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o -c /home/z/my-project/Engine/Source/Filesystem/File.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.i: cmake_force
@@ -215,7 +257,7 @@ Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o: /home/z/my-project/Engine/Source/Filesystem/Directory.cpp
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o -MF CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o.d -o CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o -c /home/z/my-project/Engine/Source/Filesystem/Directory.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.i: cmake_force
@@ -229,7 +271,7 @@ Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o: /home/z/my-project/Engine/Source/Configuration/Config.cpp
 Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o -MF CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o.d -o CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o -c /home/z/my-project/Engine/Source/Configuration/Config.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.i: cmake_force
@@ -243,7 +285,7 @@ Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o: /home/z/my-project/Engine/Source/Threading/Thread.cpp
 Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o -MF CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o.d -o CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o -c /home/z/my-project/Engine/Source/Threading/Thread.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.i: cmake_force
@@ -257,7 +299,7 @@ Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o: /home/z/my-project/Engine/Source/Threading/CPUInfo.cpp
 Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o -MF CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o.d -o CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o -c /home/z/my-project/Engine/Source/Threading/CPUInfo.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.i: cmake_force
@@ -271,7 +313,7 @@ Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o: /home/z/my-project/Engine/Source/Utilities/Hash.cpp
 Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o -MF CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o.d -o CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o -c /home/z/my-project/Engine/Source/Utilities/Hash.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.i: cmake_force
@@ -285,7 +327,7 @@ Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o: /home/z/my-project/Engine/Source/Utilities/String.cpp
 Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o -MF CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o.d -o CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o -c /home/z/my-project/Engine/Source/Utilities/String.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.i: cmake_force
@@ -299,7 +341,7 @@ Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o: /home/z/my-project/Engine/Source/Utilities/CommandLine.cpp
 Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o -MF CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o.d -o CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o -c /home/z/my-project/Engine/Source/Utilities/CommandLine.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.i: cmake_force
@@ -313,7 +355,7 @@ Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.s: cmake_force
 Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
 Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o: /home/z/my-project/Engine/Source/Core/ModuleRegistry.cpp
 Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o -MF CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o.d -o CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o -c /home/z/my-project/Engine/Source/Core/ModuleRegistry.cpp
 
 Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.i: cmake_force
@@ -334,6 +376,9 @@ Engine_OBJECTS = \
 "CMakeFiles/Engine.dir/Source/Diagnostics/BuildInfo.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Diagnostics/SystemInfo.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o" \
@@ -356,6 +401,9 @@ lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/Instrumentation
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/BuildInfo.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/SystemInfo.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o
@@ -368,7 +416,7 @@ lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/build.make
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX static library ../lib/libEngine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX static library ../lib/libEngine.a"
 	cd /home/z/my-project/build/Engine && $(CMAKE_COMMAND) -P CMakeFiles/Engine.dir/cmake_clean_target.cmake
 	cd /home/z/my-project/build/Engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Engine.dir/link.txt --verbose=$(VERBOSE)
 

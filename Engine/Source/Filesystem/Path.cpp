@@ -117,6 +117,44 @@ namespace engine::fs
 #endif
     }
 
+    Path Path::EngineDirectory()
+    {
+        Path dir = ExecutableDirectory();
+        // Navigate up from the binary directory looking for "Engine/Include"
+        // as a marker of the engine root.
+        Path candidate = dir;
+        for (int i = 0; i < 20; ++i) // Safeguard against infinite loop
+        {
+            Path marker = candidate / "Engine" / "Include";
+            if (marker.IsDirectory())
+            {
+                return candidate;
+            }
+            Path parent = candidate.Parent();
+            if (parent == candidate)
+            {
+                break; // Reached filesystem root
+            }
+            candidate = parent;
+        }
+        // Fallback: return the executable directory if we couldn't locate the marker.
+        return dir;
+    }
+
+    Path Path::ProjectDirectory()
+    {
+        if (!s_projectDirectoryOverride.empty())
+        {
+            return Path(std::string_view(s_projectDirectoryOverride));
+        }
+        return CurrentWorkingDirectory();
+    }
+
+    void Path::SetProjectDirectory(const Path& path)
+    {
+        s_projectDirectoryOverride = path.String();
+    }
+
     // ========================================================================
     //  Conversion
     // ========================================================================

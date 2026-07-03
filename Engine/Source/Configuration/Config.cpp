@@ -12,11 +12,17 @@
 #include <algorithm>
 #include <filesystem>
 #include <fstream>
+#include <map>
+#include <sstream>
 #include <string>
 #include <string_view>
 #include <variant>
 
 namespace engine::config {
+
+using engine::core::usize;
+using engine::core::i64;
+using engine::core::f64;
 
 // ============================================================================
 // Internal helpers
@@ -35,6 +41,10 @@ std::string DetectFormat(std::string_view filepath)
     if (ext == ".yaml" || ext == ".yml")
     {
         return "yaml";
+    }
+    if (ext == ".ini")
+    {
+        return "ini";
     }
     return "json"; // default fallback
 }
@@ -206,6 +216,10 @@ void Config::LoadFromString(std::string_view content, std::string_view format)
     {
         LoadYAML(content);
     }
+    else if (fmt == "ini")
+    {
+        LoadINI(content);
+    }
     else
     {
         LoadJSON(content);
@@ -221,6 +235,10 @@ std::string Config::SaveToString(std::string_view format) const
     if (fmt == "yaml" || fmt == "yml")
     {
         return SaveYAML();
+    }
+    if (fmt == "ini")
+    {
+        return SaveINI();
     }
     return SaveJSON();
 }
@@ -752,6 +770,252 @@ std::string Config::SaveYAML() const
     }
 
     return std::string(emitter.c_str());
+}
+
+// ============================================================================
+// INI format
+// ============================================================================
+
+bool Config::LoadINI(std::string_view content)
+{
+    // Simple INI parser.  Format:
+    //   ; comment
+    //   [section]
+    //   key = value
+    //   key = "quoted value"
+    //
+    // Sections become dot-notation prefixes: section.key = value.
+
+    std::string currentSection;
+    usize lineNum = 0;
+
+    std::istringstream stream{std::string(content)};
+    std::string line;
+
+    while (std::getline(stream, line))
+    {
+        ++lineNum;
+
+        // Trim leading/trailing whitespace.
+        usize start = line.find_first_not_of(" \t\r\n");
+        if (start == std::string::npos)
+        {
+            continue; // blank line
+        }
+        usize end = line.find_last_not_of(" \t\r\n");
+        std::string trimmed = line.substr(start, end - start + 1);
+
+        // Skip comments (lines starting with ; or #).
+        if (trimmed[0] == ';' || trimmed[0] == '#')
+        {
+            continue;
+        }
+
+        // Section header: [section_name]
+        if (trimmed[0] == '[' && trimmed.back() == ']')
+        {
+            currentSection = trimmed.substr(1, trimmed.size() - 2);
+            // Trim whitespace from section name.
+            usize s = currentSection.find_first_not_of(" \t");
+            usize e = currentSection.find_last_not_of(" \t");
+            if (s != std::string::npos && e != std::string::npos)
+            {
+                currentSection = currentSection.substr(s, e - s + 1);
+            }
+            continue;
+        }
+
+        // Key-value pair: key = value
+        usize eqPos = trimmed.find('=');
+        if (eqPos == std::string::npos)
+        {
+            continue; // malformed line, skip
+        }
+
+        std::string key = trimmed.substr(0, eqPos);
+        std::string value = trimmed.substr(eqPos + 1);
+
+        // Trim key.
+        usize ks = key.find_first_not_of(" \t");
+        usize ke = key.find_last_not_of(" \t");
+        if (ks != std::string::npos && ke != std::string::npos)
+        {
+            key = key.substr(ks, ke - ks + 1);
+        }
+        else
+        {
+            continue;
+        }
+
+        // Trim value.
+        usize vs = value.find_first_not_of(" \t");
+        usize ve = value.find_last_not_of(" \t");
+        if (vs != std::string::npos && ve != std::string::npos)
+        {
+            value = value.substr(vs, ve - vs + 1);
+        }
+        else
+        {
+            value.clear();
+        }
+
+        // Remove surrounding quotes from value.
+        if (value.size() >= 2 &&
+            ((value.front() == '"' && value.back() == '"') ||
+             (value.front() == '\'' && value.back() == '\'')))
+        {
+            value = value.substr(1, value.size() - 2);
+        }
+
+        // Build the full key with section prefix.
+        std::string fullKey = currentSection.empty()
+            ? key
+            : currentSection + "." + key;
+
+        // Try to parse as integer, then float, then bool, otherwise string.
+        // Use the same logic as JSONValueToEngineValue would.
+        Value configValue;
+
+        // Try bool.
+        std::string lowerVal = value;
+        std::transform(lowerVal.begin(), lowerVal.end(), lowerVal.begin(),
+                       [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+        if (lowerVal == "true" || lowerVal == "1")
+        {
+            configValue = true;
+        }
+        else if (lowerVal == "false" || lowerVal == "0")
+        {
+            configValue = false;
+        }
+        else
+        {
+            // Try integer.
+            bool isInt = !value.empty() &&
+                         (value[0] == '-' || value[0] == '+' ||
+                          std::isdigit(static_cast<unsigned char>(value[0])));
+            if (isInt)
+            {
+                try
+                {
+                    i64 intVal = 0;
+                    usize pos = 0;
+                    intVal = std::stoll(value, &pos);
+                    if (pos == value.size())
+                    {
+                        configValue = intVal;
+                    }
+                    else
+                    {
+                        isInt = false;
+                    }
+                }
+                catch (...)
+                {
+                    isInt = false;
+                }
+            }
+
+            if (!isInt)
+            {
+                // Try float.
+                bool isFloat = !value.empty() &&
+                               (value[0] == '-' || value[0] == '+' ||
+                                std::isdigit(static_cast<unsigned char>(value[0])) ||
+                                value[0] == '.');
+                if (isFloat)
+                {
+                    try
+                    {
+                        f64 floatVal = 0.0;
+                        usize pos = 0;
+                        floatVal = std::stod(value, &pos);
+                        if (pos == value.size())
+                        {
+                            configValue = floatVal;
+                        }
+                        else
+                        {
+                            configValue = value;
+                        }
+                    }
+                    catch (...)
+                    {
+                        configValue = value;
+                    }
+                }
+                else
+                {
+                    configValue = value;
+                }
+            }
+        }
+
+        m_values[fullKey] = configValue;
+    }
+
+    return true;
+}
+
+std::string Config::SaveINI() const
+{
+    // Group keys by their section prefix.
+    // Keys without a dot go under a [General] section.
+    // Keys like "render.width" go under [render].
+
+    std::map<std::string, std::vector<std::pair<std::string, Value>>> sections;
+
+    for (const auto& [key, value] : m_values)
+    {
+        usize dotPos = key.find('.');
+        if (dotPos != std::string::npos)
+        {
+            std::string section = key.substr(0, dotPos);
+            std::string localKey = key.substr(dotPos + 1);
+            sections[section].emplace_back(localKey, value);
+        }
+        else
+        {
+            sections["General"].emplace_back(key, value);
+        }
+    }
+
+    std::ostringstream oss;
+
+    for (const auto& [section, entries] : sections)
+    {
+        oss << "[" << section << "]\n";
+        for (const auto& [key, value] : entries)
+        {
+            std::visit([&](const auto& v) {
+                using T = std::decay_t<decltype(v)>;
+                if constexpr (std::is_same_v<T, bool>)
+                {
+                    oss << key << " = " << (v ? "true" : "false") << "\n";
+                }
+                else if constexpr (std::is_same_v<T, std::string>)
+                {
+                    // Quote strings that contain spaces or special characters.
+                    if (v.find(' ') != std::string::npos || v.find(';') != std::string::npos ||
+                        v.find('#') != std::string::npos)
+                    {
+                        oss << key << " = \"" << v << "\"\n";
+                    }
+                    else
+                    {
+                        oss << key << " = " << v << "\n";
+                    }
+                }
+                else
+                {
+                    oss << key << " = " << v << "\n";
+                }
+            }, value);
+        }
+        oss << "\n";
+    }
+
+    return oss.str();
 }
 
 } // namespace engine::config

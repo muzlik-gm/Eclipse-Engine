@@ -4,8 +4,8 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_UNAME"
     description: "Path to a program."
@@ -20,7 +20,6 @@ events:
     names:
       - "uname"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -33,7 +32,6 @@ events:
       - "/bin/"
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
-      - "/home/z/.local/bin/uname"
       - "/home/z/.venv/bin/uname"
       - "/app/.venv/bin/uname"
       - "/home/z/.npm-global/bin/uname"
@@ -44,7 +42,6 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -59,15 +56,15 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       The system is: Linux - 5.10.134-013.8.3.kangaroo.al8.x86_64 - x86_64
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Path to a program."
@@ -84,7 +81,6 @@ events:
       - "make"
       - "smake"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -97,7 +93,6 @@ events:
       - "/bin/"
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
-      - "/home/z/.local/bin/gmake"
       - "/home/z/.venv/bin/gmake"
       - "/app/.venv/bin/gmake"
       - "/home/z/.npm-global/bin/gmake"
@@ -108,7 +103,6 @@ events:
     found: "/usr/bin/gmake"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -123,9 +117,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER"
     description: "CXX compiler"
@@ -149,7 +143,6 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -162,7 +155,6 @@ events:
       - "/bin/"
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
-      - "/home/z/.local/bin/c++"
       - "/home/z/.venv/bin/c++"
       - "/app/.venv/bin/c++"
       - "/home/z/.npm-global/bin/c++"
@@ -173,7 +165,6 @@ events:
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -188,12 +179,12 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -208,11 +199,10 @@ events:
     names:
       - "CMakeCXXCompilerId.cpp.in"
     candidate_directories:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/"
-    found: "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -227,10 +217,10 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: /usr/bin/c++ 
@@ -249,9 +239,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -267,7 +257,6 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -281,7 +270,6 @@ events:
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -296,9 +284,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -314,7 +302,6 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -328,7 +315,6 @@ events:
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -343,9 +329,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -361,7 +347,6 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -375,7 +360,6 @@ events:
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -390,9 +374,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -408,7 +392,6 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -422,7 +405,6 @@ events:
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -437,9 +419,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -455,7 +437,6 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -469,7 +450,6 @@ events:
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -484,9 +464,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_OBJDUMP"
     description: "Path to a program."
@@ -502,7 +482,6 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -516,7 +495,6 @@ events:
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -531,9 +509,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_OBJCOPY"
     description: "Path to a program."
@@ -549,7 +527,6 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -563,7 +540,6 @@ events:
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -578,9 +554,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -596,7 +572,6 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -610,7 +585,6 @@ events:
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -625,9 +599,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -643,7 +617,6 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -656,7 +629,6 @@ events:
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
       - "/usr/bin/dlltool"
-      - "/home/z/.local/bin/dlltool"
       - "/home/z/.venv/bin/dlltool"
       - "/app/.venv/bin/dlltool"
       - "/home/z/.npm-global/bin/dlltool"
@@ -670,7 +642,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -685,9 +656,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -703,7 +674,6 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -717,7 +687,6 @@ events:
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -732,9 +701,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -750,7 +719,6 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -763,7 +731,6 @@ events:
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
       - "/usr/bin/tapi"
-      - "/home/z/.local/bin/tapi"
       - "/home/z/.venv/bin/tapi"
       - "/app/.venv/bin/tapi"
       - "/home/z/.npm-global/bin/tapi"
@@ -777,7 +744,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -792,9 +758,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -813,7 +779,6 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -826,7 +791,6 @@ events:
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
       - "/usr/bin/gcc-ar-14.2"
-      - "/home/z/.local/bin/gcc-ar-14.2"
       - "/home/z/.venv/bin/gcc-ar-14.2"
       - "/app/.venv/bin/gcc-ar-14.2"
       - "/home/z/.npm-global/bin/gcc-ar-14.2"
@@ -840,7 +804,6 @@ events:
     found: "/usr/bin/gcc-ar-14"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -855,9 +818,9 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:7 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -876,7 +839,6 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -889,7 +851,6 @@ events:
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-14.2"
-      - "/home/z/.local/bin/gcc-ranlib-14.2"
       - "/home/z/.venv/bin/gcc-ranlib-14.2"
       - "/app/.venv/bin/gcc-ranlib-14.2"
       - "/home/z/.npm-global/bin/gcc-ranlib-14.2"
@@ -903,7 +864,6 @@ events:
     found: "/usr/bin/gcc-ranlib-14"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -918,14 +878,14 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq"
-      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq"
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -936,13 +896,13 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq'
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj'
         
-        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bdec2/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_bdec2.dir/build.make CMakeFiles/cmTC_bdec2.dir/build
-        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq'
-        Building CXX object CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_18591/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_18591.dir/build.make CMakeFiles/cmTC_18591.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj'
+        Building CXX object CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -c /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -952,8 +912,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.0 (Debian 14.2.0-19) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_bdec2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccqKpEeU.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_18591.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_18591.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccSwinsg.s
         GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -975,14 +935,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/'
-         as -v --64 -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccqKpEeU.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_18591.dir/'
+         as -v --64 -o CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccSwinsg.s
         GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_bdec2
-        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdec2.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_18591
+        /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18591.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
@@ -995,22 +955,22 @@ events:
         gcc version 14.2.0 (Debian 14.2.0-19) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bdec2' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bdec2.'
-         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_18591' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_18591.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnJaLis.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_18591 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
         collect2 version 14.2.0
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnJaLis.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_18591 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Debian) 2.44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bdec2' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bdec2.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bdec2
-        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_18591' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_18591.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_18591
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -1036,20 +996,20 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq']
+        ignore line: [Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bdec2/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_bdec2.dir/build.make CMakeFiles/cmTC_bdec2.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq']
-        ignore line: [Building CXX object CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_18591/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_18591.dir/build.make CMakeFiles/cmTC_18591.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-MOk2jj']
+        ignore line: [Building CXX object CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -c /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -1059,8 +1019,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_bdec2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccqKpEeU.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_18591.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_18591.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccSwinsg.s]
         ignore line: [GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1082,14 +1042,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccqKpEeU.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_18591.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccSwinsg.s]
         ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_bdec2]
-        ignore line: [/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdec2.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_18591]
+        ignore line: [/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_18591.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
@@ -1102,13 +1062,13 @@ events:
         ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bdec2' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bdec2.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_18591' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_18591.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnJaLis.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_18591 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccQ6SU6L.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccnJaLis.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1124,7 +1084,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_bdec2] ==> ignore
+          arg [cmTC_18591] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
@@ -1137,7 +1097,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1148,7 +1108,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 14.2.0]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccnJaLis.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_18591 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_18591.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -1170,24 +1130,24 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:3 (project)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
     message: |
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
       GNU ld (GNU Binutils for Debian) 2.44
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FindGit.cmake:111 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:1887 (find_package)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:1622 (__FetchContent_populateSubbuild)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2158:EVAL:2 (__FetchContent_doPopulation)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2158 (cmake_language)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2399 (__FetchContent_Populate)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FindGit.cmake:111 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:1887 (find_package)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:1622 (__FetchContent_populateSubbuild)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2158:EVAL:2 (__FetchContent_doPopulation)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2158 (cmake_language)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2399 (__FetchContent_Populate)"
       - "CMake/Dependencies.cmake:25 (FetchContent_MakeAvailable)"
-      - "CMakeLists.txt:17 (include)"
+      - "CMakeLists.txt:21 (include)"
     mode: "program"
     variable: "GIT_EXECUTABLE"
     description: "Git command line client"
@@ -1202,7 +1162,6 @@ events:
     names:
       - "git"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -1222,9 +1181,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -1235,7 +1194,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/z/.local/bin/git"
       - "/home/z/.venv/bin/git"
       - "/app/.venv/bin/git"
       - "/home/z/.npm-global/bin/git"
@@ -1246,7 +1204,6 @@ events:
     found: "/usr/bin/git"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1263,7 +1220,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1271,16 +1228,16 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FindThreads.cmake:162 (check_cxx_source_compiles)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FindThreads.cmake:162 (check_cxx_source_compiles)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/FindThreads.cmake:226 (_threads_check_libc)"
       - "build/_deps/spdlog-src/CMakeLists.txt:151 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4"
-      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4"
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-XeU5B0"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-XeU5B0"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1291,30 +1248,30 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4'
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-XeU5B0'
         
-        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ab361/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_ab361.dir/build.make CMakeFiles/cmTC_ab361.dir/build
-        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4'
-        Building CXX object CMakeFiles/cmTC_ab361.dir/src.cxx.o
-        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++20 -o CMakeFiles/cmTC_ab361.dir/src.cxx.o -c /home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4/src.cxx
-        Linking CXX executable cmTC_ab361
-        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab361.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_ab361.dir/src.cxx.o -o cmTC_ab361
-        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4'
+        Run Build Command(s): /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_421df/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_421df.dir/build.make CMakeFiles/cmTC_421df.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-XeU5B0'
+        Building CXX object CMakeFiles/cmTC_421df.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++20 -o CMakeFiles/cmTC_421df.dir/src.cxx.o -c /home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-XeU5B0/src.cxx
+        Linking CXX executable cmTC_421df
+        /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_421df.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_421df.dir/src.cxx.o -o cmTC_421df
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-XeU5B0'
         
       exitCode: 0
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CheckSymbolExists.cmake:193 (try_compile)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CheckSymbolExists.cmake:102 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CheckSymbolExists.cmake:102 (__CHECK_SYMBOL_EXISTS_IMPL)"
       - "build/_deps/spdlog-src/CMakeLists.txt:250 (check_symbol_exists)"
     checks:
       - "Looking for fwrite_unlocked"
     directories:
-      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm"
-      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm"
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-aPuStX"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-aPuStX"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1325,23 +1282,23 @@ events:
       variable: "HAVE_FWRITE_UNLOCKED"
       cached: true
       stdout: |
-        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm'
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-aPuStX'
         
-        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f7db0/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f7db0.dir/build.make CMakeFiles/cmTC_f7db0.dir/build
-        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm'
-        Building CXX object CMakeFiles/cmTC_f7db0.dir/CheckSymbolExists.cxx.o
-        /usr/bin/c++   -std=c++20 -o CMakeFiles/cmTC_f7db0.dir/CheckSymbolExists.cxx.o -c /home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm/CheckSymbolExists.cxx
-        Linking CXX executable cmTC_f7db0
-        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7db0.dir/link.txt --verbose=1
-        /usr/bin/c++ CMakeFiles/cmTC_f7db0.dir/CheckSymbolExists.cxx.o -o cmTC_f7db0
-        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm'
+        Run Build Command(s): /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_98a5a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_98a5a.dir/build.make CMakeFiles/cmTC_98a5a.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-aPuStX'
+        Building CXX object CMakeFiles/cmTC_98a5a.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -std=c++20 -o CMakeFiles/cmTC_98a5a.dir/CheckSymbolExists.cxx.o -c /home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-aPuStX/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_98a5a
+        /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98a5a.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_98a5a.dir/CheckSymbolExists.cxx.o -o cmTC_98a5a
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-aPuStX'
         
       exitCode: 0
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:171 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:171 (find_program)"
       - "build/_deps/yaml-cpp-src/CMakeLists.txt:21 (include)"
     mode: "program"
     variable: "GITCOMMAND"
@@ -1357,7 +1314,6 @@ events:
     names:
       - "git"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -1377,9 +1333,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -1390,7 +1346,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/z/.local/bin/git"
       - "/home/z/.venv/bin/git"
       - "/app/.venv/bin/git"
       - "/home/z/.npm-global/bin/git"
@@ -1401,7 +1356,6 @@ events:
     found: "/usr/bin/git"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1418,7 +1372,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1426,7 +1380,7 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:188 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:188 (find_program)"
       - "build/_deps/yaml-cpp-src/CMakeLists.txt:21 (include)"
     mode: "program"
     variable: "MEMORYCHECK_COMMAND"
@@ -1447,7 +1401,6 @@ events:
       - "cuda-memcheck"
       - "compute-sanitizer"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -1467,9 +1420,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -1480,7 +1433,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/z/.local/bin/purify"
       - "/home/z/.venv/bin/purify"
       - "/app/.venv/bin/purify"
       - "/home/z/.npm-global/bin/purify"
@@ -1500,9 +1452,9 @@ events:
       - "/usr/purify"
       - "/bin/purify"
       - "/sbin/purify"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/purify"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/purify"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/purify"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/purify"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/purify"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/purify"
       - "/usr/X11R6/bin/purify"
       - "/usr/X11R6/sbin/purify"
       - "/usr/X11R6/purify"
@@ -1512,7 +1464,6 @@ events:
       - "/opt/bin/purify"
       - "/opt/sbin/purify"
       - "/opt/purify"
-      - "/home/z/.local/bin/valgrind"
       - "/home/z/.venv/bin/valgrind"
       - "/app/.venv/bin/valgrind"
       - "/home/z/.npm-global/bin/valgrind"
@@ -1532,9 +1483,9 @@ events:
       - "/usr/valgrind"
       - "/bin/valgrind"
       - "/sbin/valgrind"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/valgrind"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/valgrind"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/valgrind"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/valgrind"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/valgrind"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/valgrind"
       - "/usr/X11R6/bin/valgrind"
       - "/usr/X11R6/sbin/valgrind"
       - "/usr/X11R6/valgrind"
@@ -1544,7 +1495,6 @@ events:
       - "/opt/bin/valgrind"
       - "/opt/sbin/valgrind"
       - "/opt/valgrind"
-      - "/home/z/.local/bin/boundscheck"
       - "/home/z/.venv/bin/boundscheck"
       - "/app/.venv/bin/boundscheck"
       - "/home/z/.npm-global/bin/boundscheck"
@@ -1564,9 +1514,9 @@ events:
       - "/usr/boundscheck"
       - "/bin/boundscheck"
       - "/sbin/boundscheck"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/boundscheck"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/boundscheck"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/boundscheck"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/boundscheck"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/boundscheck"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/boundscheck"
       - "/usr/X11R6/bin/boundscheck"
       - "/usr/X11R6/sbin/boundscheck"
       - "/usr/X11R6/boundscheck"
@@ -1576,7 +1526,6 @@ events:
       - "/opt/bin/boundscheck"
       - "/opt/sbin/boundscheck"
       - "/opt/boundscheck"
-      - "/home/z/.local/bin/drmemory"
       - "/home/z/.venv/bin/drmemory"
       - "/app/.venv/bin/drmemory"
       - "/home/z/.npm-global/bin/drmemory"
@@ -1596,9 +1545,9 @@ events:
       - "/usr/drmemory"
       - "/bin/drmemory"
       - "/sbin/drmemory"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/drmemory"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/drmemory"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/drmemory"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/drmemory"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/drmemory"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/drmemory"
       - "/usr/X11R6/bin/drmemory"
       - "/usr/X11R6/sbin/drmemory"
       - "/usr/X11R6/drmemory"
@@ -1608,7 +1557,6 @@ events:
       - "/opt/bin/drmemory"
       - "/opt/sbin/drmemory"
       - "/opt/drmemory"
-      - "/home/z/.local/bin/cuda-memcheck"
       - "/home/z/.venv/bin/cuda-memcheck"
       - "/app/.venv/bin/cuda-memcheck"
       - "/home/z/.npm-global/bin/cuda-memcheck"
@@ -1628,9 +1576,9 @@ events:
       - "/usr/cuda-memcheck"
       - "/bin/cuda-memcheck"
       - "/sbin/cuda-memcheck"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cuda-memcheck"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/cuda-memcheck"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/cuda-memcheck"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cuda-memcheck"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/cuda-memcheck"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/cuda-memcheck"
       - "/usr/X11R6/bin/cuda-memcheck"
       - "/usr/X11R6/sbin/cuda-memcheck"
       - "/usr/X11R6/cuda-memcheck"
@@ -1640,7 +1588,6 @@ events:
       - "/opt/bin/cuda-memcheck"
       - "/opt/sbin/cuda-memcheck"
       - "/opt/cuda-memcheck"
-      - "/home/z/.local/bin/compute-sanitizer"
       - "/home/z/.venv/bin/compute-sanitizer"
       - "/app/.venv/bin/compute-sanitizer"
       - "/home/z/.npm-global/bin/compute-sanitizer"
@@ -1660,9 +1607,9 @@ events:
       - "/usr/compute-sanitizer"
       - "/bin/compute-sanitizer"
       - "/sbin/compute-sanitizer"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/compute-sanitizer"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/compute-sanitizer"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/compute-sanitizer"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/compute-sanitizer"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/compute-sanitizer"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/compute-sanitizer"
       - "/usr/X11R6/bin/compute-sanitizer"
       - "/usr/X11R6/sbin/compute-sanitizer"
       - "/usr/X11R6/compute-sanitizer"
@@ -1675,7 +1622,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1692,7 +1638,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1700,7 +1646,7 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:196 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:196 (find_program)"
       - "build/_deps/yaml-cpp-src/CMakeLists.txt:21 (include)"
     mode: "program"
     variable: "COVERAGE_COMMAND"
@@ -1716,7 +1662,6 @@ events:
     names:
       - "gcov"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -1736,9 +1681,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -1749,7 +1694,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/z/.local/bin/gcov"
       - "/home/z/.venv/bin/gcov"
       - "/app/.venv/bin/gcov"
       - "/home/z/.npm-global/bin/gcov"
@@ -1760,7 +1704,6 @@ events:
     found: "/usr/bin/gcov"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1777,7 +1720,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1800,7 +1743,6 @@ events:
     names:
       - "clang-format"
     candidate_directories:
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -1820,9 +1762,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -1833,7 +1775,6 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
-      - "/home/z/.local/bin/clang-format"
       - "/home/z/.venv/bin/clang-format"
       - "/app/.venv/bin/clang-format"
       - "/home/z/.npm-global/bin/clang-format"
@@ -1853,9 +1794,9 @@ events:
       - "/usr/clang-format"
       - "/bin/clang-format"
       - "/sbin/clang-format"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/clang-format"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/clang-format"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/clang-format"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/clang-format"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/clang-format"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/clang-format"
       - "/usr/X11R6/bin/clang-format"
       - "/usr/X11R6/sbin/clang-format"
       - "/usr/X11R6/clang-format"
@@ -1868,7 +1809,6 @@ events:
     found: false
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1885,7 +1825,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1893,8 +1833,8 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER"
@@ -1920,7 +1860,6 @@ events:
     found: "/usr/bin/cc"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1937,7 +1876,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1945,11 +1884,11 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     mode: "file"
     variable: "src_in"
@@ -1965,12 +1904,11 @@ events:
     names:
       - "CMakeCCompilerId.c.in"
     candidate_directories:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/"
       - "/home/z/my-project/CMake/"
-    found: "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    found: "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -1987,7 +1925,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -1997,9 +1935,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
@@ -2019,8 +1957,8 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
@@ -2040,7 +1978,6 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -2059,9 +1996,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -2073,7 +2010,6 @@ events:
       - "/opt/"
     searched_directories:
       - "/usr/bin/gcc-ar-14.2"
-      - "/home/z/.local/bin/gcc-ar-14.2"
       - "/home/z/.venv/bin/gcc-ar-14.2"
       - "/app/.venv/bin/gcc-ar-14.2"
       - "/home/z/.npm-global/bin/gcc-ar-14.2"
@@ -2092,9 +2028,9 @@ events:
       - "/usr/gcc-ar-14.2"
       - "/bin/gcc-ar-14.2"
       - "/sbin/gcc-ar-14.2"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/gcc-ar-14.2"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/gcc-ar-14.2"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/gcc-ar-14.2"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/gcc-ar-14.2"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/gcc-ar-14.2"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/gcc-ar-14.2"
       - "/usr/X11R6/bin/gcc-ar-14.2"
       - "/usr/X11R6/sbin/gcc-ar-14.2"
       - "/usr/X11R6/gcc-ar-14.2"
@@ -2107,7 +2043,6 @@ events:
     found: "/usr/bin/gcc-ar-14"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -2124,7 +2059,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -2132,8 +2067,8 @@ events:
   -
     kind: "find-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
@@ -2153,7 +2088,6 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
-      - "/home/z/.local/bin/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -2172,9 +2106,9 @@ events:
       - "/usr/"
       - "/bin/"
       - "/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/"
       - "/usr/X11R6/bin/"
       - "/usr/X11R6/sbin/"
       - "/usr/X11R6/"
@@ -2186,7 +2120,6 @@ events:
       - "/opt/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-14.2"
-      - "/home/z/.local/bin/gcc-ranlib-14.2"
       - "/home/z/.venv/bin/gcc-ranlib-14.2"
       - "/app/.venv/bin/gcc-ranlib-14.2"
       - "/home/z/.npm-global/bin/gcc-ranlib-14.2"
@@ -2205,9 +2138,9 @@ events:
       - "/usr/gcc-ranlib-14.2"
       - "/bin/gcc-ranlib-14.2"
       - "/sbin/gcc-ranlib-14.2"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/gcc-ranlib-14.2"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/gcc-ranlib-14.2"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/gcc-ranlib-14.2"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/gcc-ranlib-14.2"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/sbin/gcc-ranlib-14.2"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/gcc-ranlib-14.2"
       - "/usr/X11R6/bin/gcc-ranlib-14.2"
       - "/usr/X11R6/sbin/gcc-ranlib-14.2"
       - "/usr/X11R6/gcc-ranlib-14.2"
@@ -2220,7 +2153,6 @@ events:
     found: "/usr/bin/gcc-ranlib-14"
     search_context:
       ENV{PATH}:
-        - "/home/z/.local/bin"
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"
         - "/home/z/.npm-global/bin"
@@ -2237,7 +2169,7 @@ events:
         - "/usr/local"
         - "/usr"
         - "/"
-        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/home/z/.venv/lib/python3.12/site-packages/cmake/data"
         - "/usr/local"
         - "/usr/X11R6"
         - "/usr/pkg"
@@ -2245,14 +2177,14 @@ events:
   -
     kind: "try_compile-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1"
-      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1"
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: ""
@@ -2263,13 +2195,13 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1'
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN'
         
-        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_304e6/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_304e6.dir/build.make CMakeFiles/cmTC_304e6.dir/build
-        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1'
-        Building C object CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -v -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dc3f4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_dc3f4.dir/build.make CMakeFiles/cmTC_dc3f4.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN'
+        Building C object CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -c /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -2279,8 +2211,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 14.2.0 (Debian 14.2.0-19) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/'
-         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_304e6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc4ROUAt.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dc3f4.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_dc3f4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccW07d8P.s
         GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
         	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -2298,14 +2230,14 @@ events:
          /usr/include
         End of search list.
         Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/'
-         as -v --64 -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o /tmp/cc4ROUAt.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dc3f4.dir/'
+         as -v --64 -o CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o /tmp/ccW07d8P.s
         GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.'
-        Linking C executable cmTC_304e6
-        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_304e6.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_dc3f4
+        /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc3f4.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/cc
         COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
@@ -2318,21 +2250,21 @@ events:
         gcc version 14.2.0 (Debian 14.2.0-19) 
         COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_304e6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_304e6.'
-         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dc3f4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_dc3f4.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVcF1V8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_dc3f4 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
         collect2 version 14.2.0
-        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVcF1V8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_dc3f4 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Debian) 2.44
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_304e6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_304e6.'
-        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -o cmTC_304e6
-        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dc3f4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_dc3f4.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -o cmTC_dc3f4
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN'
         
       exitCode: 0
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
@@ -2353,20 +2285,20 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1']
+        ignore line: [Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN']
         ignore line: []
-        ignore line: [Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_304e6/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_304e6.dir/build.make CMakeFiles/cmTC_304e6.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1']
-        ignore line: [Building C object CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dc3f4/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_dc3f4.dir/build.make CMakeFiles/cmTC_dc3f4.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-58aeoN']
+        ignore line: [Building C object CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -c /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -2376,8 +2308,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/']
-        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_304e6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc4ROUAt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dc3f4.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_dc3f4.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccW07d8P.s]
         ignore line: [GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -2395,14 +2327,14 @@ events:
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o /tmp/cc4ROUAt.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dc3f4.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o /tmp/ccW07d8P.s]
         ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.']
-        ignore line: [Linking C executable cmTC_304e6]
-        ignore line: [/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_304e6.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_dc3f4]
+        ignore line: [/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc3f4.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
@@ -2415,13 +2347,13 @@ events:
         ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
         ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_304e6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_304e6.']
-        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_dc3f4' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_dc3f4.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVcF1V8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_dc3f4 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/cc4PtKAl.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccVcF1V8.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -2437,7 +2369,7 @@ events:
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
           arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_304e6] ==> ignore
+          arg [cmTC_dc3f4] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
@@ -2450,7 +2382,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [--push-state] ==> ignore
           arg [--as-needed] ==> ignore
@@ -2465,7 +2397,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 14.2.0]
-        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVcF1V8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_dc3f4 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_dc3f4.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'C': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -2487,9 +2419,9 @@ events:
   -
     kind: "message-v1"
     backtrace:
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
-      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
       - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
     message: |
       Running the C compiler's linker: "/usr/bin/ld" "-v"

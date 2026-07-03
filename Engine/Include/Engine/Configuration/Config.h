@@ -231,11 +231,18 @@ private:
     /// Parses a YAML string into m_values.  Returns true on success.
     bool LoadYAML(std::string_view content);
 
+    /// Parses an INI string into m_values.  Returns true on success.
+    /// INI sections are prepended as dot-notation prefixes.
+    bool LoadINI(std::string_view content);
+
     /// Serializes m_values to a JSON string (4-space indent).
     [[nodiscard]] std::string SaveJSON() const;
 
     /// Serializes m_values to a YAML string.
     [[nodiscard]] std::string SaveYAML() const;
+
+    /// Serializes m_values to an INI string with section grouping.
+    [[nodiscard]] std::string SaveINI() const;
 
     /// Converts a nlohmann::json node to a Config Value.
     [[nodiscard]] Value JSONValueToEngineValue(const nlohmann::json& j) const;

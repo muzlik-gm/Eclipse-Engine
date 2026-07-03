@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake" "/home/z/my-project/build/_deps/yaml-cpp-src"
-MakeCommand: /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake" "/home/z/my-project/build/_deps/yaml-cpp-src"
+MakeCommand: /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control

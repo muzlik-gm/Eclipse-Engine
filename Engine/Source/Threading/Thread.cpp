@@ -158,4 +158,27 @@ namespace engine::threading
         return m_mutex.try_lock_shared();
     }
 
+    // ========================================================================
+    //  ConditionVariable
+    // ========================================================================
+
+    void ConditionVariable::Wait(ScopedLock<std::mutex>& lock)
+    {
+        // ScopedLock holds a raw mutex reference; condition_variable requires unique_lock.
+        lock.m_mutex.unlock();
+        std::unique_lock<std::mutex> uLock(lock.m_mutex);
+        m_condVar.wait(uLock);
+        uLock.release();
+    }
+
+    void ConditionVariable::NotifyOne()
+    {
+        m_condVar.notify_one();
+    }
+
+    void ConditionVariable::NotifyAll()
+    {
+        m_condVar.notify_all();
+    }
+
 } // namespace engine::threading

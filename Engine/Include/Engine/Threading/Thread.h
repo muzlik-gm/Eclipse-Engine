@@ -13,6 +13,7 @@
 
 #include "Engine/Core/Types.h"
 
+#include <condition_variable>
 #include <functional>
 #include <mutex>
 #include <shared_mutex>
@@ -22,6 +23,9 @@
 
 namespace engine::threading
 {
+
+    using engine::core::i32;
+    using engine::core::i64;
 
     // ========================================================================
     //  Thread
@@ -105,6 +109,8 @@ namespace engine::threading
         ScopedLock(ScopedLock&&)                 = delete;
         ScopedLock& operator=(ScopedLock&&)      = delete;
 
+        friend class ConditionVariable;
+
     private:
         Mutex& m_mutex;
     };
@@ -151,5 +157,49 @@ namespace engine::threading
     private:
         std::shared_mutex m_mutex;
     };
+
+    // ========================================================================
+    //  ConditionVariable
+    // ========================================================================
+
+    /// Thin wrapper around std::condition_variable.
+    class ConditionVariable
+    {
+    public:
+        ConditionVariable()  = default;
+        ~ConditionVariable() = default;
+
+        ConditionVariable(const ConditionVariable&)            = delete;
+        ConditionVariable& operator=(const ConditionVariable&) = delete;
+
+        /// Blocks until notified, or spurious wakeup.
+        void Wait(ScopedLock<std::mutex>& lock);
+
+        /// Blocks until notified, predicate returns true, or timeout.
+        /// Returns true if predicate returned true, false on timeout.
+        template <typename Predicate>
+        bool WaitFor(ScopedLock<std::mutex>& lock, Predicate pred, i64 timeoutMs);
+
+        /// Notifies one waiting thread.
+        void NotifyOne();
+
+        /// Notifies all waiting threads.
+        void NotifyAll();
+
+    private:
+        std::condition_variable m_condVar;
+    };
+
+    template <typename Predicate>
+    bool ConditionVariable::WaitFor(ScopedLock<std::mutex>& lock, Predicate pred, i64 timeoutMs)
+    {
+        // ScopedLock holds a raw mutex reference; condition_variable requires unique_lock.
+        // Temporarily transfer ownership to a unique_lock for the wait.
+        lock.m_mutex.unlock();
+        std::unique_lock<std::mutex> uLock(lock.m_mutex);
+        bool result = m_condVar.wait_for(uLock, std::chrono::milliseconds(timeoutMs), pred);
+        uLock.release(); // hand ownership back so ScopedLock's dtor can unlock
+        return result;
+    }
 
 } // namespace engine::threading

@@ -1,5 +1,5 @@
 {
-  "tests": 49,
+  "tests": 93,
   "name": "AllTests",
   "testsuites": [
     {
@@ -91,6 +91,42 @@
       ]
     },
     {
+      "name": "ModuleRegistryTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "RegisterAndGet",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/ModuleRegistryTests.cpp",
+          "line": 32
+        },
+        {
+          "name": "InitializeAll",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/ModuleRegistryTests.cpp",
+          "line": 53
+        },
+        {
+          "name": "ShutdownOrder",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/ModuleRegistryTests.cpp",
+          "line": 84
+        },
+        {
+          "name": "IsInitialized",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/ModuleRegistryTests.cpp",
+          "line": 115
+        },
+        {
+          "name": "Unregister",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/ModuleRegistryTests.cpp",
+          "line": 136
+        },
+        {
+          "name": "DuplicateNameReplace",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/ModuleRegistryTests.cpp",
+          "line": 156
+        }
+      ]
+    },
+    {
       "name": "PathTest",
       "tests": 8,
       "testsuite": [
@@ -133,6 +169,108 @@
           "name": "Equality",
           "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
           "line": 52
+        }
+      ]
+    },
+    {
+      "name": "FileTest",
+      "tests": 9,
+      "testsuite": [
+        {
+          "name": "ReadWriteText",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 42
+        },
+        {
+          "name": "AppendText",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 52
+        },
+        {
+          "name": "ReadWriteBinary",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 63
+        },
+        {
+          "name": "Exists",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 73
+        },
+        {
+          "name": "Copy",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 83
+        },
+        {
+          "name": "Move",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 99
+        },
+        {
+          "name": "Size",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 115
+        },
+        {
+          "name": "ReadLines",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 124
+        },
+        {
+          "name": "Delete",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/FileTests.cpp",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "name": "DirectoryTest",
+      "tests": 9,
+      "testsuite": [
+        {
+          "name": "CreateAndExists",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 42
+        },
+        {
+          "name": "CreateAll",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 51
+        },
+        {
+          "name": "Remove",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 60
+        },
+        {
+          "name": "RemoveAll",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 70
+        },
+        {
+          "name": "Files",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 83
+        },
+        {
+          "name": "Subdirectories",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 95
+        },
+        {
+          "name": "IsEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 106
+        },
+        {
+          "name": "FilesRecursive",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 117
+        },
+        {
+          "name": "CurrentDirectory",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/DirectoryTests.cpp",
+          "line": 132
         }
       ]
     },
@@ -298,6 +436,124 @@
           "name": "CPUInfoLogicalCores",
           "file": "\/home\/z\/my-project\/Tests\/Source\/Threading\/ThreadTests.cpp",
           "line": 49
+        }
+      ]
+    },
+    {
+      "name": "BuildInfoTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "EngineName",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 13
+        },
+        {
+          "name": "VersionString",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 18
+        },
+        {
+          "name": "BuildDateNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "BuildTimeNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 29
+        },
+        {
+          "name": "CompilerNameNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 35
+        },
+        {
+          "name": "PlatformNameNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 41
+        },
+        {
+          "name": "FullBuildInfoString",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/BuildInfoTests.cpp",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "name": "SystemInfoTest",
+      "tests": 6,
+      "testsuite": [
+        {
+          "name": "HostNameNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/SystemInfoTests.cpp",
+          "line": 11
+        },
+        {
+          "name": "UserNameNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/SystemInfoTests.cpp",
+          "line": 17
+        },
+        {
+          "name": "LogicalCoreCountPositive",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/SystemInfoTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "TotalPhysicalMemoryPositive",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/SystemInfoTests.cpp",
+          "line": 29
+        },
+        {
+          "name": "OSNameNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/SystemInfoTests.cpp",
+          "line": 35
+        },
+        {
+          "name": "ArchitectureNotEmpty",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/SystemInfoTests.cpp",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "name": "PerformanceCountersTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "RegisterAndIncrement",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 12
+        },
+        {
+          "name": "MultipleCounters",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "ResetCounter",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 41
+        },
+        {
+          "name": "ResetAll",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 56
+        },
+        {
+          "name": "DuplicateName",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 71
+        },
+        {
+          "name": "HitCount",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 79
+        },
+        {
+          "name": "Report",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Diagnostics\/PerformanceCountersTests.cpp",
+          "line": 93
         }
       ]
     }

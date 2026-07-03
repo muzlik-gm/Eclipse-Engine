@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -67,7 +67,7 @@ include _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage.dir/compiler_depend.make
 include _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage.dir/progress.make
 
 _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage:
-	cd /home/z/my-project/build/_deps/yaml-cpp-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/ctest -DMODEL=Nightly -DACTIONS=Coverage -S CMakeFiles/CTestScript.cmake -V
+	cd /home/z/my-project/build/_deps/yaml-cpp-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/ctest -DMODEL=Nightly -DACTIONS=Coverage -S CMakeFiles/CTestScript.cmake -V
 
 _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage.dir/codegen:
 .PHONY : _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage.dir/codegen

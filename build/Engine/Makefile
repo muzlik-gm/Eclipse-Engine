@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/z/my-project/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/ctest $(ARGS)
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/ctest $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,37 +107,37 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
@@ -354,6 +354,30 @@ Source/Diagnostics/BuildInfo.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/BuildInfo.cpp.s
 .PHONY : Source/Diagnostics/BuildInfo.cpp.s
 
+Source/Diagnostics/CrashHandler.o: Source/Diagnostics/CrashHandler.cpp.o
+.PHONY : Source/Diagnostics/CrashHandler.o
+
+# target to build an object file
+Source/Diagnostics/CrashHandler.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.o
+.PHONY : Source/Diagnostics/CrashHandler.cpp.o
+
+Source/Diagnostics/CrashHandler.i: Source/Diagnostics/CrashHandler.cpp.i
+.PHONY : Source/Diagnostics/CrashHandler.i
+
+# target to preprocess a source file
+Source/Diagnostics/CrashHandler.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.i
+.PHONY : Source/Diagnostics/CrashHandler.cpp.i
+
+Source/Diagnostics/CrashHandler.s: Source/Diagnostics/CrashHandler.cpp.s
+.PHONY : Source/Diagnostics/CrashHandler.s
+
+# target to generate assembly for a file
+Source/Diagnostics/CrashHandler.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/CrashHandler.cpp.s
+.PHONY : Source/Diagnostics/CrashHandler.cpp.s
+
 Source/Diagnostics/Instrumentation.o: Source/Diagnostics/Instrumentation.cpp.o
 .PHONY : Source/Diagnostics/Instrumentation.o
 
@@ -378,6 +402,30 @@ Source/Diagnostics/Instrumentation.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/Instrumentation.cpp.s
 .PHONY : Source/Diagnostics/Instrumentation.cpp.s
 
+Source/Diagnostics/MemoryStats.o: Source/Diagnostics/MemoryStats.cpp.o
+.PHONY : Source/Diagnostics/MemoryStats.o
+
+# target to build an object file
+Source/Diagnostics/MemoryStats.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.o
+.PHONY : Source/Diagnostics/MemoryStats.cpp.o
+
+Source/Diagnostics/MemoryStats.i: Source/Diagnostics/MemoryStats.cpp.i
+.PHONY : Source/Diagnostics/MemoryStats.i
+
+# target to preprocess a source file
+Source/Diagnostics/MemoryStats.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.i
+.PHONY : Source/Diagnostics/MemoryStats.cpp.i
+
+Source/Diagnostics/MemoryStats.s: Source/Diagnostics/MemoryStats.cpp.s
+.PHONY : Source/Diagnostics/MemoryStats.s
+
+# target to generate assembly for a file
+Source/Diagnostics/MemoryStats.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/MemoryStats.cpp.s
+.PHONY : Source/Diagnostics/MemoryStats.cpp.s
+
 Source/Diagnostics/PerformanceCounters.o: Source/Diagnostics/PerformanceCounters.cpp.o
 .PHONY : Source/Diagnostics/PerformanceCounters.o
 
@@ -401,6 +449,30 @@ Source/Diagnostics/PerformanceCounters.s: Source/Diagnostics/PerformanceCounters
 Source/Diagnostics/PerformanceCounters.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.s
 .PHONY : Source/Diagnostics/PerformanceCounters.cpp.s
+
+Source/Diagnostics/StackTrace.o: Source/Diagnostics/StackTrace.cpp.o
+.PHONY : Source/Diagnostics/StackTrace.o
+
+# target to build an object file
+Source/Diagnostics/StackTrace.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.o
+.PHONY : Source/Diagnostics/StackTrace.cpp.o
+
+Source/Diagnostics/StackTrace.i: Source/Diagnostics/StackTrace.cpp.i
+.PHONY : Source/Diagnostics/StackTrace.i
+
+# target to preprocess a source file
+Source/Diagnostics/StackTrace.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.i
+.PHONY : Source/Diagnostics/StackTrace.cpp.i
+
+Source/Diagnostics/StackTrace.s: Source/Diagnostics/StackTrace.cpp.s
+.PHONY : Source/Diagnostics/StackTrace.s
+
+# target to generate assembly for a file
+Source/Diagnostics/StackTrace.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Engine/CMakeFiles/Engine.dir/build.make Engine/CMakeFiles/Engine.dir/Source/Diagnostics/StackTrace.cpp.s
+.PHONY : Source/Diagnostics/StackTrace.cpp.s
 
 Source/Diagnostics/SystemInfo.o: Source/Diagnostics/SystemInfo.cpp.o
 .PHONY : Source/Diagnostics/SystemInfo.o
@@ -653,12 +725,21 @@ help:
 	@echo "... Source/Diagnostics/BuildInfo.o"
 	@echo "... Source/Diagnostics/BuildInfo.i"
 	@echo "... Source/Diagnostics/BuildInfo.s"
+	@echo "... Source/Diagnostics/CrashHandler.o"
+	@echo "... Source/Diagnostics/CrashHandler.i"
+	@echo "... Source/Diagnostics/CrashHandler.s"
 	@echo "... Source/Diagnostics/Instrumentation.o"
 	@echo "... Source/Diagnostics/Instrumentation.i"
 	@echo "... Source/Diagnostics/Instrumentation.s"
+	@echo "... Source/Diagnostics/MemoryStats.o"
+	@echo "... Source/Diagnostics/MemoryStats.i"
+	@echo "... Source/Diagnostics/MemoryStats.s"
 	@echo "... Source/Diagnostics/PerformanceCounters.o"
 	@echo "... Source/Diagnostics/PerformanceCounters.i"
 	@echo "... Source/Diagnostics/PerformanceCounters.s"
+	@echo "... Source/Diagnostics/StackTrace.o"
+	@echo "... Source/Diagnostics/StackTrace.i"
+	@echo "... Source/Diagnostics/StackTrace.s"
 	@echo "... Source/Diagnostics/SystemInfo.o"
 	@echo "... Source/Diagnostics/SystemInfo.i"
 	@echo "... Source/Diagnostics/SystemInfo.s"

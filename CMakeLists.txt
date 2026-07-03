@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
 
+# Allow sub-projects that declare older cmake_minimum_required to build
+# with this newer CMake version (4.x removed backward-compat support).
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
+
 project(Engine
     VERSION 0.1.0
     DESCRIPTION "A professional, modular, cross-platform C++20 game engine"

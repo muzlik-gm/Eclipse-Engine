@@ -46,6 +46,7 @@ FetchContent_Declare(
         -DYAML_BUILD_SHARED_LIBS=OFF
         -DYAML_CPP_BUILD_TESTS=OFF
         -DYAML_CPP_BUILD_TOOLS=OFF
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 )
 FetchContent_MakeAvailable(yaml-cpp)
 

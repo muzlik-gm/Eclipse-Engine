@@ -1,0 +1,1021 @@
+     1→/**
+     2→ * @file Config.cpp
+     3→ * @brief Implementation of the hierarchical configuration system.
+     4→ */
+     5→
+     6→#include "Engine/Configuration/Config.h"
+     7→#include "Engine/Core/Log.h"
+     8→
+     9→#include <nlohmann/json.hpp>
+    10→#include <yaml-cpp/yaml.h>
+    11→
+    12→#include <algorithm>
+    13→#include <filesystem>
+    14→#include <fstream>
+    15→#include <map>
+    16→#include <sstream>
+    17→#include <string>
+    18→#include <string_view>
+    19→#include <variant>
+    20→
+    21→namespace engine::config {
+    22→
+    23→using engine::core::usize;
+    24→using engine::core::i64;
+    25→using engine::core::f64;
+    26→
+    27→// ============================================================================
+    28→// Internal helpers
+    29→// ============================================================================
+    30→
+    31→namespace {
+    32→
+    33→/// Detects the file format from the extension (case-insensitive).
+    34→std::string DetectFormat(std::string_view filepath)
+    35→{
+    36→    std::filesystem::path path(filepath);
+    37→    std::string ext = path.extension().string();
+    38→    std::transform(ext.begin(), ext.end(), ext.begin(),
+    39→                   [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+    40→
+    41→    if (ext == ".yaml" || ext == ".yml")
+    42→    {
+    43→        return "yaml";
+    44→    }
+    45→    if (ext == ".ini")
+    46→    {
+    47→        return "ini";
+    48→    }
+    49→    return "json"; // default fallback
+    50→}
+    51→
+    52→/// Recursively flattens a YAML node into dot-notation key-value pairs.
+    53→void FlattenYAML(const YAML::Node& node, std::string_view prefix,
+    54→                 std::unordered_map<std::string, Value>& out)
+    55→{
+    56→    if (!node.IsMap())
+    57→    {
+    58→        return;
+    59→    }
+    60→
+    61→    for (const auto& entry : node)
+    62→    {
+    63→        std::string key = std::string(prefix) + entry.first.as<std::string>();
+    64→
+    65→        if (entry.second.IsMap())
+    66→        {
+    67→            // Recurse into nested maps, appending a dot separator.
+    68→            FlattenYAML(entry.second, key + ".", out);
+    69→        }
+    70→        else if (entry.second.IsSequence())
+    71→        {
+    72→            // Sequences are stored as their YAML string representation.
+    73→            YAML::Emitter emitter;
+    74→            emitter << entry.second;
+    75→            out.emplace(std::move(key), emitter.c_str());
+    76→        }
+    77→        else if (entry.second.IsScalar())
+    78→        {
+    79→            const YAML::Node& val = entry.second;
+    80→
+    81→            // Try to determine the scalar type.
+    82→            // YAML::Node::as<T> will throw on mismatch, so probe in order
+    83→            // of most-specific first.  We use Tag() heuristics as well.
+    84→            if (val.Tag() == "!!bool" || val.Tag() == "tag:yaml.org,2002:bool")
+    85→            {
+    86→                out.emplace(std::move(key), val.as<bool>());
+    87→            }
+    88→            else if (val.Tag() == "!!int" || val.Tag() == "tag:yaml.org,2002:int")
+    89→            {
+    90→                out.emplace(std::move(key), static_cast<core::i64>(val.as<core::i64>()));
+    91→            }
+    92→            else if (val.Tag() == "!!float" || val.Tag() == "tag:yaml.org,2002:float")
+    93→            {
+    94→                out.emplace(std::move(key), val.as<core::f64>());
+    95→            }
+    96→            else
+    97→            {
+    98→                // Default: try bool, then integer, then float, then string.
+    99→                // This handles cases where the YAML tag is unclear
+   100→                // (e.g. implicit resolution for unquoted values).
+   101→
+   102→                // Bool probe
+   103→                try
+   104→                {
+   105→                    bool b = val.as<bool>();
+   106→                    // Distinguish from integers/strings: check the raw representation.
+   107→                    // "true"/"false" (case-insensitive) are unambiguous bools.
+   108→                    std::string raw = val.Scalar();
+   109→                    std::string lower = raw;
+   110→                    std::transform(lower.begin(), lower.end(), lower.begin(),
+   111→                                   [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+   112→                    if (lower == "true" || lower == "false")
+   113→                    {
+   114→                        out.emplace(std::move(key), b);
+   115→                        continue;
+   116→                    }
+   117→                }
+   118→                catch (const YAML::Exception&)
+   119→                {
+   120→                    // Not a bool — fall through.
+   121→                }
+   122→
+   123→                // Integer probe
+   124→                try
+   125→                {
+   126→                    core::i64 i = val.as<core::i64>();
+   127→                    out.emplace(std::move(key), i);
+   128→                    continue;
+   129→                }
+   130→                catch (const YAML::Exception&)
+   131→                {
+   132→                    // Not an integer — fall through.
+   133→                }
+   134→
+   135→                // Float probe
+   136→                try
+   137→                {
+   138→                    core::f64 f = val.as<core::f64>();
+   139→                    out.emplace(std::move(key), f);
+   140→                    continue;
+   141→                }
+   142→                catch (const YAML::Exception&)
+   143→                {
+   144→                    // Not a float — fall through to string.
+   145→                }
+   146→
+   147→                out.emplace(std::move(key), val.as<std::string>());
+   148→            }
+   149→        }
+   150→    }
+   151→}
+   152→
+   153→} // anonymous namespace
+   154→
+   155→// ============================================================================
+   156→// Constructors
+   157→// ============================================================================
+   158→
+   159→Config::Config() = default;
+   160→
+   161→Config::Config(std::string_view filepath)
+   162→{
+   163→    Load(filepath);
+   164→}
+   165→
+   166→// ============================================================================
+   167→// Loading / Saving
+   168→// ============================================================================
+   169→
+   170→bool Config::Load(std::string_view filepath)
+   171→{
+   172→    std::ifstream stream{std::string(filepath)};
+   173→    if (!stream.is_open())
+   174→    {
+   175→        ENGINE_LOG_ERROR("Config::Load — failed to open file: '{}'", filepath);
+   176→        return false;
+   177→    }
+   178→
+   179→    std::string content((std::istreambuf_iterator<char>(stream)),
+   180→                         std::istreambuf_iterator<char>());
+   181→    stream.close();
+   182→
+   183→    std::string format = DetectFormat(filepath);
+   184→    LoadFromString(content, format);
+   185→
+   186→    ENGINE_LOG_INFO("Config::Load — loaded {} entries from '{}' ({})", m_values.size(), filepath, format);
+   187→    return true;
+   188→}
+   189→
+   190→bool Config::Save(std::string_view filepath) const
+   191→{
+   192→    std::string format = DetectFormat(filepath);
+   193→    std::string content = SaveToString(format);
+   194→
+   195→    std::ofstream stream{std::string(filepath)};
+   196→    if (!stream.is_open())
+   197→    {
+   198→        ENGINE_LOG_ERROR("Config::Save — failed to open file for writing: '{}'", filepath);
+   199→        return false;
+   200→    }
+   201→
+   202→    stream << content;
+   203→    stream.close();
+   204→
+   205→    ENGINE_LOG_INFO("Config::Save — saved {} entries to '{}' ({})", m_values.size(), filepath, format);
+   206→    return true;
+   207→}
+   208→
+   209→void Config::LoadFromString(std::string_view content, std::string_view format)
+   210→{
+   211→    std::string fmt(format);
+   212→    std::transform(fmt.begin(), fmt.end(), fmt.begin(),
+   213→                   [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+   214→
+   215→    if (fmt == "yaml" || fmt == "yml")
+   216→    {
+   217→        LoadYAML(content);
+   218→    }
+   219→    else if (fmt == "ini")
+   220→    {
+   221→        LoadINI(content);
+   222→    }
+   223→    else
+   224→    {
+   225→        LoadJSON(content);
+   226→    }
+   227→}
+   228→
+   229→std::string Config::SaveToString(std::string_view format) const
+   230→{
+   231→    std::string fmt(format);
+   232→    std::transform(fmt.begin(), fmt.end(), fmt.begin(),
+   233→                   [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+   234→
+   235→    if (fmt == "yaml" || fmt == "yml")
+   236→    {
+   237→        return SaveYAML();
+   238→    }
+   239→    if (fmt == "ini")
+   240→    {
+   241→        return SaveINI();
+   242→    }
+   243→    return SaveJSON();
+   244→}
+   245→
+   246→// ============================================================================
+   247→// Typed Getters
+   248→// ============================================================================
+   249→
+   250→std::optional<Value> Config::Get(std::string_view key) const
+   251→{
+   252→    auto it = m_values.find(std::string(key));
+   253→    if (it != m_values.end())
+   254→    {
+   255→        return it->second;
+   256→    }
+   257→    return std::nullopt;
+   258→}
+   259→
+   260→std::string Config::GetString(std::string_view key, std::string_view defaultValue) const
+   261→{
+   262→    auto it = m_values.find(std::string(key));
+   263→    if (it != m_values.end())
+   264→    {
+   265→        const auto* str = std::get_if<std::string>(&it->second);
+   266→        if (str)
+   267→        {
+   268→            return *str;
+   269→        }
+   270→    }
+   271→    return std::string(defaultValue);
+   272→}
+   273→
+   274→core::i64 Config::GetInt(std::string_view key, core::i64 defaultValue) const
+   275→{
+   276→    auto it = m_values.find(std::string(key));
+   277→    if (it != m_values.end())
+   278→    {
+   279→        const auto* val = std::get_if<core::i64>(&it->second);
+   280→        if (val)
+   281→        {
+   282→            return *val;
+   283→        }
+   284→    }
+   285→    return defaultValue;
+   286→}
+   287→
+   288→core::f64 Config::GetFloat(std::string_view key, core::f64 defaultValue) const
+   289→{
+   290→    auto it = m_values.find(std::string(key));
+   291→    if (it != m_values.end())
+   292→    {
+   293→        const auto* val = std::get_if<core::f64>(&it->second);
+   294→        if (val)
+   295→        {
+   296→            return *val;
+   297→        }
+   298→    }
+   299→    return defaultValue;
+   300→}
+   301→
+   302→bool Config::GetBool(std::string_view key, bool defaultValue) const
+   303→{
+   304→    auto it = m_values.find(std::string(key));
+   305→    if (it != m_values.end())
+   306→    {
+   307→        const auto* val = std::get_if<bool>(&it->second);
+   308→        if (val)
+   309→        {
+   310→            return *val;
+   311→        }
+   312→    }
+   313→    return defaultValue;
+   314→}
+   315→
+   316→// ============================================================================
+   317→// Setters
+   318→// ============================================================================
+   319→
+   320→void Config::Set(std::string_view key, const Value& value)
+   321→{
+   322→    std::string k(key);
+   323→    auto [it, inserted] = m_values.emplace(k, value);
+   324→    if (!inserted)
+   325→    {
+   326→        it->second = value;
+   327→    }
+   328→    NotifyChange(k);
+   329→}
+   330→
+   331→void Config::SetString(std::string_view key, std::string_view value)
+   332→{
+   333→    Set(key, std::string(value));
+   334→}
+   335→
+   336→void Config::SetInt(std::string_view key, core::i64 value)
+   337→{
+   338→    Set(key, value);
+   339→}
+   340→
+   341→void Config::SetFloat(std::string_view key, core::f64 value)
+   342→{
+   343→    Set(key, value);
+   344→}
+   345→
+   346→void Config::SetBool(std::string_view key, bool value)
+   347→{
+   348→    Set(key, value);
+   349→}
+   350→
+   351→// ============================================================================
+   352→// Queries
+   353→// ============================================================================
+   354→
+   355→bool Config::Has(std::string_view key) const
+   356→{
+   357→    return m_values.contains(std::string(key));
+   358→}
+   359→
+   360→bool Config::Remove(std::string_view key)
+   361→{
+   362→    std::string k(key);
+   363→    auto it = m_values.find(k);
+   364→    if (it != m_values.end())
+   365→    {
+   366→        m_values.erase(it);
+   367→        m_validators.erase(k);
+   368→        m_callbacks.erase(k);
+   369→        return true;
+   370→    }
+   371→    return false;
+   372→}
+   373→
+   374→void Config::Clear()
+   375→{
+   376→    m_values.clear();
+   377→    m_validators.clear();
+   378→    m_callbacks.clear();
+   379→}
+   380→
+   381→core::usize Config::Size() const
+   382→{
+   383→    return m_values.size();
+   384→}
+   385→
+   386→std::vector<std::string> Config::Keys() const
+   387→{
+   388→    std::vector<std::string> keys;
+   389→    keys.reserve(m_values.size());
+   390→    for (const auto& [k, v] : m_values)
+   391→    {
+   392→        keys.push_back(k);
+   393→    }
+   394→    return keys;
+   395→}
+   396→
+   397→bool Config::IsString(std::string_view key) const
+   398→{
+   399→    auto it = m_values.find(std::string(key));
+   400→    return it != m_values.end() && std::holds_alternative<std::string>(it->second);
+   401→}
+   402→
+   403→bool Config::IsInt(std::string_view key) const
+   404→{
+   405→    auto it = m_values.find(std::string(key));
+   406→    return it != m_values.end() && std::holds_alternative<core::i64>(it->second);
+   407→}
+   408→
+   409→bool Config::IsFloat(std::string_view key) const
+   410→{
+   411→    auto it = m_values.find(std::string(key));
+   412→    return it != m_values.end() && std::holds_alternative<core::f64>(it->second);
+   413→}
+   414→
+   415→bool Config::IsBool(std::string_view key) const
+   416→{
+   417→    auto it = m_values.find(std::string(key));
+   418→    return it != m_values.end() && std::holds_alternative<bool>(it->second);
+   419→}
+   420→
+   421→// ============================================================================
+   422→// Merging
+   423→// ============================================================================
+   424→
+   425→void Config::Merge(const Config& other)
+   426→{
+   427→    for (const auto& [k, v] : other.m_values)
+   428→    {
+   429→        m_values[k] = v;
+   430→    }
+   431→}
+   432→
+   433→void Config::MergeDefaults(const Config& defaults)
+   434→{
+   435→    for (const auto& [k, v] : defaults.m_values)
+   436→    {
+   437→        m_values.try_emplace(k, v);
+   438→    }
+   439→}
+   440→
+   441→// ============================================================================
+   442→// Validation
+   443→// ============================================================================
+   444→
+   445→void Config::AddValidator(std::string_view key, Validator validator)
+   446→{
+   447→    m_validators[std::string(key)] = std::move(validator);
+   448→}
+   449→
+   450→bool Config::Validate(std::string& outError) const
+   451→{
+   452→    for (const auto& [key, validator] : m_validators)
+   453→    {
+   454→        auto it = m_values.find(key);
+   455→        if (it == m_values.end())
+   456→        {
+   457→            // Key not present — skip validation (validators only fire for existing keys).
+   458→            continue;
+   459→        }
+   460→
+   461→        if (!validator(it->second))
+   462→        {
+   463→            outError = "Validation failed for key '" + key + "'";
+   464→            return false;
+   465→        }
+   466→    }
+   467→    return true;
+   468→}
+   469→
+   470→// ============================================================================
+   471→// Callbacks
+   472→// ============================================================================
+   473→
+   474→void Config::OnChange(std::string_view key, ChangeCallback callback)
+   475→{
+   476→    m_callbacks[std::string(key)].push_back(std::move(callback));
+   477→}
+   478→
+   479→void Config::NotifyChange(std::string_view key)
+   480→{
+   481→    auto it = m_callbacks.find(std::string(key));
+   482→    if (it == m_callbacks.end())
+   483→    {
+   484→        return;
+   485→    }
+   486→
+   487→    auto valIt = m_values.find(std::string(key));
+   488→    const Value* value = (valIt != m_values.end()) ? &valIt->second : nullptr;
+   489→
+   490→    // If the key was removed, we still fire with a null-ish value by using
+   491→    // a default-constructed Value (empty string).
+   492→    Value fallbackValue = std::string{""};
+   493→    if (!value)
+   494→    {
+   495→        value = &fallbackValue;
+   496→    }
+   497→
+   498→    for (const auto& cb : it->second)
+   499→    {
+   500→        cb(key, *value);
+   501→    }
+   502→}
+   503→
+   504→// ============================================================================
+   505→// Nested Sections (dot-notation)
+   506→// ============================================================================
+   507→
+   508→Config Config::GetSection(std::string_view prefix) const
+   509→{
+   510→    Config section;
+   511→    std::string pfx(prefix);
+   512→
+   513→    for (const auto& [k, v] : m_values)
+   514→    {
+   515→        if (k.rfind(pfx, 0) == 0) // starts_with
+   516→        {
+   517→            std::string strippedKey = k.substr(pfx.size());
+   518→            if (!strippedKey.empty())
+   519→            {
+   520→                section.m_values.emplace(std::move(strippedKey), v);
+   521→            }
+   522→        }
+   523→    }
+   524→
+   525→    return section;
+   526→}
+   527→
+   528→// ============================================================================
+   529→// Private — JSON helpers
+   530→// ============================================================================
+   531→
+   532→bool Config::LoadJSON(std::string_view content)
+   533→{
+   534→    try
+   535→    {
+   536→        nlohmann::json j = nlohmann::json::parse(content);
+   537→        if (!j.is_object())
+   538→        {
+   539→            ENGINE_LOG_WARN("Config::LoadJSON — top-level JSON value is not an object");
+   540→            return false;
+   541→        }
+   542→
+   543→        for (const auto& [key, value] : j.items())
+   544→        {
+   545→            // Recursively flatten nested JSON objects into dot-notation keys.
+   546→            if (value.is_object())
+   547→            {
+   548→                // Flatten the nested object.
+   549→                std::function<void(const nlohmann::json&, const std::string&)> flatten =
+   550→                    [&](const nlohmann::json& obj, const std::string& pfx)
+   551→                {
+   552→                    for (const auto& [k, v] : obj.items())
+   553→                    {
+   554→                        std::string fullKey = pfx.empty() ? k : pfx + "." + k;
+   555→                        if (v.is_object())
+   556→                        {
+   557→                            flatten(v, fullKey);
+   558→                        }
+   559→                        else
+   560→                        {
+   561→                            m_values.emplace(fullKey, JSONValueToEngineValue(v));
+   562→                        }
+   563→                    }
+   564→                };
+   565→                flatten(value, std::string(key));
+   566→            }
+   567→            else
+   568→            {
+   569→                m_values.emplace(std::string(key), JSONValueToEngineValue(value));
+   570→            }
+   571→        }
+   572→
+   573→        return true;
+   574→    }
+   575→    catch (const nlohmann::json::parse_error& e)
+   576→    {
+   577→        ENGINE_LOG_ERROR("Config::LoadJSON — parse error: {}", e.what());
+   578→        return false;
+   579→    }
+   580→    catch (const std::exception& e)
+   581→    {
+   582→        ENGINE_LOG_ERROR("Config::LoadJSON — error: {}", e.what());
+   583→        return false;
+   584→    }
+   585→}
+   586→
+   587→std::string Config::SaveJSON() const
+   588→{
+   589→    nlohmann::json j = nlohmann::json::object();
+   590→
+   591→    for (const auto& [key, value] : m_values)
+   592→    {
+   593→        // Reconstruct nested objects from dot-notation keys.
+   594→        nlohmann::json* current = &j;
+   595→        std::string::size_type start = 0;
+   596→        std::string::size_type dotPos = key.find('.');
+   597→
+   598→        while (dotPos != std::string::npos)
+   599→        {
+   600→            std::string segment = key.substr(start, dotPos - start);
+   601→            current = &(current->operator[](std::move(segment)));
+   602→            start = dotPos + 1;
+   603→            dotPos = key.find('.', start);
+   604→        }
+   605→
+   606→        // Final segment — set the value.
+   607→        std::string lastSegment = key.substr(start);
+   608→        (*current)[std::move(lastSegment)] = EngineValueToJSON(value);
+   609→    }
+   610→
+   611→    return j.dump(4);
+   612→}
+   613→
+   614→Value Config::JSONValueToEngineValue(const nlohmann::json& j) const
+   615→{
+   616→    if (j.is_string())
+   617→    {
+   618→        return j.get<std::string>();
+   619→    }
+   620→    if (j.is_number_integer())
+   621→    {
+   622→        return j.get<core::i64>();
+   623→    }
+   624→    if (j.is_number_float())
+   625→    {
+   626→        return j.get<core::f64>();
+   627→    }
+   628→    if (j.is_boolean())
+   629→    {
+   630→        return j.get<bool>();
+   631→    }
+   632→    // Fallback: stringify the value.
+   633→    return j.dump();
+   634→}
+   635→
+   636→nlohmann::json Config::EngineValueToJSON(const Value& v) const
+   637→{
+   638→    return std::visit(
+   639→        [](const auto& arg) -> nlohmann::json { return arg; },
+   640→        v);
+   641→}
+   642→
+   643→// ============================================================================
+   644→// Private — YAML helpers
+   645→// ============================================================================
+   646→
+   647→bool Config::LoadYAML(std::string_view content)
+   648→{
+   649→    try
+   650→    {
+   651→        YAML::Node root = YAML::Load(std::string(content));
+   652→        if (!root.IsMap())
+   653→        {
+   654→            ENGINE_LOG_WARN("Config::LoadYAML — top-level YAML node is not a map");
+   655→            return false;
+   656→        }
+   657→
+   658→        FlattenYAML(root, "", m_values);
+   659→        return true;
+   660→    }
+   661→    catch (const YAML::ParserException& e)
+   662→    {
+   663→        ENGINE_LOG_ERROR("Config::LoadYAML — parse error: {}", e.what());
+   664→        return false;
+   665→    }
+   666→    catch (const std::exception& e)
+   667→    {
+   668→        ENGINE_LOG_ERROR("Config::LoadYAML — error: {}", e.what());
+   669→        return false;
+   670→    }
+   671→}
+   672→
+   673→std::string Config::SaveYAML() const
+   674→{
+   675→    // Build a nested YAML structure from dot-notation keys.
+   676→    YAML::Emitter emitter;
+   677→    emitter << YAML::BeginMap;
+   678→
+   679→    // Group keys by their top-level prefix.
+   680→    std::unordered_map<std::string, std::vector<std::pair<std::string, const Value*>>> groups;
+   681→
+   682→    for (const auto& [k, v] : m_values)
+   683→    {
+   684→        auto dotPos = k.find('.');
+   685→        if (dotPos == std::string::npos)
+   686→        {
+   687→            groups[""].emplace_back(k, &v);
+   688→        }
+   689→        else
+   690→        {
+   691→            groups[k.substr(0, dotPos)].emplace_back(k, &v);
+   692→        }
+   693→    }
+   694→
+   695→    // Helper: recursively emit a nested YAML map from dot-notation keys.
+   696→    std::function<void(YAML::Emitter&, const std::vector<std::pair<std::string, const Value*>>&, std::string_view)> emitGroup =
+   697→        [&](YAML::Emitter& em, const std::vector<std::pair<std::string, const Value*>>& entries, std::string_view prefix)
+   698→    {
+   699→        // Group entries by their next dot-segment.
+   700→        std::map<std::string, std::vector<std::pair<std::string, const Value*>>> subGroups;
+   701→        std::vector<std::pair<std::string, const Value*>> leafEntries;
+   702→
+   703→        for (const auto& [fullKey, valPtr] : entries)
+   704→        {
+   705→            std::string relative = fullKey.substr(prefix.size());
+   706→            auto dotPos = relative.find('.');
+   707→            if (dotPos == std::string::npos)
+   708→            {
+   709→                leafEntries.emplace_back(relative, valPtr);
+   710→            }
+   711→            else
+   712→            {
+   713→                std::string segment = relative.substr(0, dotPos);
+   714→                subGroups[segment].emplace_back(fullKey, valPtr);
+   715→            }
+   716→        }
+   717→
+   718→        // Emit leaf entries first.
+   719→        for (const auto& [leafKey, valPtr] : leafEntries)
+   720→        {
+   721→            em << YAML::Key << leafKey;
+   722→            std::visit(
+   723→                [&em](const auto& arg) { em << YAML::Value << arg; },
+   724→                *valPtr);
+   725→        }
+   726→
+   727→        // Emit nested groups.
+   728→        for (const auto& [segment, subEntries] : subGroups)
+   729→        {
+   730→            em << YAML::Key << segment;
+   731→            em << YAML::Value;
+   732→            em << YAML::BeginMap;
+   733→            emitGroup(em, subEntries, prefix.empty() ? segment : std::string(prefix) + "." + segment);
+   734→            em << YAML::EndMap;
+   735→        }
+   736→    };
+   737→
+   738→    // Emit the root-level groups (those with empty prefix).
+   739→    if (auto it = groups.find(""); it != groups.end())
+   740→    {
+   741→        for (const auto& [k, v] : it->second)
+   742→        {
+   743→            emitter << YAML::Key << k;
+   744→            std::visit(
+   745→                [&emitter](const auto& arg) { emitter << YAML::Value << arg; },
+   746→                *v);
+   747→        }
+   748→    }
+   749→
+   750→    // Emit each top-level group.
+   751→    for (auto& [groupName, entries] : groups)
+   752→    {
+   753→        if (groupName.empty())
+   754→        {
+   755→            continue; // already handled above
+   756→        }
+   757→
+   758→        emitter << YAML::Key << groupName;
+   759→        emitter << YAML::Value;
+   760→        emitter << YAML::BeginMap;
+   761→        emitGroup(emitter, entries, groupName);
+   762→        emitter << YAML::EndMap;
+   763→    }
+   764→
+   765→    emitter << YAML::EndMap;
+   766→
+   767→    if (!emitter.good())
+   768→    {
+   769→        ENGINE_LOG_ERROR("Config::SaveYAML — emitter error: {}", emitter.GetLastError());
+   770→    }
+   771→
+   772→    return std::string(emitter.c_str());
+   773→}
+   774→
+   775→// ============================================================================
+   776→// INI format
+   777→// ============================================================================
+   778→
+   779→bool Config::LoadINI(std::string_view content)
+   780→{
+   781→    // Simple INI parser.  Format:
+   782→    //   ; comment
+   783→    //   [section]
+   784→    //   key = value
+   785→    //   key = "quoted value"
+   786→    //
+   787→    // Sections become dot-notation prefixes: section.key = value.
+   788→
+   789→    std::string currentSection;
+   790→    usize lineNum = 0;
+   791→
+   792→    std::istringstream stream{std::string(content)};
+   793→    std::string line;
+   794→
+   795→    while (std::getline(stream, line))
+   796→    {
+   797→        ++lineNum;
+   798→
+   799→        // Trim leading/trailing whitespace.
+   800→        usize start = line.find_first_not_of(" \t\r\n");
+   801→        if (start == std::string::npos)
+   802→        {
+   803→            continue; // blank line
+   804→        }
+   805→        usize end = line.find_last_not_of(" \t\r\n");
+   806→        std::string trimmed = line.substr(start, end - start + 1);
+   807→
+   808→        // Skip comments (lines starting with ; or #).
+   809→        if (trimmed[0] == ';' || trimmed[0] == '#')
+   810→        {
+   811→            continue;
+   812→        }
+   813→
+   814→        // Section header: [section_name]
+   815→        if (trimmed[0] == '[' && trimmed.back() == ']')
+   816→        {
+   817→            currentSection = trimmed.substr(1, trimmed.size() - 2);
+   818→            // Trim whitespace from section name.
+   819→            usize s = currentSection.find_first_not_of(" \t");
+   820→            usize e = currentSection.find_last_not_of(" \t");
+   821→            if (s != std::string::npos && e != std::string::npos)
+   822→            {
+   823→                currentSection = currentSection.substr(s, e - s + 1);
+   824→            }
+   825→            continue;
+   826→        }
+   827→
+   828→        // Key-value pair: key = value
+   829→        usize eqPos = trimmed.find('=');
+   830→        if (eqPos == std::string::npos)
+   831→        {
+   832→            continue; // malformed line, skip
+   833→        }
+   834→
+   835→        std::string key = trimmed.substr(0, eqPos);
+   836→        std::string value = trimmed.substr(eqPos + 1);
+   837→
+   838→        // Trim key.
+   839→        usize ks = key.find_first_not_of(" \t");
+   840→        usize ke = key.find_last_not_of(" \t");
+   841→        if (ks != std::string::npos && ke != std::string::npos)
+   842→        {
+   843→            key = key.substr(ks, ke - ks + 1);
+   844→        }
+   845→        else
+   846→        {
+   847→            continue;
+   848→        }
+   849→
+   850→        // Trim value.
+   851→        usize vs = value.find_first_not_of(" \t");
+   852→        usize ve = value.find_last_not_of(" \t");
+   853→        if (vs != std::string::npos && ve != std::string::npos)
+   854→        {
+   855→            value = value.substr(vs, ve - vs + 1);
+   856→        }
+   857→        else
+   858→        {
+   859→            value.clear();
+   860→        }
+   861→
+   862→        // Remove surrounding quotes from value.
+   863→        if (value.size() >= 2 &&
+   864→            ((value.front() == '"' && value.back() == '"') ||
+   865→             (value.front() == '\'' && value.back() == '\'')))
+   866→        {
+   867→            value = value.substr(1, value.size() - 2);
+   868→        }
+   869→
+   870→        // Build the full key with section prefix.
+   871→        std::string fullKey = currentSection.empty()
+   872→            ? key
+   873→            : currentSection + "." + key;
+   874→
+   875→        // Try to parse as integer, then float, then bool, otherwise string.
+   876→        // Use the same logic as JSONValueToEngineValue would.
+   877→        Value configValue;
+   878→
+   879→        // Try bool.
+   880→        std::string lowerVal = value;
+   881→        std::transform(lowerVal.begin(), lowerVal.end(), lowerVal.begin(),
+   882→                       [](unsigned char c) { return static_cast<char>(std::tolower(c)); });
+   883→        if (lowerVal == "true" || lowerVal == "1")
+   884→        {
+   885→            configValue = true;
+   886→        }
+   887→        else if (lowerVal == "false" || lowerVal == "0")
+   888→        {
+   889→            configValue = false;
+   890→        }
+   891→        else
+   892→        {
+   893→            // Try integer.
+   894→            bool isInt = !value.empty() &&
+   895→                         (value[0] == '-' || value[0] == '+' ||
+   896→                          std::isdigit(static_cast<unsigned char>(value[0])));
+   897→            if (isInt)
+   898→            {
+   899→                try
+   900→                {
+   901→                    i64 intVal = 0;
+   902→                    usize pos = 0;
+   903→                    intVal = std::stoll(value, &pos);
+   904→                    if (pos == value.size())
+   905→                    {
+   906→                        configValue = intVal;
+   907→                    }
+   908→                    else
+   909→                    {
+   910→                        isInt = false;
+   911→                    }
+   912→                }
+   913→                catch (...)
+   914→                {
+   915→                    isInt = false;
+   916→                }
+   917→            }
+   918→
+   919→            if (!isInt)
+   920→            {
+   921→                // Try float.
+   922→                bool isFloat = !value.empty() &&
+   923→                               (value[0] == '-' || value[0] == '+' ||
+   924→                                std::isdigit(static_cast<unsigned char>(value[0])) ||
+   925→                                value[0] == '.');
+   926→                if (isFloat)
+   927→                {
+   928→                    try
+   929→                    {
+   930→                        f64 floatVal = 0.0;
+   931→                        usize pos = 0;
+   932→                        floatVal = std::stod(value, &pos);
+   933→                        if (pos == value.size())
+   934→                        {
+   935→                            configValue = floatVal;
+   936→                        }
+   937→                        else
+   938→                        {
+   939→                            configValue = value;
+   940→                        }
+   941→                    }
+   942→                    catch (...)
+   943→                    {
+   944→                        configValue = value;
+   945→                    }
+   946→                }
+   947→                else
+   948→                {
+   949→                    configValue = value;
+   950→                }
+   951→            }
+   952→        }
+   953→
+   954→        m_values[fullKey] = configValue;
+   955→    }
+   956→
+   957→    return true;
+   958→}
+   959→
+   960→std::string Config::SaveINI() const
+   961→{
+   962→    // Group keys by their section prefix.
+   963→    // Keys without a dot go under a [General] section.
+   964→    // Keys like "render.width" go under [render].
+   965→
+   966→    std::map<std::string, std::vector<std::pair<std::string, Value>>> sections;
+   967→
+   968→    for (const auto& [key, value] : m_values)
+   969→    {
+   970→        usize dotPos = key.find('.');
+   971→        if (dotPos != std::string::npos)
+   972→        {
+   973→            std::string section = key.substr(0, dotPos);
+   974→            std::string localKey = key.substr(dotPos + 1);
+   975→            sections[section].emplace_back(localKey, value);
+   976→        }
+   977→        else
+   978→        {
+   979→            sections["General"].emplace_back(key, value);
+   980→        }
+   981→    }
+   982→
+   983→    std::ostringstream oss;
+   984→
+   985→    for (const auto& [section, entries] : sections)
+   986→    {
+   987→        oss << "[" << section << "]\n";
+   988→        for (const auto& [key, value] : entries)
+   989→        {
+   990→            std::visit([&](const auto& v) {
+   991→                using T = std::decay_t<decltype(v)>;
+   992→                if constexpr (std::is_same_v<T, bool>)
+   993→                {
+   994→                    oss << key << " = " << (v ? "true" : "false") << "\n";
+   995→                }
+   996→                else if constexpr (std::is_same_v<T, std::string>)
+   997→                {
+   998→                    // Quote strings that contain spaces or special characters.
+   999→                    if (v.find(' ') != std::string::npos || v.find(';') != std::string::npos ||
+  1000→                        v.find('#') != std::string::npos)
+  1001→                    {
+  1002→                        oss << key << " = \"" << v << "\"\n";
+  1003→                    }
+  1004→                    else
+  1005→                    {
+  1006→                        oss << key << " = " << v << "\n";
+  1007→                    }
+  1008→                }
+  1009→                else
+  1010→                {
+  1011→                    oss << key << " = " << v << "\n";
+  1012→                }
+  1013→            }, value);
+  1014→        }
+  1015→        oss << "\n";
+  1016→    }
+  1017→
+  1018→    return oss.str();
+  1019→}
+  1020→
+  1021→} // namespace engine::config

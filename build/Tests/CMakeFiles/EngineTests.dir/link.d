@@ -5,13 +5,20 @@
   CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Core/TimingTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Core/ModuleRegistryTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Filesystem/FileTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Filesystem/DirectoryTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Configuration/ConfigTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Utilities/StringTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Utilities/HashTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Utilities/CommandLineTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o \
   ../lib/libEngine.a \
+  ../lib/libgtest.a \
   ../lib/libgtest_main.a \
   ../_deps/yaml-cpp-build/libyaml-cppd.a \
   ../_deps/spdlog-build/libspdlogd.a \
@@ -59,7 +66,13 @@ CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.o:
 
 CMakeFiles/EngineTests.dir/Source/Core/TimingTests.cpp.o:
 
+CMakeFiles/EngineTests.dir/Source/Core/ModuleRegistryTests.cpp.o:
+
 CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Filesystem/FileTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Filesystem/DirectoryTests.cpp.o:
 
 CMakeFiles/EngineTests.dir/Source/Configuration/ConfigTests.cpp.o:
 
@@ -71,7 +84,15 @@ CMakeFiles/EngineTests.dir/Source/Utilities/CommandLineTests.cpp.o:
 
 CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o:
 
+CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o:
+
 ../lib/libEngine.a:
+
+../lib/libgtest.a:
 
 ../lib/libgtest_main.a:
 

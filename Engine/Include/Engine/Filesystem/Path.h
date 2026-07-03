@@ -65,6 +65,17 @@ namespace engine::fs
         /// Uses $HOME on Unix, %USERPROFILE% on Windows.
         [[nodiscard]] static Path UserDirectory();
 
+        /// Returns the root directory of the engine installation.
+        /// Derived from ExecutableDirectory() by navigating up from the binary directory.
+        [[nodiscard]] static Path EngineDirectory();
+
+        /// Returns the root directory of the currently loaded project.
+        /// Defaults to CurrentWorkingDirectory() but can be overridden via SetProjectDirectory().
+        [[nodiscard]] static Path ProjectDirectory();
+
+        /// Overrides the project directory for the current session.
+        static void SetProjectDirectory(const Path& path);
+
         // ----------------------------------------------------------------
         //  Conversion
         // ----------------------------------------------------------------
@@ -194,6 +205,8 @@ namespace engine::fs
         friend std::ostream& operator<<(std::ostream& os, const Path& path);
 
     private:
+        inline static std::string s_projectDirectoryOverride;
+
         std::filesystem::path m_path;
         mutable std::string   m_cachedString;
         mutable bool          m_cacheDirty = true;

@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/z/my-project/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/ctest $(ARGS)
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/ctest $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,37 +107,37 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
@@ -234,6 +234,30 @@ Source/Core/LogTests.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.s
 .PHONY : Source/Core/LogTests.cpp.s
 
+Source/Core/ModuleRegistryTests.o: Source/Core/ModuleRegistryTests.cpp.o
+.PHONY : Source/Core/ModuleRegistryTests.o
+
+# target to build an object file
+Source/Core/ModuleRegistryTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Core/ModuleRegistryTests.cpp.o
+.PHONY : Source/Core/ModuleRegistryTests.cpp.o
+
+Source/Core/ModuleRegistryTests.i: Source/Core/ModuleRegistryTests.cpp.i
+.PHONY : Source/Core/ModuleRegistryTests.i
+
+# target to preprocess a source file
+Source/Core/ModuleRegistryTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Core/ModuleRegistryTests.cpp.i
+.PHONY : Source/Core/ModuleRegistryTests.cpp.i
+
+Source/Core/ModuleRegistryTests.s: Source/Core/ModuleRegistryTests.cpp.s
+.PHONY : Source/Core/ModuleRegistryTests.s
+
+# target to generate assembly for a file
+Source/Core/ModuleRegistryTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Core/ModuleRegistryTests.cpp.s
+.PHONY : Source/Core/ModuleRegistryTests.cpp.s
+
 Source/Core/TimingTests.o: Source/Core/TimingTests.cpp.o
 .PHONY : Source/Core/TimingTests.o
 
@@ -281,6 +305,126 @@ Source/Core/UUIDTests.s: Source/Core/UUIDTests.cpp.s
 Source/Core/UUIDTests.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.s
 .PHONY : Source/Core/UUIDTests.cpp.s
+
+Source/Diagnostics/BuildInfoTests.o: Source/Diagnostics/BuildInfoTests.cpp.o
+.PHONY : Source/Diagnostics/BuildInfoTests.o
+
+# target to build an object file
+Source/Diagnostics/BuildInfoTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o
+.PHONY : Source/Diagnostics/BuildInfoTests.cpp.o
+
+Source/Diagnostics/BuildInfoTests.i: Source/Diagnostics/BuildInfoTests.cpp.i
+.PHONY : Source/Diagnostics/BuildInfoTests.i
+
+# target to preprocess a source file
+Source/Diagnostics/BuildInfoTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.i
+.PHONY : Source/Diagnostics/BuildInfoTests.cpp.i
+
+Source/Diagnostics/BuildInfoTests.s: Source/Diagnostics/BuildInfoTests.cpp.s
+.PHONY : Source/Diagnostics/BuildInfoTests.s
+
+# target to generate assembly for a file
+Source/Diagnostics/BuildInfoTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.s
+.PHONY : Source/Diagnostics/BuildInfoTests.cpp.s
+
+Source/Diagnostics/PerformanceCountersTests.o: Source/Diagnostics/PerformanceCountersTests.cpp.o
+.PHONY : Source/Diagnostics/PerformanceCountersTests.o
+
+# target to build an object file
+Source/Diagnostics/PerformanceCountersTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o
+.PHONY : Source/Diagnostics/PerformanceCountersTests.cpp.o
+
+Source/Diagnostics/PerformanceCountersTests.i: Source/Diagnostics/PerformanceCountersTests.cpp.i
+.PHONY : Source/Diagnostics/PerformanceCountersTests.i
+
+# target to preprocess a source file
+Source/Diagnostics/PerformanceCountersTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.i
+.PHONY : Source/Diagnostics/PerformanceCountersTests.cpp.i
+
+Source/Diagnostics/PerformanceCountersTests.s: Source/Diagnostics/PerformanceCountersTests.cpp.s
+.PHONY : Source/Diagnostics/PerformanceCountersTests.s
+
+# target to generate assembly for a file
+Source/Diagnostics/PerformanceCountersTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.s
+.PHONY : Source/Diagnostics/PerformanceCountersTests.cpp.s
+
+Source/Diagnostics/SystemInfoTests.o: Source/Diagnostics/SystemInfoTests.cpp.o
+.PHONY : Source/Diagnostics/SystemInfoTests.o
+
+# target to build an object file
+Source/Diagnostics/SystemInfoTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o
+.PHONY : Source/Diagnostics/SystemInfoTests.cpp.o
+
+Source/Diagnostics/SystemInfoTests.i: Source/Diagnostics/SystemInfoTests.cpp.i
+.PHONY : Source/Diagnostics/SystemInfoTests.i
+
+# target to preprocess a source file
+Source/Diagnostics/SystemInfoTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.i
+.PHONY : Source/Diagnostics/SystemInfoTests.cpp.i
+
+Source/Diagnostics/SystemInfoTests.s: Source/Diagnostics/SystemInfoTests.cpp.s
+.PHONY : Source/Diagnostics/SystemInfoTests.s
+
+# target to generate assembly for a file
+Source/Diagnostics/SystemInfoTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.s
+.PHONY : Source/Diagnostics/SystemInfoTests.cpp.s
+
+Source/Filesystem/DirectoryTests.o: Source/Filesystem/DirectoryTests.cpp.o
+.PHONY : Source/Filesystem/DirectoryTests.o
+
+# target to build an object file
+Source/Filesystem/DirectoryTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/DirectoryTests.cpp.o
+.PHONY : Source/Filesystem/DirectoryTests.cpp.o
+
+Source/Filesystem/DirectoryTests.i: Source/Filesystem/DirectoryTests.cpp.i
+.PHONY : Source/Filesystem/DirectoryTests.i
+
+# target to preprocess a source file
+Source/Filesystem/DirectoryTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/DirectoryTests.cpp.i
+.PHONY : Source/Filesystem/DirectoryTests.cpp.i
+
+Source/Filesystem/DirectoryTests.s: Source/Filesystem/DirectoryTests.cpp.s
+.PHONY : Source/Filesystem/DirectoryTests.s
+
+# target to generate assembly for a file
+Source/Filesystem/DirectoryTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/DirectoryTests.cpp.s
+.PHONY : Source/Filesystem/DirectoryTests.cpp.s
+
+Source/Filesystem/FileTests.o: Source/Filesystem/FileTests.cpp.o
+.PHONY : Source/Filesystem/FileTests.o
+
+# target to build an object file
+Source/Filesystem/FileTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/FileTests.cpp.o
+.PHONY : Source/Filesystem/FileTests.cpp.o
+
+Source/Filesystem/FileTests.i: Source/Filesystem/FileTests.cpp.i
+.PHONY : Source/Filesystem/FileTests.i
+
+# target to preprocess a source file
+Source/Filesystem/FileTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/FileTests.cpp.i
+.PHONY : Source/Filesystem/FileTests.cpp.i
+
+Source/Filesystem/FileTests.s: Source/Filesystem/FileTests.cpp.s
+.PHONY : Source/Filesystem/FileTests.s
+
+# target to generate assembly for a file
+Source/Filesystem/FileTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/FileTests.cpp.s
+.PHONY : Source/Filesystem/FileTests.cpp.s
 
 Source/Filesystem/PathTests.o: Source/Filesystem/PathTests.cpp.o
 .PHONY : Source/Filesystem/PathTests.o
@@ -422,12 +566,30 @@ help:
 	@echo "... Source/Core/LogTests.o"
 	@echo "... Source/Core/LogTests.i"
 	@echo "... Source/Core/LogTests.s"
+	@echo "... Source/Core/ModuleRegistryTests.o"
+	@echo "... Source/Core/ModuleRegistryTests.i"
+	@echo "... Source/Core/ModuleRegistryTests.s"
 	@echo "... Source/Core/TimingTests.o"
 	@echo "... Source/Core/TimingTests.i"
 	@echo "... Source/Core/TimingTests.s"
 	@echo "... Source/Core/UUIDTests.o"
 	@echo "... Source/Core/UUIDTests.i"
 	@echo "... Source/Core/UUIDTests.s"
+	@echo "... Source/Diagnostics/BuildInfoTests.o"
+	@echo "... Source/Diagnostics/BuildInfoTests.i"
+	@echo "... Source/Diagnostics/BuildInfoTests.s"
+	@echo "... Source/Diagnostics/PerformanceCountersTests.o"
+	@echo "... Source/Diagnostics/PerformanceCountersTests.i"
+	@echo "... Source/Diagnostics/PerformanceCountersTests.s"
+	@echo "... Source/Diagnostics/SystemInfoTests.o"
+	@echo "... Source/Diagnostics/SystemInfoTests.i"
+	@echo "... Source/Diagnostics/SystemInfoTests.s"
+	@echo "... Source/Filesystem/DirectoryTests.o"
+	@echo "... Source/Filesystem/DirectoryTests.i"
+	@echo "... Source/Filesystem/DirectoryTests.s"
+	@echo "... Source/Filesystem/FileTests.o"
+	@echo "... Source/Filesystem/FileTests.i"
+	@echo "... Source/Filesystem/FileTests.s"
 	@echo "... Source/Filesystem/PathTests.o"
 	@echo "... Source/Filesystem/PathTests.i"
 	@echo "... Source/Filesystem/PathTests.s"

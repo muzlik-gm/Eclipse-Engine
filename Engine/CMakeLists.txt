@@ -11,6 +11,9 @@ set(ENGINE_SOURCES
     Source/Diagnostics/BuildInfo.cpp
     Source/Diagnostics/SystemInfo.cpp
     Source/Diagnostics/PerformanceCounters.cpp
+    Source/Diagnostics/StackTrace.cpp
+    Source/Diagnostics/CrashHandler.cpp
+    Source/Diagnostics/MemoryStats.cpp
     # Filesystem
     Source/Filesystem/Path.cpp
     Source/Filesystem/File.cpp
@@ -74,6 +77,8 @@ endif()
 # Platform-specific link libraries
 if(ENGINE_PLATFORM_LINUX)
     target_link_libraries(Engine PRIVATE dl rt)
+    # Enable symbol resolution for StackTrace backtrace_symbols
+    set_property(TARGET Engine APPEND_STRING PROPERTY LINK_FLAGS " -rdynamic")
 elseif(ENGINE_PLATFORM_MACOS)
     find_library(COREFOUNDATION_LIBRARY CoreFoundation)
     target_link_libraries(Engine PRIVATE ${COREFOUNDATION_LIBRARY})

@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,54 +78,54 @@ CMakeFiles/spdlog-populate-complete: spdlog-populate-prefix/src/spdlog-populate-
 CMakeFiles/spdlog-populate-complete: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-install
 CMakeFiles/spdlog-populate-complete: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-test
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'spdlog-populate'"
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E make_directory /home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate-complete
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-done
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E make_directory /home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles/spdlog-populate-complete
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-done
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-build: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-configure
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'spdlog-populate'"
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-build
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-build
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-configure: spdlog-populate-prefix/tmp/spdlog-populate-cfgcmd.txt
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-configure: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch_disconnected
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'spdlog-populate'"
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-configure
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-configure
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-download: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-gitinfo.txt
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-download: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-mkdir
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'spdlog-populate'"
-	cd /home/z/my-project/build/_deps && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-gitclone.cmake
-	cd /home/z/my-project/build/_deps && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-download
+	cd /home/z/my-project/build/_deps && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-gitclone.cmake
+	cd /home/z/my-project/build/_deps && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-download
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-install: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'spdlog-populate'"
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-install
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-install
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-mkdir:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'spdlog-populate'"
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -Dcfgdir= -P /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-mkdirs.cmake
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-mkdir
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -Dcfgdir= -P /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-mkdirs.cmake
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-mkdir
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch_disconnected: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch-info.txt
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch_disconnected: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update_disconnected
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch_disconnected step for 'spdlog-populate'"
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
-	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch_disconnected
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
+	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-patch_disconnected
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-test: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-install
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'spdlog-populate'"
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-test
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/spdlog-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-test
 
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update_disconnected: spdlog-populate-prefix/tmp/spdlog-populate-gitupdate.cmake
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update_disconnected: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update-info.txt
 spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update_disconnected: spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-download
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/spdlog-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing disconnected update step for 'spdlog-populate'"
-	cd /home/z/my-project/build/_deps/spdlog-src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -Dcan_fetch=NO -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-gitupdate.cmake
-	cd /home/z/my-project/build/_deps/spdlog-src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update_disconnected
+	cd /home/z/my-project/build/_deps/spdlog-src && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -Dcan_fetch=NO -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/tmp/spdlog-populate-gitupdate.cmake
+	cd /home/z/my-project/build/_deps/spdlog-src && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/spdlog-subbuild/spdlog-populate-prefix/src/spdlog-populate-stamp/spdlog-populate-update_disconnected
 
 CMakeFiles/spdlog-populate.dir/codegen:
 .PHONY : CMakeFiles/spdlog-populate.dir/codegen

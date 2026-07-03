@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB
 
-CXX_INCLUDES = -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest
+CXX_INCLUDES = -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest
 
 CXX_FLAGS = -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough
 
