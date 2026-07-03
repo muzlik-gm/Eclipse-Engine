@@ -1,0 +1,440 @@
+[
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/spdlog.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/spdlog.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/spdlog.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/spdlog.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/stdout_sinks.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/stdout_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/color_sinks.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/color_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/file_sinks.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/file_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/async.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/async.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/async.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/cfg.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/cfg.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/cfg.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DSPDLOG_FWRITE_UNLOCKED -I/home/z/my-project/build/_deps/spdlog-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o -c /home/z/my-project/build/_deps/spdlog-src/src/bundled_fmtlib_format.cpp",
+  "file": "/home/z/my-project/build/_deps/spdlog-src/src/bundled_fmtlib_format.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/contrib/graphbuilder.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/contrib/graphbuilder.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/contrib/graphbuilderadapter.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/contrib/graphbuilderadapter.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/binary.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/binary.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/binary.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/binary.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/convert.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/convert.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/convert.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/convert.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/depthguard.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/depthguard.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/depthguard.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/depthguard.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/directives.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/directives.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/directives.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/directives.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/emit.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/emit.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/emit.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emit.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/emitfromevents.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/emitfromevents.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/emitfromevents.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitfromevents.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/emitter.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/emitter.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/emitter.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitter.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/emitterstate.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/emitterstate.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/emitterstate.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitterstate.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/emitterutils.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/emitterutils.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/emitterutils.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/emitterutils.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/exceptions.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/exceptions.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/exceptions.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/exceptions.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/exp.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/exp.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/exp.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/exp.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/memory.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/memory.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/memory.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/memory.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/node.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/node.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/node.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/node.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/node_data.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/node_data.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/node_data.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/node_data.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/nodebuilder.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/nodebuilder.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/nodebuilder.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/nodebuilder.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/nodeevents.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/nodeevents.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/nodeevents.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/nodeevents.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/null.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/null.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/null.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/null.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/ostream_wrapper.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/ostream_wrapper.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/ostream_wrapper.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/ostream_wrapper.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/parse.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/parse.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/parse.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/parse.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/parser.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/parser.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/parser.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/parser.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/regex_yaml.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/regex_yaml.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/regex_yaml.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/regex_yaml.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/scanner.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/scanner.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/scanner.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scanner.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/scanscalar.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/scanscalar.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/scanscalar.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scanscalar.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/scantag.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/scantag.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/scantag.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scantag.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/scantoken.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/scantoken.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/scantoken.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/scantoken.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/simplekey.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/simplekey.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/simplekey.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/simplekey.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/singledocparser.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/singledocparser.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/singledocparser.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/singledocparser.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/stream.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/stream.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/stream.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/stream.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/yaml-cpp-src/src -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp.dir/src/tag.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/src/tag.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/src/tag.cpp",
+  "output": "_deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/tag.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build/util",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp-sandbox.dir/sandbox.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/util/sandbox.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/util/sandbox.cpp",
+  "output": "_deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-sandbox.dir/sandbox.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build/util",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp-parse.dir/parse.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/util/parse.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/util/parse.cpp",
+  "output": "_deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-parse.dir/parse.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/yaml-cpp-build/util",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/build/_deps/yaml-cpp-src/include -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/yaml-cpp-read.dir/read.cpp.o -c /home/z/my-project/build/_deps/yaml-cpp-src/util/read.cpp",
+  "file": "/home/z/my-project/build/_deps/yaml-cpp-src/util/read.cpp",
+  "output": "_deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read.dir/read.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/glm-build/glm",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/glm.dir/detail/glm.cpp.o -c /home/z/my-project/build/_deps/glm-src/glm/detail/glm.cpp",
+  "file": "/home/z/my-project/build/_deps/glm-src/glm/detail/glm.cpp",
+  "output": "_deps/glm-build/glm/CMakeFiles/glm.dir/detail/glm.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/build/_deps/googletest-src/googlemock -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/z/my-project/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/z/my-project/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -isystem /home/z/my-project/build/_deps/googletest-src/googlemock/include -isystem /home/z/my-project/build/_deps/googletest-src/googlemock -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/z/my-project/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/z/my-project/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -I/home/z/my-project/build/_deps/googletest-src/googletest/include -I/home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/z/my-project/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/z/my-project/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/z/my-project/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/z/my-project/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/z/my-project/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Core/Log.cpp.o -c /home/z/my-project/Engine/Source/Core/Log.cpp",
+  "file": "/home/z/my-project/Engine/Source/Core/Log.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Core/Log.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Core/Assert.cpp.o -c /home/z/my-project/Engine/Source/Core/Assert.cpp",
+  "file": "/home/z/my-project/Engine/Source/Core/Assert.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Core/Assert.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Core/UUID.cpp.o -c /home/z/my-project/Engine/Source/Core/UUID.cpp",
+  "file": "/home/z/my-project/Engine/Source/Core/UUID.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Core/UUID.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Core/Timing.cpp.o -c /home/z/my-project/Engine/Source/Core/Timing.cpp",
+  "file": "/home/z/my-project/Engine/Source/Core/Timing.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Core/Timing.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Diagnostics/Instrumentation.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/Instrumentation.cpp",
+  "file": "/home/z/my-project/Engine/Source/Diagnostics/Instrumentation.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Diagnostics/Instrumentation.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Diagnostics/BuildInfo.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/BuildInfo.cpp",
+  "file": "/home/z/my-project/Engine/Source/Diagnostics/BuildInfo.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Diagnostics/BuildInfo.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Diagnostics/SystemInfo.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/SystemInfo.cpp",
+  "file": "/home/z/my-project/Engine/Source/Diagnostics/SystemInfo.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Diagnostics/SystemInfo.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.o -c /home/z/my-project/Engine/Source/Diagnostics/PerformanceCounters.cpp",
+  "file": "/home/z/my-project/Engine/Source/Diagnostics/PerformanceCounters.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Diagnostics/PerformanceCounters.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o -c /home/z/my-project/Engine/Source/Filesystem/Path.cpp",
+  "file": "/home/z/my-project/Engine/Source/Filesystem/Path.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o -c /home/z/my-project/Engine/Source/Filesystem/File.cpp",
+  "file": "/home/z/my-project/Engine/Source/Filesystem/File.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o -c /home/z/my-project/Engine/Source/Filesystem/Directory.cpp",
+  "file": "/home/z/my-project/Engine/Source/Filesystem/Directory.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o -c /home/z/my-project/Engine/Source/Configuration/Config.cpp",
+  "file": "/home/z/my-project/Engine/Source/Configuration/Config.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o -c /home/z/my-project/Engine/Source/Threading/Thread.cpp",
+  "file": "/home/z/my-project/Engine/Source/Threading/Thread.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o -c /home/z/my-project/Engine/Source/Threading/CPUInfo.cpp",
+  "file": "/home/z/my-project/Engine/Source/Threading/CPUInfo.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o -c /home/z/my-project/Engine/Source/Utilities/Hash.cpp",
+  "file": "/home/z/my-project/Engine/Source/Utilities/Hash.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o -c /home/z/my-project/Engine/Source/Utilities/String.cpp",
+  "file": "/home/z/my-project/Engine/Source/Utilities/String.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o -c /home/z/my-project/Engine/Source/Utilities/CommandLine.cpp",
+  "file": "/home/z/my-project/Engine/Source/Utilities/CommandLine.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o -c /home/z/my-project/Engine/Source/Core/ModuleRegistry.cpp",
+  "file": "/home/z/my-project/Engine/Source/Core/ModuleRegistry.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o -c /home/z/my-project/Tests/Source/Core/LogTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Core/LogTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.o -c /home/z/my-project/Tests/Source/Core/UUIDTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Core/UUIDTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Core/TimingTests.cpp.o -c /home/z/my-project/Tests/Source/Core/TimingTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Core/TimingTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Core/TimingTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.o -c /home/z/my-project/Tests/Source/Filesystem/PathTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Filesystem/PathTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Configuration/ConfigTests.cpp.o -c /home/z/my-project/Tests/Source/Configuration/ConfigTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Configuration/ConfigTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Configuration/ConfigTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Utilities/StringTests.cpp.o -c /home/z/my-project/Tests/Source/Utilities/StringTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Utilities/StringTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Utilities/StringTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Utilities/HashTests.cpp.o -c /home/z/my-project/Tests/Source/Utilities/HashTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Utilities/HashTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Utilities/HashTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Utilities/CommandLineTests.cpp.o -c /home/z/my-project/Tests/Source/Utilities/CommandLineTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Utilities/CommandLineTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Utilities/CommandLineTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o -c /home/z/my-project/Tests/Source/Threading/ThreadTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Threading/ThreadTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o"
+}
+]

@@ -1,0 +1,29 @@
+file(REMOVE_RECURSE
+  "../bin/EngineTests"
+  "../bin/EngineTests.pdb"
+  "CMakeFiles/EngineTests.dir/link.d"
+  "CMakeFiles/EngineTests.dir/Source/Configuration/ConfigTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Configuration/ConfigTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Core/TimingTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Core/TimingTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Core/UUIDTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Utilities/CommandLineTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Utilities/CommandLineTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Utilities/HashTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Utilities/HashTests.cpp.o.d"
+  "CMakeFiles/EngineTests.dir/Source/Utilities/StringTests.cpp.o"
+  "CMakeFiles/EngineTests.dir/Source/Utilities/StringTests.cpp.o.d"
+  "EngineTests[1]_tests.cmake"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/EngineTests.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

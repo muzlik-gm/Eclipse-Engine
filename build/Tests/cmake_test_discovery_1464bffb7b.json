@@ -1,0 +1,305 @@
+{
+  "tests": 49,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "LogTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "InitializeAndShutdown",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/LogTests.cpp",
+          "line": 7
+        },
+        {
+          "name": "SetLevel",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/LogTests.cpp",
+          "line": 15
+        },
+        {
+          "name": "MultipleInitialize",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/LogTests.cpp",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "name": "UUIDTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 9
+        },
+        {
+          "name": "InvalidUUID",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 15
+        },
+        {
+          "name": "ToStringFormat",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 21
+        },
+        {
+          "name": "RoundTrip",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 37
+        },
+        {
+          "name": "Uniqueness",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 46
+        },
+        {
+          "name": "Equality",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 62
+        },
+        {
+          "name": "HashConsistency",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/UUIDTests.cpp",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "name": "TimingTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "TimerBasic",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/TimingTests.cpp",
+          "line": 10
+        },
+        {
+          "name": "TimerReset",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/TimingTests.cpp",
+          "line": 24
+        },
+        {
+          "name": "ClockNow",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/TimingTests.cpp",
+          "line": 37
+        },
+        {
+          "name": "ClockTimestamp",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Core\/TimingTests.cpp",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "name": "PathTest",
+      "tests": 8,
+      "testsuite": [
+        {
+          "name": "DefaultConstructor",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 7
+        },
+        {
+          "name": "FromString",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 13
+        },
+        {
+          "name": "Append",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 19
+        },
+        {
+          "name": "Extension",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 26
+        },
+        {
+          "name": "Stem",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 32
+        },
+        {
+          "name": "Parent",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 38
+        },
+        {
+          "name": "CurrentWorkingDirectory",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 45
+        },
+        {
+          "name": "Equality",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Filesystem\/PathTests.cpp",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "name": "ConfigTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "SetAndGet",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 9
+        },
+        {
+          "name": "DefaultValues",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 24
+        },
+        {
+          "name": "HasAndRemove",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 34
+        },
+        {
+          "name": "Merge",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 46
+        },
+        {
+          "name": "MergeDefaults",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 64
+        },
+        {
+          "name": "JSONRoundTrip",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 81
+        },
+        {
+          "name": "Keys",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Configuration\/ConfigTests.cpp",
+          "line": 99
+        }
+      ]
+    },
+    {
+      "name": "StringTest",
+      "tests": 10,
+      "testsuite": [
+        {
+          "name": "StartsWith",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 7
+        },
+        {
+          "name": "EndsWith",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 15
+        },
+        {
+          "name": "Contains",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "EqualsIgnoreCase",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 30
+        },
+        {
+          "name": "ToLower",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 38
+        },
+        {
+          "name": "ToUpper",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 45
+        },
+        {
+          "name": "Trim",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 52
+        },
+        {
+          "name": "Split",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 60
+        },
+        {
+          "name": "Join",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 69
+        },
+        {
+          "name": "Replace",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/StringTests.cpp",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "name": "HashTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "FNV1a64Basic",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/HashTests.cpp",
+          "line": 9
+        },
+        {
+          "name": "FNV1a64Consistency",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/HashTests.cpp",
+          "line": 18
+        },
+        {
+          "name": "FNV1a64DifferentInputs",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/HashTests.cpp",
+          "line": 29
+        },
+        {
+          "name": "HashCombine",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/HashTests.cpp",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "name": "CommandLineTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "HasFlag",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/CommandLineTests.cpp",
+          "line": 7
+        },
+        {
+          "name": "GetValue",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/CommandLineTests.cpp",
+          "line": 16
+        },
+        {
+          "name": "MissingValue",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Utilities\/CommandLineTests.cpp",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "name": "ThreadTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "CreateAndJoin",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Threading\/ThreadTests.cpp",
+          "line": 10
+        },
+        {
+          "name": "SharedMutexExclusive",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Threading\/ThreadTests.cpp",
+          "line": 23
+        },
+        {
+          "name": "CPUInfoLogicalCores",
+          "file": "\/home\/z\/my-project\/Tests\/Source\/Threading\/ThreadTests.cpp",
+          "line": 49
+        }
+      ]
+    }
+  ]
+}

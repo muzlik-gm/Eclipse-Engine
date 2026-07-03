@@ -1,0 +1,2497 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/home/z/.local/bin/uname"
+      - "/home/z/.venv/bin/uname"
+      - "/app/.venv/bin/uname"
+      - "/home/z/.npm-global/bin/uname"
+      - "/home/z/.bun/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 5.10.134-013.8.3.kangaroo.al8.x86_64 - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/home/z/.local/bin/gmake"
+      - "/home/z/.venv/bin/gmake"
+      - "/app/.venv/bin/gmake"
+      - "/home/z/.npm-global/bin/gmake"
+      - "/home/z/.bun/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/sbin/gmake"
+    found: "/usr/bin/gmake"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "CC"
+      - "g++"
+      - "aCC"
+      - "cl"
+      - "bcc"
+      - "xlC"
+      - "icpx"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/home/z/.local/bin/c++"
+      - "/home/z/.venv/bin/c++"
+      - "/app/.venv/bin/c++"
+      - "/home/z/.npm-global/bin/c++"
+      - "/home/z/.bun/bin/c++"
+      - "/usr/local/sbin/c++"
+      - "/usr/local/bin/c++"
+      - "/usr/sbin/c++"
+    found: "/usr/bin/c++"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/"
+    found: "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/z/my-project/build/CMakeFiles/4.3.4/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/usr/bin/dlltool"
+      - "/home/z/.local/bin/dlltool"
+      - "/home/z/.venv/bin/dlltool"
+      - "/app/.venv/bin/dlltool"
+      - "/home/z/.npm-global/bin/dlltool"
+      - "/home/z/.bun/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/usr/sbin/dlltool"
+      - "/sbin/dlltool"
+      - "/bin/dlltool"
+      - "/usr/local/bun-node-fallback-bin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/home/z/.local/bin/tapi"
+      - "/home/z/.venv/bin/tapi"
+      - "/app/.venv/bin/tapi"
+      - "/home/z/.npm-global/bin/tapi"
+      - "/home/z/.bun/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/usr/sbin/tapi"
+      - "/sbin/tapi"
+      - "/bin/tapi"
+      - "/usr/local/bun-node-fallback-bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-14.2"
+      - "gcc-ar-14"
+      - "gcc-ar14"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-14.2"
+      - "/home/z/.local/bin/gcc-ar-14.2"
+      - "/home/z/.venv/bin/gcc-ar-14.2"
+      - "/app/.venv/bin/gcc-ar-14.2"
+      - "/home/z/.npm-global/bin/gcc-ar-14.2"
+      - "/home/z/.bun/bin/gcc-ar-14.2"
+      - "/usr/local/sbin/gcc-ar-14.2"
+      - "/usr/local/bin/gcc-ar-14.2"
+      - "/usr/sbin/gcc-ar-14.2"
+      - "/sbin/gcc-ar-14.2"
+      - "/bin/gcc-ar-14.2"
+      - "/usr/local/bun-node-fallback-bin/gcc-ar-14.2"
+    found: "/usr/bin/gcc-ar-14"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:3 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-14.2"
+      - "gcc-ranlib-14"
+      - "gcc-ranlib14"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-14.2"
+      - "/home/z/.local/bin/gcc-ranlib-14.2"
+      - "/home/z/.venv/bin/gcc-ranlib-14.2"
+      - "/app/.venv/bin/gcc-ranlib-14.2"
+      - "/home/z/.npm-global/bin/gcc-ranlib-14.2"
+      - "/home/z/.bun/bin/gcc-ranlib-14.2"
+      - "/usr/local/sbin/gcc-ranlib-14.2"
+      - "/usr/local/bin/gcc-ranlib-14.2"
+      - "/usr/sbin/gcc-ranlib-14.2"
+      - "/sbin/gcc-ranlib-14.2"
+      - "/bin/gcc-ranlib-14.2"
+      - "/usr/local/bun-node-fallback-bin/gcc-ranlib-14.2"
+    found: "/usr/bin/gcc-ranlib-14"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq'
+        
+        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bdec2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bdec2.dir/build.make CMakeFiles/cmTC_bdec2.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq'
+        Building CXX object CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_bdec2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccqKpEeU.s
+        GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/include/c++/14
+         /usr/include/x86_64-linux-gnu/c++/14
+         /usr/include/c++/14/backward
+         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/'
+         as -v --64 -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccqKpEeU.s
+        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_bdec2
+        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdec2.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bdec2' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bdec2.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bdec2' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bdec2.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_bdec2
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/include/c++/14]
+          add: [/usr/include/x86_64-linux-gnu/c++/14]
+          add: [/usr/include/c++/14/backward]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/include/c++/14] ==> [/usr/include/c++/14]
+        collapse include dir [/usr/include/x86_64-linux-gnu/c++/14] ==> [/usr/include/x86_64-linux-gnu/c++/14]
+        collapse include dir [/usr/include/c++/14/backward] ==> [/usr/include/c++/14/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/14;/usr/include/x86_64-linux-gnu/c++/14;/usr/include/c++/14/backward;/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bdec2/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_bdec2.dir/build.make CMakeFiles/cmTC_bdec2.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-orXmVq']
+        ignore line: [Building CXX object CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_bdec2.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/ccqKpEeU.s]
+        ignore line: [GNU C++17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/14"]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/include/c++/14]
+        ignore line: [ /usr/include/x86_64-linux-gnu/c++/14]
+        ignore line: [ /usr/include/c++/14/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: a0e1d70a4b6c50c7ed1b3d36dfd3f9a4]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccqKpEeU.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_bdec2]
+        ignore line: [/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdec2.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_bdec2' '-foffload-options=-l_GCC_m' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_bdec2.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccQ6SU6L.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_bdec2] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/ccQ6SU6L.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_bdec2 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_bdec2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.44
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FindGit.cmake:111 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:1887 (find_package)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:1622 (__FetchContent_populateSubbuild)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2158:EVAL:2 (__FetchContent_doPopulation)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2158 (cmake_language)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FetchContent.cmake:2399 (__FetchContent_Populate)"
+      - "CMake/Dependencies.cmake:25 (FetchContent_MakeAvailable)"
+      - "CMakeLists.txt:17 (include)"
+    mode: "program"
+    variable: "GIT_EXECUTABLE"
+    description: "Git command line client"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/z/.local/bin/git"
+      - "/home/z/.venv/bin/git"
+      - "/app/.venv/bin/git"
+      - "/home/z/.npm-global/bin/git"
+      - "/home/z/.bun/bin/git"
+      - "/usr/local/sbin/git"
+      - "/usr/local/bin/git"
+      - "/usr/sbin/git"
+    found: "/usr/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FindThreads.cmake:162 (check_cxx_source_compiles)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "build/_deps/spdlog-src/CMakeLists.txt:151 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/z/my-project/CMake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4'
+        
+        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ab361/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ab361.dir/build.make CMakeFiles/cmTC_ab361.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4'
+        Building CXX object CMakeFiles/cmTC_ab361.dir/src.cxx.o
+        /usr/bin/c++ -DCMAKE_HAVE_LIBC_PTHREAD  -std=c++20 -o CMakeFiles/cmTC_ab361.dir/src.cxx.o -c /home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4/src.cxx
+        Linking CXX executable cmTC_ab361
+        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab361.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_ab361.dir/src.cxx.o -o cmTC_ab361
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-6tm5E4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CheckSymbolExists.cmake:193 (try_compile)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CheckSymbolExists.cmake:102 (__CHECK_SYMBOL_EXISTS_IMPL)"
+      - "build/_deps/spdlog-src/CMakeLists.txt:250 (check_symbol_exists)"
+    checks:
+      - "Looking for fwrite_unlocked"
+    directories:
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/z/my-project/CMake"
+    buildResult:
+      variable: "HAVE_FWRITE_UNLOCKED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm'
+        
+        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f7db0/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f7db0.dir/build.make CMakeFiles/cmTC_f7db0.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm'
+        Building CXX object CMakeFiles/cmTC_f7db0.dir/CheckSymbolExists.cxx.o
+        /usr/bin/c++   -std=c++20 -o CMakeFiles/cmTC_f7db0.dir/CheckSymbolExists.cxx.o -c /home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm/CheckSymbolExists.cxx
+        Linking CXX executable cmTC_f7db0
+        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7db0.dir/link.txt --verbose=1
+        /usr/bin/c++ CMakeFiles/cmTC_f7db0.dir/CheckSymbolExists.cxx.o -o cmTC_f7db0
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-nfxZmm'
+        
+      exitCode: 0
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:171 (find_program)"
+      - "build/_deps/yaml-cpp-src/CMakeLists.txt:21 (include)"
+    mode: "program"
+    variable: "GITCOMMAND"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/z/.local/bin/git"
+      - "/home/z/.venv/bin/git"
+      - "/app/.venv/bin/git"
+      - "/home/z/.npm-global/bin/git"
+      - "/home/z/.bun/bin/git"
+      - "/usr/local/sbin/git"
+      - "/usr/local/bin/git"
+      - "/usr/sbin/git"
+    found: "/usr/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:188 (find_program)"
+      - "build/_deps/yaml-cpp-src/CMakeLists.txt:21 (include)"
+    mode: "program"
+    variable: "MEMORYCHECK_COMMAND"
+    description: "Path to the memory checking command, used for memory error detection."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "purify"
+      - "valgrind"
+      - "boundscheck"
+      - "drmemory"
+      - "cuda-memcheck"
+      - "compute-sanitizer"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/z/.local/bin/purify"
+      - "/home/z/.venv/bin/purify"
+      - "/app/.venv/bin/purify"
+      - "/home/z/.npm-global/bin/purify"
+      - "/home/z/.bun/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/bin/purify"
+      - "/sbin/purify"
+      - "/bin/purify"
+      - "/usr/local/bun-node-fallback-bin/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/local/purify"
+      - "/usr/bin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/purify"
+      - "/bin/purify"
+      - "/sbin/purify"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/purify"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/purify"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/purify"
+      - "/usr/X11R6/bin/purify"
+      - "/usr/X11R6/sbin/purify"
+      - "/usr/X11R6/purify"
+      - "/usr/pkg/bin/purify"
+      - "/usr/pkg/sbin/purify"
+      - "/usr/pkg/purify"
+      - "/opt/bin/purify"
+      - "/opt/sbin/purify"
+      - "/opt/purify"
+      - "/home/z/.local/bin/valgrind"
+      - "/home/z/.venv/bin/valgrind"
+      - "/app/.venv/bin/valgrind"
+      - "/home/z/.npm-global/bin/valgrind"
+      - "/home/z/.bun/bin/valgrind"
+      - "/usr/local/sbin/valgrind"
+      - "/usr/local/bin/valgrind"
+      - "/usr/sbin/valgrind"
+      - "/usr/bin/valgrind"
+      - "/sbin/valgrind"
+      - "/bin/valgrind"
+      - "/usr/local/bun-node-fallback-bin/valgrind"
+      - "/usr/local/bin/valgrind"
+      - "/usr/local/sbin/valgrind"
+      - "/usr/local/valgrind"
+      - "/usr/bin/valgrind"
+      - "/usr/sbin/valgrind"
+      - "/usr/valgrind"
+      - "/bin/valgrind"
+      - "/sbin/valgrind"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/valgrind"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/valgrind"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/valgrind"
+      - "/usr/X11R6/bin/valgrind"
+      - "/usr/X11R6/sbin/valgrind"
+      - "/usr/X11R6/valgrind"
+      - "/usr/pkg/bin/valgrind"
+      - "/usr/pkg/sbin/valgrind"
+      - "/usr/pkg/valgrind"
+      - "/opt/bin/valgrind"
+      - "/opt/sbin/valgrind"
+      - "/opt/valgrind"
+      - "/home/z/.local/bin/boundscheck"
+      - "/home/z/.venv/bin/boundscheck"
+      - "/app/.venv/bin/boundscheck"
+      - "/home/z/.npm-global/bin/boundscheck"
+      - "/home/z/.bun/bin/boundscheck"
+      - "/usr/local/sbin/boundscheck"
+      - "/usr/local/bin/boundscheck"
+      - "/usr/sbin/boundscheck"
+      - "/usr/bin/boundscheck"
+      - "/sbin/boundscheck"
+      - "/bin/boundscheck"
+      - "/usr/local/bun-node-fallback-bin/boundscheck"
+      - "/usr/local/bin/boundscheck"
+      - "/usr/local/sbin/boundscheck"
+      - "/usr/local/boundscheck"
+      - "/usr/bin/boundscheck"
+      - "/usr/sbin/boundscheck"
+      - "/usr/boundscheck"
+      - "/bin/boundscheck"
+      - "/sbin/boundscheck"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/boundscheck"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/boundscheck"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/boundscheck"
+      - "/usr/X11R6/bin/boundscheck"
+      - "/usr/X11R6/sbin/boundscheck"
+      - "/usr/X11R6/boundscheck"
+      - "/usr/pkg/bin/boundscheck"
+      - "/usr/pkg/sbin/boundscheck"
+      - "/usr/pkg/boundscheck"
+      - "/opt/bin/boundscheck"
+      - "/opt/sbin/boundscheck"
+      - "/opt/boundscheck"
+      - "/home/z/.local/bin/drmemory"
+      - "/home/z/.venv/bin/drmemory"
+      - "/app/.venv/bin/drmemory"
+      - "/home/z/.npm-global/bin/drmemory"
+      - "/home/z/.bun/bin/drmemory"
+      - "/usr/local/sbin/drmemory"
+      - "/usr/local/bin/drmemory"
+      - "/usr/sbin/drmemory"
+      - "/usr/bin/drmemory"
+      - "/sbin/drmemory"
+      - "/bin/drmemory"
+      - "/usr/local/bun-node-fallback-bin/drmemory"
+      - "/usr/local/bin/drmemory"
+      - "/usr/local/sbin/drmemory"
+      - "/usr/local/drmemory"
+      - "/usr/bin/drmemory"
+      - "/usr/sbin/drmemory"
+      - "/usr/drmemory"
+      - "/bin/drmemory"
+      - "/sbin/drmemory"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/drmemory"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/drmemory"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/drmemory"
+      - "/usr/X11R6/bin/drmemory"
+      - "/usr/X11R6/sbin/drmemory"
+      - "/usr/X11R6/drmemory"
+      - "/usr/pkg/bin/drmemory"
+      - "/usr/pkg/sbin/drmemory"
+      - "/usr/pkg/drmemory"
+      - "/opt/bin/drmemory"
+      - "/opt/sbin/drmemory"
+      - "/opt/drmemory"
+      - "/home/z/.local/bin/cuda-memcheck"
+      - "/home/z/.venv/bin/cuda-memcheck"
+      - "/app/.venv/bin/cuda-memcheck"
+      - "/home/z/.npm-global/bin/cuda-memcheck"
+      - "/home/z/.bun/bin/cuda-memcheck"
+      - "/usr/local/sbin/cuda-memcheck"
+      - "/usr/local/bin/cuda-memcheck"
+      - "/usr/sbin/cuda-memcheck"
+      - "/usr/bin/cuda-memcheck"
+      - "/sbin/cuda-memcheck"
+      - "/bin/cuda-memcheck"
+      - "/usr/local/bun-node-fallback-bin/cuda-memcheck"
+      - "/usr/local/bin/cuda-memcheck"
+      - "/usr/local/sbin/cuda-memcheck"
+      - "/usr/local/cuda-memcheck"
+      - "/usr/bin/cuda-memcheck"
+      - "/usr/sbin/cuda-memcheck"
+      - "/usr/cuda-memcheck"
+      - "/bin/cuda-memcheck"
+      - "/sbin/cuda-memcheck"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cuda-memcheck"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/cuda-memcheck"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/cuda-memcheck"
+      - "/usr/X11R6/bin/cuda-memcheck"
+      - "/usr/X11R6/sbin/cuda-memcheck"
+      - "/usr/X11R6/cuda-memcheck"
+      - "/usr/pkg/bin/cuda-memcheck"
+      - "/usr/pkg/sbin/cuda-memcheck"
+      - "/usr/pkg/cuda-memcheck"
+      - "/opt/bin/cuda-memcheck"
+      - "/opt/sbin/cuda-memcheck"
+      - "/opt/cuda-memcheck"
+      - "/home/z/.local/bin/compute-sanitizer"
+      - "/home/z/.venv/bin/compute-sanitizer"
+      - "/app/.venv/bin/compute-sanitizer"
+      - "/home/z/.npm-global/bin/compute-sanitizer"
+      - "/home/z/.bun/bin/compute-sanitizer"
+      - "/usr/local/sbin/compute-sanitizer"
+      - "/usr/local/bin/compute-sanitizer"
+      - "/usr/sbin/compute-sanitizer"
+      - "/usr/bin/compute-sanitizer"
+      - "/sbin/compute-sanitizer"
+      - "/bin/compute-sanitizer"
+      - "/usr/local/bun-node-fallback-bin/compute-sanitizer"
+      - "/usr/local/bin/compute-sanitizer"
+      - "/usr/local/sbin/compute-sanitizer"
+      - "/usr/local/compute-sanitizer"
+      - "/usr/bin/compute-sanitizer"
+      - "/usr/sbin/compute-sanitizer"
+      - "/usr/compute-sanitizer"
+      - "/bin/compute-sanitizer"
+      - "/sbin/compute-sanitizer"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/compute-sanitizer"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/compute-sanitizer"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/compute-sanitizer"
+      - "/usr/X11R6/bin/compute-sanitizer"
+      - "/usr/X11R6/sbin/compute-sanitizer"
+      - "/usr/X11R6/compute-sanitizer"
+      - "/usr/pkg/bin/compute-sanitizer"
+      - "/usr/pkg/sbin/compute-sanitizer"
+      - "/usr/pkg/compute-sanitizer"
+      - "/opt/bin/compute-sanitizer"
+      - "/opt/sbin/compute-sanitizer"
+      - "/opt/compute-sanitizer"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CTest.cmake:196 (find_program)"
+      - "build/_deps/yaml-cpp-src/CMakeLists.txt:21 (include)"
+    mode: "program"
+    variable: "COVERAGE_COMMAND"
+    description: "Path to the coverage program that CTest uses for performing coverage inspection"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcov"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/z/.local/bin/gcov"
+      - "/home/z/.venv/bin/gcov"
+      - "/app/.venv/bin/gcov"
+      - "/home/z/.npm-global/bin/gcov"
+      - "/home/z/.bun/bin/gcov"
+      - "/usr/local/sbin/gcov"
+      - "/usr/local/bin/gcov"
+      - "/usr/sbin/gcov"
+    found: "/usr/bin/gcov"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "build/_deps/yaml-cpp-src/CMakeLists.txt:36 (find_program)"
+    mode: "program"
+    variable: "YAML_CPP_CLANG_FORMAT_EXE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "clang-format"
+    candidate_directories:
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/z/.local/bin/clang-format"
+      - "/home/z/.venv/bin/clang-format"
+      - "/app/.venv/bin/clang-format"
+      - "/home/z/.npm-global/bin/clang-format"
+      - "/home/z/.bun/bin/clang-format"
+      - "/usr/local/sbin/clang-format"
+      - "/usr/local/bin/clang-format"
+      - "/usr/sbin/clang-format"
+      - "/usr/bin/clang-format"
+      - "/sbin/clang-format"
+      - "/bin/clang-format"
+      - "/usr/local/bun-node-fallback-bin/clang-format"
+      - "/usr/local/bin/clang-format"
+      - "/usr/local/sbin/clang-format"
+      - "/usr/local/clang-format"
+      - "/usr/bin/clang-format"
+      - "/usr/sbin/clang-format"
+      - "/usr/clang-format"
+      - "/bin/clang-format"
+      - "/sbin/clang-format"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/clang-format"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/clang-format"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/clang-format"
+      - "/usr/X11R6/bin/clang-format"
+      - "/usr/X11R6/sbin/clang-format"
+      - "/usr/X11R6/clang-format"
+      - "/usr/pkg/bin/clang-format"
+      - "/usr/pkg/sbin/clang-format"
+      - "/usr/pkg/clang-format"
+      - "/opt/bin/clang-format"
+      - "/opt/sbin/clang-format"
+      - "/opt/clang-format"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/usr/bin/"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:468 (find_file)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:506 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/"
+      - "/home/z/my-project/CMake/"
+    found: "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/z/my-project/build/CMakeFiles/4.3.4/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-14.2"
+      - "gcc-ar-14"
+      - "gcc-ar14"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-14.2"
+      - "/home/z/.local/bin/gcc-ar-14.2"
+      - "/home/z/.venv/bin/gcc-ar-14.2"
+      - "/app/.venv/bin/gcc-ar-14.2"
+      - "/home/z/.npm-global/bin/gcc-ar-14.2"
+      - "/home/z/.bun/bin/gcc-ar-14.2"
+      - "/usr/local/sbin/gcc-ar-14.2"
+      - "/usr/local/bin/gcc-ar-14.2"
+      - "/usr/sbin/gcc-ar-14.2"
+      - "/sbin/gcc-ar-14.2"
+      - "/bin/gcc-ar-14.2"
+      - "/usr/local/bun-node-fallback-bin/gcc-ar-14.2"
+      - "/usr/local/bin/gcc-ar-14.2"
+      - "/usr/local/sbin/gcc-ar-14.2"
+      - "/usr/local/gcc-ar-14.2"
+      - "/usr/bin/gcc-ar-14.2"
+      - "/usr/sbin/gcc-ar-14.2"
+      - "/usr/gcc-ar-14.2"
+      - "/bin/gcc-ar-14.2"
+      - "/sbin/gcc-ar-14.2"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/gcc-ar-14.2"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/gcc-ar-14.2"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/gcc-ar-14.2"
+      - "/usr/X11R6/bin/gcc-ar-14.2"
+      - "/usr/X11R6/sbin/gcc-ar-14.2"
+      - "/usr/X11R6/gcc-ar-14.2"
+      - "/usr/pkg/bin/gcc-ar-14.2"
+      - "/usr/pkg/sbin/gcc-ar-14.2"
+      - "/usr/pkg/gcc-ar-14.2"
+      - "/opt/bin/gcc-ar-14.2"
+      - "/opt/sbin/gcc-ar-14.2"
+      - "/opt/gcc-ar-14.2"
+    found: "/usr/bin/gcc-ar-14"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-14.2"
+      - "gcc-ranlib-14"
+      - "gcc-ranlib14"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/z/.local/bin/"
+      - "/home/z/.venv/bin/"
+      - "/app/.venv/bin/"
+      - "/home/z/.npm-global/bin/"
+      - "/home/z/.bun/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/local/bun-node-fallback-bin/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-14.2"
+      - "/home/z/.local/bin/gcc-ranlib-14.2"
+      - "/home/z/.venv/bin/gcc-ranlib-14.2"
+      - "/app/.venv/bin/gcc-ranlib-14.2"
+      - "/home/z/.npm-global/bin/gcc-ranlib-14.2"
+      - "/home/z/.bun/bin/gcc-ranlib-14.2"
+      - "/usr/local/sbin/gcc-ranlib-14.2"
+      - "/usr/local/bin/gcc-ranlib-14.2"
+      - "/usr/sbin/gcc-ranlib-14.2"
+      - "/sbin/gcc-ranlib-14.2"
+      - "/bin/gcc-ranlib-14.2"
+      - "/usr/local/bun-node-fallback-bin/gcc-ranlib-14.2"
+      - "/usr/local/bin/gcc-ranlib-14.2"
+      - "/usr/local/sbin/gcc-ranlib-14.2"
+      - "/usr/local/gcc-ranlib-14.2"
+      - "/usr/bin/gcc-ranlib-14.2"
+      - "/usr/sbin/gcc-ranlib-14.2"
+      - "/usr/gcc-ranlib-14.2"
+      - "/bin/gcc-ranlib-14.2"
+      - "/sbin/gcc-ranlib-14.2"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/gcc-ranlib-14.2"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/sbin/gcc-ranlib-14.2"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/gcc-ranlib-14.2"
+      - "/usr/X11R6/bin/gcc-ranlib-14.2"
+      - "/usr/X11R6/sbin/gcc-ranlib-14.2"
+      - "/usr/X11R6/gcc-ranlib-14.2"
+      - "/usr/pkg/bin/gcc-ranlib-14.2"
+      - "/usr/pkg/sbin/gcc-ranlib-14.2"
+      - "/usr/pkg/gcc-ranlib-14.2"
+      - "/opt/bin/gcc-ranlib-14.2"
+      - "/opt/sbin/gcc-ranlib-14.2"
+      - "/opt/gcc-ranlib-14.2"
+    found: "/usr/bin/gcc-ranlib-14"
+    search_context:
+      ENV{PATH}:
+        - "/home/z/.local/bin"
+        - "/home/z/.venv/bin"
+        - "/app/.venv/bin"
+        - "/home/z/.npm-global/bin"
+        - "/home/z/.bun/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/local/bun-node-fallback-bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/home/z/.local/lib/python3.13/site-packages/cmake/data"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1"
+      binary: "/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/z/my-project/CMake"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1'
+        
+        Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_304e6/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_304e6.dir/build.make CMakeFiles/cmTC_304e6.dir/build
+        gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1'
+        Building C object CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_304e6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc4ROUAt.s
+        GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 14.2.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.27-GMP
+        
+        warning: MPFR header version 4.2.1 differs from library version 4.2.2.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/14/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/'
+         as -v --64 -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o /tmp/cc4ROUAt.s
+        GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_304e6
+        /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_304e6.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2,rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 14.2.0 (Debian 14.2.0-19) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_304e6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_304e6.'
+         /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 14.2.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.44
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_304e6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_304e6.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -o cmTC_304e6
+        gmake[1]: Leaving directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/14/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/14/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/14/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
+        ignore line: [Change Dir: '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1']
+        ignore line: []
+        ignore line: [Run Build Command(s): /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_304e6/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_304e6.dir/build.make CMakeFiles/cmTC_304e6.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/z/my-project/build/CMakeFiles/CMakeScratch/TryCompile-lnCdm1']
+        ignore line: [Building C object CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -c /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/cc1 -quiet -v -imultiarch x86_64-linux-gnu /home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_304e6.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -o /tmp/cc4ROUAt.s]
+        ignore line: [GNU C17 (Debian 14.2.0-19) version 14.2.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 14.2.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [warning: MPFR header version 4.2.1 differs from library version 4.2.2.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/14/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/14/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 0051dfc1fa4e89ba97760da93f2546f3]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o /tmp/cc4ROUAt.s]
+        ignore line: [GNU assembler version 2.44 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.44]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_304e6]
+        ignore line: [/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_304e6.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 14.2.0-19' --with-bugurl=file:///usr/share/doc/gcc-14/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 rust --prefix=/usr --with-gcc-major-version-only --program-suffix=-14 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/reproducible-path/gcc-14-14.2.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=3]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 14.2.0 (Debian 14.2.0-19) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/14/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/14/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/14/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_304e6' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_304e6.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/14/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc4PtKAl.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_304e6] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 14.2.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/14/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/14/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4PtKAl.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_304e6 /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/14 -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/14/../../.. -v CMakeFiles/cmTC_304e6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14] ==> [/usr/lib/gcc/x86_64-linux-gnu/14]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/14/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/14/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/14;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "/home/z/.local/lib/python3.13/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "build/_deps/entt-src/CMakeLists.txt:14 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.44
+...

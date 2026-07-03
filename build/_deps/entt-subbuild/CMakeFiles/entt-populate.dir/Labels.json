@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/CMakeFiles/entt-populate"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/CMakeFiles/entt-populate.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/CMakeFiles/entt-populate-complete.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-build.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-configure.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-download.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-install.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-patch_disconnected.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-test.rule"
+		},
+		{
+			"file" : "/home/z/my-project/build/_deps/entt-subbuild/entt-populate-prefix/src/entt-populate-stamp/entt-populate-update_disconnected.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"entt-populate"
+		],
+		"name" : "entt-populate"
+	}
+}
