@@ -1,14 +1,15 @@
 // ============================================================================
 // File: Engine/Source/Application/Application.cpp
 // Implementation of the Application class — command-line parsing,
-// configuration building, and lifecycle delegation to the Engine.
+// configuration building, platform/window lifecycle, and event processing.
 // ============================================================================
 
 #include "Engine/Application/Application.h"
 #include "Engine/Core/Log.h"
 #include "Engine/Configuration/Config.h"
-
-#include <thread>
+#include "Engine/Platform/Window.h"
+#include "Engine/Platform/PlatformManager.h"
+#include "Engine/Events/Event.h"
 
 namespace engine::application
 {
@@ -17,6 +18,10 @@ namespace engine::application
     using engine::core::i32;
     using engine::core::u32;
     using engine::config::Config;
+    using engine::platform::IWindow;
+    using engine::platform::WindowProperties;
+    using engine::platform::PlatformManager;
+    using engine::events::WindowCloseEvent;
 
     // ========================================================================
     // Construction
@@ -27,7 +32,6 @@ namespace engine::application
         , m_commandLine(0, nullptr)
         , m_engine(std::make_unique<Engine>())
     {
-        // Build argv for CommandLine from spec.commandLineArgs.
         if (!m_spec.commandLineArgs.empty())
         {
             std::vector<const char*> argv;
@@ -49,10 +53,8 @@ namespace engine::application
         : m_commandLine(argc, argv)
         , m_engine(std::make_unique<Engine>())
     {
-        // Derive application name from argv[0].
         if (argc > 0 && argv != nullptr && argv[0] != nullptr)
         {
-            // Take just the filename component.
             std::string exeName(argv[0]);
             const auto pos = exeName.find_last_of("/\\");
             if (pos != std::string::npos)
@@ -65,7 +67,6 @@ namespace engine::application
             }
         }
 
-        // Store raw args in spec for completeness.
         m_spec.commandLineArgs = m_commandLine.Args();
 
         ParseCommandLine();
@@ -85,14 +86,13 @@ namespace engine::application
     {
         if (m_initialized)
         {
-            ENGINE_LOG_WARN("Application — already initialized");
+            ENGINE_LOG_WARN("Application \u2014 already initialized");
             return true;
         }
 
         // Initialize the logging system.
         core::Log::Initialize(m_spec.name);
 
-        // Apply log level from config.
         const u32 level = m_config.engineConfig.logLevel;
         if (level <= 5)
         {
@@ -100,6 +100,22 @@ namespace engine::application
         }
 
         ENGINE_LOG_INFO("Application '{}' starting", m_spec.name);
+
+        // Initialize the platform subsystem (GLFW).
+        auto& platformMgr = PlatformManager::Instance();
+        platformMgr.Initialize();
+        if (!platformMgr.IsInitialized())
+        {
+            ENGINE_LOG_ERROR("Application \u2014 platform initialization failed");
+            core::Log::Shutdown();
+            return false;
+        }
+
+        // Create the window unless in headless mode.
+        if (!m_config.headless)
+        {
+            CreateWindow();
+        }
 
         // Create the engine if not already created.
         if (!m_engine)
@@ -110,8 +126,11 @@ namespace engine::application
         // Initialize the engine.
         if (!m_engine->Initialize(m_config.engineConfig))
         {
-            ENGINE_LOG_ERROR("Application — engine initialization failed");
+            ENGINE_LOG_ERROR("Application \u2014 engine initialization failed");
+            m_window.reset();
+            platformMgr.Shutdown();
             m_engine.reset();
+            core::Log::Shutdown();
             return false;
         }
 
@@ -125,30 +144,41 @@ namespace engine::application
     {
         if (!m_initialized || !m_engine)
         {
-            ENGINE_LOG_ERROR("Application — Run() called before successful Initialize()");
+            ENGINE_LOG_ERROR("Application \u2014 Run() called before successful Initialize()");
             return 1;
         }
 
-        ENGINE_LOG_INFO("Application — entering main loop");
+        ENGINE_LOG_INFO("Application \u2014 entering main loop");
 
-        // In Phase 1 the engine runs until RequestStop() is called.
-        // Without a window or input system, we stop after a brief
-        // demonstration run when no subsystems are registered.
-        //
-        // If subsystems are present, they control the lifecycle.
-        // If none are present, run for one frame then stop (headless mode).
-        const auto& subsystemMgr = m_engine->GetContext().GetSubsystemManager();
-        if (subsystemMgr.Count() == 0)
+        // Set up window close callback to stop the engine.
+        if (m_window)
         {
-            ENGINE_LOG_INFO("Application — no subsystems registered, running one demonstration frame");
-            m_engine->GetFrameStats().Tick();
-            m_engine->GetFrameStats().EndFrame();
-            m_engine->RequestStop();
+            m_window->SetEventCallback([this](engine::events::Event& event)
+            {
+                if (event.GetEventType() == engine::events::EventType::WindowClose)
+                {
+                    ENGINE_LOG_INFO("Application \u2014 window close requested");
+                    m_engine->RequestStop();
+                }
+            });
+        }
+
+        // In headless mode with no subsystems, run one frame then stop.
+        if (!m_window)
+        {
+            const auto& subsystemMgr = m_engine->GetContext().GetSubsystemManager();
+            if (subsystemMgr.Count() == 0)
+            {
+                ENGINE_LOG_INFO("Application \u2014 headless, no subsystems \u2014 running one demonstration frame");
+                m_engine->GetFrameStats().Tick();
+                m_engine->GetFrameStats().EndFrame();
+                m_engine->RequestStop();
+            }
         }
 
         const i32 exitCode = m_engine->Run();
 
-        ENGINE_LOG_INFO("Application — main loop exited with code {}", exitCode);
+        ENGINE_LOG_INFO("Application \u2014 main loop exited with code {}", exitCode);
         return exitCode;
     }
 
@@ -159,20 +189,45 @@ namespace engine::application
             return;
         }
 
-        ENGINE_LOG_INFO("Application — shutting down");
+        ENGINE_LOG_INFO("Application \u2014 shutting down");
 
+        // Destroy the window first.
+        if (m_window)
+        {
+            m_window->Destroy();
+            m_window.reset();
+        }
+
+        // Shut down the engine.
         if (m_engine)
         {
             m_engine->Shutdown();
             m_engine.reset();
         }
 
+        // Shut down the platform subsystem.
+        PlatformManager::Instance().Shutdown();
+
         m_initialized = false;
 
-        ENGINE_LOG_INFO("Application — shutdown complete");
+        ENGINE_LOG_INFO("Application \u2014 shutdown complete");
 
         // Shut down the logging system last.
         core::Log::Shutdown();
+    }
+
+    // ========================================================================
+    // Accessors
+    // ========================================================================
+
+    IWindow* Application::GetWindow() const noexcept
+    {
+        return m_window.get();
+    }
+
+    PlatformManager& Application::GetPlatformManager() noexcept
+    {
+        return PlatformManager::Instance();
     }
 
     // ========================================================================
@@ -190,7 +245,6 @@ namespace engine::application
 
     void Application::ParseCommandLine()
     {
-        // Override engine config values from command line.
         if (m_commandLine.Has("config"))
         {
             m_config.engineConfig.configFilePath = m_commandLine.Get("config");
@@ -219,7 +273,7 @@ namespace engine::application
 
         if (m_commandLine.Has("headless"))
         {
-            m_config.headless = m_commandLine.GetBool("headless", true);
+            m_config.headless = m_commandLine.GetBool("headless", false);
         }
 
         if (m_commandLine.Has("app-config"))
@@ -227,19 +281,17 @@ namespace engine::application
             m_config.appConfigFilePath = m_commandLine.Get("app-config");
         }
 
-        ENGINE_LOG_DEBUG("Application — command line parsed ({} args)",
+        ENGINE_LOG_DEBUG("Application \u2014 command line parsed ({} args)",
                          m_commandLine.Args().size());
     }
 
     void Application::BuildConfig()
     {
-        // Load application config file if specified.
         if (!m_config.appConfigFilePath.empty())
         {
             Config appConfig;
             if (appConfig.Load(m_config.appConfigFilePath))
             {
-                // Merge engine-relevant overrides.
                 if (appConfig.Has("engine.fixedDeltaTime"))
                 {
                     const f64 val = appConfig.GetFloat("engine.fixedDeltaTime");
@@ -257,15 +309,52 @@ namespace engine::application
                     m_config.headless = appConfig.GetBool("headless", m_config.headless);
                 }
 
-                ENGINE_LOG_DEBUG("Application — loaded app config from '{}'",
+                ENGINE_LOG_DEBUG("Application \u2014 loaded app config from '{}'",
                                  m_config.appConfigFilePath);
             }
             else
             {
-                ENGINE_LOG_WARN("Application — failed to load app config file '{}'",
+                ENGINE_LOG_WARN("Application \u2014 failed to load app config file '{}'",
                                 m_config.appConfigFilePath);
             }
         }
+    }
+
+    void Application::CreateWindow()
+    {
+        auto& platformMgr = PlatformManager::Instance();
+
+        WindowProperties windowProps;
+        windowProps.Title = m_spec.name;
+        windowProps.Width  = 1280;
+        windowProps.Height = 720;
+        windowProps.VisibleOnCreate = true;
+
+        // Apply window-related config overrides.
+        if (m_commandLine.Has("width"))
+        {
+            windowProps.Width = static_cast<u32>(
+                m_commandLine.GetInt("width", static_cast<i32>(windowProps.Width)));
+        }
+        if (m_commandLine.Has("height"))
+        {
+            windowProps.Height = static_cast<u32>(
+                m_commandLine.GetInt("height", static_cast<i32>(windowProps.Height)));
+        }
+        if (m_commandLine.Has("title"))
+        {
+            windowProps.Title = m_commandLine.Get("title");
+        }
+
+        m_window = platformMgr.CreateWindow(windowProps);
+        if (!m_window)
+        {
+            ENGINE_LOG_ERROR("Application \u2014 failed to create window");
+            return;
+        }
+
+        ENGINE_LOG_INFO("Application \u2014 window created ({}x{})",
+                        windowProps.Width, windowProps.Height);
     }
 
 } // namespace engine::application

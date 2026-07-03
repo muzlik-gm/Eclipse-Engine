@@ -1,4 +1,4 @@
-prefix=/usr/local
+prefix=/home/z/my-project/build/stub_x11
 includedir=${prefix}/include
 
 Name: EnTT

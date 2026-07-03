@@ -55,9 +55,16 @@
 #include "Engine/Utilities/CommandLine.h"
 #include "Engine/Utilities/Environment.h"
 
-// Platform — windowing and OS abstraction
+// Platform — windowing, monitor, clipboard, cursor, dynamic library, file dialog
 #include "Engine/Platform/Window.h"
 #include "Engine/Platform/OS.h"
+#include "Engine/Platform/Monitor.h"
+#include "Engine/Platform/Clipboard.h"
+#include "Engine/Platform/Cursor.h"
+#include "Engine/Platform/DynamicLibrary.h"
+#include "Engine/Platform/PlatformInfo.h"
+#include "Engine/Platform/FileDialog.h"
+#include "Engine/Platform/PlatformManager.h"
 
 // Events — type-safe event system and event bus
 #include "Engine/Events/Event.h"

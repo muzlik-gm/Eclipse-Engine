@@ -39,8 +39,7 @@ namespace engine::application
         std::string appConfigFilePath;
 
         /// Whether to run in headless mode (no window, no rendering).
-        /// Always true in Phase 1 since no rendering exists.
-        bool headless = true;
+        bool headless = false;
     };
 
 } // namespace engine::application

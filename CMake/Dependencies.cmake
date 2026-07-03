@@ -88,17 +88,19 @@ endif()
 # corresponding engine phase is implemented.
 # ============================================================================
 
-# --- GLFW (window) — Phase 1: Platform Foundation ---
+# --- GLFW (window) — Phase 2: Platform Layer & Window System ---
 FetchContent_Declare(
     glfw
     GIT_REPOSITORY https://github.com/glfw/glfw.git
-    GIT_TAG 3.4
+    GIT_TAG 3.3.9
     GIT_SHALLOW TRUE
     CMAKE_ARGS
         -DGLFW_BUILD_TESTS=OFF
         -DGLFW_BUILD_EXAMPLES=OFF
         -DGLFW_BUILD_DOCS=OFF
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 )
+FetchContent_MakeAvailable(glfw)
 
 # --- GLAD (OpenGL loader) — Phase 6: OpenGL Backend ---
 FetchContent_Declare(

@@ -1,7 +1,7 @@
 // ============================================================================
 // File: Engine/Include/Engine/Application/Application.h
-// Application class — owns the Engine, parses command line, and runs
-// the main entry loop.
+// Application class — owns the Engine and Window, parses command line,
+// processes platform events, and runs the main entry loop.
 // ============================================================================
 
 #pragma once
@@ -23,6 +23,10 @@ namespace engine::application
     using engine::runtime::Engine;
     using engine::util::CommandLine;
 
+    // Forward declaration — Platform/IWindow headers are not exposed
+    // to the application layer; access is through GetWindow().
+    namespace platform { class IWindow; class PlatformManager; }
+
     // ========================================================================
     // Application
     // ========================================================================
@@ -34,17 +38,18 @@ namespace engine::application
     ///                             → SubsystemManager
     ///                             → EngineContext
     ///                             → FrameStats
+    ///   Application → PlatformManager
+    ///   Application → Window (via PlatformManager)
     ///
     /// The Application is responsible for:
     ///   - Parsing command-line arguments.
     ///   - Constructing the engine configuration.
+    ///   - Initializing the platform subsystem (GLFW).
+    ///   - Creating and owning the Window.
+    ///   - Processing platform events each frame.
     ///   - Creating and initializing the Engine.
     ///   - Running the main loop (delegated to Engine::Run()).
-    ///   - Shutting down cleanly.
-    ///
-    /// In Phase 1 there is no window creation, no rendering, and no
-    /// platform-specific code.  The Application simply drives the engine
-    /// lifecycle.
+    ///   - Shutting down cleanly (window, platform, engine).
     ///
     /// Users create an Application via the EntryPoint macro or by
     /// instantiating this class directly.
@@ -70,7 +75,7 @@ namespace engine::application
         // Lifecycle
         // ----------------------------------------------------------------
 
-        /// Initializes the engine with the computed configuration.
+        /// Initializes the platform, window, and engine.
         /// Returns true on success.
         bool Initialize();
 
@@ -78,7 +83,7 @@ namespace engine::application
         /// Returns the exit code.
         i32 Run();
 
-        /// Shuts down the engine and the application.
+        /// Shuts down the engine, window, and application.
         void Shutdown();
 
         // ----------------------------------------------------------------
@@ -104,10 +109,23 @@ namespace engine::application
         }
 
         /// Access the application configuration.
+        [[nodiscard]] ApplicationConfig& GetConfig() noexcept
+        {
+            return m_config;
+        }
+
+        /// Access the application configuration (const).
         [[nodiscard]] const ApplicationConfig& GetConfig() const noexcept
         {
             return m_config;
         }
+
+        /// Access the platform window.  Returns nullptr before Initialize()
+        /// or in headless mode.
+        [[nodiscard]] platform::IWindow* GetWindow() const noexcept;
+
+        /// Access the platform manager.
+        [[nodiscard]] platform::PlatformManager& GetPlatformManager() noexcept;
 
         // ----------------------------------------------------------------
         // State
@@ -134,15 +152,19 @@ namespace engine::application
         /// command-line overrides.
         void BuildConfig();
 
+        /// Creates the window if not in headless mode.
+        void CreateWindow();
+
         // ----------------------------------------------------------------
         // Data
         // ----------------------------------------------------------------
 
-        ApplicationSpec              m_spec;
-        ApplicationConfig            m_config;
-        CommandLine                  m_commandLine;
-        std::unique_ptr<Engine>      m_engine;
-        bool                         m_initialized = false;
+        ApplicationSpec                      m_spec;
+        ApplicationConfig                    m_config;
+        CommandLine                          m_commandLine;
+        std::unique_ptr<Engine>            m_engine;
+        std::unique_ptr<platform::IWindow>    m_window;
+        bool                                 m_initialized = false;
     };
 
 } // namespace engine::application

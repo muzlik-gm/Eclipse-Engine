@@ -1,5 +1,0 @@
-[2026-07-03 20:26:50.068] [ENGINE] [info] [thread 26785] Logging system initialized. App: ModuleRegistryTests
-[2026-07-03 20:26:50.068] [ENGINE] [debug] [thread 26785] ModuleRegistry — registered module 'DupMod' (priority 1)
-[2026-07-03 20:26:50.068] [ENGINE] [debug] [thread 26785] ModuleRegistry — replaced module 'DupMod'
-[2026-07-03 20:26:50.068] [ENGINE] [debug] [thread 26785] ModuleRegistry — unregistered module 'DupMod'
-[2026-07-03 20:26:50.068] [ENGINE] [info] [thread 26785] Logging system shutting down.

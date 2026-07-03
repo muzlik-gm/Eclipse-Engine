@@ -20,6 +20,9 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/z/my-project/build/stub_x11/bin/"
+      - "/home/z/my-project/build/stub_x11/sbin/"
+      - "/home/z/my-project/build/stub_x11/"
       - "/home/z/.venv/bin/"
       - "/app/.venv/bin/"
       - "/home/z/.npm-global/bin/"
@@ -32,6 +35,9 @@ events:
       - "/bin/"
       - "/usr/local/bun-node-fallback-bin/"
     searched_directories:
+      - "/home/z/my-project/build/stub_x11/bin/uname"
+      - "/home/z/my-project/build/stub_x11/sbin/uname"
+      - "/home/z/my-project/build/stub_x11/uname"
       - "/home/z/.venv/bin/uname"
       - "/app/.venv/bin/uname"
       - "/home/z/.npm-global/bin/uname"
@@ -41,6 +47,8 @@ events:
       - "/usr/sbin/uname"
     found: "/usr/bin/uname"
     search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/z/my-project/build/stub_x11"
       ENV{PATH}:
         - "/home/z/.venv/bin"
         - "/app/.venv/bin"

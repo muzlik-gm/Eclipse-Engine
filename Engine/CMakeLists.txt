@@ -36,6 +36,14 @@ set(ENGINE_SOURCES
     Source/Runtime/Engine.cpp
     # Application (Phase 1)
     Source/Application/Application.cpp
+    # Platform (Phase 2)
+    Source/Platform/PlatformManager.cpp
+    Source/Platform/GLFW/GLFWWindow.cpp
+    Source/Platform/GLFW/GLFWMonitor.cpp
+    Source/Platform/GLFW/GLFWClipboard.cpp
+    Source/Platform/GLFW/GLFWCursor.cpp
+    Source/Platform/GLFW/GLFWDynamicLibrary.cpp
+    Source/Platform/PlatformInfo.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})
@@ -55,6 +63,7 @@ target_link_libraries(Engine
     PRIVATE
         yaml-cpp::yaml-cpp
         Threads::Threads
+        glfw
     PUBLIC
         spdlog::spdlog
         nlohmann_json::nlohmann_json
