@@ -1,0 +1,35 @@
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Logging system initialized. App: Sandbox
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Application 'Sandbox' starting
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine v0.1.0
+Build:    Debug
+Compiler: GCC 14.2
+Platform: Linux
+Built:    Jul  3 2026 19:15:38
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine v0.1.0
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine — initializing modules
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] ModuleManager — all 0 module(s) initialized
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine — initializing subsystems
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] SubsystemManager — initializing subsystem 'Demo'
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] [Demo] Initialize()
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] SubsystemManager — subsystem 'Demo' initialized successfully
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] SubsystemManager — all 1 subsystem(s) initialized
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine — 1 subsystem(s) registered:
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477]   - Demo
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine — initialization complete
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Application 'Sandbox' initialized
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Application — entering main loop
+[2026-07-03 20:21:53.208] [ENGINE] [info] [thread 26477] Engine — main loop started
+[2026-07-03 20:21:55.220] [ENGINE] [info] [thread 26477] [Demo] elapsed 2.012s >= 2.000s — requesting engine stop
+[2026-07-03 20:21:55.220] [ENGINE] [info] [thread 26477] Engine — stop requested
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Engine — main loop exited (121 frames)
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Application — main loop exited with code 0
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Application — shutting down
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Engine — shutting down subsystems
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] SubsystemManager — shutting down subsystem 'Demo'
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] [Demo] Shutdown() — 121 updates, 120 fixed updates
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] SubsystemManager — all subsystems shut down
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Engine — shutting down modules
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] ModuleManager — all modules shut down
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Engine — shutdown complete
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Application — shutdown complete
+[2026-07-03 20:21:55.237] [ENGINE] [info] [thread 26477] Logging system shutting down.

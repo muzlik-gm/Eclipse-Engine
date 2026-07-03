@@ -282,6 +282,90 @@ Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.s"
 	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Diagnostics/PerformanceCountersTests.cpp -o CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.s
 
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/flags.make
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o: /home/z/my-project/Tests/Source/Runtime/EngineStateTests.cpp
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o -MF CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o.d -o CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/EngineStateTests.cpp
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.i"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Tests/Source/Runtime/EngineStateTests.cpp > CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.i
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.s"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Runtime/EngineStateTests.cpp -o CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.s
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/flags.make
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o: /home/z/my-project/Tests/Source/Runtime/FrameStatsTests.cpp
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o -MF CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o.d -o CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/FrameStatsTests.cpp
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.i"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Tests/Source/Runtime/FrameStatsTests.cpp > CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.i
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.s"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Runtime/FrameStatsTests.cpp -o CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.s
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/flags.make
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o: /home/z/my-project/Tests/Source/Runtime/SubsystemManagerTests.cpp
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o -MF CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o.d -o CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/SubsystemManagerTests.cpp
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.i"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Tests/Source/Runtime/SubsystemManagerTests.cpp > CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.i
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.s"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Runtime/SubsystemManagerTests.cpp -o CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.s
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/flags.make
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o: /home/z/my-project/Tests/Source/Runtime/ModuleManagerTests.cpp
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o -MF CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o.d -o CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/ModuleManagerTests.cpp
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.i"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Tests/Source/Runtime/ModuleManagerTests.cpp > CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.i
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.s"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Runtime/ModuleManagerTests.cpp -o CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.s
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/flags.make
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o: /home/z/my-project/Tests/Source/Runtime/EngineTests.cpp
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o -MF CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o.d -o CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/EngineTests.cpp
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.i"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Tests/Source/Runtime/EngineTests.cpp > CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.i
+
+Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.s"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Runtime/EngineTests.cpp -o CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.s
+
+Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/flags.make
+Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o: /home/z/my-project/Tests/Source/Application/ApplicationTests.cpp
+Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o -MF CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o.d -o CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o -c /home/z/my-project/Tests/Source/Application/ApplicationTests.cpp
+
+Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.i"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Tests/Source/Application/ApplicationTests.cpp > CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.i
+
+Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.s"
+	cd /home/z/my-project/build/Tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Tests/Source/Application/ApplicationTests.cpp -o CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.s
+
 # Object files for target EngineTests
 EngineTests_OBJECTS = \
 "CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o" \
@@ -298,7 +382,13 @@ EngineTests_OBJECTS = \
 "CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.cpp.o" \
 "CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o" \
 "CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o" \
-"CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o"
+"CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o" \
+"CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o" \
+"CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o" \
+"CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o" \
+"CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o" \
+"CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o" \
+"CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o"
 
 # External object files for target EngineTests
 EngineTests_EXTERNAL_OBJECTS =
@@ -318,6 +408,12 @@ bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Threading/ThreadTests.c
 bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o
 bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o
 bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o
+bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o
+bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o
+bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o
+bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o
+bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o
+bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o
 bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/build.make
 bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/compiler_depend.ts
 bin/EngineTests: lib/libEngine.a
@@ -328,7 +424,7 @@ bin/EngineTests: _deps/spdlog-build/libspdlogd.a
 bin/EngineTests: _deps/glm-build/glm/libglm.a
 bin/EngineTests: lib/libgtest.a
 bin/EngineTests: Tests/CMakeFiles/EngineTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable ../bin/EngineTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable ../bin/EngineTests"
 	cd /home/z/my-project/build/Tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EngineTests.dir/link.txt --verbose=$(VERBOSE)
 	cd /home/z/my-project/build/Tests && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -D TEST_TARGET=EngineTests -D TEST_EXECUTABLE=/home/z/my-project/build/bin/EngineTests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/z/my-project/build/Tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_FILTER= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=EngineTests_TESTS -D CTEST_FILE=/home/z/my-project/build/Tests/EngineTests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_DISCOVERY_EXTRA_ARGS= -D TEST_XML_OUTPUT_DIR= -P /home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/GoogleTestAddTests.cmake
 

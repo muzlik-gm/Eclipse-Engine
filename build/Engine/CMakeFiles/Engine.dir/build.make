@@ -366,6 +366,76 @@ Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.s"
 	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Core/ModuleRegistry.cpp -o CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.s
 
+Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o: /home/z/my-project/Engine/Source/Runtime/FrameStats.cpp
+Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o -MF CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o.d -o CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o -c /home/z/my-project/Engine/Source/Runtime/FrameStats.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Runtime/FrameStats.cpp > CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Runtime/FrameStats.cpp -o CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.s
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o: /home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp
+Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o -MF CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o.d -o CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o -c /home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp > CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp -o CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.s
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o: /home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp
+Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o -MF CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o.d -o CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o -c /home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp > CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp -o CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.s
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o: /home/z/my-project/Engine/Source/Runtime/Engine.cpp
+Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o -MF CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o.d -o CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o -c /home/z/my-project/Engine/Source/Runtime/Engine.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Runtime/Engine.cpp > CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Runtime/Engine.cpp -o CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.s
+
+Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o: Engine/CMakeFiles/Engine.dir/flags.make
+Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o: /home/z/my-project/Engine/Source/Application/Application.cpp
+Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o: Engine/CMakeFiles/Engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o -MF CMakeFiles/Engine.dir/Source/Application/Application.cpp.o.d -o CMakeFiles/Engine.dir/Source/Application/Application.cpp.o -c /home/z/my-project/Engine/Source/Application/Application.cpp
+
+Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engine.dir/Source/Application/Application.cpp.i"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/z/my-project/Engine/Source/Application/Application.cpp > CMakeFiles/Engine.dir/Source/Application/Application.cpp.i
+
+Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engine.dir/Source/Application/Application.cpp.s"
+	cd /home/z/my-project/build/Engine && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/z/my-project/Engine/Source/Application/Application.cpp -o CMakeFiles/Engine.dir/Source/Application/Application.cpp.s
+
 # Object files for target Engine
 Engine_OBJECTS = \
 "CMakeFiles/Engine.dir/Source/Core/Log.cpp.o" \
@@ -388,7 +458,12 @@ Engine_OBJECTS = \
 "CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o" \
 "CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o" \
-"CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o"
+"CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o" \
+"CMakeFiles/Engine.dir/Source/Application/Application.cpp.o"
 
 # External object files for target Engine
 Engine_EXTERNAL_OBJECTS =
@@ -414,9 +489,14 @@ lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Utilities/Hash.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Utilities/String.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o
+lib/libEngine.a: Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/build.make
 lib/libEngine.a: Engine/CMakeFiles/Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX static library ../lib/libEngine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX static library ../lib/libEngine.a"
 	cd /home/z/my-project/build/Engine && $(CMAKE_COMMAND) -P CMakeFiles/Engine.dir/cmake_clean_target.cmake
 	cd /home/z/my-project/build/Engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Engine.dir/link.txt --verbose=$(VERBOSE)
 

@@ -17,6 +17,12 @@
   CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o \
   CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o \
+  CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o \
   ../lib/libEngine.a \
   ../lib/libgtest.a \
   ../lib/libgtest_main.a \
@@ -89,6 +95,18 @@ CMakeFiles/EngineTests.dir/Source/Diagnostics/BuildInfoTests.cpp.o:
 CMakeFiles/EngineTests.dir/Source/Diagnostics/SystemInfoTests.cpp.o:
 
 CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o:
+
+CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o:
 
 ../lib/libEngine.a:
 

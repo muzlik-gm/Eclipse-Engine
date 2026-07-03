@@ -402,6 +402,36 @@
   "output": "Engine/CMakeFiles/Engine.dir/Source/Core/ModuleRegistry.cpp.o"
 },
 {
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o -c /home/z/my-project/Engine/Source/Runtime/FrameStats.cpp",
+  "file": "/home/z/my-project/Engine/Source/Runtime/FrameStats.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o -c /home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp",
+  "file": "/home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o -c /home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp",
+  "file": "/home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o -c /home/z/my-project/Engine/Source/Runtime/Engine.cpp",
+  "file": "/home/z/my-project/Engine/Source/Runtime/Engine.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Engine",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -DYAML_CPP_STATIC_DEFINE -I/home/z/my-project/Engine/Include -I/home/z/my-project/Engine/Private -I/home/z/my-project/build/_deps/yaml-cpp-src/include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Engine.dir/Source/Application/Application.cpp.o -c /home/z/my-project/Engine/Source/Application/Application.cpp",
+  "file": "/home/z/my-project/Engine/Source/Application/Application.cpp",
+  "output": "Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o"
+},
+{
   "directory": "/home/z/my-project/build/Tests",
   "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Core/LogTests.cpp.o -c /home/z/my-project/Tests/Source/Core/LogTests.cpp",
   "file": "/home/z/my-project/Tests/Source/Core/LogTests.cpp",
@@ -490,5 +520,47 @@
   "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o -c /home/z/my-project/Tests/Source/Diagnostics/PerformanceCountersTests.cpp",
   "file": "/home/z/my-project/Tests/Source/Diagnostics/PerformanceCountersTests.cpp",
   "output": "Tests/CMakeFiles/EngineTests.dir/Source/Diagnostics/PerformanceCountersTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/EngineStateTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Runtime/EngineStateTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/FrameStatsTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Runtime/FrameStatsTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/SubsystemManagerTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Runtime/SubsystemManagerTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/ModuleManagerTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Runtime/ModuleManagerTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o -c /home/z/my-project/Tests/Source/Runtime/EngineTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Runtime/EngineTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Tests",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DENGINE_TESTING -DSPDLOG_COMPILED_LIB -I/home/z/my-project/build/_deps/googletest-src/googlemock/include -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -isystem /home/z/my-project/build/_deps/googletest-src/googletest/include -isystem /home/z/my-project/build/_deps/googletest-src/googletest -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o -c /home/z/my-project/Tests/Source/Application/ApplicationTests.cpp",
+  "file": "/home/z/my-project/Tests/Source/Application/ApplicationTests.cpp",
+  "output": "Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o"
+},
+{
+  "directory": "/home/z/my-project/build/Sandbox",
+  "command": "/usr/bin/c++ -DENGINE_COMPILER_GCC -DENGINE_DEBUG -DENGINE_ENABLE_ASSERTIONS -DENGINE_ENABLE_LOGGING -DENGINE_ENABLE_PROFILING -DENGINE_PLATFORM_LINUX -DSPDLOG_COMPILED_LIB -I/home/z/my-project/Engine/Include -I/home/z/my-project/build/_deps/spdlog-src/include -I/home/z/my-project/build/_deps/nlohmann_json-src/include -I/home/z/my-project/build/_deps/glm-src -g -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough -o CMakeFiles/Sandbox.dir/Source/SandboxMain.cpp.o -c /home/z/my-project/Sandbox/Source/SandboxMain.cpp",
+  "file": "/home/z/my-project/Sandbox/Source/SandboxMain.cpp",
+  "output": "Sandbox/CMakeFiles/Sandbox.dir/Source/SandboxMain.cpp.o"
 }
 ]

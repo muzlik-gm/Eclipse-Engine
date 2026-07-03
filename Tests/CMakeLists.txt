@@ -16,6 +16,13 @@ set(ENGINE_TEST_SOURCES
     Source/Diagnostics/BuildInfoTests.cpp
     Source/Diagnostics/SystemInfoTests.cpp
     Source/Diagnostics/PerformanceCountersTests.cpp
+    # Phase 1 — Runtime & Application
+    Source/Runtime/EngineStateTests.cpp
+    Source/Runtime/FrameStatsTests.cpp
+    Source/Runtime/SubsystemManagerTests.cpp
+    Source/Runtime/ModuleManagerTests.cpp
+    Source/Runtime/EngineTests.cpp
+    Source/Application/ApplicationTests.cpp
 )
 
 add_executable(EngineTests ${ENGINE_TEST_SOURCES})

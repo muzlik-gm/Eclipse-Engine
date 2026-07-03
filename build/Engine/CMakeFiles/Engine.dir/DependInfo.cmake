@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/z/my-project/Engine/Source/Application/Application.cpp" "Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Application/Application.cpp.o.d"
   "/home/z/my-project/Engine/Source/Configuration/Config.cpp" "Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Configuration/Config.cpp.o.d"
   "/home/z/my-project/Engine/Source/Core/Assert.cpp" "Engine/CMakeFiles/Engine.dir/Source/Core/Assert.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Core/Assert.cpp.o.d"
   "/home/z/my-project/Engine/Source/Core/Log.cpp" "Engine/CMakeFiles/Engine.dir/Source/Core/Log.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Core/Log.cpp.o.d"
@@ -24,6 +25,10 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/z/my-project/Engine/Source/Filesystem/Directory.cpp" "Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Filesystem/Directory.cpp.o.d"
   "/home/z/my-project/Engine/Source/Filesystem/File.cpp" "Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Filesystem/File.cpp.o.d"
   "/home/z/my-project/Engine/Source/Filesystem/Path.cpp" "Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Filesystem/Path.cpp.o.d"
+  "/home/z/my-project/Engine/Source/Runtime/Engine.cpp" "Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Runtime/Engine.cpp.o.d"
+  "/home/z/my-project/Engine/Source/Runtime/FrameStats.cpp" "Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Runtime/FrameStats.cpp.o.d"
+  "/home/z/my-project/Engine/Source/Runtime/ModuleManager.cpp" "Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Runtime/ModuleManager.cpp.o.d"
+  "/home/z/my-project/Engine/Source/Runtime/SubsystemManager.cpp" "Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Runtime/SubsystemManager.cpp.o.d"
   "/home/z/my-project/Engine/Source/Threading/CPUInfo.cpp" "Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Threading/CPUInfo.cpp.o.d"
   "/home/z/my-project/Engine/Source/Threading/Thread.cpp" "Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Threading/Thread.cpp.o.d"
   "/home/z/my-project/Engine/Source/Utilities/CommandLine.cpp" "Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o" "gcc" "Engine/CMakeFiles/Engine.dir/Source/Utilities/CommandLine.cpp.o.d"

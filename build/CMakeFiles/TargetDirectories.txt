@@ -130,3 +130,11 @@
 /home/z/my-project/build/Tests/CMakeFiles/install.dir
 /home/z/my-project/build/Tests/CMakeFiles/install/local.dir
 /home/z/my-project/build/Tests/CMakeFiles/install/strip.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/Sandbox.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/test.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/edit_cache.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/rebuild_cache.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/list_install_components.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/install.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/install/local.dir
+/home/z/my-project/build/Sandbox/CMakeFiles/install/strip.dir

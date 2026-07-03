@@ -186,6 +186,30 @@ EngineTests/fast:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/build
 .PHONY : EngineTests/fast
 
+Source/Application/ApplicationTests.o: Source/Application/ApplicationTests.cpp.o
+.PHONY : Source/Application/ApplicationTests.o
+
+# target to build an object file
+Source/Application/ApplicationTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.o
+.PHONY : Source/Application/ApplicationTests.cpp.o
+
+Source/Application/ApplicationTests.i: Source/Application/ApplicationTests.cpp.i
+.PHONY : Source/Application/ApplicationTests.i
+
+# target to preprocess a source file
+Source/Application/ApplicationTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.i
+.PHONY : Source/Application/ApplicationTests.cpp.i
+
+Source/Application/ApplicationTests.s: Source/Application/ApplicationTests.cpp.s
+.PHONY : Source/Application/ApplicationTests.s
+
+# target to generate assembly for a file
+Source/Application/ApplicationTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Application/ApplicationTests.cpp.s
+.PHONY : Source/Application/ApplicationTests.cpp.s
+
 Source/Configuration/ConfigTests.o: Source/Configuration/ConfigTests.cpp.o
 .PHONY : Source/Configuration/ConfigTests.o
 
@@ -450,6 +474,126 @@ Source/Filesystem/PathTests.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Filesystem/PathTests.cpp.s
 .PHONY : Source/Filesystem/PathTests.cpp.s
 
+Source/Runtime/EngineStateTests.o: Source/Runtime/EngineStateTests.cpp.o
+.PHONY : Source/Runtime/EngineStateTests.o
+
+# target to build an object file
+Source/Runtime/EngineStateTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.o
+.PHONY : Source/Runtime/EngineStateTests.cpp.o
+
+Source/Runtime/EngineStateTests.i: Source/Runtime/EngineStateTests.cpp.i
+.PHONY : Source/Runtime/EngineStateTests.i
+
+# target to preprocess a source file
+Source/Runtime/EngineStateTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.i
+.PHONY : Source/Runtime/EngineStateTests.cpp.i
+
+Source/Runtime/EngineStateTests.s: Source/Runtime/EngineStateTests.cpp.s
+.PHONY : Source/Runtime/EngineStateTests.s
+
+# target to generate assembly for a file
+Source/Runtime/EngineStateTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineStateTests.cpp.s
+.PHONY : Source/Runtime/EngineStateTests.cpp.s
+
+Source/Runtime/EngineTests.o: Source/Runtime/EngineTests.cpp.o
+.PHONY : Source/Runtime/EngineTests.o
+
+# target to build an object file
+Source/Runtime/EngineTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.o
+.PHONY : Source/Runtime/EngineTests.cpp.o
+
+Source/Runtime/EngineTests.i: Source/Runtime/EngineTests.cpp.i
+.PHONY : Source/Runtime/EngineTests.i
+
+# target to preprocess a source file
+Source/Runtime/EngineTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.i
+.PHONY : Source/Runtime/EngineTests.cpp.i
+
+Source/Runtime/EngineTests.s: Source/Runtime/EngineTests.cpp.s
+.PHONY : Source/Runtime/EngineTests.s
+
+# target to generate assembly for a file
+Source/Runtime/EngineTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/EngineTests.cpp.s
+.PHONY : Source/Runtime/EngineTests.cpp.s
+
+Source/Runtime/FrameStatsTests.o: Source/Runtime/FrameStatsTests.cpp.o
+.PHONY : Source/Runtime/FrameStatsTests.o
+
+# target to build an object file
+Source/Runtime/FrameStatsTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.o
+.PHONY : Source/Runtime/FrameStatsTests.cpp.o
+
+Source/Runtime/FrameStatsTests.i: Source/Runtime/FrameStatsTests.cpp.i
+.PHONY : Source/Runtime/FrameStatsTests.i
+
+# target to preprocess a source file
+Source/Runtime/FrameStatsTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.i
+.PHONY : Source/Runtime/FrameStatsTests.cpp.i
+
+Source/Runtime/FrameStatsTests.s: Source/Runtime/FrameStatsTests.cpp.s
+.PHONY : Source/Runtime/FrameStatsTests.s
+
+# target to generate assembly for a file
+Source/Runtime/FrameStatsTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/FrameStatsTests.cpp.s
+.PHONY : Source/Runtime/FrameStatsTests.cpp.s
+
+Source/Runtime/ModuleManagerTests.o: Source/Runtime/ModuleManagerTests.cpp.o
+.PHONY : Source/Runtime/ModuleManagerTests.o
+
+# target to build an object file
+Source/Runtime/ModuleManagerTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.o
+.PHONY : Source/Runtime/ModuleManagerTests.cpp.o
+
+Source/Runtime/ModuleManagerTests.i: Source/Runtime/ModuleManagerTests.cpp.i
+.PHONY : Source/Runtime/ModuleManagerTests.i
+
+# target to preprocess a source file
+Source/Runtime/ModuleManagerTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.i
+.PHONY : Source/Runtime/ModuleManagerTests.cpp.i
+
+Source/Runtime/ModuleManagerTests.s: Source/Runtime/ModuleManagerTests.cpp.s
+.PHONY : Source/Runtime/ModuleManagerTests.s
+
+# target to generate assembly for a file
+Source/Runtime/ModuleManagerTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/ModuleManagerTests.cpp.s
+.PHONY : Source/Runtime/ModuleManagerTests.cpp.s
+
+Source/Runtime/SubsystemManagerTests.o: Source/Runtime/SubsystemManagerTests.cpp.o
+.PHONY : Source/Runtime/SubsystemManagerTests.o
+
+# target to build an object file
+Source/Runtime/SubsystemManagerTests.cpp.o:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.o
+.PHONY : Source/Runtime/SubsystemManagerTests.cpp.o
+
+Source/Runtime/SubsystemManagerTests.i: Source/Runtime/SubsystemManagerTests.cpp.i
+.PHONY : Source/Runtime/SubsystemManagerTests.i
+
+# target to preprocess a source file
+Source/Runtime/SubsystemManagerTests.cpp.i:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.i
+.PHONY : Source/Runtime/SubsystemManagerTests.cpp.i
+
+Source/Runtime/SubsystemManagerTests.s: Source/Runtime/SubsystemManagerTests.cpp.s
+.PHONY : Source/Runtime/SubsystemManagerTests.s
+
+# target to generate assembly for a file
+Source/Runtime/SubsystemManagerTests.cpp.s:
+	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/Source/Runtime/SubsystemManagerTests.cpp.s
+.PHONY : Source/Runtime/SubsystemManagerTests.cpp.s
+
 Source/Threading/ThreadTests.o: Source/Threading/ThreadTests.cpp.o
 .PHONY : Source/Threading/ThreadTests.o
 
@@ -560,6 +704,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... EngineTests"
+	@echo "... Source/Application/ApplicationTests.o"
+	@echo "... Source/Application/ApplicationTests.i"
+	@echo "... Source/Application/ApplicationTests.s"
 	@echo "... Source/Configuration/ConfigTests.o"
 	@echo "... Source/Configuration/ConfigTests.i"
 	@echo "... Source/Configuration/ConfigTests.s"
@@ -593,6 +740,21 @@ help:
 	@echo "... Source/Filesystem/PathTests.o"
 	@echo "... Source/Filesystem/PathTests.i"
 	@echo "... Source/Filesystem/PathTests.s"
+	@echo "... Source/Runtime/EngineStateTests.o"
+	@echo "... Source/Runtime/EngineStateTests.i"
+	@echo "... Source/Runtime/EngineStateTests.s"
+	@echo "... Source/Runtime/EngineTests.o"
+	@echo "... Source/Runtime/EngineTests.i"
+	@echo "... Source/Runtime/EngineTests.s"
+	@echo "... Source/Runtime/FrameStatsTests.o"
+	@echo "... Source/Runtime/FrameStatsTests.i"
+	@echo "... Source/Runtime/FrameStatsTests.s"
+	@echo "... Source/Runtime/ModuleManagerTests.o"
+	@echo "... Source/Runtime/ModuleManagerTests.i"
+	@echo "... Source/Runtime/ModuleManagerTests.s"
+	@echo "... Source/Runtime/SubsystemManagerTests.o"
+	@echo "... Source/Runtime/SubsystemManagerTests.i"
+	@echo "... Source/Runtime/SubsystemManagerTests.s"
 	@echo "... Source/Threading/ThreadTests.o"
 	@echo "... Source/Threading/ThreadTests.i"
 	@echo "... Source/Threading/ThreadTests.s"

@@ -705,6 +705,19 @@ EngineTests/fast:
 	$(MAKE) $(MAKESILENT) -f Tests/CMakeFiles/EngineTests.dir/build.make Tests/CMakeFiles/EngineTests.dir/build
 .PHONY : EngineTests/fast
 
+#=============================================================================
+# Target rules for targets named Sandbox
+
+# Build rule for target.
+Sandbox: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Sandbox
+.PHONY : Sandbox
+
+# fast build rule for target.
+Sandbox/fast:
+	$(MAKE) $(MAKESILENT) -f Sandbox/CMakeFiles/Sandbox.dir/build.make Sandbox/CMakeFiles/Sandbox.dir/build
+.PHONY : Sandbox/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -749,6 +762,7 @@ help:
 	@echo "... uninstall"
 	@echo "... Engine"
 	@echo "... EngineTests"
+	@echo "... Sandbox"
 	@echo "... glm"
 	@echo "... gmock"
 	@echo "... gmock_main"

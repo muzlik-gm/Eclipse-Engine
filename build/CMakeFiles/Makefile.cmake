@@ -71,6 +71,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/z/my-project/CMake/PlatformDetection.cmake"
   "/home/z/my-project/CMakeLists.txt"
   "/home/z/my-project/Engine/CMakeLists.txt"
+  "/home/z/my-project/Sandbox/CMakeLists.txt"
   "/home/z/my-project/Tests/CMakeLists.txt"
   "CMakeFiles/4.3.4/CMakeCCompiler.cmake"
   "CMakeFiles/4.3.4/CMakeCXXCompiler.cmake"
@@ -151,6 +152,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "_deps/googletest-build/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Engine/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Tests/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Sandbox/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -196,4 +198,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
   "Engine/CMakeFiles/Engine.dir/DependInfo.cmake"
   "Tests/CMakeFiles/EngineTests.dir/DependInfo.cmake"
+  "Sandbox/CMakeFiles/Sandbox.dir/DependInfo.cmake"
   )

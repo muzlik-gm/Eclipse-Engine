@@ -69,3 +69,19 @@
 
 // Math — vector, matrix, quaternion, and common math operations
 #include "Engine/Math/Math.h"
+
+// Runtime — engine lifecycle, subsystem/module management, state machine
+#include "Engine/Runtime/EngineState.h"
+#include "Engine/Runtime/FrameStats.h"
+#include "Engine/Runtime/EngineConfig.h"
+#include "Engine/Runtime/ISubsystem.h"
+#include "Engine/Runtime/SubsystemManager.h"
+#include "Engine/Runtime/IModule.h"
+#include "Engine/Runtime/ModuleManager.h"
+#include "Engine/Runtime/EngineContext.h"
+#include "Engine/Runtime/Engine.h"
+
+// Application — application layer, specifications, configuration
+#include "Engine/Application/ApplicationSpec.h"
+#include "Engine/Application/ApplicationConfig.h"
+#include "Engine/Application/Application.h"

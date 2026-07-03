@@ -1,5 +1,19 @@
-# Sandbox application placeholder.
-# The sandbox will be implemented in a future phase.
-# This file establishes the build target so the project structure is complete.
+# Sandbox application — minimal executable that exercises the Phase 1
+# runtime architecture (Application + Engine + main loop).
 
-message(STATUS "Sandbox build is not yet implemented. Skipping.")
+set(SANDBOX_SOURCES
+    Source/SandboxMain.cpp
+)
+
+add_executable(Sandbox ${SANDBOX_SOURCES})
+
+target_link_libraries(Sandbox
+    PRIVATE
+        Engine
+)
+
+set_target_properties(Sandbox PROPERTIES
+    FOLDER "Sandbox"
+    OUTPUT_NAME "Sandbox"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+)

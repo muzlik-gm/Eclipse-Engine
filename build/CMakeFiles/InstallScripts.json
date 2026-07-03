@@ -13,7 +13,8 @@
 		"/home/z/my-project/build/_deps/googletest-build/googlemock/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/googletest-build/googletest/cmake_install.cmake",
 		"/home/z/my-project/build/Engine/cmake_install.cmake",
-		"/home/z/my-project/build/Tests/cmake_install.cmake"
+		"/home/z/my-project/build/Tests/cmake_install.cmake",
+		"/home/z/my-project/build/Sandbox/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

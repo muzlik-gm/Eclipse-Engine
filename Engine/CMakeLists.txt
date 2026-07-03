@@ -29,6 +29,13 @@ set(ENGINE_SOURCES
     Source/Utilities/CommandLine.cpp
     # Module
     Source/Core/ModuleRegistry.cpp
+    # Runtime (Phase 1)
+    Source/Runtime/FrameStats.cpp
+    Source/Runtime/SubsystemManager.cpp
+    Source/Runtime/ModuleManager.cpp
+    Source/Runtime/Engine.cpp
+    # Application (Phase 1)
+    Source/Application/Application.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})
