@@ -1,0 +1,26 @@
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Logging system initialized. App: TestApp
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Application 'TestApp' starting
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Application — running in headless mode
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine v0.1.0
+Build:    Debug
+Compiler: GCC 14.2
+Platform: Linux
+Built:    Jul  3 2026 22:18:09
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine v0.1.0
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine — initializing modules
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] ModuleManager — all 0 module(s) initialized
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine — initializing subsystems
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] SubsystemManager — initializing subsystem 'Nop'
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] SubsystemManager — subsystem 'Nop' initialized successfully
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] SubsystemManager — all 1 subsystem(s) initialized
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine — initialization complete
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Application 'TestApp' initialized
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Application — shutting down
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine — shutting down subsystems
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] SubsystemManager — shutting down subsystem 'Nop'
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] SubsystemManager — all subsystems shut down
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine — shutting down modules
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] ModuleManager — all modules shut down
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Engine — shutdown complete
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Application — shutdown complete
+[2026-07-03 22:44:48.017] [ENGINE] [info] [thread 18776] Logging system shutting down.

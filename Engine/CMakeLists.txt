@@ -44,6 +44,10 @@ set(ENGINE_SOURCES
     Source/Platform/GLFW/GLFWCursor.cpp
     Source/Platform/GLFW/GLFWDynamicLibrary.cpp
     Source/Platform/PlatformInfo.cpp
+    Source/Platform/FileDialogStub.cpp
+    Source/Platform/Timer.cpp
+    # Events (Phase 2)
+    Source/Events/EventBus.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})

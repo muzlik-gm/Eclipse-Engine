@@ -89,8 +89,8 @@ TEST(ApplicationTest, RegisterSubsystemBeforeInit)
 
 TEST(ApplicationTest, InitializeAndShutdown)
 {
-    const char* argv[] = {"TestApp"};
-    Application app(1, argv);
+    const char* argv[] = {"TestApp", "--headless"};
+    Application app(3, argv);
 
     auto nop = std::make_unique<NopSubsystem>();
     app.GetEngine().GetSubsystemManager().Register(std::move(nop));

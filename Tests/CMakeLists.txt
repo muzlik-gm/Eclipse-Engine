@@ -23,6 +23,8 @@ set(ENGINE_TEST_SOURCES
     Source/Runtime/ModuleManagerTests.cpp
     Source/Runtime/EngineTests.cpp
     Source/Application/ApplicationTests.cpp
+    # Phase 2 — Platform
+    Source/Platform/PlatformTests.cpp
 )
 
 add_executable(EngineTests ${ENGINE_TEST_SOURCES})

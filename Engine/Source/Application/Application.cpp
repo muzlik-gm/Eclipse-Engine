@@ -101,20 +101,23 @@ namespace engine::application
 
         ENGINE_LOG_INFO("Application '{}' starting", m_spec.name);
 
-        // Initialize the platform subsystem (GLFW).
-        auto& platformMgr = PlatformManager::Instance();
-        platformMgr.Initialize();
-        if (!platformMgr.IsInitialized())
-        {
-            ENGINE_LOG_ERROR("Application \u2014 platform initialization failed");
-            core::Log::Shutdown();
-            return false;
-        }
-
-        // Create the window unless in headless mode.
+        // Initialize the platform subsystem (GLFW) unless in headless mode.
         if (!m_config.headless)
         {
+            auto& platformMgr = PlatformManager::Instance();
+            platformMgr.Initialize();
+            if (!platformMgr.IsInitialized())
+            {
+                ENGINE_LOG_ERROR("Application \u2014 platform initialization failed");
+                core::Log::Shutdown();
+                return false;
+            }
+
             CreateWindow();
+        }
+        else
+        {
+            ENGINE_LOG_INFO("Application \u2014 running in headless mode");
         }
 
         // Create the engine if not already created.
@@ -128,7 +131,10 @@ namespace engine::application
         {
             ENGINE_LOG_ERROR("Application \u2014 engine initialization failed");
             m_window.reset();
-            platformMgr.Shutdown();
+            if (!m_config.headless)
+            {
+                PlatformManager::Instance().Shutdown();
+            }
             m_engine.reset();
             core::Log::Shutdown();
             return false;
@@ -205,8 +211,11 @@ namespace engine::application
             m_engine.reset();
         }
 
-        // Shut down the platform subsystem.
-        PlatformManager::Instance().Shutdown();
+        // Shut down the platform subsystem (only if it was initialized).
+        if (!m_config.headless)
+        {
+            PlatformManager::Instance().Shutdown();
+        }
 
         m_initialized = false;
 

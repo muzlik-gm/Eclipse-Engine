@@ -8,6 +8,7 @@
 #include "Engine/Events/Event.h"
 #include "Engine/Core/Log.h"
 
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
 #include <string>
@@ -21,6 +22,8 @@ namespace engine::platform
     using engine::core::u8;
     using engine::core::u32;
     using engine::core::i32;
+
+    using namespace engine::events;
 
     // ========================================================================
     // GLFWWindow
@@ -523,7 +526,7 @@ namespace engine::platform
     // IWindow factory
     // ========================================================================
 
-    std::unique_ptr<IWindow> IWindow::Create(const WindowProperties& props)
+    std::unique_ptr<IWindow> IWindow::CreateWindow(const WindowProperties& props)
     {
         auto window = std::make_unique<GLFWWindow>();
         window->Create(props);

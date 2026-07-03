@@ -1,0 +1,766 @@
+Skip to content
+muzlik-gm
+Eclipse-Engine
+Repository navigation
+Code
+Issues
+Pull requests
+Agents
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Settings
+Build and Test
+Fix MSVC compilation errors for cross-platform CI #3
+All jobs
+Run details
+Annotations
+1 error and 1 warning
+Linux (GCC 11)
+failed 4 minutes ago in 2m 35s
+Search logs
+0s
+2s
+14s
+12s
+22s
+1m 40s
+2s
+Run ctest --output-on-failure --timeout 60
+Test project /home/runner/work/Eclipse-Engine/Eclipse-Engine/build
+        Start   1: LogTest.InitializeAndShutdown
+  1/358 Test   #1: LogTest.InitializeAndShutdown ...................................   Passed    0.00 sec
+        Start   2: LogTest.SetLevel
+  2/358 Test   #2: LogTest.SetLevel ................................................   Passed    0.00 sec
+        Start   3: LogTest.MultipleInitialize
+  3/358 Test   #3: LogTest.MultipleInitialize ......................................   Passed    0.00 sec
+        Start   4: UUIDTest.DefaultConstructor
+  4/358 Test   #4: UUIDTest.DefaultConstructor .....................................   Passed    0.00 sec
+        Start   5: UUIDTest.InvalidUUID
+  5/358 Test   #5: UUIDTest.InvalidUUID ............................................   Passed    0.00 sec
+        Start   6: UUIDTest.ToStringFormat
+  6/358 Test   #6: UUIDTest.ToStringFormat .........................................   Passed    0.00 sec
+        Start   7: UUIDTest.RoundTrip
+  7/358 Test   #7: UUIDTest.RoundTrip ..............................................   Passed    0.00 sec
+        Start   8: UUIDTest.Uniqueness
+  8/358 Test   #8: UUIDTest.Uniqueness .............................................   Passed    0.01 sec
+        Start   9: UUIDTest.Equality
+  9/358 Test   #9: UUIDTest.Equality ...............................................   Passed    0.00 sec
+        Start  10: UUIDTest.HashConsistency
+ 10/358 Test  #10: UUIDTest.HashConsistency ........................................   Passed    0.00 sec
+        Start  11: TimingTest.TimerBasic
+ 11/358 Test  #11: TimingTest.TimerBasic ...........................................   Passed    0.05 sec
+        Start  12: TimingTest.TimerReset
+ 12/358 Test  #12: TimingTest.TimerReset ...........................................   Passed    0.01 sec
+        Start  13: TimingTest.ClockNow
+ 13/358 Test  #13: TimingTest.ClockNow .............................................   Passed    0.00 sec
+        Start  14: TimingTest.ClockTimestamp
+ 14/358 Test  #14: TimingTest.ClockTimestamp .......................................   Passed    0.00 sec
+        Start  15: ModuleRegistryTest.RegisterAndGet
+ 15/358 Test  #15: ModuleRegistryTest.RegisterAndGet ...............................   Passed    0.00 sec
+        Start  16: ModuleRegistryTest.InitializeAll
+ 16/358 Test  #16: ModuleRegistryTest.InitializeAll ................................   Passed    0.00 sec
+        Start  17: ModuleRegistryTest.ShutdownOrder
+ 17/358 Test  #17: ModuleRegistryTest.ShutdownOrder ................................   Passed    0.00 sec
+        Start  18: ModuleRegistryTest.IsInitialized
+ 18/358 Test  #18: ModuleRegistryTest.IsInitialized ................................   Passed    0.00 sec
+        Start  19: ModuleRegistryTest.Unregister
+ 19/358 Test  #19: ModuleRegistryTest.Unregister ...................................   Passed    0.00 sec
+        Start  20: ModuleRegistryTest.DuplicateNameReplace
+ 20/358 Test  #20: ModuleRegistryTest.DuplicateNameReplace .........................   Passed    0.00 sec
+        Start  21: PathTest.DefaultConstructor
+ 21/358 Test  #21: PathTest.DefaultConstructor .....................................   Passed    0.00 sec
+        Start  22: PathTest.FromString
+ 22/358 Test  #22: PathTest.FromString .............................................   Passed    0.00 sec
+        Start  23: PathTest.Append
+ 23/358 Test  #23: PathTest.Append .................................................   Passed    0.00 sec
+        Start  24: PathTest.Extension
+ 24/358 Test  #24: PathTest.Extension ..............................................   Passed    0.00 sec
+        Start  25: PathTest.Stem
+ 25/358 Test  #25: PathTest.Stem ...................................................   Passed    0.00 sec
+        Start  26: PathTest.Parent
+ 26/358 Test  #26: PathTest.Parent .................................................   Passed    0.00 sec
+        Start  27: PathTest.CurrentWorkingDirectory
+ 27/358 Test  #27: PathTest.CurrentWorkingDirectory ................................   Passed    0.00 sec
+        Start  28: PathTest.Equality
+ 28/358 Test  #28: PathTest.Equality ...............................................   Passed    0.00 sec
+        Start  29: FileTest.ReadWriteText
+ 29/358 Test  #29: FileTest.ReadWriteText ..........................................   Passed    0.00 sec
+        Start  30: FileTest.AppendText
+ 30/358 Test  #30: FileTest.AppendText .............................................   Passed    0.00 sec
+        Start  31: FileTest.ReadWriteBinary
+ 31/358 Test  #31: FileTest.ReadWriteBinary ........................................   Passed    0.00 sec
+        Start  32: FileTest.Exists
+ 32/358 Test  #32: FileTest.Exists .................................................   Passed    0.00 sec
+        Start  33: FileTest.Copy
+ 33/358 Test  #33: FileTest.Copy ...................................................   Passed    0.00 sec
+        Start  34: FileTest.Move
+ 34/358 Test  #34: FileTest.Move ...................................................   Passed    0.00 sec
+        Start  35: FileTest.Size
+ 35/358 Test  #35: FileTest.Size ...................................................   Passed    0.00 sec
+        Start  36: FileTest.ReadLines
+ 36/358 Test  #36: FileTest.ReadLines ..............................................   Passed    0.00 sec
+        Start  37: FileTest.Delete
+ 37/358 Test  #37: FileTest.Delete .................................................   Passed    0.00 sec
+        Start  38: DirectoryTest.CreateAndExists
+ 38/358 Test  #38: DirectoryTest.CreateAndExists ...................................   Passed    0.00 sec
+        Start  39: DirectoryTest.CreateAll
+ 39/358 Test  #39: DirectoryTest.CreateAll .........................................   Passed    0.00 sec
+        Start  40: DirectoryTest.Remove
+ 40/358 Test  #40: DirectoryTest.Remove ............................................   Passed    0.00 sec
+        Start  41: DirectoryTest.RemoveAll
+ 41/358 Test  #41: DirectoryTest.RemoveAll .........................................   Passed    0.00 sec
+        Start  42: DirectoryTest.Files
+ 42/358 Test  #42: DirectoryTest.Files .............................................   Passed    0.00 sec
+        Start  43: DirectoryTest.Subdirectories
+ 43/358 Test  #43: DirectoryTest.Subdirectories ....................................   Passed    0.00 sec
+        Start  44: DirectoryTest.IsEmpty
+ 44/358 Test  #44: DirectoryTest.IsEmpty ...........................................   Passed    0.00 sec
+        Start  45: DirectoryTest.FilesRecursive
+ 45/358 Test  #45: DirectoryTest.FilesRecursive ....................................   Passed    0.00 sec
+        Start  46: DirectoryTest.CurrentDirectory
+ 46/358 Test  #46: DirectoryTest.CurrentDirectory ..................................   Passed    0.00 sec
+        Start  47: ConfigTest.SetAndGet
+ 47/358 Test  #47: ConfigTest.SetAndGet ............................................   Passed    0.00 sec
+        Start  48: ConfigTest.DefaultValues
+ 48/358 Test  #48: ConfigTest.DefaultValues ........................................   Passed    0.00 sec
+        Start  49: ConfigTest.HasAndRemove
+ 49/358 Test  #49: ConfigTest.HasAndRemove .........................................   Passed    0.00 sec
+        Start  50: ConfigTest.Merge
+ 50/358 Test  #50: ConfigTest.Merge ................................................   Passed    0.00 sec
+        Start  51: ConfigTest.MergeDefaults
+ 51/358 Test  #51: ConfigTest.MergeDefaults ........................................   Passed    0.00 sec
+        Start  52: ConfigTest.JSONRoundTrip
+ 52/358 Test  #52: ConfigTest.JSONRoundTrip ........................................   Passed    0.00 sec
+        Start  53: ConfigTest.Keys
+ 53/358 Test  #53: ConfigTest.Keys .................................................   Passed    0.00 sec
+        Start  54: StringTest.StartsWith
+ 54/358 Test  #54: StringTest.StartsWith ...........................................   Passed    0.00 sec
+        Start  55: StringTest.EndsWith
+ 55/358 Test  #55: StringTest.EndsWith .............................................   Passed    0.00 sec
+        Start  56: StringTest.Contains
+ 56/358 Test  #56: StringTest.Contains .............................................   Passed    0.00 sec
+        Start  57: StringTest.EqualsIgnoreCase
+ 57/358 Test  #57: StringTest.EqualsIgnoreCase .....................................   Passed    0.00 sec
+        Start  58: StringTest.ToLower
+ 58/358 Test  #58: StringTest.ToLower ..............................................   Passed    0.00 sec
+        Start  59: StringTest.ToUpper
+ 59/358 Test  #59: StringTest.ToUpper ..............................................   Passed    0.00 sec
+        Start  60: StringTest.Trim
+ 60/358 Test  #60: StringTest.Trim .................................................   Passed    0.00 sec
+        Start  61: StringTest.Split
+ 61/358 Test  #61: StringTest.Split ................................................   Passed    0.00 sec
+        Start  62: StringTest.Join
+ 62/358 Test  #62: StringTest.Join .................................................   Passed    0.00 sec
+        Start  63: StringTest.Replace
+ 63/358 Test  #63: StringTest.Replace ..............................................   Passed    0.00 sec
+        Start  64: HashTest.FNV1a64Basic
+ 64/358 Test  #64: HashTest.FNV1a64Basic ...........................................   Passed    0.00 sec
+        Start  65: HashTest.FNV1a64Consistency
+ 65/358 Test  #65: HashTest.FNV1a64Consistency .....................................   Passed    0.00 sec
+        Start  66: HashTest.FNV1a64DifferentInputs
+ 66/358 Test  #66: HashTest.FNV1a64DifferentInputs .................................   Passed    0.00 sec
+        Start  67: HashTest.HashCombine
+ 67/358 Test  #67: HashTest.HashCombine ............................................   Passed    0.00 sec
+        Start  68: CommandLineTest.HasFlag
+ 68/358 Test  #68: CommandLineTest.HasFlag .........................................   Passed    0.00 sec
+        Start  69: CommandLineTest.GetValue
+ 69/358 Test  #69: CommandLineTest.GetValue ........................................   Passed    0.00 sec
+        Start  70: CommandLineTest.MissingValue
+ 70/358 Test  #70: CommandLineTest.MissingValue ....................................   Passed    0.00 sec
+        Start  71: ThreadTest.CreateAndJoin
+ 71/358 Test  #71: ThreadTest.CreateAndJoin ........................................   Passed    0.00 sec
+        Start  72: ThreadTest.SharedMutexExclusive
+ 72/358 Test  #72: ThreadTest.SharedMutexExclusive .................................   Passed    0.00 sec
+        Start  73: ThreadTest.CPUInfoLogicalCores
+ 73/358 Test  #73: ThreadTest.CPUInfoLogicalCores ..................................   Passed    0.00 sec
+        Start  74: BuildInfoTest.EngineName
+ 74/358 Test  #74: BuildInfoTest.EngineName ........................................   Passed    0.00 sec
+        Start  75: BuildInfoTest.VersionString
+ 75/358 Test  #75: BuildInfoTest.VersionString .....................................   Passed    0.00 sec
+        Start  76: BuildInfoTest.BuildDateNotEmpty
+ 76/358 Test  #76: BuildInfoTest.BuildDateNotEmpty .................................   Passed    0.00 sec
+        Start  77: BuildInfoTest.BuildTimeNotEmpty
+ 77/358 Test  #77: BuildInfoTest.BuildTimeNotEmpty .................................   Passed    0.00 sec
+        Start  78: BuildInfoTest.CompilerNameNotEmpty
+ 78/358 Test  #78: BuildInfoTest.CompilerNameNotEmpty ..............................   Passed    0.00 sec
+        Start  79: BuildInfoTest.PlatformNameNotEmpty
+ 79/358 Test  #79: BuildInfoTest.PlatformNameNotEmpty ..............................   Passed    0.00 sec
+        Start  80: BuildInfoTest.FullBuildInfoString
+ 80/358 Test  #80: BuildInfoTest.FullBuildInfoString ...............................   Passed    0.00 sec
+        Start  81: SystemInfoTest.HostNameNotEmpty
+ 81/358 Test  #81: SystemInfoTest.HostNameNotEmpty .................................   Passed    0.00 sec
+        Start  82: SystemInfoTest.UserNameNotEmpty
+ 82/358 Test  #82: SystemInfoTest.UserNameNotEmpty .................................   Passed    0.00 sec
+        Start  83: SystemInfoTest.LogicalCoreCountPositive
+ 83/358 Test  #83: SystemInfoTest.LogicalCoreCountPositive .........................   Passed    0.00 sec
+        Start  84: SystemInfoTest.TotalPhysicalMemoryPositive
+ 84/358 Test  #84: SystemInfoTest.TotalPhysicalMemoryPositive ......................   Passed    0.00 sec
+        Start  85: SystemInfoTest.OSNameNotEmpty
+ 85/358 Test  #85: SystemInfoTest.OSNameNotEmpty ...................................   Passed    0.00 sec
+        Start  86: SystemInfoTest.ArchitectureNotEmpty
+ 86/358 Test  #86: SystemInfoTest.ArchitectureNotEmpty .............................   Passed    0.00 sec
+        Start  87: PerformanceCountersTest.RegisterAndIncrement
+ 87/358 Test  #87: PerformanceCountersTest.RegisterAndIncrement ....................   Passed    0.00 sec
+        Start  88: PerformanceCountersTest.MultipleCounters
+ 88/358 Test  #88: PerformanceCountersTest.MultipleCounters ........................   Passed    0.00 sec
+        Start  89: PerformanceCountersTest.ResetCounter
+ 89/358 Test  #89: PerformanceCountersTest.ResetCounter ............................   Passed    0.00 sec
+        Start  90: PerformanceCountersTest.ResetAll
+ 90/358 Test  #90: PerformanceCountersTest.ResetAll ................................   Passed    0.00 sec
+        Start  91: PerformanceCountersTest.DuplicateName
+ 91/358 Test  #91: PerformanceCountersTest.DuplicateName ...........................   Passed    0.00 sec
+        Start  92: PerformanceCountersTest.HitCount
+ 92/358 Test  #92: PerformanceCountersTest.HitCount ................................   Passed    0.00 sec
+        Start  93: PerformanceCountersTest.Report
+ 93/358 Test  #93: PerformanceCountersTest.Report ..................................   Passed    0.00 sec
+        Start  94: EngineStateTest.ToStringAllStates
+ 94/358 Test  #94: EngineStateTest.ToStringAllStates ...............................   Passed    0.00 sec
+        Start  95: EngineStateTest.ValidTransitions
+ 95/358 Test  #95: EngineStateTest.ValidTransitions ................................   Passed    0.00 sec
+        Start  96: EngineStateTest.InvalidTransitions
+ 96/358 Test  #96: EngineStateTest.InvalidTransitions ..............................   Passed    0.00 sec
+        Start  97: FrameStatsTest.DefaultValues
+ 97/358 Test  #97: FrameStatsTest.DefaultValues ....................................   Passed    0.00 sec
+        Start  98: FrameStatsTest.SetTimeScale
+ 98/358 Test  #98: FrameStatsTest.SetTimeScale .....................................   Passed    0.00 sec
+        Start  99: FrameStatsTest.SetFixedDeltaTime
+ 99/358 Test  #99: FrameStatsTest.SetFixedDeltaTime ................................   Passed    0.00 sec
+        Start 100: FrameStatsTest.SetMaxFixedSteps
+100/358 Test #100: FrameStatsTest.SetMaxFixedSteps .................................   Passed    0.00 sec
+        Start 101: FrameStatsTest.TargetFrameTime
+101/358 Test #101: FrameStatsTest.TargetFrameTime ..................................   Passed    0.00 sec
+        Start 102: FrameStatsTest.PauseResume
+102/358 Test #102: FrameStatsTest.PauseResume ......................................   Passed    0.00 sec
+        Start 103: FrameStatsTest.TickEndFrameBasic
+103/358 Test #103: FrameStatsTest.TickEndFrameBasic ................................   Passed    0.01 sec
+        Start 104: FrameStatsTest.Reset
+104/358 Test #104: FrameStatsTest.Reset ............................................   Passed    0.00 sec
+        Start 105: SubsystemManagerTest.RegisterAndLookup
+105/358 Test #105: SubsystemManagerTest.RegisterAndLookup ..........................   Passed    0.00 sec
+        Start 106: SubsystemManagerTest.Replacement
+106/358 Test #106: SubsystemManagerTest.Replacement ................................   Passed    0.00 sec
+        Start 107: SubsystemManagerTest.Unregister
+107/358 Test #107: SubsystemManagerTest.Unregister .................................   Passed    0.00 sec
+        Start 108: SubsystemManagerTest.NullSubsystemRejected
+108/358 Test #108: SubsystemManagerTest.NullSubsystemRejected ......................   Passed    0.00 sec
+        Start 109: SubsystemManagerTest.DependencyOrdering
+109/358 Test #109: SubsystemManagerTest.DependencyOrdering .........................   Passed    0.00 sec
+        Start 110: SubsystemManagerTest.MissingDependencyFails
+110/358 Test #110: SubsystemManagerTest.MissingDependencyFails .....................   Passed    0.00 sec
+        Start 111: SubsystemManagerTest.CyclicDependencyFails
+111/358 Test #111: SubsystemManagerTest.CyclicDependencyFails ......................   Passed    0.00 sec
+        Start 112: SubsystemManagerTest.InitFailureStopsChain
+112/358 Test #112: SubsystemManagerTest.InitFailureStopsChain ......................   Passed    0.00 sec
+        Start 113: SubsystemManagerTest.UpdateDispatch
+113/358 Test #113: SubsystemManagerTest.UpdateDispatch .............................   Passed    0.00 sec
+        Start 114: SubsystemManagerTest.UpdateOnlyInitialzedSubsystems
+114/358 Test #114: SubsystemManagerTest.UpdateOnlyInitialzedSubsystems .............   Passed    0.00 sec
+        Start 115: SubsystemManagerTest.ShutdownReverseOrder
+115/358 Test #115: SubsystemManagerTest.ShutdownReverseOrder .......................   Passed    0.00 sec
+        Start 116: SubsystemManagerTest.GetNames
+116/358 Test #116: SubsystemManagerTest.GetNames ...................................   Passed    0.00 sec
+        Start 117: ModuleManagerTest.RegisterAndLookup
+117/358 Test #117: ModuleManagerTest.RegisterAndLookup .............................   Passed    0.00 sec
+        Start 118: ModuleManagerTest.DuplicateDetection
+118/358 Test #118: ModuleManagerTest.DuplicateDetection ............................   Passed    0.00 sec
+        Start 119: ModuleManagerTest.NullModuleRejected
+119/358 Test #119: ModuleManagerTest.NullModuleRejected ............................   Passed    0.00 sec
+        Start 120: ModuleManagerTest.Unregister
+120/358 Test #120: ModuleManagerTest.Unregister ....................................   Passed    0.00 sec
+        Start 121: ModuleManagerTest.VersionCompatible
+121/358 Test #121: ModuleManagerTest.VersionCompatible .............................   Passed    0.00 sec
+        Start 122: ModuleManagerTest.VersionCheckMissingModule
+122/358 Test #122: ModuleManagerTest.VersionCheckMissingModule .....................   Passed    0.00 sec
+        Start 123: ModuleManagerTest.DependencyOrdering
+123/358 Test #123: ModuleManagerTest.DependencyOrdering ............................   Passed    0.00 sec
+        Start 124: ModuleManagerTest.MissingDependencyFails
+124/358 Test #124: ModuleManagerTest.MissingDependencyFails ........................   Passed    0.00 sec
+        Start 125: ModuleManagerTest.CyclicDependencyFails
+125/358 Test #125: ModuleManagerTest.CyclicDependencyFails .........................   Passed    0.00 sec
+        Start 126: ModuleManagerTest.InitFailureStopsChain
+126/358 Test #126: ModuleManagerTest.InitFailureStopsChain .........................   Passed    0.00 sec
+        Start 127: ModuleManagerTest.GetNames
+127/358 Test #127: ModuleManagerTest.GetNames ......................................   Passed    0.00 sec
+        Start 128: EngineTest.InitializeAndShutdown
+128/358 Test #128: EngineTest.InitializeAndShutdown ................................   Passed    0.00 sec
+        Start 129: EngineTest.DoubleInitializeIsIgnored
+129/358 Test #129: EngineTest.DoubleInitializeIsIgnored ............................   Passed    0.00 sec
+        Start 130: EngineTest.RunBeforeInitializeFails
+130/358 Test #130: EngineTest.RunBeforeInitializeFails .............................   Passed    0.00 sec
+        Start 131: EngineTest.MainLoopRunsAndStops
+131/358 Test #131: EngineTest.MainLoopRunsAndStops .................................   Passed    0.00 sec
+        Start 132: EngineTest.StateProgression
+132/358 Test #132: EngineTest.StateProgression .....................................   Passed    0.00 sec
+        Start 133: EngineTest.EngineOwnsSubsystemManager
+133/358 Test #133: EngineTest.EngineOwnsSubsystemManager ...........................   Passed    0.00 sec
+        Start 134: ApplicationTest.ConstructionFromArgv
+134/358 Test #134: ApplicationTest.ConstructionFromArgv ............................   Passed    0.00 sec
+        Start 135: ApplicationTest.ConstructionFromSpec
+135/358 Test #135: ApplicationTest.ConstructionFromSpec ............................   Passed    0.00 sec
+        Start 136: ApplicationTest.EngineAccessibleBeforeInit
+136/358 Test #136: ApplicationTest.EngineAccessibleBeforeInit ......................   Passed    0.00 sec
+        Start 137: ApplicationTest.RegisterSubsystemBeforeInit
+137/358 Test #137: ApplicationTest.RegisterSubsystemBeforeInit .....................   Passed    0.00 sec
+        Start 138: ApplicationTest.InitializeAndShutdown
+138/358 Test #138: ApplicationTest.InitializeAndShutdown ...........................***Exception: SegFault  0.14 sec
+Running main() from /home/runner/work/Eclipse-Engine/Eclipse-Engine/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = ApplicationTest.InitializeAndShutdown
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from ApplicationTest
+[ RUN      ] ApplicationTest.InitializeAndShutdown
+
+        Start 139: ApplicationTest.CommandLineOverridesConfig
+139/358 Test #139: ApplicationTest.CommandLineOverridesConfig ......................   Passed    0.00 sec
+        Start 140: WindowPropertiesTest.DefaultValues
+140/358 Test #140: WindowPropertiesTest.DefaultValues ..............................   Passed    0.00 sec
+        Start 141: WindowPropertiesTest.Modification
+141/358 Test #141: WindowPropertiesTest.Modification ...............................   Passed    0.00 sec
+        Start 142: WindowPropertiesTest.BorderlessFullscreenMode
+142/358 Test #142: WindowPropertiesTest.BorderlessFullscreenMode ...................   Passed    0.00 sec
+        Start 143: WindowModeTest.EnumValues
+143/358 Test #143: WindowModeTest.EnumValues .......................................   Passed    0.00 sec
+        Start 144: CursorModeTest.EnumValues
+144/358 Test #144: CursorModeTest.EnumValues .......................................   Passed    0.00 sec
+        Start 145: CursorShapeTest.EnumValues
+145/358 Test #145: CursorShapeTest.EnumValues ......................................   Passed    0.00 sec
+        Start 146: VideoModeTest.DefaultConstruction
+146/358 Test #146: VideoModeTest.DefaultConstruction ...............................   Passed    0.00 sec
+        Start 147: VideoModeTest.FieldAssignment
+147/358 Test #147: VideoModeTest.FieldAssignment ...................................   Passed    0.00 sec
+        Start 148: MonitorInfoTest.DefaultConstruction
+148/358 Test #148: MonitorInfoTest.DefaultConstruction .............................   Passed    0.00 sec
+        Start 149: MonitorInfoTest.DefaultFieldValues
+149/358 Test #149: MonitorInfoTest.DefaultFieldValues ..............................   Passed    0.00 sec
+        Start 150: PlatformInfoTest.GetPlatformName
+150/358 Test #150: PlatformInfoTest.GetPlatformName ................................   Passed    0.00 sec
+        Start 151: PlatformInfoTest.GetArchitecture
+151/358 Test #151: PlatformInfoTest.GetArchitecture ................................   Passed    0.00 sec
+        Start 152: PlatformInfoTest.Is64Bit
+152/358 Test #152: PlatformInfoTest.Is64Bit ........................................   Passed    0.00 sec
+        Start 153: PlatformInfoTest.Gather
+153/358 Test #153: PlatformInfoTest.Gather .........................................   Passed    0.00 sec
+        Start 154: PlatformInfoTest.GetEnginePlatformString
+154/358 Test #154: PlatformInfoTest.GetEnginePlatformString ........................   Passed    0.00 sec
+        Start 155: DynamicLibraryTest.CreateReturnsNonNull
+155/358 Test #155: DynamicLibraryTest.CreateReturnsNonNull .........................   Passed    0.00 sec
+        Start 156: DynamicLibraryTest.InitialState
+156/358 Test #156: DynamicLibraryTest.InitialState .................................   Passed    0.00 sec
+        Start 157: DynamicLibraryTest.GetSymbolReturnsNullptrWhenNotLoaded
+157/358 Test #157: DynamicLibraryTest.GetSymbolReturnsNullptrWhenNotLoaded .........   Passed    0.00 sec
+        Start 158: DynamicLibraryTest.UnloadIsSafeWhenNotLoaded
+158/358 Test #158: DynamicLibraryTest.UnloadIsSafeWhenNotLoaded ....................   Passed    0.00 sec
+        Start 159: DynamicLibraryTest.LoadSystemLibrary
+159/358 Test #159: DynamicLibraryTest.LoadSystemLibrary ............................   Passed    0.00 sec
+        Start 160: ClipboardTest.CreateReturnsNonNull
+160/358 Test #160: ClipboardTest.CreateReturnsNonNull ..............................   Passed    0.00 sec
+        Start 161: FileDialogTest.CreateReturnsNonNull
+161/358 Test #161: FileDialogTest.CreateReturnsNonNull .............................   Passed    0.00 sec
+        Start 162: FileDialogTest.OpenReturnsNullopt
+162/358 Test #162: FileDialogTest.OpenReturnsNullopt ...............................   Passed    0.00 sec
+        Start 163: FileDialogTest.OpenMultipleReturnsEmpty
+163/358 Test #163: FileDialogTest.OpenMultipleReturnsEmpty .........................   Passed    0.00 sec
+        Start 164: EventTypeTest.AllWindowEventValues
+164/358 Test #164: EventTypeTest.AllWindowEventValues ..............................   Passed    0.00 sec
+        Start 165: EventCategoryTest.FlagValues
+165/358 Test #165: EventCategoryTest.FlagValues ....................................   Passed    0.00 sec
+        Start 166: WindowCreatedEventTest.NameAndCategory
+166/358 Test #166: WindowCreatedEventTest.NameAndCategory ..........................   Passed    0.00 sec
+        Start 167: WindowCloseEventTest.NameAndCategory
+167/358 Test #167: WindowCloseEventTest.NameAndCategory ............................   Passed    0.00 sec
+        Start 168: WindowResizeEventTest.NameAndCategory
+168/358 Test #168: WindowResizeEventTest.NameAndCategory ...........................   Passed    0.00 sec
+        Start 169: WindowFocusEventTest.NameAndCategory
+169/358 Test #169: WindowFocusEventTest.NameAndCategory ............................   Passed    0.00 sec
+        Start 170: WindowLostFocusEventTest.NameAndCategory
+170/358 Test #170: WindowLostFocusEventTest.NameAndCategory ........................   Passed    0.00 sec
+        Start 171: WindowMovedEventTest.NameAndCategory
+171/358 Test #171: WindowMovedEventTest.NameAndCategory ............................   Passed    0.00 sec
+        Start 172: WindowMinimizedEventTest.NameAndCategory
+172/358 Test #172: WindowMinimizedEventTest.NameAndCategory ........................   Passed    0.00 sec
+        Start 173: WindowMaximizedEventTest.NameAndCategory
+173/358 Test #173: WindowMaximizedEventTest.NameAndCategory ........................   Passed    0.00 sec
+        Start 174: WindowRestoredEventTest.NameAndCategory
+174/358 Test #174: WindowRestoredEventTest.NameAndCategory .........................   Passed    0.00 sec
+        Start 175: WindowRefreshEventTest.NameAndCategory
+175/358 Test #175: WindowRefreshEventTest.NameAndCategory ..........................   Passed    0.00 sec
+        Start 176: FramebufferResizeEventTest.NameAndCategory
+176/358 Test #176: FramebufferResizeEventTest.NameAndCategory ......................   Passed    0.00 sec
+        Start 177: DPIChangedEventTest.NameAndCategory
+177/358 Test #177: DPIChangedEventTest.NameAndCategory .............................   Passed    0.00 sec
+        Start 178: EventTest.IsInCategory
+178/358 Test #178: EventTest.IsInCategory ..........................................   Passed    0.00 sec
+        Start 179: EventTest.HandledFlag
+179/358 Test #179: EventTest.HandledFlag ...........................................   Passed    0.00 sec
+        Start 180: TimerTest.CreateReturnsNonNull
+180/358 Test #180: TimerTest.CreateReturnsNonNull ..................................   Passed    0.00 sec
+        Start 181: TimerTest.InitialState
+181/358 Test #181: TimerTest.InitialState ..........................................   Passed    0.00 sec
+        Start 182: TimerTest.StartStopReset
+182/358 Test #182: TimerTest.StartStopReset ........................................   Passed    0.05 sec
+        Start 183: TimerTest.StaticAbsoluteTimeIsMonotonic
+183/358 Test #183: TimerTest.StaticAbsoluteTimeIsMonotonic .........................   Passed    0.00 sec
+        Start 184: EventBusTest.WindowCloseDispatch
+184/358 Test #184: EventBusTest.WindowCloseDispatch ................................   Passed    0.00 sec
+        Start 185: EventBusTest.UnsubscribeClearsListeners
+185/358 Test #185: EventBusTest.UnsubscribeClearsListeners .........................   Passed    0.00 sec
+        Start 186: GraphicsBackendTest.EnumValues
+186/358 Test #186: GraphicsBackendTest.EnumValues ..................................   Passed    0.00 sec
+        Start 187: GraphicsVendorTest.EnumValues
+187/358 Test #187: GraphicsVendorTest.EnumValues ...................................   Passed    0.00 sec
+        Start 188: GraphicsFormatTest.KeyFormats
+188/358 Test #188: GraphicsFormatTest.KeyFormats ...................................   Passed    0.00 sec
+        Start 189: PrimitiveTopologyTest.Values
+189/358 Test #189: PrimitiveTopologyTest.Values ....................................   Passed    0.00 sec
+        Start 190: BufferUsageTest.FlagValues
+190/358 Test #190: BufferUsageTest.FlagValues ......................................   Passed    0.00 sec
+        Start 191: BufferUsageTest.CombinedFlags
+191/358 Test #191: BufferUsageTest.CombinedFlags ...................................   Passed    0.00 sec
+        Start 192: TextureUsageTest.FlagValues
+192/358 Test #192: TextureUsageTest.FlagValues .....................................   Passed    0.00 sec
+        Start 193: TextureUsageTest.CombinedFlags
+193/358 Test #193: TextureUsageTest.CombinedFlags ..................................   Passed    0.00 sec
+        Start 194: ShaderStageTest.FlagValues
+194/358 Test #194: ShaderStageTest.FlagValues ......................................   Passed    0.00 sec
+        Start 195: ShaderStageTest.CombinedFlags
+195/358 Test #195: ShaderStageTest.CombinedFlags ...................................   Passed    0.00 sec
+        Start 196: BlendFactorTest.SampleValues
+196/358 Test #196: BlendFactorTest.SampleValues ....................................   Passed    0.00 sec
+        Start 197: CompareOperationTest.Values
+197/358 Test #197: CompareOperationTest.Values .....................................   Passed    0.00 sec
+        Start 198: CullModeTest.Values
+198/358 Test #198: CullModeTest.Values .............................................   Passed    0.00 sec
+        Start 199: AddressModeTest.Values
+199/358 Test #199: AddressModeTest.Values ..........................................   Passed    0.00 sec
+        Start 200: ResourceStateTest.Values
+200/358 Test #200: ResourceStateTest.Values ........................................   Passed    0.00 sec
+        Start 201: FormatUtilityTest.ComponentCount
+201/358 Test #201: FormatUtilityTest.ComponentCount ................................   Passed    0.00 sec
+        Start 202: FormatUtilityTest.IsDepthStencil
+202/358 Test #202: FormatUtilityTest.IsDepthStencil ................................   Passed    0.00 sec
+        Start 203: FormatUtilityTest.IsCompressed
+203/358 Test #203: FormatUtilityTest.IsCompressed ..................................   Passed    0.00 sec
+        Start 204: FormatUtilityTest.IsSRGB
+204/358 Test #204: FormatUtilityTest.IsSRGB ........................................   Passed    0.00 sec
+        Start 205: FormatUtilityTest.IsFloat
+205/358 Test #205: FormatUtilityTest.IsFloat .......................................   Passed    0.00 sec
+        Start 206: FormatUtilityTest.CompressedBlockFunctions
+206/358 Test #206: FormatUtilityTest.CompressedBlockFunctions ......................   Passed    0.00 sec
+        Start 207: FormatUtilityTest.RowPitch
+207/358 Test #207: FormatUtilityTest.RowPitch ......................................   Passed    0.00 sec
+        Start 208: FormatUtilityTest.BitsPerPixel
+208/358 Test #208: FormatUtilityTest.BitsPerPixel ..................................   Passed    0.00 sec
+        Start 209: FormatUtilityTest.BlockSize
+209/358 Test #209: FormatUtilityTest.BlockSize .....................................   Passed    0.00 sec
+        Start 210: FormatUtilityTest.BlockDimensions
+210/358 Test #210: FormatUtilityTest.BlockDimensions ...............................   Passed    0.00 sec
+        Start 211: FormatUtilityTest.TextureSizeEstimate
+211/358 Test #211: FormatUtilityTest.TextureSizeEstimate ...........................   Passed    0.00 sec
+        Start 212: BufferDescriptionTest.Defaults
+212/358 Test #212: BufferDescriptionTest.Defaults ..................................   Passed    0.00 sec
+        Start 213: BufferDescriptionTest.Modification
+213/358 Test #213: BufferDescriptionTest.Modification ..............................   Passed    0.00 sec
+        Start 214: TextureDescriptionTest.Defaults
+214/358 Test #214: TextureDescriptionTest.Defaults .................................   Passed    0.00 sec
+        Start 215: SamplerDescriptionTest.Defaults
+215/358 Test #215: SamplerDescriptionTest.Defaults .................................   Passed    0.00 sec
+        Start 216: RasterizerStateTest.Defaults
+216/358 Test #216: RasterizerStateTest.Defaults ....................................   Passed    0.00 sec
+        Start 217: DepthStencilStateTest.Defaults
+217/358 Test #217: DepthStencilStateTest.Defaults ..................................   Passed    0.00 sec
+        Start 218: BlendStateTest.Defaults
+218/358 Test #218: BlendStateTest.Defaults .........................................   Passed    0.00 sec
+        Start 219: RenderPassDescriptionTest.Defaults
+219/358 Test #219: RenderPassDescriptionTest.Defaults ..............................   Passed    0.00 sec
+        Start 220: AttachmentDescriptionTest.Defaults
+220/358 Test #220: AttachmentDescriptionTest.Defaults ..............................   Passed    0.00 sec
+        Start 221: FramebufferDescriptionTest.Defaults
+221/358 Test #221: FramebufferDescriptionTest.Defaults .............................   Passed    0.00 sec
+        Start 222: GraphicsPipelineDescriptionTest.Defaults
+222/358 Test #222: GraphicsPipelineDescriptionTest.Defaults ........................   Passed    0.00 sec
+        Start 223: GraphicsPipelineDescriptionTest.FullConstruction
+223/358 Test #223: GraphicsPipelineDescriptionTest.FullConstruction ................   Passed    0.00 sec
+        Start 224: SwapChainDescriptionTest.Defaults
+224/358 Test #224: SwapChainDescriptionTest.Defaults ...............................   Passed    0.00 sec
+        Start 225: InstanceDescriptionTest.Defaults
+225/358 Test #225: InstanceDescriptionTest.Defaults ................................   Passed    0.00 sec
+        Start 226: GraphicsLimitsTest.Defaults
+226/358 Test #226: GraphicsLimitsTest.Defaults .....................................   Passed    0.00 sec
+        Start 227: GraphicsFeaturesTest.Defaults
+227/358 Test #227: GraphicsFeaturesTest.Defaults ...................................   Passed    0.00 sec
+        Start 228: AdapterInfoTest.Defaults
+228/358 Test #228: AdapterInfoTest.Defaults ........................................   Passed    0.00 sec
+        Start 229: MemoryStatisticsTest.Defaults
+229/358 Test #229: MemoryStatisticsTest.Defaults ...................................   Passed    0.00 sec
+        Start 230: BackendRegistryTest.InitiallyEmpty
+230/358 Test #230: BackendRegistryTest.InitiallyEmpty ..............................   Passed    0.00 sec
+        Start 231: BackendRegistryTest.BackendToString
+231/358 Test #231: BackendRegistryTest.BackendToString .............................   Passed    0.00 sec
+        Start 232: BackendRegistryTest.BackendFromString
+232/358 Test #232: BackendRegistryTest.BackendFromString ...........................   Passed    0.00 sec
+        Start 233: BackendRegistryTest.CreateInstanceWithoutBackend
+233/358 Test #233: BackendRegistryTest.CreateInstanceWithoutBackend ................   Passed    0.00 sec
+        Start 234: BackendRegistryTest.MultipleRegistrations
+234/358 Test #234: BackendRegistryTest.MultipleRegistrations .......................   Passed    0.00 sec
+        Start 235: ValidationTest.ValidBuffer
+235/358 Test #235: ValidationTest.ValidBuffer ......................................   Passed    0.00 sec
+        Start 236: ValidationTest.ZeroSizeBuffer
+236/358 Test #236: ValidationTest.ZeroSizeBuffer ...................................   Passed    0.00 sec
+        Start 237: ValidationTest.NoneUsageBuffer
+237/358 Test #237: ValidationTest.NoneUsageBuffer ..................................   Passed    0.00 sec
+        Start 238: ValidationTest.ValidTexture
+238/358 Test #238: ValidationTest.ValidTexture .....................................   Passed    0.00 sec
+        Start 239: ValidationTest.ZeroDimensionTexture
+239/358 Test #239: ValidationTest.ZeroDimensionTexture .............................   Passed    0.00 sec
+        Start 240: ValidationTest.UnknownFormatTexture
+240/358 Test #240: ValidationTest.UnknownFormatTexture .............................   Passed    0.00 sec
+        Start 241: ValidationTest.InvalidGraphicsPipeline
+241/358 Test #241: ValidationTest.InvalidGraphicsPipeline ..........................   Passed    0.00 sec
+        Start 242: ValidationTest.InvalidComputePipeline
+242/358 Test #242: ValidationTest.InvalidComputePipeline ...........................   Passed    0.00 sec
+        Start 243: ValidationTest.IsValidFormat
+243/358 Test #243: ValidationTest.IsValidFormat ....................................   Passed    0.00 sec
+        Start 244: ValidationTest.ZeroWidthTexture
+244/358 Test #244: ValidationTest.ZeroWidthTexture .................................   Passed    0.00 sec
+        Start 245: ValidationTest.ValidSampler
+245/358 Test #245: ValidationTest.ValidSampler .....................................   Passed    0.00 sec
+        Start 246: ValidationTest.InvalidAnisotropy
+246/358 Test #246: ValidationTest.InvalidAnisotropy ................................   Passed    0.00 sec
+        Start 247: ValidationTest.ValidFramebuffer
+247/358 Test #247: ValidationTest.ValidFramebuffer .................................   Passed    0.00 sec
+        Start 248: ValidationTest.EmptyFramebuffer
+248/358 Test #248: ValidationTest.EmptyFramebuffer .................................   Passed    0.00 sec
+        Start 249: ValidationTest.ValidRenderPass
+249/358 Test #249: ValidationTest.ValidRenderPass ..................................   Passed    0.00 sec
+        Start 250: ValidationTest.EmptyRenderPass
+250/358 Test #250: ValidationTest.EmptyRenderPass ..................................   Passed    0.00 sec
+        Start 251: ValidationTest.RenderPassBadAttachmentRef
+251/358 Test #251: ValidationTest.RenderPassBadAttachmentRef .......................   Passed    0.00 sec
+        Start 252: ValidationTest.ValidGraphicsPipeline
+252/358 Test #252: ValidationTest.ValidGraphicsPipeline ............................   Passed    0.00 sec
+        Start 253: ValidationTest.NoShaderGraphicsPipeline
+253/358 Test #253: ValidationTest.NoShaderGraphicsPipeline .........................   Passed    0.00 sec
+        Start 254: ValidationTest.MissingVertexShader
+254/358 Test #254: ValidationTest.MissingVertexShader ..............................   Passed    0.00 sec
+        Start 255: ValidationTest.ValidComputePipeline
+255/358 Test #255: ValidationTest.ValidComputePipeline .............................   Passed    0.00 sec
+        Start 256: ValidationTest.WrongStageComputePipeline
+256/358 Test #256: ValidationTest.WrongStageComputePipeline ........................   Passed    0.00 sec
+        Start 257: ValidationTest.NullHandleSwapChain
+257/358 Test #257: ValidationTest.NullHandleSwapChain ..............................   Passed    0.00 sec
+        Start 258: ValidationTest.ZeroSizeSwapChain
+258/358 Test #258: ValidationTest.ZeroSizeSwapChain ................................   Passed    0.00 sec
+        Start 259: RHIObjectTypeTest.Values
+259/358 Test #259: RHIObjectTypeTest.Values ........................................   Passed    0.00 sec
+        Start 260: RHIObjectTypeTest.AllValues
+260/358 Test #260: RHIObjectTypeTest.AllValues .....................................   Passed    0.00 sec
+        Start 261: DescriptorTypeTest.Values
+261/358 Test #261: DescriptorTypeTest.Values .......................................   Passed    0.00 sec
+        Start 262: RHIResultTest.Values
+262/358 Test #262: RHIResultTest.Values ............................................   Passed    0.00 sec
+        Start 263: VertexLayoutTest.Defaults
+263/358 Test #263: VertexLayoutTest.Defaults .......................................   Passed    0.00 sec
+        Start 264: VertexLayoutTest.Modification
+264/358 Test #264: VertexLayoutTest.Modification ...................................   Passed    0.00 sec
+        Start 265: PushConstantRangeTest.Defaults
+265/358 Test #265: PushConstantRangeTest.Defaults ..................................   Passed    0.00 sec
+        Start 266: ShaderDescriptionTest.Defaults
+266/358 Test #266: ShaderDescriptionTest.Defaults ..................................   Passed    0.00 sec
+        Start 267: ShaderDescriptionTest.Modification
+267/358 Test #267: ShaderDescriptionTest.Modification ..............................   Passed    0.00 sec
+        Start 268: ComputePipelineDescriptionTest.Defaults
+268/358 Test #268: ComputePipelineDescriptionTest.Defaults .........................   Passed    0.00 sec
+        Start 269: SampleCountTest.Values
+269/358 Test #269: SampleCountTest.Values ..........................................   Passed    0.00 sec
+        Start 270: DescriptorSetLayoutBindingTest.Defaults
+270/358 Test #270: DescriptorSetLayoutBindingTest.Defaults .........................   Passed    0.00 sec
+        Start 271: PipelineLayoutDescriptionTest.Defaults
+271/358 Test #271: PipelineLayoutDescriptionTest.Defaults ..........................   Passed    0.00 sec
+        Start 272: SubpassDependencyTest.Defaults
+272/358 Test #272: SubpassDependencyTest.Defaults ..................................   Passed    0.00 sec
+        Start 273: BufferCopyRegionTest.Defaults
+273/358 Test #273: BufferCopyRegionTest.Defaults ...................................   Passed    0.00 sec
+        Start 274: TextureCopyRegionTest.Defaults
+274/358 Test #274: TextureCopyRegionTest.Defaults ..................................   Passed    0.00 sec
+        Start 275: DynamicStateDescriptionTest.Defaults
+275/358 Test #275: DynamicStateDescriptionTest.Defaults ............................   Passed    0.00 sec
+        Start 276: VendorToStringTest.KnownVendors
+276/358 Test #276: VendorToStringTest.KnownVendors .................................   Passed    0.00 sec
+        Start 277: BackendToNameTest.KnownBackends
+277/358 Test #277: BackendToNameTest.KnownBackends .................................   Passed    0.00 sec
+        Start 278: FormatClassificationTest.DepthFormats
+278/358 Test #278: FormatClassificationTest.DepthFormats ...........................   Passed    0.00 sec
+        Start 279: FormatClassificationTest.StencilFormats
+279/358 Test #279: FormatClassificationTest.StencilFormats .........................   Passed    0.00 sec
+        Start 280: FormatClassificationTest.DepthOnlyFormats
+280/358 Test #280: FormatClassificationTest.DepthOnlyFormats .......................   Passed    0.00 sec
+        Start 281: FormatClassificationTest.CompressedFormats
+281/358 Test #281: FormatClassificationTest.CompressedFormats ......................   Passed    0.00 sec
+        Start 282: FormatClassificationTest.SRGBFormats
+282/358 Test #282: FormatClassificationTest.SRGBFormats ............................   Passed    0.00 sec
+        Start 283: FormatClassificationTest.FloatFormats
+283/358 Test #283: FormatClassificationTest.FloatFormats ...........................   Passed    0.00 sec
+        Start 284: FormatClassificationTest.SignedFormats
+284/358 Test #284: FormatClassificationTest.SignedFormats ..........................   Passed    0.00 sec
+        Start 285: FormatClassificationTest.UIntFormats
+285/358 Test #285: FormatClassificationTest.UIntFormats ............................   Passed    0.00 sec
+        Start 286: FormatClassificationTest.NormalizedFormats
+286/358 Test #286: FormatClassificationTest.NormalizedFormats ......................   Passed    0.00 sec
+        Start 287: ReflectedUniformTest.Defaults
+287/358 Test #287: ReflectedUniformTest.Defaults ...................................   Passed    0.00 sec
+        Start 288: ReflectedResourceBindingTest.Defaults
+288/358 Test #288: ReflectedResourceBindingTest.Defaults ...........................   Passed    0.00 sec
+        Start 289: ReflectedPushConstantTest.Defaults
+289/358 Test #289: ReflectedPushConstantTest.Defaults ..............................   Passed    0.00 sec
+        Start 290: ValidationSeverityTest.Values
+290/358 Test #290: ValidationSeverityTest.Values ...................................   Passed    0.00 sec
+        Start 291: ValidationMessageTest.Defaults
+291/358 Test #291: ValidationMessageTest.Defaults ..................................   Passed    0.00 sec
+        Start 292: ShaderLanguageTest.Values
+292/358 Test #292: ShaderLanguageTest.Values .......................................   Passed    0.00 sec
+        Start 293: VertexAttributeDescriptionTest.Defaults
+293/358 Test #293: VertexAttributeDescriptionTest.Defaults .........................   Passed    0.00 sec
+        Start 294: VertexBindingDescriptionTest.Defaults
+294/358 Test #294: VertexBindingDescriptionTest.Defaults ...........................   Passed    0.00 sec
+        Start 295: StencilOpDescriptionTest.Defaults
+295/358 Test #295: StencilOpDescriptionTest.Defaults ...............................   Passed    0.00 sec
+        Start 296: BlendAttachmentDescriptionTest.Defaults
+296/358 Test #296: BlendAttachmentDescriptionTest.Defaults .........................   Passed    0.00 sec
+        Start 297: InputAssemblyDescriptionTest.Defaults
+297/358 Test #297: InputAssemblyDescriptionTest.Defaults ...........................   Passed    0.00 sec
+        Start 298: FramebufferAttachmentTest.Defaults
+298/358 Test #298: FramebufferAttachmentTest.Defaults ..............................   Passed    0.00 sec
+        Start 299: DescriptorSetDescriptionTest.Defaults
+299/358 Test #299: DescriptorSetDescriptionTest.Defaults ...........................   Passed    0.00 sec
+        Start 300: TextureSubresourceTest.Defaults
+300/358 Test #300: TextureSubresourceTest.Defaults .................................   Passed    0.00 sec
+        Start 301: GraphicsAPITest.EnumValues
+301/358 Test #301: GraphicsAPITest.EnumValues ......................................   Passed    0.00 sec
+        Start 302: GraphicsAPITest.APIToString
+302/358 Test #302: GraphicsAPITest.APIToString .....................................   Passed    0.00 sec
+        Start 303: IShaderTest.DefaultsAndQueries
+303/358 Test #303: IShaderTest.DefaultsAndQueries ..................................   Passed    0.00 sec
+        Start 304: IShaderTest.IsNotCompiledWhenFlagFalse
+304/358 Test #304: IShaderTest.IsNotCompiledWhenFlagFalse ..........................   Passed    0.00 sec
+        Start 305: IVertexBufferTest.Queries
+305/358 Test #305: IVertexBufferTest.Queries .......................................   Passed    0.00 sec
+        Start 306: IIndexBufferTest.Queries
+306/358 Test #306: IIndexBufferTest.Queries ........................................   Passed    0.00 sec
+        Start 307: IUniformBufferTest.QueriesAndDynamicOffset
+307/358 Test #307: IUniformBufferTest.QueriesAndDynamicOffset ......................   Passed    0.00 sec
+        Start 308: IStorageBufferTest.Queries
+308/358 Test #308: IStorageBufferTest.Queries ......................................   Passed    0.00 sec
+        Start 309: IVertexArrayTest.AddVertexBuffersAndIndexBuffer
+309/358 Test #309: IVertexArrayTest.AddVertexBuffersAndIndexBuffer .................   Passed    0.00 sec
+        Start 310: IVertexArrayTest.SetIndexBufferAndBind
+310/358 Test #310: IVertexArrayTest.SetIndexBufferAndBind ..........................   Passed    0.00 sec
+        Start 311: IGraphicsQueueTest.Defaults
+311/358 Test #311: IGraphicsQueueTest.Defaults .....................................   Passed    0.00 sec
+        Start 312: IGraphicsQueueTest.WaitIdle
+312/358 Test #312: IGraphicsQueueTest.WaitIdle .....................................   Passed    0.00 sec
+        Start 313: IGraphicsBackendTest.Defaults
+313/358 Test #313: IGraphicsBackendTest.Defaults ...................................   Passed    0.00 sec
+        Start 314: IGraphicsBackendTest.UnavailableBackend
+314/358 Test #314: IGraphicsBackendTest.UnavailableBackend .........................   Passed    0.00 sec
+        Start 315: IGraphicsBackendTest.CreateInstanceReturnsNullWhenUnavailable
+315/358 Test #315: IGraphicsBackendTest.CreateInstanceReturnsNullWhenUnavailable ...   Passed    0.00 sec
+        Start 316: PipelineCacheTest.StoreAndLoad
+316/358 Test #316: PipelineCacheTest.StoreAndLoad ..................................   Passed    0.00 sec
+        Start 317: PipelineCacheTest.LoadMiss
+317/358 Test #317: PipelineCacheTest.LoadMiss ......................................   Passed    0.00 sec
+        Start 318: PipelineCacheTest.RemoveAndClear
+318/358 Test #318: PipelineCacheTest.RemoveAndClear ................................   Passed    0.00 sec
+        Start 319: PipelineBindPointTest.Values
+319/358 Test #319: PipelineBindPointTest.Values ....................................   Passed    0.00 sec
+        Start 320: BoundPipelineStateTest.Defaults
+320/358 Test #320: BoundPipelineStateTest.Defaults .................................   Passed    0.00 sec
+        Start 321: PipelineStatisticsTest.Defaults
+321/358 Test #321: PipelineStatisticsTest.Defaults .................................   Passed    0.00 sec
+        Start 322: PipelineValidatorTest.ValidGraphicsPipeline
+322/358 Test #322: PipelineValidatorTest.ValidGraphicsPipeline .....................   Passed    0.00 sec
+        Start 323: PipelineValidatorTest.MissingVertexShader
+323/358 Test #323: PipelineValidatorTest.MissingVertexShader .......................   Passed    0.00 sec
+        Start 324: PipelineValidatorTest.VertexBindingExceedsLimit
+324/358 Test #324: PipelineValidatorTest.VertexBindingExceedsLimit .................   Passed    0.00 sec
+        Start 325: PipelineValidatorTest.ValidComputePipeline
+325/358 Test #325: PipelineValidatorTest.ValidComputePipeline ......................   Passed    0.00 sec
+        Start 326: PipelineValidatorTest.WrongStageComputePipeline
+326/358 Test #326: PipelineValidatorTest.WrongStageComputePipeline .................   Passed    0.00 sec
+        Start 327: PipelineValidatorTest.RenderPassCompatibility
+327/358 Test #327: PipelineValidatorTest.RenderPassCompatibility ...................   Passed    0.00 sec
+        Start 328: PipelineValidatorTest.RenderPassCompatibilityInvalidIndex
+328/358 Test #328: PipelineValidatorTest.RenderPassCompatibilityInvalidIndex .......   Passed    0.00 sec
+        Start 329: PipelineValidatorTest.PushConstantsValidation
+329/358 Test #329: PipelineValidatorTest.PushConstantsValidation ...................   Passed    0.00 sec
+        Start 330: PipelineValidatorTest.PushConstantsExceedLimit
+330/358 Test #330: PipelineValidatorTest.PushConstantsExceedLimit ..................   Passed    0.00 sec
+        Start 331: PipelineValidatorTest.PushConstantsNoStages
+331/358 Test #331: PipelineValidatorTest.PushConstantsNoStages .....................   Passed    0.00 sec
+        Start 332: PipelineValidatorTest.DescriptorLayoutValidation
+332/358 Test #332: PipelineValidatorTest.DescriptorLayoutValidation ................   Passed    0.00 sec
+        Start 333: PipelineValidatorTest.DescriptorLayoutExceedsLimits
+333/358 Test #333: PipelineValidatorTest.DescriptorLayoutExceedsLimits .............   Passed    0.00 sec
+        Start 334: PipelineValidatorTest.DescriptorLayoutZeroCount
+334/358 Test #334: PipelineValidatorTest.DescriptorLayoutZeroCount .................   Passed    0.00 sec
+        Start 335: ShaderMetadataTest.InputsAndOutputs
+335/358 Test #335: ShaderMetadataTest.InputsAndOutputs .............................   Passed    0.00 sec
+        Start 336: ShaderMetadataTest.UniformsAndHash
+336/358 Test #336: ShaderMetadataTest.UniformsAndHash ..............................   Passed    0.00 sec
+        Start 337: ShaderMetadataTest.WorkgroupSize
+337/358 Test #337: ShaderMetadataTest.WorkgroupSize ................................   Passed    0.00 sec
+        Start 338: ShaderMetadataTest.MetadataString
+338/358 Test #338: ShaderMetadataTest.MetadataString ...............................   Passed    0.00 sec
+        Start 339: ShaderInputTypeTest.Values
+339/358 Test #339: ShaderInputTypeTest.Values ......................................   Passed    0.00 sec
+        Start 340: ShaderHotReloadTest.WatchAndUnwatch
+340/358 Test #340: ShaderHotReloadTest.WatchAndUnwatch .............................   Passed    0.00 sec
+        Start 341: ShaderHotReloadTest.EnableDisable
+341/358 Test #341: ShaderHotReloadTest.EnableDisable ...............................   Passed    0.00 sec
+        Start 342: ShaderHotReloadTest.PollForChanges
+342/358 Test #342: ShaderHotReloadTest.PollForChanges ..............................   Passed    0.00 sec
+        Start 343: ShaderCompilerTest.CompileSuccess
+343/358 Test #343: ShaderCompilerTest.CompileSuccess ...............................   Passed    0.00 sec
+        Start 344: ShaderCompilerTest.CompileFailure
+344/358 Test #344: ShaderCompilerTest.CompileFailure ...............................   Passed    0.00 sec
+        Start 345: ShaderCompilerTest.CompileFile
+345/358 Test #345: ShaderCompilerTest.CompileFile ..................................   Passed    0.00 sec
+        Start 346: ShaderCompilerTest.LanguageSupport
+346/358 Test #346: ShaderCompilerTest.LanguageSupport ..............................   Passed    0.00 sec
+        Start 347: ShaderCompilationResultTest.Defaults
+347/358 Test #347: ShaderCompilationResultTest.Defaults ............................   Passed    0.00 sec
+        Start 348: ShaderCompileOptionsTest.Defaults
+348/358 Test #348: ShaderCompileOptionsTest.Defaults ...............................   Passed    0.00 sec
+        Start 349: BufferViewTest.Defaults
+349/358 Test #349: BufferViewTest.Defaults .........................................   Passed    0.00 sec
+        Start 350: TextureViewTest.Defaults
+350/358 Test #350: TextureViewTest.Defaults ........................................   Passed    0.00 sec
+        Start 351: ResourceBarrierTest.Defaults
+351/358 Test #351: ResourceBarrierTest.Defaults ....................................   Passed    0.00 sec
+        Start 352: TextureLayoutTest.Defaults
+352/358 Test #352: TextureLayoutTest.Defaults ......................................   Passed    0.00 sec
+        Start 353: SubresourceRangeTest.Defaults
+353/358 Test #353: SubresourceRangeTest.Defaults ...................................   Passed    0.00 sec
+        Start 354: ShaderReloadResultTest.Defaults
+354/358 Test #354: ShaderReloadResultTest.Defaults .................................   Passed    0.00 sec
+        Start 355: ShaderInputDescriptionTest.Defaults
+355/358 Test #355: ShaderInputDescriptionTest.Defaults .............................   Passed    0.00 sec
+        Start 356: InterfaceCountTest.AllSpecInterfacesAreDefined
+356/358 Test #356: InterfaceCountTest.AllSpecInterfacesAreDefined ..................   Passed    0.00 sec
+        Start 357: EnumCountTest.AllSpecEnumsAreDefined
+357/358 Test #357: EnumCountTest.AllSpecEnumsAreDefined ............................   Passed    0.00 sec
+        Start 358: DescriptionCountTest.AllSpecDescriptionsAreDefined
+358/358 Test #358: DescriptionCountTest.AllSpecDescriptionsAreDefined ..............   Passed    0.00 sec
+
+99% tests passed, 1 tests failed out of 358
+
+Total Test time (real) =   1.48 sec
+
+The following tests FAILED:
+	138 - ApplicationTest.InitializeAndShutdown (SEGFAULT)
+Errors while running CTest
+Error: Process completed with exit code 8.
+0s
+0s

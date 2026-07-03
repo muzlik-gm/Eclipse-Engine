@@ -13,9 +13,11 @@
 
 namespace engine::platform {
 
+    using engine::core::u8;
     using engine::core::u32;
     using engine::core::i32;
     using engine::core::f32;
+    using engine::core::f64;
 
     // ========================================================================
     // WindowMode
@@ -154,7 +156,7 @@ namespace engine::platform {
         // --------------------------------------------------------------------
         // Factory – creates the GLFW-backed implementation.
         // --------------------------------------------------------------------
-        [[nodiscard]] static std::unique_ptr<IWindow> Create(const WindowProperties& props);
+        [[nodiscard]] static std::unique_ptr<IWindow> CreateWindow(const WindowProperties& props);
     };
 
 } // namespace engine::platform

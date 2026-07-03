@@ -1,7 +1,7 @@
 // ============================================================================
 // File: Sandbox/Source/SandboxMain.cpp
-// Minimal sandbox executable that exercises the Phase 1 runtime
-// architecture — Application, Engine, and the main loop.
+// Minimal sandbox executable that exercises the Phase 2 platform layer
+// — Application, Engine, Window, and the main loop.
 // ============================================================================
 
 #include "Engine/Core/Types.h"
@@ -9,6 +9,8 @@
 #include "Engine/Application/Application.h"
 #include "Engine/Runtime/Engine.h"
 #include "Engine/Runtime/ISubsystem.h"
+#include "Engine/Platform/Window.h"
+#include "Engine/Platform/PlatformInfo.h"
 
 #include <chrono>
 #include <cstdio>
@@ -89,6 +91,13 @@ using engine::core::i32;
 
 int main(i32 argc, const char* argv[])
 {
+    // Report platform information before creating the application.
+    auto platformInfo = engine::platform::PlatformInfo::Gather();
+    std::printf("Platform: %s\n", platformInfo.GetEnginePlatformString().c_str());
+    std::printf("Architecture: %s, 64-bit: %s\n\n",
+                platformInfo.Architecture.c_str(),
+                platformInfo.Is64BitPlatform ? "yes" : "no");
+
     // Create application.
     application::Application app(argc, argv);
 
@@ -104,11 +113,22 @@ int main(i32 argc, const char* argv[])
     config.engineConfig.targetFrameTime = 1.0 / 60.0;
     config.engineConfig.printSubsystemInfo = true;
 
-    // Initialize.
+    // Initialize (creates window and platform).
     if (!app.Initialize())
     {
         std::printf("Sandbox: initialization failed\n");
+        std::printf("Tip: run with --headless to skip window creation\n");
         return 1;
+    }
+
+    // Report window state.
+    auto* window = app.GetWindow();
+    if (window)
+    {
+        std::printf("Window created: %s (%ux%u)\n",
+                    window->GetTitle().c_str(),
+                    window->GetWidth(),
+                    window->GetHeight());
     }
 
     // Run.

@@ -16,16 +16,18 @@
 #include <string>
 #include <string_view>
 
+namespace engine::platform
+{
+    class IWindow;
+    class PlatformManager;
+} // namespace engine::platform
+
 namespace engine::application
 {
 
     using engine::core::i32;
     using engine::runtime::Engine;
     using engine::util::CommandLine;
-
-    // Forward declaration — Platform/IWindow headers are not exposed
-    // to the application layer; access is through GetWindow().
-    namespace platform { class IWindow; class PlatformManager; }
 
     // ========================================================================
     // Application
@@ -122,10 +124,10 @@ namespace engine::application
 
         /// Access the platform window.  Returns nullptr before Initialize()
         /// or in headless mode.
-        [[nodiscard]] platform::IWindow* GetWindow() const noexcept;
+        [[nodiscard]] engine::platform::IWindow* GetWindow() const noexcept;
 
         /// Access the platform manager.
-        [[nodiscard]] platform::PlatformManager& GetPlatformManager() noexcept;
+        [[nodiscard]] engine::platform::PlatformManager& GetPlatformManager() noexcept;
 
         // ----------------------------------------------------------------
         // State
@@ -162,8 +164,8 @@ namespace engine::application
         ApplicationSpec                      m_spec;
         ApplicationConfig                    m_config;
         CommandLine                          m_commandLine;
-        std::unique_ptr<Engine>            m_engine;
-        std::unique_ptr<platform::IWindow>    m_window;
+        std::unique_ptr<Engine>               m_engine;
+        std::unique_ptr<engine::platform::IWindow> m_window;
         bool                                 m_initialized = false;
     };
 

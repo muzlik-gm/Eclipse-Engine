@@ -7,6 +7,7 @@
 #include "Engine/Platform/PlatformManager.h"
 #include "Engine/Core/Log.h"
 
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
 #include <utility>
@@ -100,7 +101,7 @@ namespace engine::platform
             return nullptr;
         }
 
-        return IWindow::Create(props);
+        return IWindow::CreateWindow(props);
     }
 
     // ========================================================================

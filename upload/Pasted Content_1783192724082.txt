@@ -1,0 +1,710 @@
+Skip to content
+muzlik-gm
+Eclipse-Engine
+Repository navigation
+Code
+Issues
+Pull requests
+Agents
+Actions
+Projects
+Wiki
+Security and quality
+Insights
+Settings
+Build and Test
+Fix MSVC compilation errors for cross-platform CI #3
+All jobs
+Run details
+Annotations
+1 error and 1 warning
+Windows (MSVC)
+failed 3 minutes ago in 5m 7s
+Search logs
+0s
+5s
+1m 2s
+3m 55s
+Run cmake --build build --config Release -- /m
+MSBuild version 18.7.8+1ac568fee for .NET Framework
+
+  Checking File Globs
+  1>Checking Build System
+  Generating HTML documentation
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/docs/CMakeLists.txt
+  Generating GLAD OpenGL 4.6 Core Profile loader
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/src/CMakeLists.txt
+  context.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glm-src/glm/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/spdlog-src/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/yaml-cpp-src/CMakeLists.txt
+  glm.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/googletest-src/googletest/CMakeLists.txt
+  spdlog.cpp
+  gtest-all.cc
+  graphbuilder.cpp
+  [07/04/2026 19:10:53][INFO	][glad   	]: downloading latest 'gl' specification
+  [07/04/2026 19:10:53][INFO	][glad.opener	]: opening: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml'
+  [07/04/2026 19:10:54][INFO	][glad   	]: generating 'gl' bindings: {'gl': Version(major=4, minor=6)}
+  [07/04/2026 19:10:54][INFO	][glad.opener	]: saving: 'https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/main/api/KHR/khrplatform.h' to 'D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glad-generated\include\KHR\khrplatform.h'
+  [07/04/2026 19:10:54][INFO	][glad   	]: generating 'gl' bindings - done
+  init.c
+  graphbuilderadapter.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/CMakeLists.txt
+  input.c
+C:\Program Files\Microsoft Visual Studio\18\Enterprise\MSBuild\Microsoft\VC\v180\Microsoft.CppCommon.targets(254,5): warning MSB8065: Custom build for item "D:\a\Eclipse-Engine\Eclipse-Engine\build\CMakeFiles\33680d55af1523c3444a39406aea83ee\glad.c.rule" succeeded, but specified output "d:\a\eclipse-engine\eclipse-engine\build\_deps\glad-generated\include\glad\gl.h" has not been created. This may cause incremental build to work incorrectly. [D:\a\Eclipse-Engine\Eclipse-Engine\build\glad_api.vcxproj]
+  glad.c
+  monitor.c
+  binary.cpp
+  vulkan.c
+  window.c
+  glad_api.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\Release\glad_api.lib
+  glm.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glm-build\glm\Release\glm.lib
+  convert.cpp
+  win32_init.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/googletest-src/googlemock/CMakeLists.txt
+  gtest-all.cc
+  stdout_sinks.cpp
+  win32_joystick.c
+  win32_monitor.c
+  depthguard.cpp
+  win32_time.c
+  win32_thread.c
+  win32_window.c
+  Generating GLAD
+  wgl_context.c
+  [07/04/2026 19:11:01][INFO	][glad   	]: downloading latest 'gl' specification
+  [07/04/2026 19:11:01][INFO	][glad.opener	]: opening: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml'
+  egl_context.c
+  [07/04/2026 19:11:02][INFO	][glad   	]: generating 'gl' bindings: {'gl': None}
+  [07/04/2026 19:11:02][INFO	][glad.opener	]: saving: 'https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/main/api/KHR/khrplatform.h' to 'D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glad-build\include\KHR\khrplatform.h'
+  [07/04/2026 19:11:02][INFO	][glad   	]: generating 'gl' bindings - done
+  osmesa_context.c
+  directives.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glad-src/CMakeLists.txt
+  Generating Code...
+  emit.cpp
+  color_sinks.cpp
+  glfw.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\src\Release\glfw3.lib
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/googletest-src/googlemock/CMakeLists.txt
+  emitfromevents.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  gmock-all.cc
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  emitter.cpp
+  gtest.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\lib\Release\gtest.lib
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  gtest-all.cc
+  emitterstate.cpp
+  file_sinks.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  emitterutils.cpp
+  Generating Code...
+  exceptions.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  gmock-all.cc
+  glfwinfo.c
+  exp.cpp
+  getopt.c
+  glad_gl.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(106,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\glfwinfo.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(177,64): warning C4100: 'minor': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\glfwinfo.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(243,50): warning C4100: 'instance': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\glfwinfo.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(891,33): warning C4456: declaration of 'ep_count' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\glfwinfo.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(776,59):
+      see declaration of 'ep_count'
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(904,36): warning C4456: declaration of 'ep' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\glfwinfo.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\glfwinfo.c(815,32):
+      see declaration of 'ep'
+  
+  glad_vulkan.c
+  Generating Code...
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  glfwinfo.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\glfwinfo.exe
+  gamma.c
+  memory.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(3360,37): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5186,47): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5187,42): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5280,46): warning C5287: operands are different enum types 'nk_window_flags' and 'nk_panel_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15505,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15510,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23540,44): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(25104,44): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear_glfw_gl2.h(217,80): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  (compiling source file '../../glfw-src/tests/gamma.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\gamma.c(52,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\gamma.c(57,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\gamma.c(57,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\gamma.c(87,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\gamma.c(87,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  glad_gl.c
+  Generating Code...
+  async.cpp
+  node.cpp
+  empty.c
+  tinycthread.c
+  gmock_main.cc
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\empty.c(42,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\empty.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\empty.c(47,30): warning C4100: 'data': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\empty.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\empty.c(63,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\empty.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\empty.c(63,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\empty.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\tinycthread.c(578,38): warning C4100: 'clk_id': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\empty.vcxproj]
+  glad_gl.c
+  Generating Code...
+  cfg.cpp
+  node_data.cpp
+  heightmap.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\heightmap.c(384,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\heightmap.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\heightmap.c(384,73): warning C4100: 'action': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\heightmap.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\heightmap.c(384,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\heightmap.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\heightmap.c(395,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\heightmap.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\heightmap.c(400,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\heightmap.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\heightmap.c(400,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\heightmap.vcxproj]
+  glad_gl.c
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23468,1): warning C4701: potentially uninitialized local variable 'num_len' used [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\gamma.vcxproj]
+  boing.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\boing.c(216,27): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\boing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\boing.c(239,53): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\boing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\boing.c(275,77): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\boing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\boing.c(275,41): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\boing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\boing.c(291,44): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\boing.vcxproj]
+  glad_gl.c
+  Generating Code...
+  boing.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\boing.exe
+  clipboard.c
+  getopt.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\clipboard.c(50,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\clipboard.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\clipboard.c(55,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\clipboard.vcxproj]
+  glad_gl.c
+  Generating Code...
+  heightmap.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\heightmap.exe
+  gamma.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\gamma.exe
+  clipboard.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\clipboard.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  bundled_fmtlib_format.cpp
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  icon.c
+  glad_gl.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\icon.c(93,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\icon.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\icon.c(93,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\icon.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\icon.c(113,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\icon.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\icon.c(113,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\icon.vcxproj]
+  Generating Code...
+  gears.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\gears.c(214,42): warning C4100: 's': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\gears.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\gears.c(247,27): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\gears.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\gears.c(304,26): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\gears.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\gears.c(304,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\gears.vcxproj]
+  nodebuilder.cpp
+  glad_gl.c
+  Generating Code...
+  icon.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\icon.exe
+  empty.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\empty.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glad-src/CMakeLists.txt
+  cursor.c
+  gears.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\gears.exe
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\cursor.c(75,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\cursor.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\cursor.c(146,50): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\cursor.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\cursor.c(156,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\cursor.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\cursor.c(458,23): warning C4456: declaration of 'i' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\cursor.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\cursor.c(326,9):
+      see declaration of 'i'
+  
+  glad_gl.c
+  Generating Code...
+  gmock.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\lib\Release\gmock.lib
+  iconify.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(51,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(56,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(123,46): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(128,51): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(133,47): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(140,49): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\iconify.c(147,50): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\iconify.vcxproj]
+  getopt.c
+  glad_gl.c
+  Generating Code...
+  Generating Code...
+  cursor.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\cursor.exe
+  iconify.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\iconify.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  Generating Code...
+  inputlag.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(3360,37): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5186,47): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5187,42): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5280,46): warning C5287: operands are different enum types 'nk_window_flags' and 'nk_panel_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15505,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15510,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23540,44): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(25104,44): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear_glfw_gl2.h(217,80): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  (compiling source file '../../glfw-src/tests/inputlag.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(80,38): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(127,25): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(132,78): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(132,52): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(228,13): warning C4456: declaration of 'width' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(154,13):
+      see declaration of 'width'
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(228,20): warning C4456: declaration of 'height' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\inputlag.c(154,20):
+      see declaration of 'height'
+  
+  getopt.c
+  glad_gl.c
+  Generating Code...
+  nodeevents.cpp
+  null.cpp
+  ostream_wrapper.cpp
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23468,1): warning C4701: potentially uninitialized local variable 'num_len' used [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\inputlag.vcxproj]
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/googletest-src/googletest/CMakeLists.txt
+  glad.c
+  inputlag.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\inputlag.exe
+  gmock_main.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\lib\Release\gmock_main.lib
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  events.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\events.c(264,32): warning C4244: '=': conversion from 'unsigned int' to 'char', possible loss of data [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\events.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\events.c(269,33): warning C4244: '=': conversion from 'unsigned int' to 'char', possible loss of data [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\events.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\events.c(275,33): warning C4244: '=': conversion from 'unsigned int' to 'char', possible loss of data [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\events.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\events.c(284,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\events.vcxproj]
+  getopt.c
+  glad_gl.c
+  spdlog.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\spdlog-build\Release\spdlog.lib
+  Generating Code...
+  joysticks.c
+  monitors.c
+  glad.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glad-build\Release\glad.lib
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(3360,37): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5186,47): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5187,42): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5280,46): warning C5287: operands are different enum types 'nk_window_flags' and 'nk_panel_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\monitors.c(76,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\monitors.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\monitors.c(81,51): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\monitors.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\monitors.c(88,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\monitors.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\monitors.c(88,73): warning C4100: 'action': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\monitors.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\monitors.c(88,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\monitors.vcxproj]
+  getopt.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15505,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+  glad_gl.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15510,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23540,44): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(25104,44): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear_glfw_gl2.h(217,80): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  (compiling source file '../../glfw-src/tests/joysticks.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\joysticks.c(60,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\joysticks.c(89,39): warning C4459: declaration of 'window' hides global declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  msaa.c
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\joysticks.c(56,20):
+      see declaration of 'window'
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\joysticks.c(89,39): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\joysticks.c(326,36): warning C4244: 'function': conversion from 'int' to 'unsigned char', possible loss of data [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  glad_gl.c
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\msaa.c(72,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\msaa.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\msaa.c(77,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\msaa.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\msaa.c(77,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\msaa.vcxproj]
+  getopt.c
+  glad_gl.c
+  Generating Code...
+  monitors.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\monitors.exe
+  msaa.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\msaa.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  particles.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\particles.c(864,41): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\particles.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\particles.c(875,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\particles.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\particles.c(875,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\particles.vcxproj]
+  tinycthread.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\tinycthread.c(578,38): warning C4100: 'clk_id': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\particles.vcxproj]
+  getopt.c
+  glad_gl.c
+  Generating Code...
+  offscreen.c
+  gtest_main.cc
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\offscreen.c(74,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\offscreen.vcxproj]
+  glad_gl.c
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23468,1): warning C4701: potentially uninitialized local variable 'num_len' used [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\joysticks.vcxproj]
+  particles.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\particles.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  offscreen.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\offscreen.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  Compiling...
+  parse.cpp
+  parser.cpp
+  reopen.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(70,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(75,47): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(80,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(80,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(200,17): warning C4456: declaration of 'width' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(119,13):
+      see declaration of 'width'
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(200,24): warning C4456: declaration of 'height' hides previous local declaration [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(119,20):
+      see declaration of 'height'
+  
+  joysticks.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\joysticks.exe
+  sharing.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(101,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(101,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+  glad_gl.c
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\sharing.c(65,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\sharing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\sharing.c(70,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\sharing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\sharing.c(70,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\sharing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\sharing.c(76,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\sharing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\sharing.c(76,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\sharing.vcxproj]
+  glad_gl.c
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\reopen.c(238,1): warning C4702: unreachable code [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\reopen.vcxproj]
+  opacity.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(3360,37): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5186,47): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5187,42): warning C5287: operands are different enum types 'nk_panel_set' and 'nk_panel_type'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(5280,46): warning C5287: operands are different enum types 'nk_window_flags' and 'nk_panel_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15505,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(15510,18): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23540,44): warning C5287: operands are different enum types 'nk_edit_types' and 'nk_edit_flags'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(25104,44): warning C5287: operands are different enum types 'nk_panel_type' and 'nk_panel_set'; use an explicit cast to silence this warning [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+  reopen.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\reopen.exe
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear_glfw_gl2.h(217,80): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  (compiling source file '../../glfw-src/tests/opacity.c')
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\opacity.c(45,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\opacity.c(50,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\opacity.c(50,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  glad_gl.c
+  Generating Code...
+  sharing.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\sharing.exe
+  events.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\events.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  splitview.c
+  glad_gl.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\splitview.c(384,44): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\splitview.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\splitview.c(454,76): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\splitview.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\splitview.c(454,40): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\splitview.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\splitview.c(474,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\splitview.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\splitview.c(474,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\splitview.vcxproj]
+  Generating Code...
+  gtest_main.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\lib\Release\gtest_main.lib
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  regex_yaml.cpp
+  scanner.cpp
+  tearing.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\tearing.c(91,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\tearing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\tearing.c(96,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\tearing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\tearing.c(155,27): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\tearing.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\tearing.c(155,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\tearing.vcxproj]
+  glad_gl.c
+  Generating Code...
+  splitview.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\splitview.exe
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\nuklear.h(23468,1): warning C4701: potentially uninitialized local variable 'num_len' used [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\opacity.vcxproj]
+  threads.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  tearing.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\tearing.exe
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\threads.c(51,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\threads.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\threads.c(56,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\threads.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\threads.c(56,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\threads.vcxproj]
+  tinycthread.c
+  simple.c
+  timeout.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\simple.c(67,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\simple.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\simple.c(72,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\simple.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\simple.c(72,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\simple.vcxproj]
+  glad_gl.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\timeout.c(39,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\timeout.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\timeout.c(44,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\timeout.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\timeout.c(44,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\timeout.vcxproj]
+  Generating Code...
+  glad_gl.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  opacity.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\opacity.exe
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\deps\tinycthread.c(578,38): warning C4100: 'clk_id': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\threads.vcxproj]
+  glad_gl.c
+  Generating Code...
+  title.c
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\title.c(37,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\title.vcxproj]
+  glad_gl.c
+  timeout.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\timeout.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/examples/CMakeLists.txt
+  Generating Code...
+  simple.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\simple.exe
+  triangle-vulkan.c
+  wave.c
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(265,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(275,78): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(275,52): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(318,76): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(354,49): warning C4100: 'x': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(354,34): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(366,44): warning C4100: 'window': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(391,26): warning C4100: 'argv': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\examples\wave.c(391,14): warning C4100: 'argc': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\wave.vcxproj]
+  glad_gl.c
+  Generating Code...
+  title.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\title.exe
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/glfw-src/tests/CMakeLists.txt
+  scanscalar.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(135,21): warning C4100: 'pUserData': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(134,53): warning C4100: 'pMsg': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(134,27): warning C4100: 'pLayerPrefix': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(133,60): warning C4100: 'msgCode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(133,42): warning C4100: 'location': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(133,24): warning C4100: 'srcObject': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(132,60): warning C4100: 'objType': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(132,23): warning C4100: 'msgFlags': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(233,55): warning C4100: 'pUserData': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(232,32): warning C4100: 'location': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(232,14): warning C4100: 'srcObject': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(231,54): warning C4100: 'objType': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(1473,37): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(1478,90): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(1478,64): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\triangle-vulkan.c(1960,47): warning C4100: 'demo': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\triangle-vulkan.vcxproj]
+  glad_vulkan.c
+  windows.c
+  Generating Code...
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\windows.c(67,32): warning C4100: 'error': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\windows.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\windows.c(72,85): warning C4100: 'mods': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\windows.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-src\tests\windows.c(72,59): warning C4100: 'scancode': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\windows.vcxproj]
+  getopt.c
+  glad_gl.c
+  threads.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\threads.exe
+  Generating Code...
+  triangle-vulkan.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\triangle-vulkan.exe
+  wave.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\examples\Release\wave.exe
+  windows.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\glfw-build\tests\Release\windows.exe
+  scantag.cpp
+  scantoken.cpp
+  simplekey.cpp
+  singledocparser.cpp
+  stream.cpp
+  tag.cpp
+  Generating Code...
+  yaml-cpp.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\Release\yaml-cpp.lib
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/yaml-cpp-src/util/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/yaml-cpp-src/util/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/build/_deps/yaml-cpp-src/util/CMakeLists.txt
+  Building Custom Rule D:/a/Eclipse-Engine/Eclipse-Engine/Engine/CMakeLists.txt
+  sandbox.cpp
+  read.cpp
+  Log.cpp
+  parse.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-src\util\sandbox.cpp(21,50): warning C4100: 'style': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\yaml-cpp-sandbox.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-src\util\sandbox.cpp(24,45): warning C4100: 'style': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\yaml-cpp-sandbox.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-src\util\read.cpp(23,50): warning C4100: 'style': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\yaml-cpp-read.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-src\util\read.cpp(26,45): warning C4100: 'style': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\yaml-cpp-read.vcxproj]
+  yaml-cpp-sandbox.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\Release\sandbox.exe
+  yaml-cpp-read.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\Release\read.exe
+  yaml-cpp-parse.vcxproj -> D:\a\Eclipse-Engine\Eclipse-Engine\build\_deps\yaml-cpp-build\util\Release\parse.exe
+  Assert.cpp
+  UUID.cpp
+  Timing.cpp
+  Instrumentation.cpp
+  BuildInfo.cpp
+  SystemInfo.cpp
+  PerformanceCounters.cpp
+  StackTrace.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\StackTrace.cpp(32,13): warning C4005: 'WIN32_LEAN_AND_MEAN': macro redefinition [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\StackTrace.cpp(32,13):
+      'WIN32_LEAN_AND_MEAN' previously declared on the command line
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\StackTrace.cpp(252,26): error C2664: 'BOOL SymFromAddr(HANDLE,DWORD64,PDWORD64,PSYMBOL_INFO)': cannot convert argument 3 from 'DWORD *' to 'PDWORD64' [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\StackTrace.cpp(252,85):
+      Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\dbghelp.h(2956,1):
+      see declaration of 'SymFromAddr'
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\StackTrace.cpp(252,26):
+      while trying to match the argument list '(HANDLE, DWORD64, DWORD *, SYMBOL_INFO *)'
+  
+  CrashHandler.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\CrashHandler.cpp(24,13): warning C4005: 'WIN32_LEAN_AND_MEAN': macro redefinition [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\CrashHandler.cpp(24,13):
+      'WIN32_LEAN_AND_MEAN' previously declared on the command line
+  
+  MemoryStats.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\MemoryStats.cpp(32,13): warning C4005: 'WIN32_LEAN_AND_MEAN': macro redefinition [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Diagnostics\MemoryStats.cpp(32,13):
+      'WIN32_LEAN_AND_MEAN' previously declared on the command line
+  
+  Path.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Filesystem\Path.cpp(108,24): error C2440: '<function-style-cast>': cannot convert from 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' to 'engine::fs::Path' [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Filesystem\Path.cpp(108,24):
+      'engine::fs::Path::Path': ambiguous call to overloaded function
+          D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Filesystem\Path.cpp(33,11):
+          could be 'engine::fs::Path::Path(const std::filesystem::path &)'
+          D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Filesystem\Path.cpp(28,11):
+          or       'engine::fs::Path::Path(std::string_view)'
+          D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Filesystem\Path.cpp(108,24):
+          while trying to match the argument list '(std::basic_string<char,std::char_traits<char>,std::allocator<char>>)'
+  
+  File.cpp
+  Directory.cpp
+  Config.cpp
+  Thread.cpp
+  CPUInfo.cpp
+  Hash.cpp
+  String.cpp
+  CommandLine.cpp
+  Generating Code...
+  Compiling...
+  ModuleRegistry.cpp
+  FrameStats.cpp
+  SubsystemManager.cpp
+  ModuleManager.cpp
+  Engine.cpp
+  Application.cpp
+  PlatformManager.cpp
+  GLFWWindow.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWWindow.cpp(288,78): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  GLFWMonitor.cpp
+  GLFWClipboard.cpp
+  GLFWCursor.cpp
+  GLFWDynamicLibrary.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(12,13): warning C4005: 'WIN32_LEAN_AND_MEAN': macro redefinition [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+      D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(12,13):
+      'WIN32_LEAN_AND_MEAN' previously declared on the command line
+  
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(43,49): error C2065: 'RTLD_NOW': undeclared identifier [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(43,24): error C3861: 'dlopen': identifier not found [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(53,17): error C3861: 'dlerror': identifier not found [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(72,13): error C3861: 'dlclose': identifier not found [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Platform\GLFW\GLFWDynamicLibrary.cpp(89,20): error C3861: 'dlsym': identifier not found [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  PlatformInfo.cpp
+  FileDialogStub.cpp
+  Timer.cpp
+  EventBus.cpp
+  BackendRegistry.cpp
+  RHIUtilities.cpp
+  RHIValidation.cpp
+  PipelineValidation.cpp
+  Generating Code...
+  Compiling...
+  OpenGLFactory.cpp
+  OpenGLContext.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLContext.cpp(29,60): warning C4100: 'userParam': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLContext.cpp(29,17): warning C4100: 'length': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  OpenGLInstance.cpp
+  OpenGLDevice.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLDevice.cpp(309,26): warning C4100: 'pool': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  OpenGLSwapChain.cpp
+  OpenGLBuffer.cpp
+  OpenGLTexture.cpp
+  OpenGLSampler.cpp
+  OpenGLFramebuffer.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLFramebuffer.cpp(24,19): warning C4505: 'engine::rhi::gl::GetGLAttachmentPoint': unreferenced function with internal linkage has been removed [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  OpenGLRenderPass.cpp
+  OpenGLShader.cpp
+  OpenGLShaderPreprocessor.cpp
+  OpenGLPipeline.cpp
+  OpenGLCommandBuffer.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLCommandBuffer.cpp(911,13): warning C4189: 'arrayLayer': local variable is initialized but not referenced [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  OpenGLCommandQueue.cpp
+  OpenGLGraphicsQueue.cpp
+  OpenGLVertexArray.cpp
+  OpenGLStateCache.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLStateCache.cpp(461,58): warning C4100: 'glFace': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  OpenGLFence.cpp
+  OpenGLSemaphore.cpp
+  Generating Code...
+  Compiling...
+  OpenGLCapabilities.cpp
+  OpenGLDebug.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\OpenGL\OpenGLDebug.cpp(85,23): warning C4100: 'length': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  OpenGLFormat.cpp
+  Renderer.cpp
+  RendererContext.cpp
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\RendererContext.cpp(31,45): warning C4100: 'height': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+D:\a\Eclipse-Engine\Eclipse-Engine\Engine\Source\Renderer\RendererContext.cpp(30,45): warning C4100: 'width': unreferenced parameter [D:\a\Eclipse-Engine\Eclipse-Engine\build\Engine\Engine.vcxproj]
+  Generating Code...
+Error: Process completed with exit code 1.
+0s
+2s
+0s

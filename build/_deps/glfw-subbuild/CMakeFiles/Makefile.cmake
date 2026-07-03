@@ -7,10 +7,8 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeDetermineSystem.cmake"
   "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeGenericSystem.cmake"
   "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeInitializeConfigs.cmake"
-  "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeSystem.cmake.in"
   "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeSystemSpecificInformation.cmake"
   "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/CMakeSystemSpecificInitialize.cmake"
   "/home/z/.venv/lib/python3.12/site-packages/cmake/data/share/cmake-4.3/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.3.4/CMakeSystem.cmake"
   "glfw-populate-prefix/tmp/glfw-populate-mkdirs.cmake"
   "glfw-populate-prefix/tmp/glfw-populate-gitclone.cmake"
   "glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-gitinfo.txt"

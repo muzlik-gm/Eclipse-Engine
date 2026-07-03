@@ -6,6 +6,7 @@
 #include "Engine/Platform/Cursor.h"
 #include "Engine/Core/Log.h"
 
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
 namespace engine::platform
@@ -28,7 +29,7 @@ namespace engine::platform
             case CursorShape::Hand:      glfwShape = GLFW_HAND_CURSOR;      break;
             case CursorShape::HResize:   glfwShape = GLFW_HRESIZE_CURSOR;  break;
             case CursorShape::VResize:   glfwShape = GLFW_VRESIZE_CURSOR;  break;
-            case CursorShape::ResizeAll: glfwShape = GLFW_RESIZE_ALL_CURSOR; break;
+            case CursorShape::ResizeAll: glfwShape = GLFW_ARROW_CURSOR; break;
             case CursorShape::NoCursor:  return nullptr;
         }
         return glfwCreateStandardCursor(glfwShape);

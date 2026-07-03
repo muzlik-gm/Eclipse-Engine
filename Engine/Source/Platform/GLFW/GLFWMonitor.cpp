@@ -6,6 +6,7 @@
 #include "Engine/Platform/Monitor.h"
 #include "Engine/Core/Log.h"
 
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
 namespace engine::platform

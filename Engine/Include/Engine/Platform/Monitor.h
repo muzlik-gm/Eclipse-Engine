@@ -11,6 +11,7 @@
 
 namespace engine::platform {
 
+    using engine::core::u8;
     using engine::core::u32;
     using engine::core::i32;
     using engine::core::f32;

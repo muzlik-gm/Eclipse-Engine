@@ -102,6 +102,17 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glfw)
 
+# Add compatibility include path for X11 extension headers that may
+# not be installed in the standard layout.  The real headers from
+# libXrandr, libXinerama, and libXcursor are stored in the source
+# tree and injected before the system paths.
+if(ENGINE_PLATFORM_LINUX AND NOT APPLE)
+    set(GLFW_X11_COMPAT_DIR "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/_glfw_x11_compat")
+    file(MAKE_DIRECTORY "${GLFW_X11_COMPAT_DIR}/X11/Xcursor")
+    file(MAKE_DIRECTORY "${GLFW_X11_COMPAT_DIR}/X11/extensions")
+    target_include_directories(glfw BEFORE PRIVATE "${GLFW_X11_COMPAT_DIR}")
+endif()
+
 # --- GLAD (OpenGL loader) — Phase 6: OpenGL Backend ---
 FetchContent_Declare(
     glad

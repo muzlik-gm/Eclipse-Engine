@@ -51,7 +51,9 @@ namespace engine::platform
 
             if (!m_Handle)
             {
-#ifdef ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
+#ifdef ENGINE_PLATFORM_LINUX
+                ENGINE_LOG_ERROR("DynamicLibrary — failed to load '{}': {}", filePath, dlerror());
+#elif defined(ENGINE_PLATFORM_MACOS)
                 ENGINE_LOG_ERROR("DynamicLibrary — failed to load '{}': {}", filePath, dlerror());
 #elif defined(ENGINE_PLATFORM_WINDOWS)
                 ENGINE_LOG_ERROR("DynamicLibrary — failed to load '{}'", filePath);
@@ -68,7 +70,9 @@ namespace engine::platform
         {
             if (!m_Handle) return;
 
-#ifdef ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
+#ifdef ENGINE_PLATFORM_LINUX
+            dlclose(m_Handle);
+#elif defined(ENGINE_PLATFORM_MACOS)
             dlclose(m_Handle);
 #elif defined(ENGINE_PLATFORM_WINDOWS)
             FreeLibrary(static_cast<HMODULE>(m_Handle));
@@ -83,7 +87,9 @@ namespace engine::platform
         {
             if (!m_Handle) return nullptr;
 
-#ifdef ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
+#ifdef ENGINE_PLATFORM_LINUX
+            return dlsym(m_Handle, name.c_str());
+#elif defined(ENGINE_PLATFORM_MACOS)
             return dlsym(m_Handle, name.c_str());
 #elif defined(ENGINE_PLATFORM_WINDOWS)
             return static_cast<void*>(GetProcAddress(static_cast<HMODULE>(m_Handle), name.c_str()));
