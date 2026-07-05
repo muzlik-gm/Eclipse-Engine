@@ -95,7 +95,7 @@ namespace engine::math {
     [[nodiscard]] inline Vec3 Cross(const Vec3& a, const Vec3& b) { return glm::cross(a, b); }
 
     [[nodiscard]] inline f32 Length(const Vec3& v) { return glm::length(v); }
-    [[nodiscard]] inline f32 LengthSquared(const Vec3& v) { return glm::length2(v); }
+    [[nodiscard]] inline f32 LengthSquared(const Vec3& v) { return glm::dot(v, v); }
 
     /// Linear interpolation between two values.
     template <typename T>

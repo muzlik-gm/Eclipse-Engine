@@ -48,6 +48,11 @@ set(ENGINE_SOURCES
     Source/Platform/Timer.cpp
     # Events (Phase 2)
     Source/Events/EventBus.cpp
+    # World, Scene & ECS (Phase 5)
+    Source/Systems/TransformSystem.cpp
+    Source/World/World.cpp
+    Source/Scene/Scene.cpp
+    Source/Serialization/SceneSerializer.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})
@@ -72,6 +77,7 @@ target_link_libraries(Engine
         spdlog::spdlog
         nlohmann_json::nlohmann_json
         glm::glm
+        EnTT::EnTT
 )
 
 # Compile definitions based on build type

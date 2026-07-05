@@ -25,6 +25,13 @@ set(ENGINE_TEST_SOURCES
     Source/Application/ApplicationTests.cpp
     # Phase 2 — Platform
     Source/Platform/PlatformTests.cpp
+    # Phase 5 — ECS, Transforms, Scene, World
+    Source/ECS/RegistryTests.cpp
+    Source/Components/TransformComponentTests.cpp
+    Source/Systems/TransformSystemTests.cpp
+    Source/Transforms/TransformUtilsTests.cpp
+    Source/Scene/SceneTests.cpp
+    Source/World/WorldTests.cpp
 )
 
 add_executable(EngineTests ${ENGINE_TEST_SOURCES})
