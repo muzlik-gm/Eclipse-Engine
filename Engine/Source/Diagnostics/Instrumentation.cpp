@@ -25,6 +25,7 @@ namespace
 
 using engine::core::i64;
 using engine::core::u32;
+using engine::core::u64;
 
 #if ENGINE_PLATFORM_WINDOWS
     #ifndef WIN32_LEAN_AND_MEAN

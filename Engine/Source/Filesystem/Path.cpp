@@ -104,7 +104,7 @@ namespace engine::fs
         const char* homePath  = std::getenv("HOMEPATH");
         if (homeDrive && homePath)
         {
-            return Path(std::string(homeDrive) + homePath);
+            return Path(std::string_view(std::string(homeDrive) + homePath));
         }
         return Path{};
 #else

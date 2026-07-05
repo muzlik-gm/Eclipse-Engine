@@ -237,7 +237,7 @@ std::string StackTrace::Capture(usize maxFrames)
     symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
     symbol->MaxNameLen   = static_cast<ULONG>(kMaxNameLen);
 
-    DWORD displacement = 0;
+    DWORD64 displacement = 0;
     IMAGEHLP_LINE64 line = {};
     line.SizeOfStruct = sizeof(IMAGEHLP_LINE64);
 

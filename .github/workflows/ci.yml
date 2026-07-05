@@ -1,0 +1,88 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build-linux:
+    name: Linux (GCC ${{ matrix.gcc }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        gcc: ['13', '14']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install GCC ${{ matrix.gcc }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y g++-${{ matrix.gcc }}
+          echo "CC=gcc-${{ matrix.gcc }}" >> $GITHUB_ENV
+          echo "CXX=g++-${{ matrix.gcc }}" >> $GITHUB_ENV
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libx11-dev libxrandr-dev libxinerama-dev \
+            libxcursor-dev libxi-dev libgl1-mesa-dev \
+            libxfixes-dev python3
+
+      - name: Configure
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DENGINE_BUILD_TESTS=ON \
+            -DENGINE_BUILD_SANDBOX=OFF
+
+      - name: Build
+        run: cmake --build build --config ${{ env.BUILD_TYPE }} -j$(nproc)
+
+      - name: Test
+        working-directory: build
+        run: ctest --output-on-failure --timeout 60
+
+  build-windows:
+    name: Windows (MSVC)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Release `
+            -DENGINE_BUILD_TESTS=ON `
+            -DENGINE_BUILD_SANDBOX=OFF
+
+      - name: Build
+        run: cmake --build build --config Release -- /m
+
+      - name: Test
+        working-directory: build
+        run: ctest --output-on-failure --timeout 60 -C Release
+
+  build-macos:
+    name: macOS (Clang)
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
+            -DENGINE_BUILD_TESTS=ON \
+            -DENGINE_BUILD_SANDBOX=OFF
+
+      - name: Build
+        run: cmake --build build --config ${{ env.BUILD_TYPE }} -j$(sysctl -n hw.ncpu)
+
+      - name: Test
+        working-directory: build
+        run: ctest --output-on-failure --timeout 60

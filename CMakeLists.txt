@@ -7,7 +7,7 @@ set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 project(Engine
     VERSION 0.1.0
     DESCRIPTION "A professional, modular, cross-platform C++20 game engine"
-    LANGUAGES CXX
+    LANGUAGES C CXX
 )
 
 # CMake modules

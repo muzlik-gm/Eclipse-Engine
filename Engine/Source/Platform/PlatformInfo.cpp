@@ -19,7 +19,7 @@ namespace engine::platform
 
     std::string PlatformInfo::GetOSVersion()
     {
-#if defined(ENGINE_PLATFORM_LINUX)
+#if ENGINE_PLATFORM_LINUX
         FILE* f = std::fopen("/proc/version", "r");
         if (f)
         {
@@ -43,9 +43,9 @@ namespace engine::platform
             std::fclose(f);
         }
         return "Unknown";
-#elif defined(ENGINE_PLATFORM_MACOS)
+#elif ENGINE_PLATFORM_MACOS
         return diagnostics::SystemInfo::OSName();
-#elif defined(ENGINE_PLATFORM_WINDOWS)
+#elif ENGINE_PLATFORM_WINDOWS
         return diagnostics::SystemInfo::OSName();
 #else
         return "Unknown";
@@ -59,11 +59,11 @@ namespace engine::platform
 
     std::string PlatformInfo::GetPlatformName()
     {
-#if defined(ENGINE_PLATFORM_LINUX)
+#if ENGINE_PLATFORM_LINUX
         return "Linux";
-#elif defined(ENGINE_PLATFORM_MACOS)
+#elif ENGINE_PLATFORM_MACOS
         return "macOS";
-#elif defined(ENGINE_PLATFORM_WINDOWS)
+#elif ENGINE_PLATFORM_WINDOWS
         return "Windows";
 #else
         return "Unknown";

@@ -18,8 +18,11 @@ TimePoint Clock::Now()
 
 f64 Clock::Timestamp()
 {
-    const auto now    = Now();
-    const auto epoch  = TimePoint{};
+    // Use system_clock for wall-clock epoch time (Unix timestamp).
+    // high_resolution_clock may be an alias for steady_clock on some
+    // platforms (e.g. macOS), which measures time since boot, not epoch.
+    const auto now    = std::chrono::system_clock::now();
+    const auto epoch  = std::chrono::system_clock::time_point{};
     return std::chrono::duration<f64>(now - epoch).count();
 }
 
