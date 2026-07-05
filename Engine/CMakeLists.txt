@@ -49,9 +49,13 @@ set(ENGINE_SOURCES
     # Events (Phase 2)
     Source/Events/EventBus.cpp
     # World, Scene & ECS (Phase 5)
+    Source/Entities/EntityManager.cpp
     Source/Systems/TransformSystem.cpp
-    Source/World/World.cpp
+    Source/Systems/SystemScheduler.cpp
     Source/Scene/Scene.cpp
+    Source/Scene/SceneManager.cpp
+    Source/World/World.cpp
+    Source/World/WorldManager.cpp
     Source/Serialization/SceneSerializer.cpp
 )
 
