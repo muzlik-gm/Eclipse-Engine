@@ -102,3 +102,24 @@ Stage Summary:
 - GLFW isolation: no module outside Platform includes GLFW headers
 - CMake: FetchContent for GLFW, X11 compat headers for CI, Platform sources added to Engine target
 ---
+Task ID: 3
+Agent: Main Agent
+Task: Fix cross-platform compilation errors (Round 5 — Windows MSVC + macOS Clang)
+
+Work Log:
+- Audited entire codebase for cross-platform issues using Explore agent
+- Identified 5 files needing fixes across Windows/macOS
+- Fixed Path.h/cpp: added explicit `Path(const std::string&)` constructor to resolve MSVC ambiguity between `string_view` and `filesystem::path` overloads
+- Fixed Environment.h: added `WIN32_LEAN_AND_MEAN` guard before `<windows.h>` to prevent min/max macro conflicts
+- Fixed Environment.h: `GetCommandLineArguments()` was using `/proc/self/cmdline` on macOS (doesn't exist) — now uses `_NSGetArgv()` from `crt_externs.h`
+- Fixed StackTrace.cpp: replaced all raw `#if defined(__linux__)`/`defined(_WIN32)` with `ENGINE_PLATFORM_*` macros; added `Platform.h` include and proper `WIN32_LEAN_AND_MEAN` guard
+- Fixed CrashHandler.cpp: same macro consistency fix; added `Platform.h` include and proper `WIN32_LEAN_AND_MEAN` guard
+- Added `.gitignore` entries for `build/`, `_deps/`, `tool-results/`
+- Verified: clean build from `rm -rf build _deps`, 178/178 tests pass on Linux GCC 14
+- Pushed commit d30bc77 to GitHub
+
+Stage Summary:
+- 5 source files modified, 1 new .gitignore entry
+- All known Windows MSVC and macOS Clang compilation errors addressed
+- Key fixes: MSVC Path constructor ambiguity, Windows min/max macro conflict, macOS /proc/self/cmdline bug, consistent platform macro usage
+---
