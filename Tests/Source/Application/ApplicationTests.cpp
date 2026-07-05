@@ -89,14 +89,8 @@ TEST(ApplicationTest, RegisterSubsystemBeforeInit)
 
 TEST(ApplicationTest, InitializeAndShutdown)
 {
-    // Initialize logging before creating the Application so that the
-    // Engine constructor (called inside the Application ctor) can log
-    // safely.  Application::Initialize() will see Log is already init'd
-    // and skip re-initialization.
-    engine::core::Log::Initialize("TestApp");
-
     const char* argv[] = {"TestApp", "--headless", "--no-build-info"};
-    Application app(4, argv);
+    Application app(3, argv);
 
     auto nop = std::make_unique<NopSubsystem>();
     app.GetEngine().GetSubsystemManager().Register(std::move(nop));

@@ -5,13 +5,7 @@
 
 #include "Engine/Core/Log.h"
 
-#include "Engine/Core/Platform.h"
-
-#if ENGINE_PLATFORM_WINDOWS
-    #include <spdlog/sinks/stdout_sinks.h>
-#else
-    #include <spdlog/sinks/stdout_color_sinks.h>
-#endif
+#include <spdlog/sinks/stdout_color_sinks.h>
 #include <spdlog/sinks/basic_file_sink.h>
 
 namespace engine::core {
@@ -26,16 +20,8 @@ void Log::Initialize(std::string_view appName) {
     }
 
     // Create sinks: console output and a log file.
-    // On Windows, use stdout_sink_mt to avoid Win32 console API calls
-    // (GetStdHandle / GetConsoleScreenBufferInfo) that crash with SEH
-    // in headless CI environments where no real console is attached.
-#if ENGINE_PLATFORM_WINDOWS
-    auto consoleSink = std::make_shared<spdlog::sinks::stdout_sink_mt>();
-    consoleSink->set_pattern("[%L] %v");
-#else
     auto consoleSink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
     consoleSink->set_pattern("%^[%L]%$ %v");
-#endif
 
     std::string logFileName = std::string(appName) + ".log";
     auto fileSink = std::make_shared<spdlog::sinks::basic_file_sink_mt>(logFileName, true);
