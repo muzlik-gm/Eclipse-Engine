@@ -97,6 +97,8 @@ namespace engine::threading
         return value;
     }
 
+#endif // ENGINE_PLATFORM_LINUX
+
     /// Formats a byte count into a human-readable string (e.g. "32 KiB").
     static std::string FormatByteSize(u64 bytes)
     {
@@ -122,8 +124,6 @@ namespace engine::threading
         oss << bytes << " B";
         return oss.str();
     }
-
-#endif // ENGINE_PLATFORM_LINUX
 
     // ========================================================================
     //  CPUID helpers (x86)

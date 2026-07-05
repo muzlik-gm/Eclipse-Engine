@@ -172,6 +172,8 @@ std::string StackTrace::Capture(usize maxFrames)
 
 #if ENGINE_PLATFORM_WINDOWS
 
+using engine::core::u8;
+
 namespace
 {
 
@@ -235,12 +237,12 @@ std::string StackTrace::Capture(usize maxFrames)
     // Allocate symbol info buffer with room for the name.
     // SymFromAddr requires sizeof(SYMBOL_INFO) + MAX_SYM_NAME * sizeof(TCHAR).
     constexpr usize kMaxNameLen = 256;
-    auto symbolInfoBuf = std::make_unique<u8[]>(sizeof(SYMBOL_INFO) + kMaxNameLen);
+    auto symbolInfoBuf = std::make_unique<unsigned char[]>(sizeof(SYMBOL_INFO) + kMaxNameLen);
     auto* symbol       = reinterpret_cast<SYMBOL_INFO*>(symbolInfoBuf.get());
     symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
     symbol->MaxNameLen   = static_cast<ULONG>(kMaxNameLen);
 
-    DWORD64 displacement = 0;
+    DWORD64 displacement64 = 0;
     IMAGEHLP_LINE64 line = {};
     line.SizeOfStruct = sizeof(IMAGEHLP_LINE64);
 
@@ -248,21 +250,22 @@ std::string StackTrace::Capture(usize maxFrames)
     {
         oss << "  [" << std::setw(3) << i << "] 0x"
             << std::hex << std::setfill('0')
-            << std::setw(reinterpret_cast<usize>(sizeof(void*)) * 2)
+            << std::setw(static_cast<int>(sizeof(void*)) * 2)
             << reinterpret_cast<std::uintptr_t>(buffer[i])
             << std::dec << std::setfill(' ');
 
-        BOOL hasSymbol = SymFromAddr(process, reinterpret_cast<DWORD64>(buffer[i]), &displacement, symbol);
+        BOOL hasSymbol = SymFromAddr(process, reinterpret_cast<DWORD64>(buffer[i]), &displacement64, symbol);
         if (hasSymbol)
         {
             oss << " " << symbol->Name;
-            if (displacement != 0)
+            if (displacement64 != 0)
             {
-                oss << " + 0x" << std::hex << displacement << std::dec;
+                oss << " + 0x" << std::hex << displacement64 << std::dec;
             }
         }
 
-        BOOL hasLine = SymGetLineFromAddr64(process, reinterpret_cast<DWORD64>(buffer[i]), &displacement, &line);
+        DWORD lineDisplacement = 0;
+        BOOL hasLine = SymGetLineFromAddr64(process, reinterpret_cast<DWORD64>(buffer[i]), &lineDisplacement, &line);
         if (hasLine)
         {
             oss << "  (" << line.FileName << ":" << line.LineNumber << ")";
