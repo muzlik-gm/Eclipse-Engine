@@ -38,6 +38,10 @@ namespace engine::fs
         /// Constructs from a UTF-8 string view.
         Path(std::string_view path);
 
+        /// Constructs from a std::string.
+        /// Prevents MSVC ambiguity between string_view and filesystem::path overloads.
+        Path(const std::string& path);
+
         /// Constructs from an existing std::filesystem::path.
         Path(const std::filesystem::path& path);
 

@@ -30,6 +30,11 @@ namespace engine::fs
     {
     }
 
+    Path::Path(const std::string& path)
+        : m_path(path)
+    {
+    }
+
     Path::Path(const std::filesystem::path& path)
         : m_path(path)
     {

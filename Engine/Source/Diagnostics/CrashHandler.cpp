@@ -12,6 +12,7 @@
 #include "Engine/Diagnostics/StackTrace.h"
 #include "Engine/Core/Log.h"
 #include "Engine/Core/BuildConfig.h"
+#include "Engine/Core/Platform.h"
 
 #include <csignal>
 #include <cstdlib>
@@ -20,8 +21,10 @@
 // Platform-specific includes
 // ============================================================================
 
-#if defined(_WIN32)
-    #define WIN32_LEAN_AND_MEAN
+#if ENGINE_PLATFORM_WINDOWS
+    #ifndef WIN32_LEAN_AND_MEAN
+        #define WIN32_LEAN_AND_MEAN
+    #endif
     #include <windows.h>
 #endif
 
@@ -42,7 +45,7 @@ static CrashHandler::CrashCallback s_crashCallback;
 
 static std::string SignalDescription(int sig)
 {
-#if defined(__linux__) || defined(__APPLE__)
+#if ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
     switch (sig)
     {
         case SIGSEGV: return "Segmentation fault (SIGSEGV)";
@@ -53,7 +56,7 @@ static std::string SignalDescription(int sig)
         case SIGTRAP: return "Trace/breakpoint trap (SIGTRAP)";
         default:      return "Unknown signal (" + std::to_string(sig) + ")";
     }
-#elif defined(_WIN32)
+#elif ENGINE_PLATFORM_WINDOWS
     // Windows exception codes passed through the callback.
     switch (sig)
     {
@@ -83,7 +86,7 @@ static std::string SignalDescription(int sig)
 // POSIX implementation
 // ===========================================================================
 
-#if defined(__linux__) || defined(__APPLE__)
+#if ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
 
 /// Stores the previous signal handlers so we can restore them on shutdown.
 static struct sigaction s_oldActions[4];
@@ -173,7 +176,7 @@ void CrashHandler::SetCallback(CrashCallback cb)
 // Windows implementation
 // ===========================================================================
 
-#if defined(_WIN32)
+#if ENGINE_PLATFORM_WINDOWS
 
 static LPTOP_LEVEL_EXCEPTION_FILTER s_previousFilter = nullptr;
 static bool s_initialized = false;
@@ -244,7 +247,7 @@ void CrashHandler::SetCallback(CrashCallback cb)
 // Fallback for unknown platforms
 // ===========================================================================
 
-#if !defined(__linux__) && !defined(__APPLE__) && !defined(_WIN32)
+#if !ENGINE_PLATFORM_LINUX && !ENGINE_PLATFORM_MACOS && !ENGINE_PLATFORM_WINDOWS
 
 static bool s_initialized = false;
 

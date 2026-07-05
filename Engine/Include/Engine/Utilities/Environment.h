@@ -74,6 +74,9 @@ namespace engine::util
 
 #if ENGINE_PLATFORM_WINDOWS
 #    include <cstdlib>
+#    ifndef WIN32_LEAN_AND_MEAN
+#        define WIN32_LEAN_AND_MEAN
+#    endif
 #    include <windows.h>
 #elif ENGINE_PLATFORM_MACOS
 #    include <crt_externs.h>
@@ -217,7 +220,15 @@ namespace engine::util
             }
             LocalFree(argvW);
         }
-#else // Linux / macOS — read /proc/self/cmdline
+#elif ENGINE_PLATFORM_MACOS
+        // macOS: use _NSGetArgv from crt_externs.h (already included above).
+        char** argv = *_NSGetArgv();
+        int argc = *_NSGetArgc();
+        for (int i = 1; i < argc; ++i)
+        {
+            result.emplace_back(argv[i]);
+        }
+#else // Linux — read /proc/self/cmdline
         std::ifstream cmdline("/proc/self/cmdline", std::ios::binary);
         if (!cmdline.is_open())
         {

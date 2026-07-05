@@ -15,6 +15,7 @@
 #include "Engine/Diagnostics/StackTrace.h"
 #include "Engine/Core/Log.h"
 #include "Engine/Core/BuildConfig.h"
+#include "Engine/Core/Platform.h"
 
 #include <sstream>
 #include <iomanip>
@@ -23,13 +24,15 @@
 // Platform-specific includes
 // ============================================================================
 
-#if defined(__linux__) || defined(__APPLE__)
+#if ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
     #include <execinfo.h>
     #include <cxxabi.h>
     #include <cstdlib>
     #include <cstring>
-#elif defined(_WIN32)
-    #define WIN32_LEAN_AND_MEAN
+#elif ENGINE_PLATFORM_WINDOWS
+    #ifndef WIN32_LEAN_AND_MEAN
+        #define WIN32_LEAN_AND_MEAN
+    #endif
     #include <windows.h>
     #include <dbghelp.h>
     #pragma comment(lib, "dbghelp.lib")
@@ -44,7 +47,7 @@ namespace engine::diagnostics
 
 std::string StackTrace::Demangle(const std::string& mangled)
 {
-#if defined(__linux__) || defined(__APPLE__)
+#if ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
     // __cxa_demangle is available with GCC and Clang on POSIX.
     int status = 0;
     char* demangled = abi::__cxa_demangle(
@@ -66,7 +69,7 @@ std::string StackTrace::Demangle(const std::string& mangled)
         std::free(demangled);
     }
     return mangled;
-#elif defined(_WIN32)
+#elif ENGINE_PLATFORM_WINDOWS
     // MSVC uses a different mangling scheme. UnDecorateSymbolName handles it.
     // Allocate a generously-sized buffer; truncate if needed.
     char undecorated[1024] = {};
@@ -90,7 +93,7 @@ std::string StackTrace::Demangle(const std::string& mangled)
 // Capture — POSIX (Linux & macOS)
 // ===========================================================================
 
-#if defined(__linux__) || defined(__APPLE__)
+#if ENGINE_PLATFORM_LINUX || ENGINE_PLATFORM_MACOS
 
 std::string StackTrace::Capture(usize maxFrames)
 {
@@ -167,7 +170,7 @@ std::string StackTrace::Capture(usize maxFrames)
 // Capture — Windows
 // ===========================================================================
 
-#if defined(_WIN32)
+#if ENGINE_PLATFORM_WINDOWS
 
 namespace
 {
@@ -277,7 +280,7 @@ std::string StackTrace::Capture(usize maxFrames)
 // Fallback Capture for unknown platforms
 // ===========================================================================
 
-#if !defined(__linux__) && !defined(__APPLE__) && !defined(_WIN32)
+#if !ENGINE_PLATFORM_LINUX && !ENGINE_PLATFORM_MACOS && !ENGINE_PLATFORM_WINDOWS
 
 std::string StackTrace::Capture(usize /*maxFrames*/)
 {
