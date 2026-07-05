@@ -80,8 +80,11 @@ void Log::Shutdown() {
     s_coreLogger->flush();
     s_clientLogger->flush();
 
-    spdlog::drop("ENGINE");
-    spdlog::drop("APP");
+    // Use spdlog::shutdown() to properly clean up ALL global spdlog state:
+    // drops all registered loggers, resets the default logger, and flushes
+    // all threads.  This prevents dangling references in spdlog's internal
+    // registry that could crash during static destruction on Windows.
+    spdlog::shutdown();
 
     s_coreLogger.reset();
     s_clientLogger.reset();
