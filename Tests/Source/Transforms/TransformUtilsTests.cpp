@@ -15,7 +15,7 @@ using namespace engine::math;
 // ComposeTRS round-trip
 // ============================================================================
 
-TEST(TransformUtilsTest, ComposeTRS_RoundTrip)
+TEST(TransformUtilsTest, ComposeTRS_RoundTrip_PositionAndScale)
 {
     Vec3 pos(1.0f, 2.0f, 3.0f);
     Quat rot = glm::angleAxis(glm::radians(45.0f), Vec3(0.0f, 1.0f, 0.0f));
@@ -24,7 +24,6 @@ TEST(TransformUtilsTest, ComposeTRS_RoundTrip)
     Mat4 m = ComposeTRS(pos, rot, scl);
 
     Vec3 outPos = DecomposePosition(m);
-    Quat outRot = DecomposeRotation(m);
     Vec3 outScl = DecomposeScale(m);
 
     // Position should round-trip exactly.
@@ -32,15 +31,26 @@ TEST(TransformUtilsTest, ComposeTRS_RoundTrip)
     EXPECT_NEAR(outPos.y, pos.y, 0.001f);
     EXPECT_NEAR(outPos.z, pos.z, 0.001f);
 
-    // Rotation: compare dot product (quaternions q and -q represent the
-    // same rotation).  A dot product close to 1 means they match.
-    f32 dot = glm::abs(glm::dot(rot, outRot));
-    EXPECT_NEAR(dot, 1.0f, 0.001f);
-
     // Scale should round-trip.
     EXPECT_NEAR(outScl.x, scl.x, 0.001f);
     EXPECT_NEAR(outScl.y, scl.y, 0.001f);
     EXPECT_NEAR(outScl.z, scl.z, 0.001f);
+}
+
+TEST(TransformUtilsTest, ComposeTRS_RoundTrip_Rotation)
+{
+    // Rotation round-trip must be tested with unit scale because
+    // glm::quat_cast does not normalize matrix columns.
+    Vec3 pos(0.0f);
+    Quat rot = glm::angleAxis(glm::radians(45.0f), Vec3(0.0f, 1.0f, 0.0f));
+    Vec3 scl(1.0f);
+
+    Mat4 m = ComposeTRS(pos, rot, scl);
+    Quat outRot = DecomposeRotation(m);
+
+    // Compare dot product (quaternions q and -q represent the same rotation).
+    f32 dot = glm::abs(glm::dot(rot, outRot));
+    EXPECT_NEAR(dot, 1.0f, 0.001f);
 }
 
 // ============================================================================

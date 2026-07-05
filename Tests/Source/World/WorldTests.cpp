@@ -8,6 +8,7 @@
 #include "Engine/World/World.h"
 
 using namespace engine::world;
+using engine::core::UUID;
 
 // ============================================================================
 // Initialization
@@ -54,7 +55,7 @@ TEST(WorldTest, DestroyScene_DecrementsCount)
     ASSERT_TRUE(world.Initialize());
 
     auto& extra = world.CreateScene("Extra");
-    core::UUID extraUUID = extra.GetUUID();
+    UUID extraUUID = extra.GetUUID();
 
     ASSERT_EQ(world.SceneCount(), 2u);
 
@@ -75,10 +76,10 @@ TEST(WorldTest, SetActiveScene_SwitchesActive)
     ASSERT_TRUE(world.Initialize());
 
     auto& scene2 = world.CreateScene("Second");
-    core::UUID scene2UUID = scene2.GetUUID();
+    UUID scene2UUID = scene2.GetUUID();
 
     // The default "Main Scene" should be active initially.
-    core::UUID mainUUID = world.GetActiveScene()->GetUUID();
+    UUID mainUUID = world.GetActiveScene()->GetUUID();
     EXPECT_TRUE(world.GetActiveScene()->IsActive());
 
     // Switch to scene2.
@@ -87,7 +88,7 @@ TEST(WorldTest, SetActiveScene_SwitchesActive)
     EXPECT_TRUE(world.GetActiveScene()->IsActive());
 
     // The old scene should no longer be active.
-    scene::Scene* mainScene = world.GetScene(mainUUID);
+    engine::scene::Scene* mainScene = world.GetScene(mainUUID);
     ASSERT_NE(mainScene, nullptr);
     EXPECT_FALSE(mainScene->IsActive());
 
@@ -101,14 +102,14 @@ TEST(WorldTest, SetActiveScene_SwitchesActive)
 TEST(WorldTest, DestroyActiveScene_FallsBack)
 {
     World world;
-    ASSERT_TRUE(world.Initialize();
+    ASSERT_TRUE(world.Initialize());
 
     // Create two additional scenes.
     auto& scene2 = world.CreateScene("Second");
     auto& scene3 = world.CreateScene("Third");
 
-    core::UUID scene2UUID = scene2.GetUUID();
-    core::UUID scene3UUID = scene3.GetUUID();
+    UUID scene2UUID = scene2.GetUUID();
+    UUID scene3UUID = scene3.GetUUID();
 
     // Make scene3 active.
     world.SetActiveScene(scene3UUID);
@@ -130,7 +131,7 @@ TEST(WorldTest, DestroyActiveScene_AllScenesFallbackToNullptr)
     ASSERT_TRUE(world.Initialize());
 
     // Only one scene (the default). Destroy it.
-    core::UUID mainUUID = world.GetActiveScene()->GetUUID();
+    UUID mainUUID = world.GetActiveScene()->GetUUID();
     world.DestroyScene(mainUUID);
 
     EXPECT_EQ(world.SceneCount(), 0u);

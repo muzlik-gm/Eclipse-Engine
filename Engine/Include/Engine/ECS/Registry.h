@@ -35,8 +35,11 @@ namespace engine::ecs {
         }
 
         /// @brief Destroys the given entity and all its components.
+        ///        If the entity is null or not alive, this is a no-op.
         void DestroyEntity(Entity entity)
         {
+            if (entity == entt::null || !m_registry.valid(entity))
+                return;
             m_registry.destroy(entity);
         }
 
@@ -54,8 +57,9 @@ namespace engine::ecs {
         template <typename T, typename... Args>
         T& AddComponent(Entity entity, Args&&... args)
         {
-            return m_registry.emplace_or_replace<T>(
+            m_registry.emplace_or_replace<T>(
                 entity, std::forward<Args>(args)...);
+            return m_registry.get<T>(entity);
         }
 
         /// @brief Removes a component of type T from the given entity.

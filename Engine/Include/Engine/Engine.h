@@ -92,3 +92,42 @@
 #include "Engine/Application/ApplicationSpec.h"
 #include "Engine/Application/ApplicationConfig.h"
 #include "Engine/Application/Application.h"
+
+// ECS — entity identifier and registry wrapper
+#include "Engine/ECS/Entity.h"
+#include "Engine/ECS/Registry.h"
+
+// Entities — fluent entity handle
+#include "Engine/Entities/EntityHandle.h"
+
+// Components — core data-only components
+#include "Engine/Components/TagComponent.h"
+#include "Engine/Components/IDComponent.h"
+#include "Engine/Components/TransformComponent.h"
+#include "Engine/Components/HierarchyComponent.h"
+#include "Engine/Components/VisibilityComponent.h"
+#include "Engine/Components/EnabledComponent.h"
+#include "Engine/Components/StaticComponent.h"
+
+// Systems — base system interface and built-in systems
+#include "Engine/Systems/ISystem.h"
+#include "Engine/Systems/TransformSystem.h"
+
+// Transforms — TRS composition, decomposition, local-to-world utilities
+#include "Engine/Transforms/TransformUtils.h"
+
+// Hierarchy — parent-child manipulation utilities
+#include "Engine/Hierarchy/HierarchyUtils.h"
+
+// Scene — self-contained ECS world with systems
+#include "Engine/Scene/Scene.h"
+
+// World — subsystem managing multiple scenes
+#include "Engine/World/World.h"
+
+// Events — scene and world lifecycle events
+#include "Engine/SceneEvents/SceneEvents.h"
+#include "Engine/WorldEvents/WorldEvents.h"
+
+// Serialization — scene serialization to JSON
+#include "Engine/Serialization/SceneSerializer.h"

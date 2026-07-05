@@ -8,6 +8,7 @@
 #include "Engine/Core/UUID.h"
 #include "Engine/Systems/ISystem.h"
 #include "Engine/Entities/EntityHandle.h"
+#include "Engine/Components/TagComponent.h"
 
 #include <memory>
 #include <string>
@@ -93,10 +94,11 @@ namespace engine::scene {
         // -- Queries -----------------------------------------------------------
 
         /// @brief Returns the number of alive entities in the registry.
+        ///        Counts entities that have a TagComponent (added by CreateEntity).
         [[nodiscard]] usize EntityCount()
         {
             usize count = 0;
-            for ([[maybe_unused]] auto entity : m_registry.GetInner().storage<entt::entity>()) { (void)entity; ++count; }
+            for ([[maybe_unused]] auto entity : m_registry.View<components::TagComponent>()) { (void)entity; ++count; }
             return count;
         }
 

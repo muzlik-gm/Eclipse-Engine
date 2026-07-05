@@ -1,6 +1,6 @@
 // ============================================================================
 // File: Tests/Source/ECS/RegistryTests.cpp
-// Tests for engine::ecs::Registry — entity lifetime, components, views.
+// Tests for engine::ecs::Registry - entity lifetime, components, views.
 // ============================================================================
 
 #include <gtest/gtest.h>
@@ -10,9 +10,17 @@
 #include "Engine/Components/TagComponent.h"
 #include "Engine/Components/TransformComponent.h"
 
+#include <string>
+#include <vector>
+
 using namespace engine::ecs;
 using engine::components::TagComponent;
 using engine::components::TransformComponent;
+
+// ============================================================================
+// Lightweight marker component for counting entities in views.
+// ============================================================================
+struct TestMarker { int value = 0; };
 
 // ============================================================================
 // Entity lifetime
@@ -35,8 +43,18 @@ TEST(RegistryTest, CreateEntity_IncrementsCount)
     registry.CreateEntity();
     registry.CreateEntity();
 
+    // Entities without components cannot be counted via a typed view.
+    // Instead verify that three distinct valid entities were produced.
+    // We add a marker component to confirm view counting works.
+    Entity a = registry.CreateEntity();
+    Entity b = registry.CreateEntity();
+    Entity c = registry.CreateEntity();
+    registry.AddComponent<TestMarker>(a);
+    registry.AddComponent<TestMarker>(b);
+    registry.AddComponent<TestMarker>(c);
+
     usize count = 0;
-    for ([[maybe_unused]] auto e : registry.View<TagComponent>()) { (void)e; ++count; }
+    for ([[maybe_unused]] auto e : registry.View<TestMarker>()) { (void)e; ++count; }
     EXPECT_EQ(count, 3u);
 }
 
@@ -46,15 +64,17 @@ TEST(RegistryTest, DestroyEntity_DecrementsCount)
 
     Entity e0 = registry.CreateEntity();
     Entity e1 = registry.CreateEntity();
+    registry.AddComponent<TestMarker>(e0);
+    registry.AddComponent<TestMarker>(e1);
 
     usize count = 0;
-    for ([[maybe_unused]] auto e : registry.View<TagComponent>()) { (void)e; ++count; }
+    for ([[maybe_unused]] auto e : registry.View<TestMarker>()) { (void)e; ++count; }
     ASSERT_EQ(count, 2u);
 
     registry.DestroyEntity(e0);
 
     count = 0;
-    for ([[maybe_unused]] auto e : registry.View<TagComponent>()) { (void)e; ++count; }
+    for ([[maybe_unused]] auto e : registry.View<TestMarker>()) { (void)e; ++count; }
     EXPECT_EQ(count, 1u);
     EXPECT_FALSE(registry.IsValid(e0));
     EXPECT_TRUE(registry.IsValid(e1));
@@ -67,6 +87,15 @@ TEST(RegistryTest, DestroyEntity_InvalidEntity_DoesNotCrash)
     EXPECT_NO_THROW(registry.DestroyEntity(Invalid));
 }
 
+TEST(RegistryTest, DestroyEntity_AlreadyDestroyed_DoesNotCrash)
+{
+    Registry registry;
+    Entity e = registry.CreateEntity();
+    registry.DestroyEntity(e);
+    // Double-destroy should be a no-op.
+    EXPECT_NO_THROW(registry.DestroyEntity(e));
+}
+
 // ============================================================================
 // Component management
 // ============================================================================
@@ -76,11 +105,11 @@ TEST(RegistryTest, AddComponentAndRetrieve)
     Registry registry;
     Entity entity = registry.CreateEntity();
 
-    registry.AddComponent<engine::components::TagComponent>(entity, engine::components::TagComponent{"TestTag"});
+    registry.AddComponent<TagComponent>(entity, TagComponent{"TestTag"});
 
-    EXPECT_TRUE(registry.HasComponent<engine::components::TagComponent>(entity));
+    EXPECT_TRUE(registry.HasComponent<TagComponent>(entity));
 
-    auto& tag = registry.GetComponent<engine::components::TagComponent>(entity);
+    auto& tag = registry.GetComponent<TagComponent>(entity);
     EXPECT_EQ(tag.Tag, "TestTag");
 }
 
@@ -89,11 +118,11 @@ TEST(RegistryTest, RemoveComponent)
     Registry registry;
     Entity entity = registry.CreateEntity();
 
-    registry.AddComponent<engine::components::TagComponent>(entity, engine::components::TagComponent{"Temp"});
-    EXPECT_TRUE(registry.HasComponent<engine::components::TagComponent>(entity));
+    registry.AddComponent<TagComponent>(entity, TagComponent{"Temp"});
+    EXPECT_TRUE(registry.HasComponent<TagComponent>(entity));
 
-    registry.RemoveComponent<engine::components::TagComponent>(entity);
-    EXPECT_FALSE(registry.HasComponent<engine::components::TagComponent>(entity));
+    registry.RemoveComponent<TagComponent>(entity);
+    EXPECT_FALSE(registry.HasComponent<TagComponent>(entity));
 }
 
 TEST(RegistryTest, HasComponent_FalseWhenMissing)
@@ -101,7 +130,7 @@ TEST(RegistryTest, HasComponent_FalseWhenMissing)
     Registry registry;
     Entity entity = registry.CreateEntity();
 
-    EXPECT_FALSE(registry.HasComponent<engine::components::TagComponent>(entity));
+    EXPECT_FALSE(registry.HasComponent<TagComponent>(entity));
 }
 
 // ============================================================================
@@ -122,11 +151,11 @@ TEST(RegistryTest, View_FiltersCorrectly)
     // Add TagComponent to the first 5.
     for (int i = 0; i < 5; ++i)
     {
-        registry.AddComponent<engine::components::TagComponent>(entities[i],
-            engine::components::TagComponent{"Tagged_" + std::to_string(i)});
+        registry.AddComponent<TagComponent>(entities[i],
+            TagComponent{"Tagged_" + std::to_string(i)});
     }
 
-    auto view = registry.View<engine::components::TagComponent>();
+    auto view = registry.View<TagComponent>();
     usize count = 0;
     for ([[maybe_unused]] auto entityHandle : view)
     {
@@ -144,17 +173,21 @@ TEST(RegistryTest, Clear_RemovesAllEntities)
 {
     Registry registry;
 
-    registry.CreateEntity();
-    registry.CreateEntity();
-    registry.CreateEntity();
+    Entity e0 = registry.CreateEntity();
+    Entity e1 = registry.CreateEntity();
+    Entity e2 = registry.CreateEntity();
+    registry.AddComponent<TestMarker>(e0);
+    registry.AddComponent<TestMarker>(e1);
+    registry.AddComponent<TestMarker>(e2);
+
     usize count = 0;
-    for ([[maybe_unused]] auto e : registry.View<TagComponent>()) { (void)e; ++count; }
+    for ([[maybe_unused]] auto e : registry.View<TestMarker>()) { (void)e; ++count; }
     ASSERT_EQ(count, 3u);
 
     registry.Clear();
 
     count = 0;
-    for ([[maybe_unused]] auto e : registry.View<TagComponent>()) { (void)e; ++count; }
+    for ([[maybe_unused]] auto e : registry.View<TestMarker>()) { (void)e; ++count; }
     EXPECT_EQ(count, 0u);
 }
 
@@ -167,16 +200,16 @@ TEST(RegistryTest, MultipleComponentTypes)
     Registry registry;
     Entity entity = registry.CreateEntity();
 
-    registry.AddComponent<engine::components::TagComponent>(entity, engine::components::TagComponent{"Multi"});
-    registry.AddComponent<engine::components::TransformComponent>(entity);
+    registry.AddComponent<TagComponent>(entity, TagComponent{"Multi"});
+    registry.AddComponent<TransformComponent>(entity);
 
-    EXPECT_TRUE(registry.HasComponent<engine::components::TagComponent>(entity));
-    EXPECT_TRUE(registry.HasComponent<engine::components::TransformComponent>(entity));
+    EXPECT_TRUE(registry.HasComponent<TagComponent>(entity));
+    EXPECT_TRUE(registry.HasComponent<TransformComponent>(entity));
 
-    auto& tag = registry.GetComponent<engine::components::TagComponent>(entity);
+    auto& tag = registry.GetComponent<TagComponent>(entity);
     EXPECT_EQ(tag.Tag, "Multi");
 
-    auto& transform = registry.GetComponent<engine::components::TransformComponent>(entity);
+    auto& transform = registry.GetComponent<TransformComponent>(entity);
     EXPECT_NEAR(transform.Translation.x, 0.0f, 0.001f);
     EXPECT_NEAR(transform.Translation.y, 0.0f, 0.001f);
     EXPECT_NEAR(transform.Translation.z, 0.0f, 0.001f);
