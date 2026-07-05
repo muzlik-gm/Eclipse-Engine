@@ -27,11 +27,11 @@
   ../lib/libEngine.a \
   ../lib/libgtest.a \
   ../lib/libgtest_main.a \
-  ../_deps/yaml-cpp-build/libyaml-cppd.a \
+  ../_deps/yaml-cpp-build/libyaml-cpp.a \
   ../_deps/glfw-build/src/libglfw3.a \
   /usr/lib/x86_64-linux-gnu/librt.a \
   /usr/lib/x86_64-linux-gnu/libX11.so \
-  ../_deps/spdlog-build/libspdlogd.a \
+  ../_deps/spdlog-build/libspdlog.a \
   ../_deps/glm-build/glm/libglm.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libdl.a \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/librt.a \
@@ -123,7 +123,7 @@ CMakeFiles/EngineTests.dir/Source/Platform/PlatformTests.cpp.o:
 
 ../lib/libgtest_main.a:
 
-../_deps/yaml-cpp-build/libyaml-cppd.a:
+../_deps/yaml-cpp-build/libyaml-cpp.a:
 
 ../_deps/glfw-build/src/libglfw3.a:
 
@@ -131,7 +131,7 @@ CMakeFiles/EngineTests.dir/Source/Platform/PlatformTests.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libX11.so:
 
-../_deps/spdlog-build/libspdlogd.a:
+../_deps/spdlog-build/libspdlog.a:
 
 ../_deps/glm-build/glm/libglm.a:
 

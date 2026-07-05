@@ -27,7 +27,7 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(yaml-cpp-populate
-                     "UPDATE_DISCONNECTED" "True" "GIT_REPOSITORY" "https://github.com/jbeder/yaml-cpp.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "0.8.0" "GIT_SHALLOW" "TRUE" "CMAKE_ARGS" "-DYAML_BUILD_SHARED_LIBS=OFF" "-DYAML_CPP_BUILD_TESTS=OFF" "-DYAML_CPP_BUILD_TOOLS=OFF" "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                     "UPDATE_DISCONNECTED" "True" "GIT_REPOSITORY" "https://github.com/jbeder/yaml-cpp.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "0.8.0" "GIT_SHALLOW" "TRUE" "CMAKE_ARGS" "-DYAML_BUILD_SHARED_LIBS=OFF" "-DYAML_CPP_BUILD_TESTS=OFF" "-DYAML_CPP_BUILD_TOOLS=OFF" "-DYAML_CPP_BUILD_CONTRIB=OFF" "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                     SOURCE_DIR          "/home/z/my-project/build/_deps/yaml-cpp-src"
                     BINARY_DIR          "/home/z/my-project/build/_deps/yaml-cpp-build"
                     CONFIGURE_COMMAND   ""

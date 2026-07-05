@@ -11,7 +11,7 @@ BuildDirectory: /home/z/my-project/build/_deps/yaml-cpp-build
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: c-6a47d12e-14c2a3ca-fe19be94dc88
+Site: c-6a49cb25-14c2a3ca-7426384ae4a3
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake" "/home/z/my-project/build/_deps/yaml-cpp-src"
-MakeCommand: /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake" "/home/z/my-project/build/_deps/yaml-cpp-src"
+MakeCommand: /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control

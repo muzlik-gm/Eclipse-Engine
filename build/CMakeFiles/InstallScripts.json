@@ -5,7 +5,6 @@
 		"/home/z/my-project/build/_deps/spdlog-build/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/nlohmann_json-build/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/yaml-cpp-build/cmake_install.cmake",
-		"/home/z/my-project/build/_deps/yaml-cpp-build/util/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/glm-build/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/glm-build/glm/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/entt-build/cmake_install.cmake",
@@ -14,11 +13,9 @@
 		"/home/z/my-project/build/_deps/googletest-build/googletest/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/glfw-build/cmake_install.cmake",
 		"/home/z/my-project/build/_deps/glfw-build/src/cmake_install.cmake",
-		"/home/z/my-project/build/_deps/glfw-build/examples/cmake_install.cmake",
-		"/home/z/my-project/build/_deps/glfw-build/tests/cmake_install.cmake",
+		"/home/z/my-project/build/_deps/glad-build/cmake_install.cmake",
 		"/home/z/my-project/build/Engine/cmake_install.cmake",
-		"/home/z/my-project/build/Tests/cmake_install.cmake",
-		"/home/z/my-project/build/Sandbox/cmake_install.cmake"
+		"/home/z/my-project/build/Tests/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

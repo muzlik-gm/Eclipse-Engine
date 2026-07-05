@@ -85,6 +85,7 @@ _deps/glfw-build/src/CMakeFiles/glfw.dir/vulkan.c.o: \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /home/z/my-project/ThirdParty/_glfw_x11_compat/X11/extensions/Xrandr.h \
  /usr/include/X11/extensions/randr.h \
  /usr/include/X11/extensions/Xrender.h /usr/include/X11/Xutil.h \
@@ -136,4 +137,5 @@ _deps/glfw-build/src/CMakeFiles/glfw.dir/vulkan.c.o: \
  /usr/include/strings.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h

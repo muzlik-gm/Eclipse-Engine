@@ -1,0 +1,26 @@
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Logging system initialized. App: TestApp
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Application 'TestApp' starting
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Application — running in headless mode
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine v0.1.0
+Build:    Release
+Compiler: GCC 14.2
+Platform: Linux
+Built:    Jul  5 2026 03:31:06
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine v0.1.0
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine — initializing modules
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] ModuleManager — all 0 module(s) initialized
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine — initializing subsystems
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] SubsystemManager — initializing subsystem 'Nop'
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] SubsystemManager — subsystem 'Nop' initialized successfully
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] SubsystemManager — all 1 subsystem(s) initialized
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine — initialization complete
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Application 'TestApp' initialized
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Application — shutting down
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine — shutting down subsystems
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] SubsystemManager — shutting down subsystem 'Nop'
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] SubsystemManager — all subsystems shut down
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine — shutting down modules
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] ModuleManager — all modules shut down
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Engine — shutdown complete
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Application — shutdown complete
+[2026-07-05 03:32:16.551] [ENGINE] [info] [thread 9304] Logging system shutting down.

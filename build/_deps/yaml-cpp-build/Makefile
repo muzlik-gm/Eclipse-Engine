@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/z/my-project/build
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/ctest $(ARGS)
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/ctest $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -78,7 +78,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -88,7 +88,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -107,37 +107,37 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
 # The main all target
@@ -615,54 +615,6 @@ src/binary.s: src/binary.cpp.s
 src/binary.cpp.s:
 	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/binary.cpp.s
 .PHONY : src/binary.cpp.s
-
-src/contrib/graphbuilder.o: src/contrib/graphbuilder.cpp.o
-.PHONY : src/contrib/graphbuilder.o
-
-# target to build an object file
-src/contrib/graphbuilder.cpp.o:
-	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.o
-.PHONY : src/contrib/graphbuilder.cpp.o
-
-src/contrib/graphbuilder.i: src/contrib/graphbuilder.cpp.i
-.PHONY : src/contrib/graphbuilder.i
-
-# target to preprocess a source file
-src/contrib/graphbuilder.cpp.i:
-	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.i
-.PHONY : src/contrib/graphbuilder.cpp.i
-
-src/contrib/graphbuilder.s: src/contrib/graphbuilder.cpp.s
-.PHONY : src/contrib/graphbuilder.s
-
-# target to generate assembly for a file
-src/contrib/graphbuilder.cpp.s:
-	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.s
-.PHONY : src/contrib/graphbuilder.cpp.s
-
-src/contrib/graphbuilderadapter.o: src/contrib/graphbuilderadapter.cpp.o
-.PHONY : src/contrib/graphbuilderadapter.o
-
-# target to build an object file
-src/contrib/graphbuilderadapter.cpp.o:
-	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.o
-.PHONY : src/contrib/graphbuilderadapter.cpp.o
-
-src/contrib/graphbuilderadapter.i: src/contrib/graphbuilderadapter.cpp.i
-.PHONY : src/contrib/graphbuilderadapter.i
-
-# target to preprocess a source file
-src/contrib/graphbuilderadapter.cpp.i:
-	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.i
-.PHONY : src/contrib/graphbuilderadapter.cpp.i
-
-src/contrib/graphbuilderadapter.s: src/contrib/graphbuilderadapter.cpp.s
-.PHONY : src/contrib/graphbuilderadapter.s
-
-# target to generate assembly for a file
-src/contrib/graphbuilderadapter.cpp.s:
-	cd /home/z/my-project/build && $(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.s
-.PHONY : src/contrib/graphbuilderadapter.cpp.s
 
 src/convert.o: src/convert.cpp.o
 .PHONY : src/convert.o
@@ -1382,12 +1334,6 @@ help:
 	@echo "... src/binary.o"
 	@echo "... src/binary.i"
 	@echo "... src/binary.s"
-	@echo "... src/contrib/graphbuilder.o"
-	@echo "... src/contrib/graphbuilder.i"
-	@echo "... src/contrib/graphbuilder.s"
-	@echo "... src/contrib/graphbuilderadapter.o"
-	@echo "... src/contrib/graphbuilderadapter.i"
-	@echo "... src/contrib/graphbuilderadapter.s"
 	@echo "... src/convert.o"
 	@echo "... src/convert.i"
 	@echo "... src/convert.s"

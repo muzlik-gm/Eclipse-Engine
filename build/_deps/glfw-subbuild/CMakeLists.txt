@@ -27,7 +27,7 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 
 include(ExternalProject)
 ExternalProject_Add(glfw-populate
-                     "UPDATE_DISCONNECTED" "True" "GIT_REPOSITORY" "https://github.com/glfw/glfw.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "3.3.9" "GIT_SHALLOW" "TRUE" "CMAKE_ARGS" "-DGLFW_BUILD_TESTS=OFF" "-DGLFW_BUILD_EXAMPLES=OFF" "-DGLFW_BUILD_DOCS=OFF" "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+                     "UPDATE_DISCONNECTED" "True" "GIT_REPOSITORY" "https://github.com/glfw/glfw.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "3.3.9" "GIT_SHALLOW" "TRUE" "PATCH_COMMAND" "/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake" "-DSRC_FILE=<SOURCE_DIR>/CMakeLists.txt" "-DCOMPAT_DIR=/home/z/my-project/ThirdParty/_glfw_x11_compat" "-P" "/home/z/my-project/CMake/patch_glfw.cmake" "CMAKE_ARGS" "-DGLFW_BUILD_TESTS=OFF" "-DGLFW_BUILD_EXAMPLES=OFF" "-DGLFW_BUILD_DOCS=OFF" "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
                     SOURCE_DIR          "/home/z/my-project/build/_deps/glfw-src"
                     BINARY_DIR          "/home/z/my-project/build/_deps/glfw-build"
                     CONFIGURE_COMMAND   ""

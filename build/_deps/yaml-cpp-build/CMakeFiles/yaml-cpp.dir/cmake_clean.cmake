@@ -1,10 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/yaml-cpp.dir/src/binary.cpp.o"
   "CMakeFiles/yaml-cpp.dir/src/binary.cpp.o.d"
-  "CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.o"
-  "CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilder.cpp.o.d"
-  "CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.o"
-  "CMakeFiles/yaml-cpp.dir/src/contrib/graphbuilderadapter.cpp.o.d"
   "CMakeFiles/yaml-cpp.dir/src/convert.cpp.o"
   "CMakeFiles/yaml-cpp.dir/src/convert.cpp.o.d"
   "CMakeFiles/yaml-cpp.dir/src/depthguard.cpp.o"
@@ -61,8 +57,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/yaml-cpp.dir/src/stream.cpp.o.d"
   "CMakeFiles/yaml-cpp.dir/src/tag.cpp.o"
   "CMakeFiles/yaml-cpp.dir/src/tag.cpp.o.d"
-  "libyaml-cppd.a"
-  "libyaml-cppd.pdb"
+  "libyaml-cpp.a"
+  "libyaml-cpp.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

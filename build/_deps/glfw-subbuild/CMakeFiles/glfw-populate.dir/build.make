@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,54 +78,54 @@ CMakeFiles/glfw-populate-complete: glfw-populate-prefix/src/glfw-populate-stamp/
 CMakeFiles/glfw-populate-complete: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install
 CMakeFiles/glfw-populate-complete: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'glfw-populate'"
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E make_directory /home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles/glfw-populate-complete
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E make_directory /home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles/glfw-populate-complete
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'glfw-populate'"
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure: glfw-populate-prefix/tmp/glfw-populate-cfgcmd.txt
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch_disconnected
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'glfw-populate'"
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-gitinfo.txt
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'glfw-populate'"
-	cd /home/z/my-project/build/_deps && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/tmp/glfw-populate-gitclone.cmake
-	cd /home/z/my-project/build/_deps && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download
+	cd /home/z/my-project/build/_deps && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/tmp/glfw-populate-gitclone.cmake
+	cd /home/z/my-project/build/_deps && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'glfw-populate'"
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'glfw-populate'"
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -Dcfgdir= -P /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/tmp/glfw-populate-mkdirs.cmake
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -Dcfgdir= -P /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/tmp/glfw-populate-mkdirs.cmake
+	/home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch_disconnected: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch-info.txt
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch_disconnected: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update_disconnected
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch_disconnected step for 'glfw-populate'"
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
-	/home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch_disconnected
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing patch_disconnected step for 'glfw-populate'"
+	cd /home/z/my-project/build/_deps/glfw-src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -DSRC_FILE=/home/z/my-project/build/_deps/glfw-src/CMakeLists.txt -DCOMPAT_DIR=/home/z/my-project/ThirdParty/_glfw_x11_compat -P /home/z/my-project/CMake/patch_glfw.cmake
+	cd /home/z/my-project/build/_deps/glfw-src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch_disconnected
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'glfw-populate'"
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E echo_append
-	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E echo_append
+	cd /home/z/my-project/build/_deps/glfw-build && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test
 
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update_disconnected: glfw-populate-prefix/tmp/glfw-populate-gitupdate.cmake
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update_disconnected: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update-info.txt
 glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update_disconnected: glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/_deps/glfw-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing disconnected update step for 'glfw-populate'"
-	cd /home/z/my-project/build/_deps/glfw-src && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -Dcan_fetch=NO -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/tmp/glfw-populate-gitupdate.cmake
-	cd /home/z/my-project/build/_deps/glfw-src && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update_disconnected
+	cd /home/z/my-project/build/_deps/glfw-src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -Dcan_fetch=NO -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/tmp/glfw-populate-gitupdate.cmake
+	cd /home/z/my-project/build/_deps/glfw-src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E touch /home/z/my-project/build/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update_disconnected
 
 CMakeFiles/glfw-populate.dir/codegen:
 .PHONY : CMakeFiles/glfw-populate.dir/codegen

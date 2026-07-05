@@ -1,0 +1,2 @@
+/usr/bin/ar qc libglad_api.a "CMakeFiles/glad_api.dir/_deps/glad-generated/src/glad.c.o"
+/usr/bin/ranlib libglad_api.a

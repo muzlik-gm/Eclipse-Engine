@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake
+CMAKE_COMMAND = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake
 
 # The command to remove a file.
-RM = /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -E rm -f
+RM = /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ include _deps/glfw-build/src/CMakeFiles/update_mappings.dir/progress.make
 
 _deps/glfw-build/src/CMakeFiles/update_mappings:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/z/my-project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/z/my-project/build/_deps/glfw-src/src && /home/z/.venv/lib/python3.12/site-packages/cmake/data/bin/cmake -P /home/z/my-project/build/_deps/glfw-src/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	cd /home/z/my-project/build/_deps/glfw-src/src && /home/z/.local/lib/python3.13/site-packages/cmake/data/bin/cmake -P /home/z/my-project/build/_deps/glfw-src/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 _deps/glfw-build/src/CMakeFiles/update_mappings.dir/codegen:
 .PHONY : _deps/glfw-build/src/CMakeFiles/update_mappings.dir/codegen

@@ -4,9 +4,9 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -DENGINE_COMPILER_GCC -DENGINE_PLATFORM_LINUX -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/home/z/my-project/ThirdParty/_glfw_x11_compat -I/home/z/my-project/build/_deps/glfw-src/include -I/home/z/my-project/build/_deps/glfw-src/src -I/home/z/my-project/build/_deps/glfw-build/src -I/home/z/my-project/build/_deps/glfw-src/include/X11/X11 -I/home/z/my-project/ThirdParty/_glfw_x11_compat/X11/extensions -I/home/z/my-project/ThirdParty/_glfw_x11_compat/X11/Xcursor
+C_INCLUDES = -I/home/z/my-project/ThirdParty/_glfw_x11_compat -I/home/z/my-project/build/_deps/glfw-src/include -I/home/z/my-project/build/_deps/glfw-src/src -I/home/z/my-project/build/_deps/glfw-build/src
 
-C_FLAGS = -g -std=gnu99 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough
+C_FLAGS = -O3 -DNDEBUG -std=gnu99 -fPIC -Wall -Wextra -Wpedantic -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wimplicit-fallthrough
 
 # Custom flags: _deps/glfw-build/src/CMakeFiles/glfw.dir/context.c.o_FLAGS = -Wdeclaration-after-statement
 
