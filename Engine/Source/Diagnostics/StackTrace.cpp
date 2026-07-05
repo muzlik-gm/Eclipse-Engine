@@ -172,8 +172,6 @@ std::string StackTrace::Capture(usize maxFrames)
 
 #if ENGINE_PLATFORM_WINDOWS
 
-using engine::core::u8;
-
 namespace
 {
 
@@ -228,7 +226,22 @@ std::string StackTrace::Capture(usize maxFrames)
     }
 
     // Ensure DbgHelp is initialised.
-    GetDbgHelpSession();
+    DbgHelpSession& dbgHelp = GetDbgHelpSession();
+    if (!dbgHelp.initialized)
+    {
+        // SymInitialize failed — return raw addresses only.
+        std::ostringstream oss;
+        oss << "Stack trace (" << frameCount << " frames, symbols unavailable):\n";
+        for (WORD i = 0; i < frameCount; ++i)
+        {
+            oss << "  [" << std::setw(3) << i << "] 0x"
+                << std::hex << std::setfill('0')
+                << std::setw(static_cast<int>(sizeof(void*)) * 2)
+                << reinterpret_cast<std::uintptr_t>(buffer[i])
+                << std::dec << std::setfill(' ') << "\n";
+        }
+        return oss.str();
+    }
 
     HANDLE process = GetCurrentProcess();
     std::ostringstream oss;

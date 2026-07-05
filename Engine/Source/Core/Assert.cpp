@@ -26,7 +26,11 @@ void AssertFail(const char* condition,
         line,
         function  ? function  : "<unknown>");
 
-    spdlog::default_logger()->flush();
+    auto defaultLogger = spdlog::default_logger();
+    if (defaultLogger)
+    {
+        defaultLogger->flush();
+    }
 
     // Platform-specific debug trap / termination.
 #if defined(_MSC_VER)

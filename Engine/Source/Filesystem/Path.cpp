@@ -190,7 +190,10 @@ namespace engine::fs
     {
         if (m_cacheDirty)
         {
-            m_cachedString = m_path.string();
+            // Use generic format (forward slashes) for cross-platform
+            // consistency.  Game engines conventionally store paths with
+            // '/' regardless of the host OS.
+            m_cachedString = m_path.generic_string();
             m_cacheDirty   = false;
         }
     }
