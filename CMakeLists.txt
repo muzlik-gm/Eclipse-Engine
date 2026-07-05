@@ -23,18 +23,15 @@ include(Dependencies)
 # Sub-projects
 add_subdirectory(Engine)
 
-option(ENGINE_BUILD_TESTS "Build engine tests" ON)
 if(ENGINE_BUILD_TESTS)
     enable_testing()
     add_subdirectory(Tests)
 endif()
 
-option(ENGINE_BUILD_SANDBOX "Build sandbox application" OFF)
 if(ENGINE_BUILD_SANDBOX)
     add_subdirectory(Sandbox)
 endif()
 
-option(ENGINE_BUILD_EDITOR "Build editor" OFF)
 if(ENGINE_BUILD_EDITOR)
     add_subdirectory(Editor)
 endif()

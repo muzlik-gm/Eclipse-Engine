@@ -1,5 +1,38 @@
-skills/
-node_modules/
+# Build artifacts
 build/
 _deps/
+cmake-build-*/
+out/
+
+# IDE & editor files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Compiled / generated files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+
+# Logs
+*.log
+
+# Tool results & temporary files
 tool-results/
+upload/
+download/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependencies (managed by CMake FetchContent, do not add vendor files here)
