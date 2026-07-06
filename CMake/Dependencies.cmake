@@ -180,15 +180,42 @@ if(ENGINE_PLATFORM_LINUX AND NOT APPLE)
     target_link_libraries(glad_api PRIVATE dl)
 endif()
 
-# --- Dear ImGui (editor UI) — Phase 27: Dear ImGui Integration ---
+# --- Dear ImGui (editor UI) — Phase 7: Editor Foundation ---
+# Use the docking branch for dockspace + multi-viewport support.
 FetchContent_Declare(
     imgui
     GIT_REPOSITORY https://github.com/ocornut/imgui.git
-    GIT_TAG v1.91.8
+    GIT_TAG docking
     GIT_SHALLOW TRUE
-    CMAKE_ARGS
-        -DIMGUI_BUILD_TESTS=OFF
 )
+FetchContent_MakeAvailable(imgui)
+
+# Build ImGui as a static library with GLFW + OpenGL3 backends.
+set(IMGUI_SOURCES
+    ${imgui_SOURCE_DIR}/imgui.cpp
+    ${imgui_SOURCE_DIR}/imgui_draw.cpp
+    ${imgui_SOURCE_DIR}/imgui_tables.cpp
+    ${imgui_SOURCE_DIR}/imgui_widgets.cpp
+    ${imgui_SOURCE_DIR}/imgui_demo.cpp
+    # Backends
+    ${imgui_SOURCE_DIR}/backends/imgui_impl_glfw.cpp
+    ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
+)
+
+add_library(imgui STATIC ${IMGUI_SOURCES})
+target_include_directories(imgui
+    PUBLIC
+        ${imgui_SOURCE_DIR}
+        ${imgui_SOURCE_DIR}/backends
+)
+target_link_libraries(imgui
+    PUBLIC
+        glfw
+        glad_api
+)
+target_compile_features(imgui PUBLIC cxx_std_20)
+target_compile_definitions(imgui PUBLIC IMGUI_DISABLE_OBSOLETE_FUNCTIONS)
+target_compile_definitions(imgui PUBLIC GLFW_INCLUDE_NONE)
 
 # --- stb (image loading) — Phase 14: Importer Pipeline ---
 FetchContent_Declare(

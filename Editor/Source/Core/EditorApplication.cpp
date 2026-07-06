@@ -1,0 +1,396 @@
+// ============================================================================
+// File: Editor/Source/Core/EditorApplication.cpp
+// ============================================================================
+#include "Editor/Core/EditorApplication.h"
+#include "Editor/Selection/EditorSelection.h"
+#include "Editor/Panels/HierarchyPanel.h"
+#include "Editor/Panels/InspectorPanel.h"
+#include "Editor/Panels/ScenePanel.h"
+#include "Editor/Panels/GamePanel.h"
+#include "Editor/Panels/ConsolePanel.h"
+#include "Editor/Panels/ContentBrowserPanel.h"
+#include "Editor/Panels/StatisticsPanel.h"
+#include "Editor/Panels/ProfilerPanel.h"
+#include "Editor/Framework/PanelManager.h"
+#include "Editor/Commands/EditorCommandSystem.h"
+#include "Editor/Commands/ShortcutManager.h"
+#include "Editor/Theme/ThemeManager.h"
+#include "Editor/Framework/LayoutManager.h"
+#include "Editor/Prefs/EditorPreferences.h"
+#include "Editor/Prefs/ProjectSettings.h"
+#include "Editor/Camera/EditorCamera.h"
+#include "Editor/Gizmos/GizmoManager.h"
+#include "Engine/Core/Log.h"
+
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
+
+namespace editor {
+
+    using namespace engine::core;
+
+    // ========================================================================
+    // Construction / Destruction
+    // ========================================================================
+
+    EditorApplication::EditorApplication() = default;
+
+    EditorApplication::~EditorApplication()
+    {
+        Shutdown();
+    }
+
+    // ========================================================================
+    // Initialization
+    // ========================================================================
+
+    bool EditorApplication::Initialize(GLFWwindow* window, engine::events::EventBus* eventBus,
+                                        engine::scene::Scene* scene,
+                                        engine::renderer::Renderer* renderer)
+    {
+        m_Window = window;
+
+        // Bind engine subsystems to the editor context.
+        m_Context.SetEventBus(eventBus);
+        m_Context.SetActiveScene(scene);
+        m_Context.SetRenderer(renderer);
+
+        // Initialize ImGui.
+        InitializeImGui(window);
+
+        // Apply the theme.
+        m_Context.GetTheme().ApplyToImGui();
+
+        // Register commands, shortcuts, and panels.
+        RegisterDefaultCommands();
+        RegisterDefaultShortcuts();
+        RegisterDefaultPanels();
+
+        // Load layout.
+        m_Context.GetLayout().SetConfigDirectory(".editor");
+        m_Context.GetLayout().Load(m_Context);
+
+        // Load preferences.
+        m_Context.GetPreferences().Load(".editor/editor_prefs.json");
+
+        // Apply camera preferences.
+        auto& cam = m_Context.GetCamera();
+        cam.SetMoveSpeed(m_Context.GetPreferences().CameraMoveSpeed);
+        cam.SetRotateSpeed(m_Context.GetPreferences().CameraRotateSpeed);
+        cam.SetZoomSpeed(m_Context.GetPreferences().CameraZoomSpeed);
+        cam.SetPanSpeed(m_Context.GetPreferences().CameraPanSpeed);
+        cam.SetNearClip(m_Context.GetPreferences().CameraNearClip);
+        cam.SetFarClip(m_Context.GetPreferences().CameraFarClip);
+        cam.SetFOV(m_Context.GetPreferences().CameraFOV);
+
+        m_Initialized = true;
+        ENGINE_LOG_INFO("EditorApplication — initialized");
+        return true;
+    }
+
+    void EditorApplication::InitializeImGui(GLFWwindow* window)
+    {
+        IMGUI_CHECKVERSION();
+        ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO();
+        io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+        io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+        io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+        io.IniFilename = ".editor/imgui.ini";
+
+        // When viewports are enabled, tweak window rounding and background.
+        ImGuiStyle& style = ImGui::GetStyle();
+        if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+        {
+            style.WindowRounding = 0.0f;
+            style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+        }
+
+        // Initialize ImGui backends.
+        ImGui_ImplGlfw_InitForOpenGL(window, true);
+        ImGui_ImplOpenGL3_Init("#version 460 core");
+
+        ENGINE_LOG_INFO("EditorApplication — ImGui initialized");
+    }
+
+    // ========================================================================
+    // Shutdown
+    // ========================================================================
+
+    void EditorApplication::Shutdown()
+    {
+        if (!m_Initialized)
+            return;
+
+        // Save layout and preferences.
+        m_Context.GetLayout().Save(m_Context);
+        m_Context.GetPreferences().Save(".editor/editor_prefs.json");
+
+        ShutdownImGui();
+        m_Initialized = false;
+        ENGINE_LOG_INFO("EditorApplication — shut down");
+    }
+
+    void EditorApplication::ShutdownImGui()
+    {
+        ImGui_ImplOpenGL3_Shutdown();
+        ImGui_ImplGlfw_Shutdown();
+        ImGui::DestroyContext();
+    }
+
+    // ========================================================================
+    // Render
+    // ========================================================================
+
+    void EditorApplication::Render()
+    {
+        if (!m_Initialized)
+            return;
+
+        // Start ImGui frame.
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        // Update editor camera.
+        m_Context.GetCamera().Update(m_Context.GetDeltaTime());
+
+        // Render the main window with dockspace, menu bar, and toolbar.
+        ImGuiViewport* viewport = ImGui::GetMainViewport();
+        ImGui::SetNextWindowPos(viewport->WorkPos);
+        ImGui::SetNextWindowSize(viewport->WorkSize);
+        ImGui::SetNextWindowViewport(viewport->ID);
+
+        ImGuiWindowFlags windowFlags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking
+                                     | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse
+                                     | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove
+                                     | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+        ImGui::Begin("##EditorMainFrame", nullptr, windowFlags);
+        ImGui::PopStyleVar();
+
+        // Menu bar.
+        m_MenuBar.Render(m_Context);
+
+        // Toolbar.
+        m_Toolbar.Render(m_Context);
+
+        // Dockspace.
+        m_Dockspace.Render(m_Context);
+
+        ImGui::End();
+
+        // Render all panels.
+        m_Context.GetPanels().RenderAll(m_Context);
+
+        // Render ImGui viewports.
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+        {
+            GLFWwindow* backup = glfwGetCurrentContext();
+            ImGui::UpdatePlatformWindows();
+            ImGui::RenderPlatformWindowsDefault();
+            glfwMakeContextCurrent(backup);
+        }
+    }
+
+    // ========================================================================
+    // Key processing
+    // ========================================================================
+
+    void EditorApplication::ProcessKey(u32 key, u32 mods)
+    {
+        m_Context.GetShortcuts().ProcessKey(key, static_cast<KeyModifiers>(mods));
+    }
+
+    // ========================================================================
+    // Default command / shortcut / panel registration
+    // ========================================================================
+
+    void EditorApplication::RegisterDefaultCommands()
+    {
+        auto& cmds = m_Context.GetCommands();
+
+        // -- File commands -------------------------------------------------
+        cmds.Register({"file.new_project", "New Project", "File", "Create a new project.",
+            []() { ENGINE_LOG_INFO("Editor: New Project command"); }});
+
+        cmds.Register({"file.open_project", "Open Project...", "File", "Open an existing project.",
+            []() { ENGINE_LOG_INFO("Editor: Open Project command"); }});
+
+        cmds.Register({"file.save_project", "Save Project", "File", "Save the current project.",
+            []() { ENGINE_LOG_INFO("Editor: Save Project command"); }});
+
+        cmds.Register({"file.save_project_as", "Save Project As...", "File", "Save the project to a new location.",
+            []() { ENGINE_LOG_INFO("Editor: Save Project As command"); }});
+
+        cmds.Register({"file.new_scene", "New Scene", "File", "Create a new scene.",
+            []() { ENGINE_LOG_INFO("Editor: New Scene command"); }});
+
+        cmds.Register({"file.open_scene", "Open Scene...", "File", "Open an existing scene.",
+            []() { ENGINE_LOG_INFO("Editor: Open Scene command"); }});
+
+        cmds.Register({"file.save_scene", "Save Scene", "File", "Save the current scene.",
+            []() { ENGINE_LOG_INFO("Editor: Save Scene command"); }});
+
+        cmds.Register({"file.save_scene_as", "Save Scene As...", "File", "Save the scene to a new file.",
+            []() { ENGINE_LOG_INFO("Editor: Save Scene As command"); }});
+
+        cmds.Register({"file.exit", "Exit", "File", "Exit the editor.",
+            [this]() { if (m_Window) glfwSetWindowShouldClose(m_Window, GLFW_TRUE); }});
+
+        // -- Edit commands -------------------------------------------------
+        cmds.Register({"edit.undo", "Undo", "Edit", "Undo the last action.",
+            []() { ENGINE_LOG_INFO("Editor: Undo command"); }});
+        cmds.Register({"edit.redo", "Redo", "Edit", "Redo the last undone action.",
+            []() { ENGINE_LOG_INFO("Editor: Redo command"); }});
+        cmds.Register({"edit.cut", "Cut", "Edit", "Cut the selection.",
+            []() { ENGINE_LOG_INFO("Editor: Cut command"); }});
+        cmds.Register({"edit.copy", "Copy", "Edit", "Copy the selection.",
+            []() { ENGINE_LOG_INFO("Editor: Copy command"); }});
+        cmds.Register({"edit.paste", "Paste", "Edit", "Paste from clipboard.",
+            []() { ENGINE_LOG_INFO("Editor: Paste command"); }});
+        cmds.Register({"edit.duplicate", "Duplicate", "Edit", "Duplicate the selection.",
+            []() { ENGINE_LOG_INFO("Editor: Duplicate command"); }});
+        cmds.Register({"edit.delete", "Delete", "Edit", "Delete the selection.",
+            []() { ENGINE_LOG_INFO("Editor: Delete command"); }});
+        cmds.Register({"edit.preferences", "Preferences...", "Edit", "Open editor preferences.",
+            []() { ENGINE_LOG_INFO("Editor: Preferences command"); }});
+
+        // -- View commands -------------------------------------------------
+        cmds.Register({"view.toggle_grid", "Toggle Grid", "View", "Toggle the scene grid.",
+            [this]() { m_Context.GetPreferences().GridVisible = !m_Context.GetPreferences().GridVisible; }});
+        cmds.Register({"view.toggle_gizmos", "Toggle Gizmos", "View", "Toggle gizmo visibility.",
+            []() { ENGINE_LOG_INFO("Editor: Toggle Gizmos command"); }});
+        cmds.Register({"view.frame_selected", "Frame Selected", "View", "Focus the camera on the selected entity.",
+            [this]()
+            {
+                auto entity = m_Context.GetSelection().GetPrimaryEntity();
+                if (entity == engine::ecs::Invalid) return;
+                // Focus on origin for now — full implementation needs transform lookup.
+                m_Context.GetCamera().Focus(engine::math::Vec3(0.0f));
+            }});
+        cmds.Register({"view.zoom_in", "Zoom In", "View", "Zoom the camera in.",
+            [this]() { m_Context.GetCamera().Zoom(-1.0f); }});
+        cmds.Register({"view.zoom_out", "Zoom Out", "View", "Zoom the camera out.",
+            [this]() { m_Context.GetCamera().Zoom(1.0f); }});
+        cmds.Register({"view.reset_camera", "Reset Camera", "View", "Reset the camera to default position.",
+            [this]()
+            {
+                m_Context.GetCamera().SetPosition(engine::math::Vec3(0.0f, 5.0f, 10.0f));
+                m_Context.GetCamera().SetTarget(engine::math::Vec3(0.0f));
+            }});
+
+        // -- Window commands ----------------------------------------------
+        cmds.Register({"window.close_all", "Close All Panels", "Window", "Close all docked panels.",
+            [this]()
+            {
+                for (auto* p : m_Context.GetPanels().GetAllPanels())
+                    if (p->CanClose()) p->SetOpen(false);
+            }});
+        cmds.Register({"window.reset_layout", "Reset Layout", "Window", "Reset the editor layout to defaults.",
+            [this]() { m_Context.GetLayout().ResetToDefault(); }});
+
+        // -- Tools commands -----------------------------------------------
+        cmds.Register({"tools.build_assets", "Build Asset Database", "Tools", "Scan and import all assets.",
+            []() { ENGINE_LOG_INFO("Editor: Build Assets command"); }});
+        cmds.Register({"tools.reimport_all", "Reimport All", "Tools", "Reimport all assets from source.",
+            []() { ENGINE_LOG_INFO("Editor: Reimport All command"); }});
+        cmds.Register({"tools.project_settings", "Project Settings...", "Tools", "Open project settings.",
+            []() { ENGINE_LOG_INFO("Editor: Project Settings command"); }});
+        cmds.Register({"tools.editor_preferences", "Editor Preferences...", "Tools", "Open editor preferences.",
+            []() { ENGINE_LOG_INFO("Editor: Editor Preferences command"); }});
+
+        // -- Help commands -------------------------------------------------
+        cmds.Register({"help.documentation", "Documentation", "Help", "Open the engine documentation.",
+            []() { ENGINE_LOG_INFO("Editor: Documentation command"); }});
+        cmds.Register({"help.about", "About", "Help", "Show about dialog.",
+            []() { ENGINE_LOG_INFO("Eclipse Engine Editor — Phase 7"); }});
+
+        // -- Editor mode commands -----------------------------------------
+        cmds.Register({"editor.play", "Play", "Editor", "Enter play mode.",
+            [this]() { m_Context.SetMode(EditorMode::Play); }});
+        cmds.Register({"editor.pause", "Pause", "Editor", "Pause play mode.",
+            [this]() { m_Context.SetMode(EditorMode::Pause); }});
+        cmds.Register({"editor.stop", "Stop", "Editor", "Stop play mode and return to edit mode.",
+            [this]() { m_Context.SetMode(EditorMode::Edit); }});
+        cmds.Register({"editor.step", "Step", "Editor", "Step one frame in play mode.",
+            [this]() { m_Context.SetMode(EditorMode::Step); }});
+    }
+
+    void EditorApplication::RegisterDefaultShortcuts()
+    {
+        using K = KeyModifiers;
+        auto& sc = m_Context.GetShortcuts();
+
+        // Use GLFW key constants.
+        #define GLFW_KEY_A 65
+        #define GLFW_KEY_D 68
+        #define GLFW_KEY_E 69
+        #define GLFW_KEY_F 70
+        #define GLFW_KEY_N 78
+        #define GLFW_KEY_O 79
+        #define GLFW_KEY_Q 81
+        #define GLFW_KEY_R 82
+        #define GLFW_KEY_S 83
+        #define GLFW_KEY_W 87
+        #define GLFW_KEY_SPACE 32
+        #define GLFW_KEY_DELETE 256
+        #define GLFW_KEY_F5 294
+
+        // File
+        sc.Bind("file.save_scene",       GLFW_KEY_S, K::Ctrl, "Ctrl+S");
+        sc.Bind("file.open_scene",       GLFW_KEY_O, K::Ctrl, "Ctrl+O");
+        sc.Bind("file.save_scene_as",    GLFW_KEY_S, K::Ctrl | K::Shift, "Ctrl+Shift+S");
+        sc.Bind("file.new_scene",        GLFW_KEY_N, K::Ctrl, "Ctrl+N");
+
+        // Edit
+        sc.Bind("edit.delete",           GLFW_KEY_DELETE, K::None, "Delete");
+        sc.Bind("edit.duplicate",        GLFW_KEY_D, K::Ctrl, "Ctrl+D");
+
+        // View
+        sc.Bind("view.frame_selected",   GLFW_KEY_F, K::None, "F");
+
+        // Transform modes
+        sc.Bind("editor.translate_mode", GLFW_KEY_W, K::None, "W");
+        sc.Bind("editor.rotate_mode",    GLFW_KEY_E, K::None, "E");
+        sc.Bind("editor.scale_mode",     GLFW_KEY_R, K::None, "R");
+
+        // Play mode
+        sc.Bind("editor.play",           GLFW_KEY_SPACE, K::None, "Space");
+
+        // Register transform mode commands.
+        auto& cmds = m_Context.GetCommands();
+        cmds.Register({"editor.translate_mode", "Translate Mode", "Editor", "Set gizmo to translate mode.",
+            [this]() { m_Context.GetGizmos().SetMode(GizmoMode::Translate); }});
+        cmds.Register({"editor.rotate_mode", "Rotate Mode", "Editor", "Set gizmo to rotate mode.",
+            [this]() { m_Context.GetGizmos().SetMode(GizmoMode::Rotate); }});
+        cmds.Register({"editor.scale_mode", "Scale Mode", "Editor", "Set gizmo to scale mode.",
+            [this]() { m_Context.GetGizmos().SetMode(GizmoMode::Scale); }});
+    }
+
+    void EditorApplication::RegisterDefaultPanels()
+    {
+        auto& panels = m_Context.GetPanels();
+
+        panels.Register(std::make_unique<HierarchyPanel>());
+        panels.Register(std::make_unique<InspectorPanel>());
+        panels.Register(std::make_unique<ScenePanel>());
+        panels.Register(std::make_unique<GamePanel>());
+        panels.Register(std::make_unique<ContentBrowserPanel>());
+        panels.Register(std::make_unique<ConsolePanel>());
+        panels.Register(std::make_unique<StatisticsPanel>());
+        panels.Register(std::make_unique<ProfilerPanel>());
+
+        // Find the console panel for log routing.
+        m_ConsolePanel = dynamic_cast<ConsolePanel*>(
+            panels.FindPanel("Console"));
+    }
+
+} // namespace editor

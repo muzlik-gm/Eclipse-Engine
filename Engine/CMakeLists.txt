@@ -92,6 +92,7 @@ set(ENGINE_SOURCES
     Source/Renderer/Core/RendererStatistics.cpp
     Source/Renderer/Core/RendererContext.cpp
     Source/Renderer/Core/Renderer.cpp
+    Source/Renderer/RHI/BackendRegistry.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})
