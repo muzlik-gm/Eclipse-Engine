@@ -12,10 +12,7 @@ namespace editor {
 
     using engine::core::u32;
 
-    Dockspace::Dockspace()
-    {
-        m_DockspaceID = static_cast<u32>(ImGui::GetID("EditorDockspace"));
-    }
+    Dockspace::Dockspace() = default;
 
     void Dockspace::Render(EditorContext& context)
     {
