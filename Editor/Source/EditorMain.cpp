@@ -16,6 +16,11 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+// Force-link the OpenGL backend so its static self-registration runs.
+// Without this, the linker strips OpenGLBackend.cpp from the static
+// Engine library and the backend is never registered.
+extern "C" void ForceLinkOpenGLBackend();
+
 using namespace engine;
 using engine::core::i32;
 using engine::core::f64;
@@ -26,6 +31,9 @@ int main(i32 argc, const char* argv[])
     core::Log::Initialize("EclipseEditor");
 
     ENGINE_LOG_INFO("=== Eclipse Engine Editor ===");
+
+    // Force the OpenGL backend to be registered before anything else.
+    ForceLinkOpenGLBackend();
 
     // Create the application + engine.
     application::Application app(argc, argv);
@@ -52,6 +60,21 @@ int main(i32 argc, const char* argv[])
         return 1;
     }
 
+    // Make the OpenGL context current BEFORE initializing GLAD or ImGui.
+    glfwMakeContextCurrent(glfwWindow);
+    glfwSwapInterval(1); // Enable vsync.
+
+    // Initialize GLAD.
+    if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress)))
+    {
+        ENGINE_LOG_ERROR("Failed to initialize GLAD");
+        return 1;
+    }
+
+    ENGINE_LOG_INFO("OpenGL {} — {}",
+                    reinterpret_cast<const char*>(glGetString(GL_VERSION)),
+                    reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+
     // Get the active scene from the WorldManager.
     scene::Scene* activeScene = nullptr;
     auto* worldManager = engineRef.GetSubsystemManager().GetRaw("WorldManager");
@@ -61,18 +84,22 @@ int main(i32 argc, const char* argv[])
         activeScene = wm->GetWorld().GetActiveScene();
     }
 
-    // Create the renderer (simplified — in production this would be
-    // configured via the RendererConfiguration).
+    // Create the renderer.
     renderer::RendererConfiguration rendererConfig;
     rendererConfig.Backend = rhi::GraphicsBackend::OpenGL;
     rendererConfig.WindowHandle = glfwWindow;
-    rendererConfig.Width = 1280;
-    rendererConfig.Height = 720;
+    rendererConfig.Width = window->GetWidth();
+    rendererConfig.Height = window->GetHeight();
     rendererConfig.EnableValidation = true;
 
     auto renderer = std::make_unique<renderer::Renderer>();
     renderer->SetConfiguration(rendererConfig);
-    renderer->Initialize();
+
+    if (!renderer->Initialize())
+    {
+        ENGINE_LOG_ERROR("Failed to initialize renderer — continuing without it");
+        // Don't return — we still want ImGui to work for the editor UI.
+    }
 
     // Create and initialize the editor.
     editor::EditorApplication editorApp;
@@ -82,17 +109,6 @@ int main(i32 argc, const char* argv[])
         ENGINE_LOG_ERROR("Failed to initialize editor");
         return 1;
     }
-
-    // Set up key callback for shortcuts.
-    glfwSetKeyCallback(glfwWindow, [](GLFWwindow* /*win*/, int key, int /*scancode*/,
-                                       int action, int mods)
-    {
-        if (action == GLFW_PRESS || action == GLFW_REPEAT)
-        {
-            // Forward to the editor via a global pointer.
-            // In production, this would use a proper event system.
-        }
-    });
 
     ENGINE_LOG_INFO("Editor ready — entering main loop");
 
