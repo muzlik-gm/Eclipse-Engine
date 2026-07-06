@@ -232,7 +232,7 @@ namespace editor {
         }
         else
         {
-            ENGINE_LOG_ERROR("SceneRenderer — mesh shader FAILED to compile");
+            ENGINE_LOG_ERROR("SceneRenderer — mesh shader FAILED to compile/link");
         }
 
         if (m_GridShaderProgram)
@@ -245,10 +245,23 @@ namespace editor {
         }
         else
         {
-            ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile");
+            ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile/link");
         }
 
-        m_ShadersCompiled = true;
+        // Only mark as compiled if BOTH programs succeeded.
+        // Otherwise retry next frame so transient GL errors don't
+        // leave us permanently stuck with no rendering.
+        if (m_ShaderProgram && m_GridShaderProgram)
+        {
+            m_ShadersCompiled = true;
+        }
+        else
+        {
+            ENGINE_LOG_ERROR("SceneRenderer — shader compilation incomplete, will retry next frame");
+            // Clean up any partially-created resources.
+            if (m_ShaderProgram) { glDeleteProgram(m_ShaderProgram); m_ShaderProgram = 0; }
+            if (m_GridShaderProgram) { glDeleteProgram(m_GridShaderProgram); m_GridShaderProgram = 0; }
+        }
 
         err = glGetError();
         if (err != GL_NO_ERROR)
@@ -349,6 +362,10 @@ namespace editor {
 
         for (auto entity : view)
         {
+            // Validate entity before accessing components.
+            if (!registry.IsValid(entity))
+                continue;
+
             auto& mesh = registry.GetComponent<MeshComponent>(entity);
             auto& tf   = registry.GetComponent<TransformComponent>(entity);
 
@@ -392,11 +409,21 @@ namespace editor {
 
         // Skip if framebuffer is not valid.
         if (!framebuffer.IsValid())
+        {
+            ENGINE_LOG_WARN("SceneRenderer::RenderScene — framebuffer invalid, skipping");
             return;
+        }
 
         EnsureShaders();
         EnsureGridGeometry();
         EnsureCubeGeometry();
+
+        // Cannot render without valid shader programs.
+        if (!m_ShaderProgram && !m_GridShaderProgram)
+        {
+            ENGINE_LOG_WARN("SceneRenderer::RenderScene — no valid shader programs, skipping");
+            return;
+        }
 
         framebuffer.Bind();
 
@@ -426,6 +453,13 @@ namespace editor {
         }
 
         framebuffer.Unbind();
+
+        if (m_DrawCalls == 0)
+        {
+            ENGINE_LOG_WARN("SceneRenderer — 0 draw calls produced. Grid={} shaders={}/{}",
+                            renderGrid && context.GetPreferences().GridVisible,
+                            (int)m_ShaderProgram, (int)m_GridShaderProgram);
+        }
     }
 
     void SceneRenderer::RenderGameView(EditorContext& context, ViewportFramebuffer& framebuffer)
@@ -458,6 +492,9 @@ namespace editor {
 
             for (auto entity : cameraView)
             {
+                if (!registry.IsValid(entity))
+                    continue;
+
                 auto& cam = registry.GetComponent<CameraComponent>(entity);
                 auto& tf  = registry.GetComponent<TransformComponent>(entity);
 

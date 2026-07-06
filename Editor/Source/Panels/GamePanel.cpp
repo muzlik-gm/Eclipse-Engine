@@ -46,8 +46,11 @@ namespace editor {
         // Resize the framebuffer if needed.
         u32 w = static_cast<u32>(size.x);
         u32 h = static_cast<u32>(size.y);
-        if (m_Framebuffer.NeedsResize(w, h))
+        if (m_Framebuffer.NeedsResize(w, h) || !m_Framebuffer.IsValid())
             m_Framebuffer.Resize(w, h);
+
+        if (!m_Framebuffer.IsValid())
+            return;
 
         // Render the game view into the framebuffer.
         m_SceneRenderer.RenderGameView(context, m_Framebuffer);

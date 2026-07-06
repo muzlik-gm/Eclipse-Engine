@@ -86,13 +86,15 @@ namespace editor {
         ImGui::Image(static_cast<ImTextureID>(m_Framebuffer.GetColorTextureID()),
                      size, ImVec2(0, 1), ImVec2(1, 0));
 
+        // Capture hover/focus BEFORE handling input so we use the
+        // current frame's state instead of last frame's.
+        m_IsFocused = ImGui::IsWindowFocused();
+        m_IsHovered = ImGui::IsWindowHovered();
+
         // Handle mouse input for camera + picking.
         ImVec2 imagePos = ImGui::GetItemRectMin();
         ImVec2 imageSize = ImGui::GetItemRectSize();
         HandleMouseInput(context, imagePos, imageSize);
-
-        m_IsFocused = ImGui::IsWindowFocused();
-        m_IsHovered = ImGui::IsWindowHovered();
 
         // Render gizmos for the selected entity.
         context.GetGizmos().Render(context);
@@ -113,19 +115,23 @@ namespace editor {
         if (!m_IsHovered || !inside)
             return;
 
-        // Camera controls.
-        if (ImGui::IsMouseDragging(ImGuiMouseButton_Middle) ||
-            (ImGui::IsMouseDragging(ImGuiMouseButton_Right) && !ImGui::GetIO().KeyAlt))
+        // Camera controls — middle-mouse or right-mouse drag.
+        ImGuiMouseButton dragButton = ImGuiMouseButton_COUNT;
+        if (ImGui::IsMouseDragging(ImGuiMouseButton_Middle))
+            dragButton = ImGuiMouseButton_Middle;
+        else if (ImGui::IsMouseDragging(ImGuiMouseButton_Right) && !ImGui::GetIO().KeyAlt)
+            dragButton = ImGuiMouseButton_Right;
+
+        if (dragButton != ImGuiMouseButton_COUNT)
         {
-            ImVec2 delta = ImGui::GetMouseDragDelta(ImGuiMouseButton_Middle);
+            ImVec2 delta = ImGui::GetMouseDragDelta(dragButton);
             if (delta.x != 0 || delta.y != 0)
             {
                 if (ImGui::GetIO().KeyShift)
                     cam.Pan(delta.x * 0.5f, delta.y * 0.5f);
                 else
                     cam.Orbit(delta.x * 0.5f, delta.y * 0.5f);
-                ImGui::ResetMouseDragDelta(ImGuiMouseButton_Middle);
-                ImGui::ResetMouseDragDelta(ImGuiMouseButton_Right);
+                ImGui::ResetMouseDragDelta(dragButton);
             }
         }
 
