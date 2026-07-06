@@ -221,12 +221,22 @@ namespace editor {
             m_uViewProj = glGetUniformLocation(m_ShaderProgram, "u_ViewProj");
             m_uModel    = glGetUniformLocation(m_ShaderProgram, "u_Model");
             m_uColor    = glGetUniformLocation(m_ShaderProgram, "u_Color");
+            ENGINE_LOG_INFO("SceneRenderer — mesh shader compiled (program={})", m_ShaderProgram);
+        }
+        else
+        {
+            ENGINE_LOG_ERROR("SceneRenderer — mesh shader FAILED to compile");
         }
 
         if (m_GridShaderProgram)
         {
             m_uViewProjGrid = glGetUniformLocation(m_GridShaderProgram, "u_ViewProj");
-            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_GridColor");
+            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_Color");
+            ENGINE_LOG_INFO("SceneRenderer — grid shader compiled (program={})", m_GridShaderProgram);
+        }
+        else
+        {
+            ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile");
         }
 
         m_ShadersCompiled = true;

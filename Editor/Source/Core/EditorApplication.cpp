@@ -390,10 +390,23 @@ namespace editor {
             "Create a scene with a camera, light, and test cubes.",
             [this]()
             {
+                // Stop play mode if currently playing (otherwise it will
+                // restore an empty snapshot and destroy our new scene).
+                if (m_Context.GetPlayMode().IsPlaying())
+                {
+                    m_Context.GetPlayMode().Stop(m_Context);
+                }
+
                 auto scene = m_Context.GetSceneManager().NewScene("Test Scene");
                 m_Context.SetActiveScene(scene.get());
 
-                // Create camera.
+                // Position the editor camera to see the grid.
+                auto& cam = m_Context.GetCamera();
+                cam.SetPosition(engine::math::Vec3(0.0f, 5.0f, 10.0f));
+                cam.SetTarget(engine::math::Vec3(0.0f, 0.0f, 0.0f));
+                cam.SetDistance(10.0f);
+
+                // Create camera entity.
                 auto camEntity = EntityFactory::CreateCamera(m_Context, "Main Camera");
                 auto* activeScene = m_Context.GetActiveScene();
                 if (activeScene)
@@ -493,8 +506,8 @@ namespace editor {
         sc.Bind("editor.rotate_mode",    GLFW_KEY_E, K::None, "E");
         sc.Bind("editor.scale_mode",     GLFW_KEY_R, K::None, "R");
 
-        // Play mode
-        sc.Bind("editor.play",           GLFW_KEY_SPACE, K::None, "Space");
+        // Play mode — removed Space shortcut (too dangerous, triggers on
+        // any text input).  Use the toolbar Play button instead.
 
         // Register transform mode commands.
         auto& cmds = m_Context.GetCommands();
