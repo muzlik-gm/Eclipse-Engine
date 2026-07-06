@@ -93,6 +93,12 @@ set(ENGINE_SOURCES
     Source/Renderer/Core/RendererContext.cpp
     Source/Renderer/Core/Renderer.cpp
     Source/Renderer/RHI/BackendRegistry.cpp
+    # Rendering Framework (Phase 10)
+    Source/Renderer/Queue/RenderQueue.cpp
+    Source/Renderer/Graph/RenderGraph.cpp
+    Source/Renderer/Passes/RenderPasses.cpp
+    Source/Renderer/Visibility/VisibilitySystem.cpp
+    Source/Renderer/Pipeline/RenderPipeline.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})
