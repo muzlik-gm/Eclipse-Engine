@@ -85,6 +85,26 @@ namespace engine::systems {
                 child = m_registry->GetComponent<components::HierarchyComponent>(child).NextSibling;
             }
         }
+
+        // Step 3: Process standalone entities (TransformComponent, no HierarchyComponent).
+        // These are flat, non-hierarchical entities created by the editor or loaded
+        // from scenes that don't use the hierarchy system.
+        auto standaloneView = m_registry->View<components::TransformComponent>();
+        for (auto entityHandle : standaloneView)
+        {
+            ecs::Entity entity{entityHandle};
+
+            // Skip entities that also have HierarchyComponent (already handled above).
+            if (m_registry->HasComponent<components::HierarchyComponent>(entity))
+                continue;
+
+            auto& transform = m_registry->GetComponent<components::TransformComponent>(entity);
+            if (transform.WorldDirty)
+            {
+                transform.WorldMatrix = transform.GetLocalMatrix();
+                transform.WorldDirty  = false;
+            }
+        }
     }
 
 } // namespace engine::systems

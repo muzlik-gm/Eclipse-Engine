@@ -96,6 +96,13 @@ namespace editor {
         cam.SetFarClip(m_Context.GetPreferences().CameraFarClip);
         cam.SetFOV(m_Context.GetPreferences().CameraFOV);
 
+        // If no active scene was provided, create a default empty one.
+        if (!m_Context.GetSceneManager().HasScene())
+        {
+            m_Context.GetSceneManager().NewScene("Untitled");
+        }
+        m_Context.SetActiveScene(m_Context.GetSceneManager().GetCurrentScene());
+
         m_Initialized = true;
         ENGINE_LOG_INFO("EditorApplication — initialized");
         return true;
@@ -171,8 +178,12 @@ namespace editor {
         // Update editor camera.
         m_Context.GetCamera().Update(m_Context.GetDeltaTime());
 
+        // Refresh the active scene from SceneManager to prevent dangling
+        // raw pointers when the engine replaces the scene.
+        auto* scene = m_Context.GetSceneManager().GetCurrentScene();
+        m_Context.SetActiveScene(scene);
+
         // Update transforms on the active scene so world matrices are current.
-        auto* scene = m_Context.GetActiveScene();
         if (scene)
         {
             engine::systems::TransformSystem ts;
@@ -201,13 +212,14 @@ namespace editor {
         // Toolbar.
         m_Toolbar.Render(m_Context);
 
-        // Dockspace.
+        // Dockspace (creates dockspace on the current ##EditorMainFrame window).
         m_Dockspace.Render(m_Context);
 
-        ImGui::End();
-
-        // Render all panels.
+        // Render all panels INSIDE the main frame window so they can dock.
         m_Context.GetPanels().RenderAll(m_Context);
+
+        // Close the ##EditorMainFrame window.
+        ImGui::End();
 
         // Render ImGui.
         ImGui::Render();

@@ -64,11 +64,15 @@ namespace editor {
         // Resize the framebuffer if needed.
         u32 w = static_cast<u32>(size.x);
         u32 h = static_cast<u32>(size.y);
-        if (m_Framebuffer.NeedsResize(w, h))
+        if (m_Framebuffer.NeedsResize(w, h) || !m_Framebuffer.IsValid())
         {
             m_Framebuffer.Resize(w, h);
             context.GetCamera().SetViewportSize(w, h);
         }
+
+        // Don't render scene or display image if framebuffer is invalid.
+        if (!m_Framebuffer.IsValid())
+            return;
 
         // Update camera.
         auto& cam = context.GetCamera();

@@ -75,6 +75,9 @@ namespace editor {
             if (!ifs.is_open())
             {
                 ENGINE_LOG_INFO("LayoutManager — no layout file found, using defaults");
+                ResetToDefault();
+                for (const auto& name : m_Layout.OpenPanels)
+                    context.GetPanels().OpenPanel(name);
                 return false;
             }
 

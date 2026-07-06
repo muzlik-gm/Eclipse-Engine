@@ -17,6 +17,7 @@
 #include <glad/glad.h>
 #include <vector>
 #include <cmath>
+#include <cstring>
 
 namespace editor {
 
@@ -213,6 +214,9 @@ namespace editor {
     {
         if (m_ShadersCompiled) return;
 
+        GLenum err = glGetError();
+        while (err != GL_NO_ERROR) err = glGetError();
+
         m_ShaderProgram = LinkProgram(kMeshVertexShader, kMeshFragmentShader);
         m_GridShaderProgram = LinkProgram(kGridVertexShader, kGridFragmentShader);
 
@@ -221,6 +225,9 @@ namespace editor {
             m_uViewProj = glGetUniformLocation(m_ShaderProgram, "u_ViewProj");
             m_uModel    = glGetUniformLocation(m_ShaderProgram, "u_Model");
             m_uColor    = glGetUniformLocation(m_ShaderProgram, "u_Color");
+            if (m_uViewProj < 0) ENGINE_LOG_WARN("SceneRenderer — u_ViewProj not found in mesh shader");
+            if (m_uModel < 0)    ENGINE_LOG_WARN("SceneRenderer — u_Model not found in mesh shader");
+            if (m_uColor < 0)    ENGINE_LOG_WARN("SceneRenderer — u_Color not found in mesh shader");
             ENGINE_LOG_INFO("SceneRenderer — mesh shader compiled (program={})", m_ShaderProgram);
         }
         else
@@ -231,7 +238,9 @@ namespace editor {
         if (m_GridShaderProgram)
         {
             m_uViewProjGrid = glGetUniformLocation(m_GridShaderProgram, "u_ViewProj");
-            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_Color");
+            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_GridColor");
+            if (m_uViewProjGrid < 0) ENGINE_LOG_WARN("SceneRenderer — u_ViewProj not found in grid shader");
+            if (m_uGridColor < 0)    ENGINE_LOG_WARN("SceneRenderer — u_GridColor not found in grid shader");
             ENGINE_LOG_INFO("SceneRenderer — grid shader compiled (program={})", m_GridShaderProgram);
         }
         else
@@ -240,6 +249,10 @@ namespace editor {
         }
 
         m_ShadersCompiled = true;
+
+        err = glGetError();
+        if (err != GL_NO_ERROR)
+            ENGINE_LOG_ERROR("SceneRenderer — GL error 0x{:X} after EnsureShaders", err);
     }
 
     void SceneRenderer::EnsureGridGeometry()
@@ -377,6 +390,10 @@ namespace editor {
     {
         m_DrawCalls = 0;
 
+        // Skip if framebuffer is not valid.
+        if (!framebuffer.IsValid())
+            return;
+
         EnsureShaders();
         EnsureGridGeometry();
         EnsureCubeGeometry();
@@ -400,12 +417,23 @@ namespace editor {
         RenderMeshes(context, viewProjection);
 
         glDisable(GL_DEPTH_TEST);
+
+        // Check for OpenGL errors.
+        GLenum err = glGetError();
+        if (err != GL_NO_ERROR)
+        {
+            ENGINE_LOG_ERROR("SceneRenderer — GL error 0x{:X} during scene render", err);
+        }
+
         framebuffer.Unbind();
     }
 
     void SceneRenderer::RenderGameView(EditorContext& context, ViewportFramebuffer& framebuffer)
     {
         m_DrawCalls = 0;
+
+        if (!framebuffer.IsValid())
+            return;
 
         EnsureShaders();
         EnsureGridGeometry();
@@ -464,6 +492,13 @@ namespace editor {
         }
 
         glDisable(GL_DEPTH_TEST);
+
+        GLenum err = glGetError();
+        if (err != GL_NO_ERROR)
+        {
+            ENGINE_LOG_ERROR("SceneRenderer — GL error 0x{:X} during game view render", err);
+        }
+
         framebuffer.Unbind();
     }
 

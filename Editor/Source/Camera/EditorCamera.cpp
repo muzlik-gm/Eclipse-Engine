@@ -138,7 +138,7 @@ namespace editor {
 
     void EditorCamera::RecalculateView() const
     {
-        m_ViewMatrix = engine::math::LookAt(m_Position, m_Target, m_Up);
+        m_ViewMatrix = engine::math::LookAt(m_Position, m_Target, Vec3(0.0f, 1.0f, 0.0f));
         m_ViewDirty = false;
     }
 

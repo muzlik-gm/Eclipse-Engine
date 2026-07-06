@@ -51,8 +51,8 @@ namespace editor {
         /// @brief Returns the framebuffer height.
         [[nodiscard]] engine::core::u32 GetHeight() const noexcept { return m_Height; }
 
-        /// @brief Returns true if the framebuffer is valid and ready.
-        [[nodiscard]] bool IsValid() const noexcept { return m_FBO != 0; }
+        /// @brief Returns true if the framebuffer is valid, complete, and ready.
+        [[nodiscard]] bool IsValid() const noexcept { return m_Valid; }
 
         /// @brief Returns true if the framebuffer needs to be resized
         ///        to match @p width x @p height.
@@ -69,6 +69,7 @@ namespace editor {
         GLuint                   m_DepthStencil{0};
         engine::core::u32        m_Width{0};
         engine::core::u32        m_Height{0};
+        bool                     m_Valid{false};
     };
 
 } // namespace editor

@@ -52,7 +52,7 @@ namespace editor {
 
         [[nodiscard]] bool Matches(engine::core::u32 key, KeyModifiers mods) const noexcept
         {
-            return Key == key && (Mods & mods) != 0;
+            return Key == key && static_cast<engine::core::u32>(Mods) == static_cast<engine::core::u32>(mods);
         }
     };
 

@@ -18,7 +18,7 @@ namespace editor {
         if (width == 0 || height == 0)
             return;
 
-        if (m_Width == width && m_Height == height && m_FBO != 0)
+        if (m_Width == width && m_Height == height && m_Valid)
             return;
 
         m_Width = width;
@@ -57,7 +57,8 @@ namespace editor {
 
         // Check completeness.
         GLenum status = glCheckFramebufferStatus(GL_FRAMEBUFFER);
-        if (status != GL_FRAMEBUFFER_COMPLETE)
+        m_Valid = (status == GL_FRAMEBUFFER_COMPLETE);
+        if (!m_Valid)
         {
             ENGINE_LOG_ERROR("ViewportFramebuffer — incomplete (status=0x{:X})", status);
         }
@@ -65,11 +66,12 @@ namespace editor {
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
         glBindTexture(GL_TEXTURE_2D, 0);
 
-        ENGINE_LOG_DEBUG("ViewportFramebuffer — created {}x{}", m_Width, m_Height);
+        ENGINE_LOG_DEBUG("ViewportFramebuffer — created {}x{} (valid={})", m_Width, m_Height, m_Valid);
     }
 
     void ViewportFramebuffer::Destroy()
     {
+        m_Valid = false;
         if (m_DepthStencil)
         {
             glDeleteTextures(1, &m_DepthStencil);
