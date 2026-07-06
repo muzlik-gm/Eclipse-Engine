@@ -37,41 +37,34 @@ namespace editor {
     // ========================================================================
 
     static const char* kMeshVertexShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         layout(location = 0) in vec3 a_Position;
         layout(location = 1) in vec3 a_Normal;
         uniform mat4 u_ViewProj;
         uniform mat4 u_Model;
         out vec3 v_Normal;
-        out vec3 v_WorldPos;
         void main()
         {
-            vec4 worldPos = u_Model * vec4(a_Position, 1.0);
-            gl_Position = u_ViewProj * worldPos;
+            gl_Position = u_ViewProj * u_Model * vec4(a_Position, 1.0);
             v_Normal = mat3(u_Model) * a_Normal;
-            v_WorldPos = worldPos.xyz;
         }
     )GLSL";
 
     static const char* kMeshFragmentShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         in vec3 v_Normal;
-        in vec3 v_WorldPos;
         out vec4 FragColor;
         uniform vec4 u_Color;
         void main()
         {
             vec3 lightDir = normalize(vec3(0.5, 1.0, 0.3));
-            vec3 normal = normalize(v_Normal);
-            float diff = max(dot(normal, lightDir), 0.0);
-            float ambient = 0.3;
-            vec3 col = u_Color.rgb * (ambient + diff * 0.7);
-            FragColor = vec4(col, u_Color.a);
+            float diff = max(dot(normalize(v_Normal), lightDir), 0.0);
+            FragColor = vec4(u_Color.rgb * (0.3 + diff * 0.7), u_Color.a);
         }
     )GLSL";
 
     static const char* kGridVertexShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         layout(location = 0) in vec3 a_Position;
         uniform mat4 u_ViewProj;
         out float v_Dist;
@@ -83,14 +76,14 @@ namespace editor {
     )GLSL";
 
     static const char* kGridFragmentShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         in float v_Dist;
         out vec4 FragColor;
-        uniform vec4 u_GridColor;
+        uniform vec4 u_Color;
         void main()
         {
             float fade = 1.0 - clamp(v_Dist / 50.0, 0.0, 1.0);
-            FragColor = vec4(u_GridColor.rgb, u_GridColor.a * fade);
+            FragColor = vec4(u_Color.rgb, u_Color.a * fade);
         }
     )GLSL";
 
@@ -98,52 +91,26 @@ namespace editor {
     // Cube data
     // ========================================================================
 
-    struct Vertex
-    {
-        Vec3 Position;
-        Vec3 Normal;
-    };
+    struct Vertex { Vec3 Position; Vec3 Normal; };
 
     static const Vertex kCubeVertices[] = {
-        // Front face
-        {{-0.5f, -0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}},
-        {{ 0.5f, -0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}},
-        {{ 0.5f,  0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}},
-        {{-0.5f,  0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}},
-        // Back face
-        {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}},
-        {{ 0.5f, -0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}},
-        {{ 0.5f,  0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}},
-        {{-0.5f,  0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}},
-        // Top face
-        {{-0.5f,  0.5f,  0.5f}, {0.0f, 1.0f, 0.0f}},
-        {{ 0.5f,  0.5f,  0.5f}, {0.0f, 1.0f, 0.0f}},
-        {{ 0.5f,  0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
-        {{-0.5f,  0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}},
-        // Bottom face
-        {{-0.5f, -0.5f, -0.5f}, {0.0f, -1.0f, 0.0f}},
-        {{ 0.5f, -0.5f, -0.5f}, {0.0f, -1.0f, 0.0f}},
-        {{ 0.5f, -0.5f,  0.5f}, {0.0f, -1.0f, 0.0f}},
-        {{-0.5f, -0.5f,  0.5f}, {0.0f, -1.0f, 0.0f}},
-        // Right face
-        {{ 0.5f, -0.5f,  0.5f}, {1.0f, 0.0f, 0.0f}},
-        {{ 0.5f, -0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
-        {{ 0.5f,  0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}},
-        {{ 0.5f,  0.5f,  0.5f}, {1.0f, 0.0f, 0.0f}},
-        // Left face
-        {{-0.5f, -0.5f, -0.5f}, {-1.0f, 0.0f, 0.0f}},
-        {{-0.5f, -0.5f,  0.5f}, {-1.0f, 0.0f, 0.0f}},
-        {{-0.5f,  0.5f,  0.5f}, {-1.0f, 0.0f, 0.0f}},
-        {{-0.5f,  0.5f, -0.5f}, {-1.0f, 0.0f, 0.0f}},
+        {{-0.5f,-0.5f, 0.5f},{0,0,1}}, {{ 0.5f,-0.5f, 0.5f},{0,0,1}},
+        {{ 0.5f, 0.5f, 0.5f},{0,0,1}}, {{-0.5f, 0.5f, 0.5f},{0,0,1}},
+        {{-0.5f,-0.5f,-0.5f},{0,0,-1}}, {{ 0.5f,-0.5f,-0.5f},{0,0,-1}},
+        {{ 0.5f, 0.5f,-0.5f},{0,0,-1}}, {{-0.5f, 0.5f,-0.5f},{0,0,-1}},
+        {{-0.5f, 0.5f, 0.5f},{0,1,0}}, {{ 0.5f, 0.5f, 0.5f},{0,1,0}},
+        {{ 0.5f, 0.5f,-0.5f},{0,1,0}}, {{-0.5f, 0.5f,-0.5f},{0,1,0}},
+        {{-0.5f,-0.5f,-0.5f},{0,-1,0}}, {{ 0.5f,-0.5f,-0.5f},{0,-1,0}},
+        {{ 0.5f,-0.5f, 0.5f},{0,-1,0}}, {{-0.5f,-0.5f, 0.5f},{0,-1,0}},
+        {{ 0.5f,-0.5f, 0.5f},{1,0,0}}, {{ 0.5f,-0.5f,-0.5f},{1,0,0}},
+        {{ 0.5f, 0.5f,-0.5f},{1,0,0}}, {{ 0.5f, 0.5f, 0.5f},{1,0,0}},
+        {{-0.5f,-0.5f,-0.5f},{-1,0,0}}, {{-0.5f,-0.5f, 0.5f},{-1,0,0}},
+        {{-0.5f, 0.5f, 0.5f},{-1,0,0}}, {{-0.5f, 0.5f,-0.5f},{-1,0,0}},
     };
 
     static const u32 kCubeIndices[] = {
-        0,  1,  2,   0,  2,  3,    // front
-        4,  5,  6,   4,  6,  7,    // back
-        8,  9,  10,  8,  10, 11,   // top
-        12, 13, 14,  12, 14, 15,   // bottom
-        16, 17, 18,  16, 18, 19,   // right
-        20, 21, 22,  20, 22, 23,   // left
+        0,1,2, 0,2,3, 4,5,6, 4,6,7, 8,9,10, 8,10,11,
+        12,13,14, 12,14,15, 16,17,18, 16,18,19, 20,21,22, 20,22,23,
     };
 
     // ========================================================================
@@ -159,7 +126,7 @@ namespace editor {
         glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
         if (success != GL_TRUE)
         {
-            char log[512];
+            char log[1024];
             glGetShaderInfoLog(shader, sizeof(log), nullptr, log);
             ENGINE_LOG_ERROR("SceneRenderer — shader compile error:\n{}", log);
             glDeleteShader(shader);
@@ -182,7 +149,7 @@ namespace editor {
         glGetProgramiv(program, GL_LINK_STATUS, &success);
         if (success != GL_TRUE)
         {
-            char log[512];
+            char log[1024];
             glGetProgramInfoLog(program, sizeof(log), nullptr, log);
             ENGINE_LOG_ERROR("SceneRenderer — program link error:\n{}", log);
             glDeleteProgram(program);
@@ -192,6 +159,58 @@ namespace editor {
         glDeleteShader(fs);
         return program;
     }
+
+    // ========================================================================
+    // GL state saver — saves ALL state that SceneRenderer modifies
+    // ========================================================================
+
+    struct GLStateSaver
+    {
+        GLint lastFBO{0};
+        GLint lastViewport[4]{0,0,0,0};
+        GLint lastProgram{0};
+        GLint lastVAO{0};
+        GLint lastArrayBuffer{0};
+        GLint lastElementBuffer{0};
+        GLboolean lastDepthTest{GL_FALSE};
+        GLboolean lastDepthMask{GL_TRUE};
+        GLint lastDepthFunc{GL_LESS};
+        GLboolean lastBlend{GL_FALSE};
+        GLboolean lastCullFace{GL_FALSE};
+        GLboolean lastScissorTest{GL_FALSE};
+
+        GLStateSaver()
+        {
+            glGetIntegerv(GL_FRAMEBUFFER_BINDING, &lastFBO);
+            glGetIntegerv(GL_VIEWPORT, lastViewport);
+            glGetIntegerv(GL_CURRENT_PROGRAM, &lastProgram);
+            glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &lastVAO);
+            glGetIntegerv(GL_ARRAY_BUFFER_BINDING, &lastArrayBuffer);
+            glGetIntegerv(GL_ELEMENT_ARRAY_BUFFER_BINDING, &lastElementBuffer);
+            lastDepthTest = glIsEnabled(GL_DEPTH_TEST);
+            glGetBooleanv(GL_DEPTH_WRITEMASK, &lastDepthMask);
+            glGetIntegerv(GL_DEPTH_FUNC, &lastDepthFunc);
+            lastBlend = glIsEnabled(GL_BLEND);
+            lastCullFace = glIsEnabled(GL_CULL_FACE);
+            lastScissorTest = glIsEnabled(GL_SCISSOR_TEST);
+        }
+
+        ~GLStateSaver()
+        {
+            if (lastScissorTest) glEnable(GL_SCISSOR_TEST); else glDisable(GL_SCISSOR_TEST);
+            if (lastCullFace) glEnable(GL_CULL_FACE); else glDisable(GL_CULL_FACE);
+            if (lastBlend) glEnable(GL_BLEND); else glDisable(GL_BLEND);
+            glDepthFunc(lastDepthFunc);
+            glDepthMask(lastDepthMask);
+            if (lastDepthTest) glEnable(GL_DEPTH_TEST); else glDisable(GL_DEPTH_TEST);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, lastElementBuffer);
+            glBindBuffer(GL_ARRAY_BUFFER, lastArrayBuffer);
+            glBindVertexArray(lastVAO);
+            glUseProgram(lastProgram);
+            glBindFramebuffer(GL_FRAMEBUFFER, lastFBO);
+            glViewport(lastViewport[0], lastViewport[1], lastViewport[2], lastViewport[3]);
+        }
+    };
 
     // ========================================================================
     // SceneRenderer
@@ -214,8 +233,8 @@ namespace editor {
     {
         if (m_ShadersCompiled) return;
 
-        GLenum err = glGetError();
-        while (err != GL_NO_ERROR) err = glGetError();
+        // Clear any pending GL errors.
+        while (glGetError() != GL_NO_ERROR) {}
 
         m_ShaderProgram = LinkProgram(kMeshVertexShader, kMeshFragmentShader);
         m_GridShaderProgram = LinkProgram(kGridVertexShader, kGridFragmentShader);
@@ -225,10 +244,8 @@ namespace editor {
             m_uViewProj = glGetUniformLocation(m_ShaderProgram, "u_ViewProj");
             m_uModel    = glGetUniformLocation(m_ShaderProgram, "u_Model");
             m_uColor    = glGetUniformLocation(m_ShaderProgram, "u_Color");
-            if (m_uViewProj < 0) ENGINE_LOG_WARN("SceneRenderer — u_ViewProj not found in mesh shader");
-            if (m_uModel < 0)    ENGINE_LOG_WARN("SceneRenderer — u_Model not found in mesh shader");
-            if (m_uColor < 0)    ENGINE_LOG_WARN("SceneRenderer — u_Color not found in mesh shader");
-            ENGINE_LOG_INFO("SceneRenderer — mesh shader compiled (program={})", m_ShaderProgram);
+            ENGINE_LOG_INFO("SceneRenderer — mesh shader compiled (program={}, vpLoc={}, modelLoc={}, colorLoc={})",
+                           m_ShaderProgram, m_uViewProj, m_uModel, m_uColor);
         }
         else
         {
@@ -238,41 +255,23 @@ namespace editor {
         if (m_GridShaderProgram)
         {
             m_uViewProjGrid = glGetUniformLocation(m_GridShaderProgram, "u_ViewProj");
-            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_GridColor");
-            if (m_uViewProjGrid < 0) ENGINE_LOG_WARN("SceneRenderer — u_ViewProj not found in grid shader");
-            if (m_uGridColor < 0)    ENGINE_LOG_WARN("SceneRenderer — u_GridColor not found in grid shader");
-            ENGINE_LOG_INFO("SceneRenderer — grid shader compiled (program={})", m_GridShaderProgram);
+            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_Color");
+            ENGINE_LOG_INFO("SceneRenderer — grid shader compiled (program={}, vpLoc={}, colorLoc={})",
+                           m_GridShaderProgram, m_uViewProjGrid, m_uGridColor);
         }
         else
         {
             ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile/link");
         }
 
-        // Only mark as compiled if BOTH programs succeeded.
-        // Otherwise retry next frame so transient GL errors don't
-        // leave us permanently stuck with no rendering.
-        if (m_ShaderProgram && m_GridShaderProgram)
-        {
-            m_ShadersCompiled = true;
-        }
-        else
-        {
-            ENGINE_LOG_ERROR("SceneRenderer — shader compilation incomplete, will retry next frame");
-            // Clean up any partially-created resources.
-            if (m_ShaderProgram) { glDeleteProgram(m_ShaderProgram); m_ShaderProgram = 0; }
-            if (m_GridShaderProgram) { glDeleteProgram(m_GridShaderProgram); m_GridShaderProgram = 0; }
-        }
-
-        err = glGetError();
-        if (err != GL_NO_ERROR)
-            ENGINE_LOG_ERROR("SceneRenderer — GL error 0x{:X} after EnsureShaders", err);
+        // Mark as compiled regardless — don't retry every frame (causes leaks).
+        m_ShadersCompiled = true;
     }
 
     void SceneRenderer::EnsureGridGeometry()
     {
         if (m_GridVAO) return;
 
-        // Generate a grid on the XZ plane centered at origin.
         const float gridSize = 50.0f;
         const float step = 1.0f;
         const int halfCells = static_cast<int>(gridSize / step);
@@ -281,12 +280,8 @@ namespace editor {
         for (int i = -halfCells; i <= halfCells; ++i)
         {
             float pos = static_cast<float>(i) * step;
-
-            // Line along X axis.
             vertices.push_back({-gridSize, 0.0f, pos});
             vertices.push_back({ gridSize, 0.0f, pos});
-
-            // Line along Z axis.
             vertices.push_back({pos, 0.0f, -gridSize});
             vertices.push_back({pos, 0.0f,  gridSize});
         }
@@ -302,6 +297,8 @@ namespace editor {
         glEnableVertexAttribArray(0);
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vec3), nullptr);
         glBindVertexArray(0);
+
+        ENGINE_LOG_INFO("SceneRenderer — grid geometry created ({} vertices)", m_GridLineCount);
     }
 
     void SceneRenderer::EnsureCubeGeometry()
@@ -318,30 +315,33 @@ namespace editor {
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_CubeIBO);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(kCubeIndices), kCubeIndices, GL_STATIC_DRAW);
 
-        // Position attribute.
         glEnableVertexAttribArray(0);
         glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), nullptr);
-
-        // Normal attribute.
         glEnableVertexAttribArray(1);
         glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                               reinterpret_cast<void*>(offsetof(Vertex, Normal)));
-
         glBindVertexArray(0);
+
+        ENGINE_LOG_INFO("SceneRenderer — cube geometry created");
     }
 
     void SceneRenderer::RenderGrid(const Mat4& viewProjection)
     {
         if (!m_GridShaderProgram || !m_GridVAO) return;
 
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_BLEND);
+        glDepthMask(GL_FALSE);
+
         glUseProgram(m_GridShaderProgram);
         glUniformMatrix4fv(m_uViewProjGrid, 1, GL_FALSE, &viewProjection[0][0]);
-        glUniform4f(m_uGridColor, 0.5f, 0.5f, 0.5f, 0.6f);
+        glUniform4f(m_uGridColor, 0.5f, 0.5f, 0.5f, 0.8f);
 
         glBindVertexArray(m_GridVAO);
         glDrawArrays(GL_LINES, 0, m_GridLineCount);
         glBindVertexArray(0);
 
+        glDepthMask(GL_TRUE);
         ++m_DrawCalls;
     }
 
@@ -355,35 +355,35 @@ namespace editor {
         auto& registry = scene->GetRegistry();
         auto view = registry.View<MeshComponent, TransformComponent>();
 
+        glDisable(GL_BLEND);
+        glDisable(GL_CULL_FACE);
+
         glUseProgram(m_ShaderProgram);
         glUniformMatrix4fv(m_uViewProj, 1, GL_FALSE, &viewProjection[0][0]);
 
         glBindVertexArray(m_CubeVAO);
 
+        u32 meshCount = 0;
         for (auto entity : view)
         {
-            // Validate entity before accessing components.
             if (!registry.IsValid(entity))
                 continue;
 
             auto& mesh = registry.GetComponent<MeshComponent>(entity);
             auto& tf   = registry.GetComponent<TransformComponent>(entity);
 
-            // Skip invisible entities.
             if (registry.HasComponent<VisibilityComponent>(entity))
             {
                 if (!registry.GetComponent<VisibilityComponent>(entity).IsVisible)
                     continue;
             }
 
-            // Skip non-mesh types (only render Cube, Sphere, Plane for now).
             if (mesh.Type == MeshType::None)
                 continue;
 
             Mat4 model = tf.WorldMatrix;
             glUniformMatrix4fv(m_uModel, 1, GL_FALSE, &model[0][0]);
 
-            // Color based on mesh type.
             Vec4 color(0.8f, 0.8f, 0.8f, 1.0f);
             if (mesh.Type == MeshType::Cube)
                 color = Vec4(0.8f, 0.6f, 0.3f, 1.0f);
@@ -396,10 +396,17 @@ namespace editor {
 
             glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
             ++m_DrawCalls;
+            ++meshCount;
         }
 
         glBindVertexArray(0);
         glUseProgram(0);
+
+        if (meshCount == 0)
+        {
+            ENGINE_LOG_WARN("SceneRenderer::RenderMeshes — 0 meshes rendered. Scene={}",
+                           scene->GetName());
+        }
     }
 
     void SceneRenderer::RenderScene(EditorContext& context, ViewportFramebuffer& framebuffer,
@@ -407,59 +414,41 @@ namespace editor {
     {
         m_DrawCalls = 0;
 
-        // Skip if framebuffer is not valid.
         if (!framebuffer.IsValid())
-        {
-            ENGINE_LOG_WARN("SceneRenderer::RenderScene — framebuffer invalid, skipping");
             return;
-        }
 
         EnsureShaders();
         EnsureGridGeometry();
         EnsureCubeGeometry();
 
-        // Cannot render without valid shader programs.
-        if (!m_ShaderProgram && !m_GridShaderProgram)
-        {
-            ENGINE_LOG_WARN("SceneRenderer::RenderScene — no valid shader programs, skipping");
-            return;
-        }
+        // Save ALL GL state before we touch anything.
+        GLStateSaver stateSaver;
 
         framebuffer.Bind();
 
-        // Clear with editor background color.
+        // Clear.
         auto bg = context.GetTheme().GetColor("background");
         glClearColor(bg.x, bg.y, bg.z, bg.w);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // Set up GL state for 3D rendering.
         glEnable(GL_DEPTH_TEST);
+        glDepthFunc(GL_LESS);
+        glDepthMask(GL_TRUE);
+        glDisable(GL_BLEND);
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_SCISSOR_TEST);
 
-        // Render grid if enabled.
+        // Render grid.
         if (renderGrid && context.GetPreferences().GridVisible)
         {
             RenderGrid(viewProjection);
         }
 
-        // Render entities with meshes.
+        // Render meshes.
         RenderMeshes(context, viewProjection);
 
-        glDisable(GL_DEPTH_TEST);
-
-        // Check for OpenGL errors.
-        GLenum err = glGetError();
-        if (err != GL_NO_ERROR)
-        {
-            ENGINE_LOG_ERROR("SceneRenderer — GL error 0x{:X} during scene render", err);
-        }
-
-        framebuffer.Unbind();
-
-        if (m_DrawCalls == 0)
-        {
-            ENGINE_LOG_WARN("SceneRenderer — 0 draw calls produced. Grid={} shaders={}/{}",
-                            renderGrid && context.GetPreferences().GridVisible,
-                            (int)m_ShaderProgram, (int)m_GridShaderProgram);
-        }
+        // Restore is handled by GLStateSaver destructor.
     }
 
     void SceneRenderer::RenderGameView(EditorContext& context, ViewportFramebuffer& framebuffer)
@@ -473,13 +462,20 @@ namespace editor {
         EnsureGridGeometry();
         EnsureCubeGeometry();
 
+        GLStateSaver stateSaver;
+
         framebuffer.Bind();
 
         glClearColor(0.05f, 0.05f, 0.08f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glEnable(GL_DEPTH_TEST);
 
-        // Find the primary runtime camera.
+        glEnable(GL_DEPTH_TEST);
+        glDepthFunc(GL_LESS);
+        glDepthMask(GL_TRUE);
+        glDisable(GL_BLEND);
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_SCISSOR_TEST);
+
         auto* scene = context.GetActiveScene();
         if (scene)
         {
@@ -516,7 +512,6 @@ namespace editor {
             }
             else
             {
-                // Default camera.
                 viewMatrix = engine::math::LookAt(Vec3(0.0f, 5.0f, 10.0f),
                                                    Vec3(0.0f, 0.0f, 0.0f),
                                                    Vec3(0.0f, 1.0f, 0.0f));
@@ -528,15 +523,7 @@ namespace editor {
             }
         }
 
-        glDisable(GL_DEPTH_TEST);
-
-        GLenum err = glGetError();
-        if (err != GL_NO_ERROR)
-        {
-            ENGINE_LOG_ERROR("SceneRenderer — GL error 0x{:X} during game view render", err);
-        }
-
-        framebuffer.Unbind();
+        // Restore is handled by GLStateSaver destructor.
     }
 
 } // namespace editor

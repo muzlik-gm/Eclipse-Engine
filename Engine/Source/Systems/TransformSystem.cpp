@@ -89,6 +89,8 @@ namespace engine::systems {
         // Step 3: Process standalone entities (TransformComponent, no HierarchyComponent).
         // These are flat, non-hierarchical entities created by the editor or loaded
         // from scenes that don't use the hierarchy system.
+        // Always update these — the editor may modify Translation/Rotation/Scale
+        // every frame via the Inspector, so we can't rely on WorldDirty alone.
         auto standaloneView = m_registry->View<components::TransformComponent>();
         for (auto entityHandle : standaloneView)
         {
@@ -99,11 +101,9 @@ namespace engine::systems {
                 continue;
 
             auto& transform = m_registry->GetComponent<components::TransformComponent>(entity);
-            if (transform.WorldDirty)
-            {
-                transform.WorldMatrix = transform.GetLocalMatrix();
-                transform.WorldDirty  = false;
-            }
+            // Always recalculate — the Inspector may have changed Translation/Rotation/Scale.
+            transform.WorldMatrix = transform.GetLocalMatrix();
+            transform.WorldDirty  = false;
         }
     }
 
