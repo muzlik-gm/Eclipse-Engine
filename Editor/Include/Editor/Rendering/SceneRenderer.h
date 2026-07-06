@@ -8,13 +8,14 @@
 #include "Engine/Math/Math.h"
 #include "Editor/Viewport/ViewportFramebuffer.h"
 
+#include <glad/glad.h>
+
 namespace editor {
 
     class EditorContext;
 
     /// @brief Renders the active scene into a viewport framebuffer.
-    ///        Iterates entities with MeshComponent + TransformComponent,
-    ///        applies the camera's view-projection, and draws them.
+    ///        Uses direct OpenGL calls for the editor viewport.
     class SceneRenderer
     {
     public:
@@ -22,16 +23,10 @@ namespace editor {
         ~SceneRenderer();
 
         /// @brief Renders the scene into @p framebuffer using @p viewProjection.
-        /// @param context         The editor context.
-        /// @param framebuffer     Target framebuffer.
-        /// @param viewProjection  Camera view-projection matrix.
-        /// @param renderGrid      If true, renders the editor grid.
         void RenderScene(EditorContext& context, ViewportFramebuffer& framebuffer,
                          const engine::math::Mat4& viewProjection, bool renderGrid = true);
 
         /// @brief Renders the runtime game view into @p framebuffer.
-        /// @param context         The editor context.
-        /// @param framebuffer     Target framebuffer.
         void RenderGameView(EditorContext& context, ViewportFramebuffer& framebuffer);
 
         /// @brief Returns the number of draw calls in the last render.
@@ -39,11 +34,35 @@ namespace editor {
         { return m_DrawCalls; }
 
     private:
+        void EnsureShaders();
+        void EnsureGridGeometry();
+        void EnsureCubeGeometry();
+        void RenderGrid(const engine::math::Mat4& viewProjection);
+        void RenderMeshes(EditorContext& context, const engine::math::Mat4& viewProjection);
+
         engine::core::u32 m_DrawCalls{0};
 
-        // Procedural validation shader sources.
-        const char* m_VertexShaderSrc;
-        const char* m_FragmentShaderSrc;
+        // Shader program.
+        GLuint m_ShaderProgram{0};
+        GLuint m_GridShaderProgram{0};
+        bool   m_ShadersCompiled{false};
+
+        // Grid geometry.
+        GLuint m_GridVAO{0};
+        GLuint m_GridVBO{0};
+        int    m_GridLineCount{0};
+
+        // Cube geometry (for default mesh rendering).
+        GLuint m_CubeVAO{0};
+        GLuint m_CubeVBO{0};
+        GLuint m_CubeIBO{0};
+
+        // Uniform locations (cached).
+        GLint  m_uViewProj{-1};
+        GLint  m_uModel{-1};
+        GLint  m_uColor{-1};
+        GLint  m_uViewProjGrid{-1};
+        GLint  m_uGridColor{-1};
     };
 
 } // namespace editor

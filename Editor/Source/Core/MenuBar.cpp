@@ -128,6 +128,7 @@ namespace editor {
 
         MenuItem(context, "Build Asset Database", "tools.build_assets");
         MenuItem(context, "Reimport All", "tools.reimport_all");
+        MenuItem(context, "Create Test Scene", "scene.create_default");
         ImGui::Separator();
         MenuItem(context, "Project Settings...", "tools.project_settings");
         MenuItem(context, "Editor Preferences...", "tools.editor_preferences");

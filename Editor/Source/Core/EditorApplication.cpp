@@ -27,6 +27,8 @@
 #include "Editor/Prefs/ProjectSettings.h"
 #include "Editor/Camera/EditorCamera.h"
 #include "Editor/Gizmos/GizmoManager.h"
+#include "Engine/Systems/TransformSystem.h"
+#include "Engine/Components/TransformComponent.h"
 #include "Engine/Core/Log.h"
 
 #include <imgui.h>
@@ -168,6 +170,15 @@ namespace editor {
 
         // Update editor camera.
         m_Context.GetCamera().Update(m_Context.GetDeltaTime());
+
+        // Update transforms on the active scene so world matrices are current.
+        auto* scene = m_Context.GetActiveScene();
+        if (scene)
+        {
+            engine::systems::TransformSystem ts;
+            ts.OnAttach(scene->GetRegistry());
+            ts.Update(m_Context.GetDeltaTime());
+        }
 
         // Render the main window with dockspace, menu bar, and toolbar.
         ImGuiViewport* viewport = ImGui::GetMainViewport();
@@ -373,6 +384,65 @@ namespace editor {
             [this]() { EntityFactory::CreatePlane(m_Context); }});
         cmds.Register({"entity.create_sphere", "Create Sphere", "Entity", "Create a sphere entity.",
             [this]() { EntityFactory::CreateSphere(m_Context); }});
+
+        // -- Create default test scene ------------------------------------
+        cmds.Register({"scene.create_default", "Create Test Scene", "Scene",
+            "Create a scene with a camera, light, and test cubes.",
+            [this]()
+            {
+                auto scene = m_Context.GetSceneManager().NewScene("Test Scene");
+                m_Context.SetActiveScene(scene.get());
+
+                // Create camera.
+                auto camEntity = EntityFactory::CreateCamera(m_Context, "Main Camera");
+                auto* activeScene = m_Context.GetActiveScene();
+                if (activeScene)
+                {
+                    auto& camTf = activeScene->GetRegistry().GetComponent<engine::components::TransformComponent>(camEntity);
+                    camTf.Translation = {0.0f, 3.0f, 8.0f};
+                    camTf.WorldDirty = true;
+                }
+
+                // Create a light.
+                EntityFactory::CreateDirectionalLight(m_Context, "Sun");
+
+                // Create some cubes.
+                auto cube1 = EntityFactory::CreateCube(m_Context, "Cube 1");
+                if (activeScene)
+                {
+                    auto& tf1 = activeScene->GetRegistry().GetComponent<engine::components::TransformComponent>(cube1);
+                    tf1.Translation = {0.0f, 0.0f, 0.0f};
+                    tf1.WorldDirty = true;
+                }
+
+                auto cube2 = EntityFactory::CreateCube(m_Context, "Cube 2");
+                if (activeScene)
+                {
+                    auto& tf2 = activeScene->GetRegistry().GetComponent<engine::components::TransformComponent>(cube2);
+                    tf2.Translation = {2.0f, 0.0f, 0.0f};
+                    tf2.WorldDirty = true;
+                }
+
+                auto cube3 = EntityFactory::CreateCube(m_Context, "Cube 3");
+                if (activeScene)
+                {
+                    auto& tf3 = activeScene->GetRegistry().GetComponent<engine::components::TransformComponent>(cube3);
+                    tf3.Translation = {-2.0f, 0.0f, 0.0f};
+                    tf3.WorldDirty = true;
+                }
+
+                // Create a plane as a floor.
+                auto plane = EntityFactory::CreatePlane(m_Context, "Floor");
+                if (activeScene)
+                {
+                    auto& tfP = activeScene->GetRegistry().GetComponent<engine::components::TransformComponent>(plane);
+                    tfP.Translation = {0.0f, -0.5f, 0.0f};
+                    tfP.Scale = {10.0f, 1.0f, 10.0f};
+                    tfP.WorldDirty = true;
+                }
+
+                ENGINE_LOG_INFO("Editor — created default test scene");
+            }});
 
         // -- Entity deletion command --------------------------------------
         cmds.Register({"entity.delete", "Delete Entity", "Entity", "Delete the selected entity.",
