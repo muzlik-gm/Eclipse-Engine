@@ -14,6 +14,9 @@
 #include "Editor/Gizmos/GizmoManager.h"
 #include "Editor/Core/EditorIcons.h"
 #include "Editor/Core/PlayModeController.h"
+#include "Editor/Project/ProjectManager.h"
+#include "Editor/Project/SceneManager.h"
+#include "Editor/History/CommandHistory.h"
 
 namespace editor {
 
@@ -30,6 +33,9 @@ namespace editor {
         , m_Gizmos(std::make_unique<GizmoManager>())
         , m_Icons(std::make_unique<EditorIcons>())
         , m_PlayMode(std::make_unique<PlayModeController>())
+        , m_ProjectManager(std::make_unique<ProjectManager>())
+        , m_SceneManager(std::make_unique<SceneManager>())
+        , m_History(std::make_unique<CommandHistory>())
     {
     }
 

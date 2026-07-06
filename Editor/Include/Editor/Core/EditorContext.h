@@ -26,6 +26,9 @@ namespace editor {
     class GizmoManager;
     class EditorIcons;
     class PlayModeController;
+    class ProjectManager;
+    class SceneManager;
+    class CommandHistory;
 
     namespace runtime = engine::runtime;
     namespace events = engine::events;
@@ -77,6 +80,9 @@ namespace editor {
         [[nodiscard]] GizmoManager&        GetGizmos()        noexcept { return *m_Gizmos; }
         [[nodiscard]] EditorIcons&         GetIcons()         noexcept { return *m_Icons; }
         [[nodiscard]] PlayModeController&  GetPlayMode()      noexcept { return *m_PlayMode; }
+        [[nodiscard]] ProjectManager&      GetProjectManager() noexcept { return *m_ProjectManager; }
+        [[nodiscard]] SceneManager&        GetSceneManager()   noexcept { return *m_SceneManager; }
+        [[nodiscard]] CommandHistory&      GetHistory()        noexcept { return *m_History; }
 
         // -- Engine access -------------------------------------------------
 
@@ -113,6 +119,9 @@ namespace editor {
         std::unique_ptr<GizmoManager>        m_Gizmos;
         std::unique_ptr<EditorIcons>         m_Icons;
         std::unique_ptr<PlayModeController>  m_PlayMode;
+        std::unique_ptr<ProjectManager>      m_ProjectManager;
+        std::unique_ptr<SceneManager>        m_SceneManager;
+        std::unique_ptr<CommandHistory>      m_History;
 
         events::EventBus*                    m_EventBus{nullptr};
         scene::Scene*                        m_ActiveScene{nullptr};

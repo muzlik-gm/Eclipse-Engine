@@ -5,6 +5,9 @@
 #include "Editor/Selection/EditorSelection.h"
 #include "Editor/Core/EntityFactory.h"
 #include "Editor/Core/PlayModeController.h"
+#include "Editor/Project/ProjectManager.h"
+#include "Editor/Project/SceneManager.h"
+#include "Editor/History/CommandHistory.h"
 #include "Editor/Panels/HierarchyPanel.h"
 #include "Editor/Panels/InspectorPanel.h"
 #include "Editor/Panels/ScenePanel.h"
@@ -221,25 +224,57 @@ namespace editor {
 
         // -- File commands -------------------------------------------------
         cmds.Register({"file.new_project", "New Project", "File", "Create a new project.",
-            []() { ENGINE_LOG_INFO("Editor: New Project command"); }});
+            [this]() { m_Context.GetProjectManager().CreateProject(".", "NewProject"); }});
 
         cmds.Register({"file.open_project", "Open Project...", "File", "Open an existing project.",
-            []() { ENGINE_LOG_INFO("Editor: Open Project command"); }});
+            []() { ENGINE_LOG_INFO("Editor: Open Project — use project browser"); }});
 
         cmds.Register({"file.save_project", "Save Project", "File", "Save the current project.",
-            []() { ENGINE_LOG_INFO("Editor: Save Project command"); }});
+            [this]() { m_Context.GetProjectManager().SaveProject(); }});
 
         cmds.Register({"file.save_project_as", "Save Project As...", "File", "Save the project to a new location.",
             []() { ENGINE_LOG_INFO("Editor: Save Project As command"); }});
 
         cmds.Register({"file.new_scene", "New Scene", "File", "Create a new scene.",
-            []() { ENGINE_LOG_INFO("Editor: New Scene command"); }});
+            [this]()
+            {
+                auto scene = m_Context.GetSceneManager().NewScene();
+                m_Context.SetActiveScene(scene.get());
+            }});
 
         cmds.Register({"file.open_scene", "Open Scene...", "File", "Open an existing scene.",
-            []() { ENGINE_LOG_INFO("Editor: Open Scene command"); }});
+            [this]()
+            {
+                auto* proj = m_Context.GetProjectManager().GetCurrentProject();
+                if (proj)
+                {
+                    auto scenes = proj->GetSceneFiles();
+                    if (!scenes.empty())
+                    {
+                        auto scene = m_Context.GetSceneManager().LoadScene(scenes[0]);
+                        if (scene)
+                            m_Context.SetActiveScene(scene.get());
+                    }
+                }
+            }});
 
         cmds.Register({"file.save_scene", "Save Scene", "File", "Save the current scene.",
-            []() { ENGINE_LOG_INFO("Editor: Save Scene command"); }});
+            [this]()
+            {
+                if (m_Context.GetSceneManager().GetCurrentScenePath().empty())
+                {
+                    auto* proj = m_Context.GetProjectManager().GetCurrentProject();
+                    if (proj)
+                    {
+                        auto path = (proj->GetScenePath() / "NewScene.scene").string();
+                        m_Context.GetSceneManager().SaveSceneAs(path);
+                    }
+                }
+                else
+                {
+                    m_Context.GetSceneManager().SaveScene();
+                }
+            }});
 
         cmds.Register({"file.save_scene_as", "Save Scene As...", "File", "Save the scene to a new file.",
             []() { ENGINE_LOG_INFO("Editor: Save Scene As command"); }});
@@ -249,9 +284,11 @@ namespace editor {
 
         // -- Edit commands -------------------------------------------------
         cmds.Register({"edit.undo", "Undo", "Edit", "Undo the last action.",
-            []() { ENGINE_LOG_INFO("Editor: Undo command"); }});
+            [this]() { m_Context.GetHistory().Undo(); },
+            [this]() { return m_Context.GetHistory().CanUndo(); }});
         cmds.Register({"edit.redo", "Redo", "Edit", "Redo the last undone action.",
-            []() { ENGINE_LOG_INFO("Editor: Redo command"); }});
+            [this]() { m_Context.GetHistory().Redo(); },
+            [this]() { return m_Context.GetHistory().CanRedo(); }});
         cmds.Register({"edit.cut", "Cut", "Edit", "Cut the selection.",
             []() { ENGINE_LOG_INFO("Editor: Cut command"); }});
         cmds.Register({"edit.copy", "Copy", "Edit", "Copy the selection.",

@@ -32,6 +32,10 @@ set(EDITOR_SOURCES
     Source/Rendering/SceneRenderer.cpp
     Source/Rendering/DebugRenderer.cpp
     Source/Picking/EntityPicking.cpp
+    Source/Project/Project.cpp
+    Source/Project/ProjectManager.cpp
+    Source/Project/SceneManager.cpp
+    Source/History/CommandHistory.cpp
 )
 
 add_executable(EclipseEditor ${EDITOR_SOURCES})
