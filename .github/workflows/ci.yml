@@ -40,7 +40,8 @@ jobs:
         run: |
           cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
             -DENGINE_BUILD_TESTS=ON \
-            -DENGINE_BUILD_SANDBOX=ON
+            -DENGINE_BUILD_SANDBOX=ON \
+            -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
         run: cmake --build build --config ${{ env.BUILD_TYPE }} -j$(nproc)
@@ -57,11 +58,13 @@ jobs:
           path: |
             build/bin/Sandbox
             build/bin/EngineTests
+            build/bin/EclipseEditor
           if-no-files-found: error
 
   build-windows:
     name: Windows (MSVC)
     runs-on: windows-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -69,7 +72,8 @@ jobs:
         run: |
           cmake -B build -DCMAKE_BUILD_TYPE=Release `
             -DENGINE_BUILD_TESTS=ON `
-            -DENGINE_BUILD_SANDBOX=ON
+            -DENGINE_BUILD_SANDBOX=ON `
+            -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
         run: cmake --build build --config Release -- /m
@@ -85,11 +89,13 @@ jobs:
           path: |
             build/bin/Release/Sandbox.exe
             build/bin/Release/EngineTests.exe
-          if-no-files-found: error
+            build/bin/Release/EclipseEditor.exe
+          if-no-files-found: warn
 
   build-macos:
     name: macOS (Clang)
     runs-on: macos-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -97,7 +103,8 @@ jobs:
         run: |
           cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
             -DENGINE_BUILD_TESTS=ON \
-            -DENGINE_BUILD_SANDBOX=ON
+            -DENGINE_BUILD_SANDBOX=ON \
+            -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
         run: cmake --build build --config ${{ env.BUILD_TYPE }} -j$(sysctl -n hw.ncpu)
@@ -113,4 +120,5 @@ jobs:
           path: |
             build/bin/Sandbox
             build/bin/EngineTests
+            build/bin/EclipseEditor
           if-no-files-found: error

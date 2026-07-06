@@ -22,7 +22,11 @@ namespace editor {
         auto now = std::chrono::system_clock::now();
         auto t = std::chrono::system_clock::to_time_t(now);
         std::tm tm{};
-        localtime_r(&t, &tm);
+        #if defined(_WIN32)
+            localtime_s(&tm, &t);
+        #else
+            localtime_r(&t, &tm);
+        #endif
         char ts[32];
         std::strftime(ts, sizeof(ts), "%H:%M:%S", &tm);
 
