@@ -59,6 +59,15 @@ set(ENGINE_SOURCES
     Source/Serialization/SceneSerializer.cpp
     Source/Hierarchy/HierarchyManager.cpp
     Source/Renderer/WorldRenderer.cpp
+    # Asset Framework (Phase 6)
+    Source/Assets/Core/AssetManager.cpp
+    Source/Assets/Database/AssetDatabase.cpp
+    Source/Assets/Filesystem/AssetFilesystem.cpp
+    Source/Assets/Filesystem/AssetWatcher.cpp
+    Source/Assets/Registry/AssetTypeRegistry.cpp
+    Source/Assets/Importers/ImporterRegistry.cpp
+    Source/Assets/Serialization/AssetSerializer.cpp
+    Source/Assets/Async/AsyncAssetLoader.cpp
     # OpenGL Backend (Phase 4)
     Source/Renderer/OpenGL/OpenGLTypes.cpp
     Source/Renderer/OpenGL/OpenGLDebugLayer.cpp
