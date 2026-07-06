@@ -27,6 +27,7 @@ set(EDITOR_SOURCES
     Source/Panels/ContentBrowserPanel.cpp
     Source/Panels/StatisticsPanel.cpp
     Source/Panels/ProfilerPanel.cpp
+    Source/Panels/ProjectBrowserPanel.cpp
     Source/Viewport/ViewportFramebuffer.cpp
     Source/Viewport/FramebufferManager.cpp
     Source/Rendering/SceneRenderer.cpp
@@ -36,6 +37,7 @@ set(EDITOR_SOURCES
     Source/Project/ProjectManager.cpp
     Source/Project/SceneManager.cpp
     Source/History/CommandHistory.cpp
+    Source/Core/DragDrop.cpp
 )
 
 add_executable(EclipseEditor ${EDITOR_SOURCES})

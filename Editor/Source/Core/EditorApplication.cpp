@@ -16,6 +16,8 @@
 #include "Editor/Panels/ContentBrowserPanel.h"
 #include "Editor/Panels/StatisticsPanel.h"
 #include "Editor/Panels/ProfilerPanel.h"
+#include "Editor/Panels/ProjectBrowserPanel.h"
+#include "Editor/Core/DragDrop.h"
 #include "Editor/Framework/PanelManager.h"
 #include "Editor/Commands/EditorCommandSystem.h"
 #include "Editor/Commands/ShortcutManager.h"
@@ -450,6 +452,7 @@ namespace editor {
         panels.Register(std::make_unique<ConsolePanel>());
         panels.Register(std::make_unique<StatisticsPanel>());
         panels.Register(std::make_unique<ProfilerPanel>());
+        panels.Register(std::make_unique<ProjectBrowserPanel>());
 
         // Find the console panel for log routing.
         m_ConsolePanel = dynamic_cast<ConsolePanel*>(
