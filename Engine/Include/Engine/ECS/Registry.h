@@ -62,7 +62,7 @@ namespace engine::ecs {
         ///        If the entity is null or not alive, this is a no-op.
         void DestroyEntity(Entity entity)
         {
-            if (entity == entt::null || !m_registry.valid(entity))
+            if (entity == engine::ecs::Invalid || !m_registry.valid(entity))
                 return;
             m_registry.destroy(entity);
         }

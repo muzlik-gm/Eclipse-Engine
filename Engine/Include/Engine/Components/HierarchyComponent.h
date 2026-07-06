@@ -25,17 +25,17 @@ namespace engine::components
     /// efficiently with a single depth-first traversal.
     struct HierarchyComponent
     {
-        /// Parent entity, or entt::null if this entity is a root.
-        ecs::Entity Parent{entt::null};
+        /// Parent entity, or engine::ecs::Invalid if this entity is a root.
+        ecs::Entity Parent{engine::ecs::Invalid};
 
-        /// First child entity, or entt::null if leaf.
-        ecs::Entity FirstChild{entt::null};
+        /// First child entity, or engine::ecs::Invalid if leaf.
+        ecs::Entity FirstChild{engine::ecs::Invalid};
 
-        /// Next sibling entity, or entt::null if last child.
-        ecs::Entity NextSibling{entt::null};
+        /// Next sibling entity, or engine::ecs::Invalid if last child.
+        ecs::Entity NextSibling{engine::ecs::Invalid};
 
-        /// Previous sibling entity, or entt::null if first child.
-        ecs::Entity PrevSibling{entt::null};
+        /// Previous sibling entity, or engine::ecs::Invalid if first child.
+        ecs::Entity PrevSibling{engine::ecs::Invalid};
 
         /// Number of direct children (cached for fast queries).
         u32 ChildCount{0};

@@ -26,7 +26,7 @@ namespace engine::hierarchy {
     /// have one.
     inline void SetParent(ecs::Registry& registry, ecs::Entity child, ecs::Entity parent)
     {
-        if (child == entt::null || parent == entt::null)
+        if (child == engine::ecs::Invalid || parent == engine::ecs::Invalid)
             return;
 
         // Ensure the child has a HierarchyComponent.
@@ -45,7 +45,7 @@ namespace engine::hierarchy {
         auto& parentHier = registry.GetComponent<components::HierarchyComponent>(parent);
 
         // Unlink from old parent if any.
-        if (childHier.Parent != entt::null
+        if (childHier.Parent != engine::ecs::Invalid
             && registry.HasComponent<components::HierarchyComponent>(childHier.Parent))
         {
             RemoveFromParent(registry, child);
@@ -54,18 +54,18 @@ namespace engine::hierarchy {
         // Link into new parent's child list (append to end).
         childHier.Parent = parent;
 
-        if (parentHier.FirstChild == entt::null)
+        if (parentHier.FirstChild == engine::ecs::Invalid)
         {
             // Parent has no children yet.
             parentHier.FirstChild = child;
-            childHier.PrevSibling = entt::null;
+            childHier.PrevSibling = engine::ecs::Invalid;
         }
         else
         {
             // Walk to the last child.
             ecs::Entity sibling = parentHier.FirstChild;
             while (registry.GetComponent<components::HierarchyComponent>(sibling).NextSibling
-                   != entt::null)
+                   != engine::ecs::Invalid)
             {
                 sibling = registry.GetComponent<components::HierarchyComponent>(sibling).NextSibling;
             }
@@ -75,7 +75,7 @@ namespace engine::hierarchy {
             childHier.PrevSibling = sibling;
         }
 
-        childHier.NextSibling = entt::null;
+        childHier.NextSibling = engine::ecs::Invalid;
         ++parentHier.ChildCount;
     }
 
@@ -88,7 +88,7 @@ namespace engine::hierarchy {
     /// After this call the entity becomes a root (Parent == Invalid).
     inline void RemoveFromParent(ecs::Registry& registry, ecs::Entity entity)
     {
-        if (entity == entt::null)
+        if (entity == engine::ecs::Invalid)
             return;
 
         if (!registry.HasComponent<components::HierarchyComponent>(entity))
@@ -96,7 +96,7 @@ namespace engine::hierarchy {
 
         auto& hier = registry.GetComponent<components::HierarchyComponent>(entity);
 
-        if (hier.Parent == entt::null)
+        if (hier.Parent == engine::ecs::Invalid)
             return; // Already a root.
 
         if (!registry.HasComponent<components::HierarchyComponent>(hier.Parent))
@@ -111,13 +111,13 @@ namespace engine::hierarchy {
         }
 
         // Update sibling pointers.
-        if (hier.PrevSibling != entt::null
+        if (hier.PrevSibling != engine::ecs::Invalid
             && registry.HasComponent<components::HierarchyComponent>(hier.PrevSibling))
         {
             registry.GetComponent<components::HierarchyComponent>(hier.PrevSibling).NextSibling = hier.NextSibling;
         }
 
-        if (hier.NextSibling != entt::null
+        if (hier.NextSibling != engine::ecs::Invalid
             && registry.HasComponent<components::HierarchyComponent>(hier.NextSibling))
         {
             registry.GetComponent<components::HierarchyComponent>(hier.NextSibling).PrevSibling = hier.PrevSibling;
@@ -126,9 +126,9 @@ namespace engine::hierarchy {
         --parentHier.ChildCount;
 
         // Reset entity's links.
-        hier.Parent      = entt::null;
-        hier.PrevSibling = entt::null;
-        hier.NextSibling = entt::null;
+        hier.Parent      = engine::ecs::Invalid;
+        hier.PrevSibling = engine::ecs::Invalid;
+        hier.NextSibling = engine::ecs::Invalid;
     }
 
     // ========================================================================
@@ -142,7 +142,7 @@ namespace engine::hierarchy {
     {
         std::vector<ecs::Entity> children;
 
-        if (parent == entt::null)
+        if (parent == engine::ecs::Invalid)
             return children;
 
         if (!registry.HasComponent<components::HierarchyComponent>(parent))
@@ -151,7 +151,7 @@ namespace engine::hierarchy {
         const auto& hier = registry.GetComponent<components::HierarchyComponent>(parent);
         ecs::Entity current = hier.FirstChild;
 
-        while (current != entt::null)
+        while (current != engine::ecs::Invalid)
         {
             children.push_back(current);
 
@@ -180,7 +180,7 @@ namespace engine::hierarchy {
             ecs::Entity entity{entityHandle};
             const auto& hier = registry.GetComponent<components::HierarchyComponent>(entity);
 
-            if (hier.Parent == entt::null)
+            if (hier.Parent == engine::ecs::Invalid)
             {
                 roots.push_back(entity);
             }
@@ -198,7 +198,7 @@ namespace engine::hierarchy {
     [[nodiscard]] inline bool IsDescendantOf(
         ecs::Registry& registry, ecs::Entity entity, ecs::Entity ancestor)
     {
-        if (entity == entt::null || ancestor == entt::null)
+        if (entity == engine::ecs::Invalid || ancestor == engine::ecs::Invalid)
             return false;
 
         if (entity == ancestor)
@@ -206,7 +206,7 @@ namespace engine::hierarchy {
 
         ecs::Entity current = entity;
 
-        while (current != entt::null)
+        while (current != engine::ecs::Invalid)
         {
             if (!registry.HasComponent<components::HierarchyComponent>(current))
                 break;

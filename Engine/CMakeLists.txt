@@ -57,6 +57,8 @@ set(ENGINE_SOURCES
     Source/World/World.cpp
     Source/World/WorldManager.cpp
     Source/Serialization/SceneSerializer.cpp
+    Source/Hierarchy/HierarchyManager.cpp
+    Source/Renderer/WorldRenderer.cpp
     # OpenGL Backend (Phase 4)
     Source/Renderer/OpenGL/OpenGLTypes.cpp
     Source/Renderer/OpenGL/OpenGLDebugLayer.cpp
