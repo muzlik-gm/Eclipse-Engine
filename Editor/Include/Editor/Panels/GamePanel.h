@@ -4,6 +4,8 @@
 #pragma once
 
 #include "Editor/Framework/PanelManager.h"
+#include "Editor/Viewport/ViewportFramebuffer.h"
+#include "Editor/Rendering/SceneRenderer.h"
 #include <string>
 
 namespace editor {
@@ -24,6 +26,8 @@ namespace editor {
     private:
         std::string m_Name{"Game View"};
         std::string m_Title{"Game View"};
+        ViewportFramebuffer m_Framebuffer;
+        SceneRenderer       m_SceneRenderer;
     };
 
 } // namespace editor

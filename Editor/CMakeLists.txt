@@ -7,6 +7,8 @@ set(EDITOR_SOURCES
     Source/Core/MenuBar.cpp
     Source/Core/Toolbar.cpp
     Source/Core/EditorIcons.cpp
+    Source/Core/EntityFactory.cpp
+    Source/Core/PlayModeController.cpp
     Source/Commands/EditorCommandSystem.cpp
     Source/Commands/ShortcutManager.cpp
     Source/Theme/ThemeManager.cpp
@@ -25,6 +27,11 @@ set(EDITOR_SOURCES
     Source/Panels/ContentBrowserPanel.cpp
     Source/Panels/StatisticsPanel.cpp
     Source/Panels/ProfilerPanel.cpp
+    Source/Viewport/ViewportFramebuffer.cpp
+    Source/Viewport/FramebufferManager.cpp
+    Source/Rendering/SceneRenderer.cpp
+    Source/Rendering/DebugRenderer.cpp
+    Source/Picking/EntityPicking.cpp
 )
 
 add_executable(EclipseEditor ${EDITOR_SOURCES})

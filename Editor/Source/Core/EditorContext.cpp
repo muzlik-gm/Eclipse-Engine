@@ -13,6 +13,7 @@
 #include "Editor/Camera/EditorCamera.h"
 #include "Editor/Gizmos/GizmoManager.h"
 #include "Editor/Core/EditorIcons.h"
+#include "Editor/Core/PlayModeController.h"
 
 namespace editor {
 
@@ -28,6 +29,7 @@ namespace editor {
         , m_Camera(std::make_unique<EditorCamera>())
         , m_Gizmos(std::make_unique<GizmoManager>())
         , m_Icons(std::make_unique<EditorIcons>())
+        , m_PlayMode(std::make_unique<PlayModeController>())
     {
     }
 

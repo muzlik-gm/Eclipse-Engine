@@ -3,6 +3,8 @@
 // ============================================================================
 #include "Editor/Core/EditorApplication.h"
 #include "Editor/Selection/EditorSelection.h"
+#include "Editor/Core/EntityFactory.h"
+#include "Editor/Core/PlayModeController.h"
 #include "Editor/Panels/HierarchyPanel.h"
 #include "Editor/Panels/InspectorPanel.h"
 #include "Editor/Panels/ScenePanel.h"
@@ -259,7 +261,7 @@ namespace editor {
         cmds.Register({"edit.duplicate", "Duplicate", "Edit", "Duplicate the selection.",
             []() { ENGINE_LOG_INFO("Editor: Duplicate command"); }});
         cmds.Register({"edit.delete", "Delete", "Edit", "Delete the selection.",
-            []() { ENGINE_LOG_INFO("Editor: Delete command"); }});
+            [this]() { m_Context.GetCommands().Execute("entity.delete"); }});
         cmds.Register({"edit.preferences", "Preferences...", "Edit", "Open editor preferences.",
             []() { ENGINE_LOG_INFO("Editor: Preferences command"); }});
 
@@ -315,13 +317,37 @@ namespace editor {
 
         // -- Editor mode commands -----------------------------------------
         cmds.Register({"editor.play", "Play", "Editor", "Enter play mode.",
-            [this]() { m_Context.SetMode(EditorMode::Play); }});
+            [this]() { m_Context.GetPlayMode().EnterPlayMode(m_Context); }});
         cmds.Register({"editor.pause", "Pause", "Editor", "Pause play mode.",
-            [this]() { m_Context.SetMode(EditorMode::Pause); }});
+            [this]() { m_Context.GetPlayMode().Pause(m_Context); }});
         cmds.Register({"editor.stop", "Stop", "Editor", "Stop play mode and return to edit mode.",
-            [this]() { m_Context.SetMode(EditorMode::Edit); }});
+            [this]() { m_Context.GetPlayMode().Stop(m_Context); }});
         cmds.Register({"editor.step", "Step", "Editor", "Step one frame in play mode.",
-            [this]() { m_Context.SetMode(EditorMode::Step); }});
+            [this]() { m_Context.GetPlayMode().Step(m_Context); }});
+
+        // -- Entity creation commands -------------------------------------
+        cmds.Register({"entity.create_empty", "Create Empty", "Entity", "Create an empty entity.",
+            [this]() { EntityFactory::CreateEmpty(m_Context); }});
+        cmds.Register({"entity.create_camera", "Create Camera", "Entity", "Create a camera entity.",
+            [this]() { EntityFactory::CreateCamera(m_Context); }});
+        cmds.Register({"entity.create_light", "Create Light", "Entity", "Create a directional light.",
+            [this]() { EntityFactory::CreateDirectionalLight(m_Context); }});
+        cmds.Register({"entity.create_cube", "Create Cube", "Entity", "Create a cube entity.",
+            [this]() { EntityFactory::CreateCube(m_Context); }});
+        cmds.Register({"entity.create_plane", "Create Plane", "Entity", "Create a plane entity.",
+            [this]() { EntityFactory::CreatePlane(m_Context); }});
+        cmds.Register({"entity.create_sphere", "Create Sphere", "Entity", "Create a sphere entity.",
+            [this]() { EntityFactory::CreateSphere(m_Context); }});
+
+        // -- Entity deletion command --------------------------------------
+        cmds.Register({"entity.delete", "Delete Entity", "Entity", "Delete the selected entity.",
+            [this]()
+            {
+                auto entity = m_Context.GetSelection().GetPrimaryEntity();
+                if (entity != engine::ecs::Invalid)
+                    EntityFactory::DeleteEntity(m_Context, entity);
+            },
+            [this]() { return m_Context.GetSelection().GetPrimaryEntity() != engine::ecs::Invalid; }});
     }
 
     void EditorApplication::RegisterDefaultShortcuts()

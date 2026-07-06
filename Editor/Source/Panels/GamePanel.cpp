@@ -3,32 +3,39 @@
 // ============================================================================
 #include "Editor/Panels/GamePanel.h"
 #include "Editor/Core/EditorContext.h"
+#include "Editor/Commands/EditorCommandSystem.h"
 #include "Engine/Scene/Scene.h"
 #include "Engine/ECS/Registry.h"
 #include "Engine/Components/CameraComponent.h"
 #include "Engine/Components/TransformComponent.h"
 
 #include <imgui.h>
+#include <glad/glad.h>
 
 namespace editor {
+
+    using engine::core::u32;
 
     GamePanel::GamePanel() = default;
 
     void GamePanel::OnRender(EditorContext& context)
     {
-        // Toolbar with play/pause/resume controls.
+        // Play/pause/stop/step controls.
         auto mode = context.GetMode();
 
-        if (ImGui::Button(mode == EditorMode::Play ? "Pause" : "Play"))
+        if (ImGui::Button(mode == EditorMode::Play ? "|| Pause" : "> Play"))
         {
-            context.SetMode(mode == EditorMode::Play ? EditorMode::Edit : EditorMode::Play);
+            if (mode == EditorMode::Play)
+                context.GetCommands().Execute("editor.pause");
+            else
+                context.GetCommands().Execute("editor.play");
         }
         ImGui::SameLine();
-        if (ImGui::Button("Stop"))
-            context.SetMode(EditorMode::Edit);
+        if (ImGui::Button("[] Stop"))
+            context.GetCommands().Execute("editor.stop");
         ImGui::SameLine();
-        if (ImGui::Button("Step"))
-            context.SetMode(EditorMode::Step);
+        if (ImGui::Button(">| Step"))
+            context.GetCommands().Execute("editor.step");
 
         ImGui::Separator();
 
@@ -36,27 +43,32 @@ namespace editor {
         if (size.x <= 0 || size.y <= 0)
             return;
 
-        // Render placeholder — actual runtime camera rendering is wired
-        // during the rendering systems phase.
-        ImDrawList* dl = ImGui::GetWindowDrawList();
-        ImVec2 p0 = ImGui::GetCursorScreenPos();
-        ImVec2 p1 = ImVec2(p0.x + size.x, p0.y + size.y);
+        // Resize the framebuffer if needed.
+        u32 w = static_cast<u32>(size.x);
+        u32 h = static_cast<u32>(size.y);
+        if (m_Framebuffer.NeedsResize(w, h))
+            m_Framebuffer.Resize(w, h);
 
-        // Dark background to simulate game viewport.
-        dl->AddRectFilled(p0, p1, ImGui::ColorConvertFloat4ToU32(
-            ImVec4(0.05f, 0.05f, 0.08f, 1.0f)));
+        // Render the game view into the framebuffer.
+        m_SceneRenderer.RenderGameView(context, m_Framebuffer);
 
-        // Display mode label.
+        // Display the framebuffer texture.
+        ImGui::Image(static_cast<ImTextureID>(m_Framebuffer.GetColorTextureID()),
+                     size, ImVec2(0, 1), ImVec2(1, 0));
+
+        // Display mode label overlay.
         const char* modeLabel = "Edit Mode";
         if (mode == EditorMode::Play)  modeLabel = "Playing";
         if (mode == EditorMode::Pause) modeLabel = "Paused";
         if (mode == EditorMode::Step)  modeLabel = "Stepping";
 
-        dl->AddText(ImVec2(p0.x + 8, p0.y + 8),
-            ImGui::ColorConvertFloat4ToU32(ImVec4(0.5f, 0.9f, 0.5f, 1.0f)),
-            modeLabel);
-
-        ImGui::Dummy(size);
+        ImDrawList* dl = ImGui::GetWindowDrawList();
+        ImVec2 p0 = ImGui::GetItemRectMin();
+        dl->AddRectFilled(ImVec2(p0.x, p0.y), ImVec2(p0.x + 100, p0.y + 20),
+                          ImGui::ColorConvertFloat4ToU32(ImVec4(0, 0, 0, 0.6f)));
+        dl->AddText(ImVec2(p0.x + 8, p0.y + 4),
+                    ImGui::ColorConvertFloat4ToU32(ImVec4(0.5f, 0.9f, 0.5f, 1.0f)),
+                    modeLabel);
     }
 
 } // namespace editor
