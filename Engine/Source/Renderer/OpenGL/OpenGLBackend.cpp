@@ -79,20 +79,17 @@ namespace engine::opengl {
     static OpenGLBackend       g_OpenGLBackend;
     static engine::rhi::BackendRegistrar g_OpenGLBackendRegistrar(&g_OpenGLBackend);
 
-    /// @brief Forces the OpenGL backend to be registered.  This function
-    ///        must be called explicitly from the executable (not from the
-    ///        engine library) to ensure the linker includes this
-    ///        translation unit.  Without this call, the static
-    ///        BackendRegistrar above is stripped by the linker when
-    ///        linking against the static Engine library.
-    extern "C" void ForceLinkOpenGLBackend()
-    {
-        // The mere existence of this function in this translation unit
-        // forces the linker to include OpenGLBackend.cpp, which in turn
-        // ensures the static g_OpenGLBackend and g_OpenGLBackendRegistrar
-        // are constructed at program startup.
-        (void)g_OpenGLBackend;
-        (void)g_OpenGLBackendRegistrar;
-    }
-
 } // namespace engine::opengl
+
+// ============================================================================
+// Force-link function — MUST be outside the namespace so the symbol name
+// is truly global (C linkage, no namespace prefix).
+// ============================================================================
+
+extern "C" void ForceLinkOpenGLBackend()
+{
+    // The mere existence of this function in this translation unit
+    // forces the linker to include OpenGLBackend.cpp, which ensures
+    // the static g_OpenGLBackend and g_OpenGLBackendRegistrar are
+    // constructed at program startup.
+}

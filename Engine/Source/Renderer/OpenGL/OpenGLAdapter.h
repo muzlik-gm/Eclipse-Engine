@@ -12,7 +12,7 @@ namespace engine::opengl {
     class OpenGLAdapter final : public engine::rhi::IGraphicsAdapter
     {
     public:
-        OpenGLAdapter();
+        OpenGLAdapter() = default;
         ~OpenGLAdapter() override = default;
 
         // -- IGraphicsObject

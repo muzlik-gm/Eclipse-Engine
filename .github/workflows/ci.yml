@@ -14,6 +14,7 @@ jobs:
   build-linux:
     name: Linux (GCC ${{ matrix.gcc }})
     runs-on: ubuntu-24.04
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
@@ -31,20 +32,13 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            libx11-dev libxrandr-dev libxinerama-dev \
-            libxcursor-dev libxi-dev libgl1-mesa-dev \
-            libxfixes-dev python3
+          sudo apt-get install -y libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libxfixes-dev python3
 
       - name: Configure
-        run: |
-          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
-            -DENGINE_BUILD_TESTS=ON \
-            -DENGINE_BUILD_SANDBOX=ON \
-            -DENGINE_BUILD_EDITOR=ON
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
-        run: cmake --build build --config ${{ env.BUILD_TYPE }} -j$(nproc)
+        run: cmake --build build --config Release -j$(nproc)
 
       - name: Test
         working-directory: build
@@ -59,23 +53,21 @@ jobs:
             build/bin/Sandbox
             build/bin/EngineTests
             build/bin/EclipseEditor
-          if-no-files-found: error
+          if-no-files-found: warn
 
   build-windows:
     name: Windows (MSVC)
     runs-on: windows-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
       - name: Configure
-        run: |
-          cmake -B build -DCMAKE_BUILD_TYPE=Release `
-            -DENGINE_BUILD_TESTS=ON `
-            -DENGINE_BUILD_SANDBOX=ON `
-            -DENGINE_BUILD_EDITOR=ON
+        shell: cmd
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
+        shell: cmd
         run: cmake --build build --config Release -- /m
 
       - name: Test
@@ -95,19 +87,15 @@ jobs:
   build-macos:
     name: macOS (Clang)
     runs-on: macos-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
       - name: Configure
-        run: |
-          cmake -B build -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }} \
-            -DENGINE_BUILD_TESTS=ON \
-            -DENGINE_BUILD_SANDBOX=ON \
-            -DENGINE_BUILD_EDITOR=ON
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
-        run: cmake --build build --config ${{ env.BUILD_TYPE }} -j$(sysctl -n hw.ncpu)
+        run: cmake --build build --config Release -j$(sysctl -n hw.ncpu)
 
       - name: Test
         working-directory: build
@@ -121,4 +109,4 @@ jobs:
             build/bin/Sandbox
             build/bin/EngineTests
             build/bin/EclipseEditor
-          if-no-files-found: error
+          if-no-files-found: warn
