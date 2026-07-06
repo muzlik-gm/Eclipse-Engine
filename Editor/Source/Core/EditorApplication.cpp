@@ -34,6 +34,7 @@
 #include <imgui_impl_opengl3.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <filesystem>
 
 namespace editor {
 
@@ -105,16 +106,19 @@ namespace editor {
         ImGuiIO& io = ImGui::GetIO();
         io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
         io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-        io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+        // NOTE: ViewportsEnable disabled — causes crashes on some Windows
+        // systems when dragging windows outside the main window.
+        // io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+
+        // Ensure the .editor directory exists before ImGui tries to
+        // write its ini file there.
+        std::filesystem::create_directories(".editor");
         io.IniFilename = ".editor/imgui.ini";
 
-        // When viewports are enabled, tweak window rounding and background.
+        // Apply default style.
         ImGuiStyle& style = ImGui::GetStyle();
-        if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-        {
-            style.WindowRounding = 0.0f;
-            style.Colors[ImGuiCol_WindowBg].w = 1.0f;
-        }
+        style.WindowRounding = 0.0f;
+        style.Colors[ImGuiCol_WindowBg].w = 1.0f;
 
         // Initialize ImGui backends.
         ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -194,17 +198,9 @@ namespace editor {
         // Render all panels.
         m_Context.GetPanels().RenderAll(m_Context);
 
-        // Render ImGui viewports.
+        // Render ImGui.
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-        if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-        {
-            GLFWwindow* backup = glfwGetCurrentContext();
-            ImGui::UpdatePlatformWindows();
-            ImGui::RenderPlatformWindowsDefault();
-            glfwMakeContextCurrent(backup);
-        }
     }
 
     // ========================================================================
