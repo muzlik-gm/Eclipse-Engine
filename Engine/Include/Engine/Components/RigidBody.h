@@ -5,10 +5,12 @@
 #pragma once
 
 #include "Engine/Core/Types.h"
+#include "Engine/Math/Math.h"
 
 namespace engine::components {
 
     using engine::core::f32;
+    using engine::math::Vec3;
 
     /// @brief Determines how a rigid body interacts with the physics world.
     enum class BodyType : int
@@ -19,6 +21,9 @@ namespace engine::components {
     };
 
     /// @brief Attaches rigid body parameters to an entity.
+    ///
+    /// Linear and angular velocities are stored as Vec3 for cache-friendly
+    /// SIMD-friendly access by the future physics subsystem.
     struct RigidBody
     {
         BodyType Type{BodyType::Dynamic};
@@ -27,12 +32,8 @@ namespace engine::components {
         f32 AngularDrag{0.05f};
         bool UseGravity{true};
         bool IsKinematic{false};
-        float LinearVelocityX{0.0f};
-        float LinearVelocityY{0.0f};
-        float LinearVelocityZ{0.0f};
-        float AngularVelocityX{0.0f};
-        float AngularVelocityY{0.0f};
-        float AngularVelocityZ{0.0f};
+        Vec3 LinearVelocity{0.0f, 0.0f, 0.0f};
+        Vec3 AngularVelocity{0.0f, 0.0f, 0.0f};
     };
 
 } // namespace engine::components

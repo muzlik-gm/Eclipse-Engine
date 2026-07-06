@@ -7,6 +7,8 @@
 #include "Engine/Math/Math.h"
 #include "Engine/Core/Types.h"
 
+#include <string>
+
 namespace engine::components {
 
     using engine::core::f32;

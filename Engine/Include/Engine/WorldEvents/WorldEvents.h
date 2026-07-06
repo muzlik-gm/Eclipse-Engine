@@ -1,5 +1,6 @@
 // ============================================================================
 // File: Engine/Include/Engine/WorldEvents/WorldEvents.h
+// Runtime events fired by the World subsystem and WorldManager.
 // ============================================================================
 #pragma once
 
@@ -11,57 +12,57 @@
 
 namespace engine::world_events {
 
-    using engine::core::u32;
     using engine::core::f64;
+    using engine::core::UUID;
     using engine::events::Event;
     using engine::events::EventType;
     using engine::events::EventCategory;
 
     // ========================================================================
-    // WorldInitializedEvent
+    // WorldInitializedEvent — fired when World::Initialize completes.
     // ========================================================================
     class WorldInitializedEvent final : public Event
     {
     public:
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "WorldInitialized"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "WorldInitialized"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::WorldInitialized; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::World | EventCategory::Application; }
     };
 
     // ========================================================================
-    // WorldShutdownEvent
+    // WorldShutdownEvent — fired when World::Shutdown begins.
     // ========================================================================
     class WorldShutdownEvent final : public Event
     {
     public:
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "WorldShutdown"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "WorldShutdown"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::WorldShutdown; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::World | EventCategory::Application; }
     };
 
     // ========================================================================
-    // ActiveSceneChangedEvent
+    // ActiveSceneChangedEvent — fired when the active scene changes.
     // ========================================================================
     class ActiveSceneChangedEvent final : public Event
     {
     public:
-        explicit ActiveSceneChangedEvent(core::UUID oldScene, core::UUID newScene)
+        ActiveSceneChangedEvent(UUID oldScene, UUID newScene)
             : m_OldScene(oldScene), m_NewScene(newScene) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "ActiveSceneChanged"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "ActiveSceneChanged"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::ActiveSceneChanged; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::World | EventCategory::Scene; }
 
-        [[nodiscard]] constexpr core::UUID GetOldScene() const noexcept { return m_OldScene; }
-        [[nodiscard]] constexpr core::UUID GetNewScene() const noexcept { return m_NewScene; }
+        [[nodiscard]] UUID GetOldScene() const noexcept { return m_OldScene; }
+        [[nodiscard]] UUID GetNewScene() const noexcept { return m_NewScene; }
 
     private:
-        core::UUID m_OldScene;
-        core::UUID m_NewScene;
+        UUID m_OldScene;
+        UUID m_NewScene;
     };
 
     // ========================================================================
-    // WorldTickEvent
+    // WorldTickEvent — fired at the start of each World::Update.
     // ========================================================================
     class WorldTickEvent final : public Event
     {
@@ -69,11 +70,11 @@ namespace engine::world_events {
         explicit WorldTickEvent(f64 deltaTime)
             : m_DeltaTime(deltaTime) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "WorldTick"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "WorldTick"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::WorldTick; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::World; }
 
-        [[nodiscard]] constexpr f64 GetDeltaTime() const noexcept { return m_DeltaTime; }
+        [[nodiscard]] f64 GetDeltaTime() const noexcept { return m_DeltaTime; }
 
     private:
         f64 m_DeltaTime;

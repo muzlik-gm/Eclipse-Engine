@@ -6,6 +6,8 @@
 
 #include "Engine/Scene/Scene.h"
 #include "Engine/Runtime/ISubsystem.h"
+#include "Engine/Events/EventBus.h"
+#include "Engine/WorldEvents/WorldEvents.h"
 
 #include <memory>
 #include <unordered_map>
@@ -14,6 +16,7 @@ namespace engine::world {
 
     using engine::core::f64;
     using engine::core::usize;
+    using engine::events::EventBus;
 
     // ========================================================================
     // World
@@ -49,6 +52,12 @@ namespace engine::world {
         void FixedUpdate(f64 fixedDeltaTime) override;
         void LateUpdate(f64 deltaTime) override;
 
+        // -- EventBus binding ---------------------------------------------------
+
+        /// @brief Binds an EventBus so that world and scene events are
+        ///        dispatched.  Must be called before Initialize().
+        void SetEventBus(EventBus* bus) noexcept { m_EventBus = bus; }
+
         // -- Scene management --------------------------------------------------
 
         /// @brief Creates a new scene with the given name and returns a
@@ -79,13 +88,10 @@ namespace engine::world {
         /// @brief Returns the number of scenes currently managed.
         [[nodiscard]] usize SceneCount() const { return m_scenes.size(); }
 
-        /// @brief Returns a const reference to the internal scene map.
-        [[nodiscard]] const std::unordered_map<core::UUID, std::unique_ptr<scene::Scene>>&
-        GetScenes() const { return m_scenes; }
-
     private:
         std::unordered_map<core::UUID, std::unique_ptr<scene::Scene>> m_scenes;
         scene::Scene* m_activeScene{nullptr};
+        EventBus*     m_EventBus{nullptr};
     };
 
 } // namespace engine::world

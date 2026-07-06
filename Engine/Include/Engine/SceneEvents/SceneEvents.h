@@ -1,5 +1,6 @@
 // ============================================================================
 // File: Engine/Include/Engine/SceneEvents/SceneEvents.h
+// Runtime events fired by the Scene, ECS Registry, and hierarchy utilities.
 // ============================================================================
 #pragma once
 
@@ -13,167 +14,212 @@
 
 namespace engine::scene_events {
 
-    using engine::core::u32;
+    using engine::core::UUID;
+    using engine::ecs::Entity;
     using engine::events::Event;
     using engine::events::EventType;
     using engine::events::EventCategory;
 
     // ========================================================================
-    // EntityCreatedEvent
+    // Entity events
     // ========================================================================
+
     class EntityCreatedEvent final : public Event
     {
     public:
-        explicit EntityCreatedEvent(ecs::Entity entity, core::UUID sceneUUID)
+        EntityCreatedEvent(Entity entity, UUID sceneUUID)
             : m_Entity(entity), m_SceneUUID(sceneUUID) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "EntityCreated"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "EntityCreated"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::EntityCreated; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Entity | EventCategory::Scene; }
 
-        [[nodiscard]] constexpr ecs::Entity   GetEntity() const noexcept { return m_Entity; }
-        [[nodiscard]] constexpr core::UUID    GetSceneUUID() const noexcept { return m_SceneUUID; }
+        [[nodiscard]] Entity GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] UUID   GetSceneUUID() const noexcept { return m_SceneUUID; }
 
     private:
-        ecs::Entity m_Entity;
-        core::UUID  m_SceneUUID;
+        Entity m_Entity;
+        UUID   m_SceneUUID;
     };
 
-    // ========================================================================
-    // EntityDestroyedEvent
-    // ========================================================================
     class EntityDestroyedEvent final : public Event
     {
     public:
-        explicit EntityDestroyedEvent(ecs::Entity entity)
+        explicit EntityDestroyedEvent(Entity entity)
             : m_Entity(entity) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "EntityDestroyed"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "EntityDestroyed"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::EntityDestroyed; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Entity | EventCategory::Scene; }
 
-        [[nodiscard]] constexpr ecs::Entity GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] Entity GetEntity() const noexcept { return m_Entity; }
 
     private:
-        ecs::Entity m_Entity;
+        Entity m_Entity;
     };
 
     // ========================================================================
-    // ComponentAddedEvent
+    // Component events
     // ========================================================================
+
     class ComponentAddedEvent final : public Event
     {
     public:
-        explicit ComponentAddedEvent(ecs::Entity entity, std::string componentName)
+        ComponentAddedEvent(Entity entity, std::string componentName)
             : m_Entity(entity), m_ComponentName(std::move(componentName)) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "ComponentAdded"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "ComponentAdded"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::ComponentAdded; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Component | EventCategory::Entity; }
 
-        [[nodiscard]] constexpr ecs::Entity          GetEntity() const noexcept { return m_Entity; }
-        [[nodiscard]] constexpr const std::string&   GetComponentName() const noexcept { return m_ComponentName; }
+        [[nodiscard]] Entity             GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] const std::string& GetComponentName() const noexcept { return m_ComponentName; }
 
     private:
-        ecs::Entity m_Entity;
+        Entity      m_Entity;
         std::string m_ComponentName;
     };
 
-    // ========================================================================
-    // ComponentRemovedEvent
-    // ========================================================================
     class ComponentRemovedEvent final : public Event
     {
     public:
-        explicit ComponentRemovedEvent(ecs::Entity entity, std::string componentName)
+        ComponentRemovedEvent(Entity entity, std::string componentName)
             : m_Entity(entity), m_ComponentName(std::move(componentName)) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "ComponentRemoved"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "ComponentRemoved"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::ComponentRemoved; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Component | EventCategory::Entity; }
 
-        [[nodiscard]] constexpr ecs::Entity          GetEntity() const noexcept { return m_Entity; }
-        [[nodiscard]] constexpr const std::string&   GetComponentName() const noexcept { return m_ComponentName; }
+        [[nodiscard]] Entity             GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] const std::string& GetComponentName() const noexcept { return m_ComponentName; }
 
     private:
-        ecs::Entity m_Entity;
+        Entity      m_Entity;
+        std::string m_ComponentName;
+    };
+
+    class ComponentModifiedEvent final : public Event
+    {
+    public:
+        ComponentModifiedEvent(Entity entity, std::string componentName)
+            : m_Entity(entity), m_ComponentName(std::move(componentName)) {}
+
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "ComponentModified"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::ComponentModified; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Component | EventCategory::Entity; }
+
+        [[nodiscard]] Entity             GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] const std::string& GetComponentName() const noexcept { return m_ComponentName; }
+
+    private:
+        Entity      m_Entity;
         std::string m_ComponentName;
     };
 
     // ========================================================================
-    // TransformChangedEvent
+    // Hierarchy / Transform / Visibility events
     // ========================================================================
+
     class TransformChangedEvent final : public Event
     {
     public:
-        explicit TransformChangedEvent(ecs::Entity entity)
+        explicit TransformChangedEvent(Entity entity)
             : m_Entity(entity) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "TransformChanged"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "TransformChanged"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::TransformChanged; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Entity; }
 
-        [[nodiscard]] constexpr ecs::Entity GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] Entity GetEntity() const noexcept { return m_Entity; }
 
     private:
-        ecs::Entity m_Entity;
+        Entity m_Entity;
     };
 
-    // ========================================================================
-    // HierarchyChangedEvent
-    // ========================================================================
     class HierarchyChangedEvent final : public Event
     {
     public:
-        explicit HierarchyChangedEvent(ecs::Entity entity)
+        explicit HierarchyChangedEvent(Entity entity)
             : m_Entity(entity) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "HierarchyChanged"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "HierarchyChanged"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::HierarchyChanged; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Entity; }
 
-        [[nodiscard]] constexpr ecs::Entity GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] Entity GetEntity() const noexcept { return m_Entity; }
 
     private:
-        ecs::Entity m_Entity;
+        Entity m_Entity;
+    };
+
+    class VisibilityChangedEvent final : public Event
+    {
+    public:
+        VisibilityChangedEvent(Entity entity, bool visible)
+            : m_Entity(entity), m_Visible(visible) {}
+
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "VisibilityChanged"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::VisibilityChanged; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Entity; }
+
+        [[nodiscard]] Entity GetEntity() const noexcept { return m_Entity; }
+        [[nodiscard]] bool   IsVisible() const noexcept { return m_Visible; }
+
+    private:
+        Entity m_Entity;
+        bool   m_Visible;
     };
 
     // ========================================================================
-    // SceneLoadedEvent
+    // Scene lifecycle events
     // ========================================================================
+
     class SceneLoadedEvent final : public Event
     {
     public:
-        explicit SceneLoadedEvent(core::UUID sceneUUID)
+        explicit SceneLoadedEvent(UUID sceneUUID)
             : m_SceneUUID(sceneUUID) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "SceneLoaded"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "SceneLoaded"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::SceneLoaded; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Scene | EventCategory::World; }
 
-        [[nodiscard]] constexpr core::UUID GetSceneUUID() const noexcept { return m_SceneUUID; }
+        [[nodiscard]] UUID GetSceneUUID() const noexcept { return m_SceneUUID; }
 
     private:
-        core::UUID m_SceneUUID;
+        UUID m_SceneUUID;
     };
 
-    // ========================================================================
-    // SceneUnloadedEvent
-    // ========================================================================
     class SceneUnloadedEvent final : public Event
     {
     public:
-        explicit SceneUnloadedEvent(core::UUID sceneUUID)
+        explicit SceneUnloadedEvent(UUID sceneUUID)
             : m_SceneUUID(sceneUUID) {}
 
-        [[nodiscard]] constexpr std::string_view GetName() const noexcept override { return "SceneUnloaded"; }
-        [[nodiscard]] constexpr EventType       GetEventType() const noexcept override { return EventType::None; }
-        [[nodiscard]] constexpr EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Application; }
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "SceneUnloaded"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::SceneUnloaded; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Scene | EventCategory::World; }
 
-        [[nodiscard]] constexpr core::UUID GetSceneUUID() const noexcept { return m_SceneUUID; }
+        [[nodiscard]] UUID GetSceneUUID() const noexcept { return m_SceneUUID; }
 
     private:
-        core::UUID m_SceneUUID;
+        UUID m_SceneUUID;
+    };
+
+    class SceneActivatedEvent final : public Event
+    {
+    public:
+        explicit SceneActivatedEvent(UUID sceneUUID)
+            : m_SceneUUID(sceneUUID) {}
+
+        [[nodiscard]] std::string_view GetName() const noexcept override { return "SceneActivated"; }
+        [[nodiscard]] EventType       GetEventType() const noexcept override { return EventType::SceneActivated; }
+        [[nodiscard]] EventCategory   GetCategoryFlags() const noexcept override { return EventCategory::Scene | EventCategory::World; }
+
+        [[nodiscard]] UUID GetSceneUUID() const noexcept { return m_SceneUUID; }
+
+    private:
+        UUID m_SceneUUID;
     };
 
 } // namespace engine::scene_events

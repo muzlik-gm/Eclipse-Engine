@@ -170,8 +170,11 @@ TEST(EngineTest, EngineOwnsSubsystemManager)
         std::make_unique<StopSubsystem>(&engine, 1));
 
     ASSERT_TRUE(engine.Initialize(config));
-    EXPECT_EQ(engine.GetSubsystemManager().Count(), 1u);
+    // Engine::Initialize() auto-registers the WorldManager subsystem,
+    // so the count includes both the test's Stopper and WorldManager.
+    EXPECT_GE(engine.GetSubsystemManager().Count(), 1u);
     EXPECT_TRUE(engine.GetSubsystemManager().IsInitialized("Stopper"));
+    EXPECT_TRUE(engine.GetSubsystemManager().IsInitialized("WorldManager"));
 
     engine.Shutdown();
     TEST_LOG_SHUTDOWN();

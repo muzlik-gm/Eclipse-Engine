@@ -8,9 +8,11 @@
 #include "Engine/Core/Log.h"
 #include "Engine/Diagnostics/BuildInfo.h"
 #include "Engine/Configuration/Config.h"
+#include "Engine/World/WorldManager.h"
 
 #include <chrono>
 #include <thread>
+#include <memory>
 
 namespace engine::runtime
 {
@@ -75,6 +77,15 @@ namespace engine::runtime
             TransitionTo(EngineState::Stopping);
             Shutdown();
             return false;
+        }
+
+        // Register the WorldManager subsystem and bind the EventBus so
+        // that world / scene / entity / component events are dispatched.
+        {
+            auto worldManager = std::make_unique<world::WorldManager>();
+            worldManager->SetEventBus(&m_context.GetEventBus());
+            m_context.GetSubsystemManager().Register(std::move(worldManager));
+            ENGINE_LOG_INFO("Engine — registered WorldManager subsystem");
         }
 
         // Initialize subsystems.

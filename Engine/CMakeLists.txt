@@ -57,6 +57,30 @@ set(ENGINE_SOURCES
     Source/World/World.cpp
     Source/World/WorldManager.cpp
     Source/Serialization/SceneSerializer.cpp
+    # OpenGL Backend (Phase 4)
+    Source/Renderer/OpenGL/OpenGLTypes.cpp
+    Source/Renderer/OpenGL/OpenGLDebugLayer.cpp
+    Source/Renderer/OpenGL/OpenGLStateCache.cpp
+    Source/Renderer/OpenGL/OpenGLContext.cpp
+    Source/Renderer/OpenGL/OpenGLCapabilities.cpp
+    Source/Renderer/OpenGL/OpenGLBuffer.cpp
+    Source/Renderer/OpenGL/OpenGLTexture.cpp
+    Source/Renderer/OpenGL/OpenGLShaderPreprocessor.cpp
+    Source/Renderer/OpenGL/OpenGLShader.cpp
+    Source/Renderer/OpenGL/OpenGLPipeline.cpp
+    Source/Renderer/OpenGL/OpenGLVertexArray.cpp
+    Source/Renderer/OpenGL/OpenGLRenderPass.cpp
+    Source/Renderer/OpenGL/OpenGLSync.cpp
+    Source/Renderer/OpenGL/OpenGLCommandBuffer.cpp
+    Source/Renderer/OpenGL/OpenGLCommandQueue.cpp
+    Source/Renderer/OpenGL/OpenGLSwapChain.cpp
+    Source/Renderer/OpenGL/OpenGLFactory.cpp
+    Source/Renderer/OpenGL/OpenGLDevice.cpp
+    Source/Renderer/OpenGL/OpenGLBackend.cpp
+    # Render Core (Phase 4)
+    Source/Renderer/Core/RendererStatistics.cpp
+    Source/Renderer/Core/RendererContext.cpp
+    Source/Renderer/Core/Renderer.cpp
 )
 
 add_library(Engine ${ENGINE_LIBRARY_TYPE} ${ENGINE_SOURCES})
@@ -67,6 +91,7 @@ target_include_directories(Engine
         $<INSTALL_INTERFACE:include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/Private
+        ${CMAKE_BINARY_DIR}/_deps/glad-generated/include
 )
 
 # Link dependencies
@@ -77,6 +102,7 @@ target_link_libraries(Engine
         yaml-cpp::yaml-cpp
         Threads::Threads
         glfw
+        glad_api
     PUBLIC
         spdlog::spdlog
         nlohmann_json::nlohmann_json

@@ -22,6 +22,7 @@ namespace engine::events {
     enum class EventType : u32
     {
         None                  = 0,
+        // Window / Input events (1–49)
         WindowClose           = 1,
         WindowResize          = 2,
         WindowFocus           = 3,
@@ -39,7 +40,32 @@ namespace engine::events {
         WindowRestored        = 15,
         WindowRefresh         = 16,
         FramebufferResized    = 17,
-        DPIChanged            = 18
+        DPIChanged            = 18,
+
+        // World events (100–149)
+        WorldInitialized      = 100,
+        WorldShutdown         = 101,
+        WorldTick             = 102,
+        ActiveSceneChanged    = 103,
+
+        // Scene events (200–249)
+        SceneLoaded           = 200,
+        SceneUnloaded         = 201,
+        SceneActivated        = 202,
+
+        // Entity events (300–349)
+        EntityCreated         = 300,
+        EntityDestroyed       = 301,
+
+        // Component events (400–449)
+        ComponentAdded        = 400,
+        ComponentRemoved      = 401,
+        ComponentModified     = 402,
+
+        // Hierarchy / Transform / Visibility events (500–549)
+        HierarchyChanged      = 500,
+        TransformChanged      = 501,
+        VisibilityChanged     = 502
     };
 
     // ========================================================================
@@ -53,7 +79,11 @@ namespace engine::events {
         Keyboard    = (1u << 2),
         Mouse       = (1u << 3),
         MouseButton = (1u << 4),
-        Window      = (1u << 5)
+        Window      = (1u << 5),
+        World       = (1u << 6),
+        Scene       = (1u << 7),
+        Entity      = (1u << 8),
+        Component   = (1u << 9)
     };
 
     ENGINE_ENUM_FLAGS(EventCategory);

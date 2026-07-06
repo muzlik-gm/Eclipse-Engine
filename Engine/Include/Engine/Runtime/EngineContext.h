@@ -8,6 +8,7 @@
 #pragma once
 
 #include "Engine/Core/Types.h"
+#include "Engine/Events/EventBus.h"
 #include "Engine/Runtime/EngineConfig.h"
 #include "Engine/Runtime/EngineState.h"
 #include "Engine/Runtime/FrameStats.h"
@@ -143,11 +144,28 @@ namespace engine::runtime
             return m_frameStats;
         }
 
+        // ----------------------------------------------------------------
+        // Event bus (shared by all subsystems)
+        // ----------------------------------------------------------------
+
+        /// Access the engine-wide event bus.
+        [[nodiscard]] events::EventBus& GetEventBus() noexcept
+        {
+            return m_eventBus;
+        }
+
+        /// Access the engine-wide event bus (const).
+        [[nodiscard]] const events::EventBus& GetEventBus() const noexcept
+        {
+            return m_eventBus;
+        }
+
     private:
         SubsystemManager                m_subsystemManager;
         EngineConfig                    m_config;
         EngineState                     m_state = EngineState::Starting;
         FrameStats                      m_frameStats;
+        events::EventBus                m_eventBus;
         std::unordered_map<std::type_index, std::any> m_services;
         mutable std::mutex              m_mutex;
     };

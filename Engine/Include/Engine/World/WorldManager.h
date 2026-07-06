@@ -6,6 +6,7 @@
 
 #include "Engine/World/World.h"
 #include "Engine/Runtime/ISubsystem.h"
+#include "Engine/Events/EventBus.h"
 
 namespace engine::world {
 
@@ -32,6 +33,10 @@ namespace engine::world {
         void Update(f64 deltaTime) override;
         void FixedUpdate(f64 fixedDeltaTime) override;
         void LateUpdate(f64 deltaTime) override;
+
+        /// @brief Binds an EventBus to the World so that world and scene
+        ///        events are dispatched.  Must be called before Initialize().
+        void SetEventBus(events::EventBus* bus) noexcept { m_world.SetEventBus(bus); }
 
         [[nodiscard]] World& GetWorld() { return m_world; }
         [[nodiscard]] const World& GetWorld() const { return m_world; }

@@ -1,23 +1,26 @@
 // ============================================================================
 // File: Engine/Include/Engine/Scene/Scene.h
-// Owns an ECS registry, a list of systems, and entity lifetime helpers.
+// Owns an ECS registry, a system scheduler, and entity lifetime helpers.
 // ============================================================================
 #pragma once
 
 #include "Engine/ECS/Registry.h"
 #include "Engine/Core/UUID.h"
 #include "Engine/Systems/ISystem.h"
+#include "Engine/Systems/SystemScheduler.h"
 #include "Engine/Entities/EntityHandle.h"
 #include "Engine/Components/TagComponent.h"
+#include "Engine/Events/EventBus.h"
+#include "Engine/SceneEvents/SceneEvents.h"
 
 #include <memory>
 #include <string>
-#include <vector>
 
 namespace engine::scene {
 
     using engine::core::f64;
     using engine::core::usize;
+    using engine::events::EventBus;
 
     // ========================================================================
     // Scene
@@ -29,13 +32,18 @@ namespace engine::scene {
     /// Each Scene is identified by a UUID and a human-readable name.  The
     /// World subsystem (engine::world::World) manages the lifetime of
     /// multiple scenes and selects one as the active scene for simulation.
+    ///
+    /// Systems are managed by a SystemScheduler that respects named groups,
+    /// integer priorities, and declared dependencies.
     class Scene
     {
     public:
         // -- Constructors / Destructor -----------------------------------------
 
         /// @brief Constructs a scene with the given name and a random UUID.
-        explicit Scene(std::string name);
+        /// @param eventBus Optional EventBus for dispatching entity and
+        ///                 component events.  May be nullptr.
+        explicit Scene(std::string name, EventBus* eventBus = nullptr);
 
         ~Scene() = default;
 
@@ -49,8 +57,13 @@ namespace engine::scene {
         [[nodiscard]] const core::UUID& GetUUID() const noexcept { return m_uuid; }
         [[nodiscard]] const std::string& GetName() const noexcept { return m_name; }
         [[nodiscard]] ecs::Registry& GetRegistry() noexcept { return m_registry; }
+        [[nodiscard]] const ecs::Registry& GetRegistry() const noexcept { return m_registry; }
         [[nodiscard]] bool IsActive() const noexcept { return m_isActive; }
         void SetActive(bool active) noexcept { m_isActive = active; }
+
+        /// @brief Returns the system scheduler that owns this scene's systems.
+        [[nodiscard]] systems::SystemScheduler& GetSystemScheduler() noexcept { return m_Scheduler; }
+        [[nodiscard]] const systems::SystemScheduler& GetSystemScheduler() const noexcept { return m_Scheduler; }
 
         // -- Entity lifetime ---------------------------------------------------
 
@@ -67,7 +80,7 @@ namespace engine::scene {
         // -- System management -------------------------------------------------
 
         /// @brief Constructs a system of type @p T, calls OnAttach, and
-        ///        adds it to the scene.
+        ///        registers it with the system scheduler.
         ///
         /// @tparam T  Concrete system type (must derive from ISystem).
         /// @tparam Args Constructor argument types for @p T.
@@ -76,38 +89,53 @@ namespace engine::scene {
         template <typename T, typename... Args>
         T& AddSystem(Args&&... args)
         {
-            auto system = std::make_unique<T>(std::forward<Args>(args)...);
-            system->OnAttach(m_registry);
-            T& ref = *system;
-            m_systems.push_back(std::move(system));
-            return ref;
+            return m_Scheduler.Add<T>(m_registry, "Default", 0,
+                                      std::forward<Args>(args)...);
+        }
+
+        /// @brief Registers a system with explicit group and priority.
+        template <typename T, typename... Args>
+        T& AddSystemWithGroup(const std::string& group,
+                              engine::core::i32 priority,
+                              Args&&... args)
+        {
+            return m_Scheduler.Add<T>(m_registry, group, priority,
+                                      std::forward<Args>(args)...);
         }
 
         // -- Per-frame updates -------------------------------------------------
 
-        /// @brief Calls Update on every enabled system.
+        /// @brief Calls Update on every enabled system via the scheduler.
         void OnUpdate(f64 deltaTime);
 
-        /// @brief Calls FixedUpdate on every enabled system.
+        /// @brief Calls FixedUpdate on every enabled system via the scheduler.
         void OnFixedUpdate(f64 fixedDeltaTime);
+
+        /// @brief Calls LateUpdate on every enabled system via the scheduler.
+        void OnLateUpdate(f64 deltaTime);
 
         // -- Queries -----------------------------------------------------------
 
         /// @brief Returns the number of alive entities in the registry.
         ///        Counts entities that have a TagComponent (added by CreateEntity).
-        [[nodiscard]] usize EntityCount()
+        [[nodiscard]] usize EntityCount() const
         {
             usize count = 0;
-            for ([[maybe_unused]] auto entity : m_registry.View<components::TagComponent>()) { (void)entity; ++count; }
+            for ([[maybe_unused]] auto entity : m_registry.View<components::TagComponent>())
+            {
+                (void)entity;
+                ++count;
+            }
             return count;
         }
 
     private:
-        core::UUID                                  m_uuid;
-        std::string                                 m_name;
-        ecs::Registry                               m_registry;
-        std::vector<std::unique_ptr<systems::ISystem>> m_systems;
-        bool                                        m_isActive{false};
+        core::UUID                            m_uuid;
+        std::string                           m_name;
+        ecs::Registry                         m_registry;
+        systems::SystemScheduler              m_Scheduler;
+        EventBus*                             m_EventBus{nullptr};
+        bool                                  m_isActive{false};
     };
 
 } // namespace engine::scene
