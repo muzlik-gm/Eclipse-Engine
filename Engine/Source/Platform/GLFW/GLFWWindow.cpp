@@ -53,7 +53,13 @@ namespace engine::platform
 
             m_Properties = props;
 
-            glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+            // Request an OpenGL context (not GLFW_NO_API which is for Vulkan).
+            glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_API);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+            glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+            glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
+            glfwWindowHint(GLFW_SAMPLES, 0);
             glfwWindowHint(GLFW_RESIZABLE, m_Properties.Resizable ? GLFW_TRUE : GLFW_FALSE);
             glfwWindowHint(GLFW_VISIBLE, m_Properties.VisibleOnCreate ? GLFW_TRUE : GLFW_FALSE);
             glfwWindowHint(GLFW_DECORATED,
