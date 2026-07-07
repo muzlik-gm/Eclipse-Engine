@@ -142,6 +142,41 @@ namespace editor {
 
     void Toolbar::RenderQuickAccess(EditorContext& context)
     {
+        // Entity creation dropdown.
+        if (ImGui::Button("+ Add Entity"))
+            ImGui::OpenPopup("##AddEntityToolbar");
+
+        if (ImGui::BeginPopup("##AddEntityToolbar"))
+        {
+            if (ImGui::MenuItem("Empty"))
+                context.GetCommands().Execute("entity.create_empty");
+            if (ImGui::MenuItem("Camera"))
+                context.GetCommands().Execute("entity.create_camera");
+            if (ImGui::MenuItem("Light"))
+                context.GetCommands().Execute("entity.create_light");
+            ImGui::Separator();
+            if (ImGui::MenuItem("Cube"))
+                context.GetCommands().Execute("entity.create_cube");
+            if (ImGui::MenuItem("Sphere"))
+                context.GetCommands().Execute("entity.create_sphere");
+            if (ImGui::MenuItem("Plane"))
+                context.GetCommands().Execute("entity.create_plane");
+            ImGui::Separator();
+            if (ImGui::MenuItem("Test Scene"))
+                context.GetCommands().Execute("scene.create_default");
+            ImGui::EndPopup();
+        }
+
+        ImGui::SameLine();
+
+        // Delete selected.
+        if (ImGui::Button("- Delete"))
+            context.GetCommands().Execute("entity.delete");
+
+        ImGui::SameLine();
+        ImGui::Separator();
+        ImGui::SameLine();
+
         if (ImGui::Button("Stats"))
             context.GetPanels().TogglePanel("Statistics");
 

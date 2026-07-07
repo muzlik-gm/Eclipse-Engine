@@ -3,6 +3,8 @@
 // ============================================================================
 #include "Editor/Panels/HierarchyPanel.h"
 #include "Editor/Core/EditorContext.h"
+#include "Editor/Core/EntityFactory.h"
+#include "Editor/Commands/EditorCommandSystem.h"
 #include "Editor/Selection/EditorSelection.h"
 #include "Editor/Theme/ThemeManager.h"
 #include "Engine/Scene/Scene.h"
@@ -26,6 +28,39 @@ namespace editor {
         std::copy(m_SearchFilter.begin(), m_SearchFilter.end(), searchBuf);
         ImGui::InputTextWithHint("##Search", "Search entities...", searchBuf, sizeof(searchBuf));
         m_SearchFilter = searchBuf;
+
+        ImGui::SameLine();
+
+        // Add entity button with dropdown.
+        if (ImGui::Button("+ Add"))
+            ImGui::OpenPopup("##AddEntityPopup");
+
+        if (ImGui::BeginPopup("##AddEntityPopup"))
+        {
+            if (ImGui::MenuItem("Empty Entity"))
+                context.GetCommands().Execute("entity.create_empty");
+            if (ImGui::MenuItem("Camera"))
+                context.GetCommands().Execute("entity.create_camera");
+            if (ImGui::MenuItem("Directional Light"))
+                context.GetCommands().Execute("entity.create_light");
+            ImGui::Separator();
+            if (ImGui::MenuItem("Cube"))
+                context.GetCommands().Execute("entity.create_cube");
+            if (ImGui::MenuItem("Sphere"))
+                context.GetCommands().Execute("entity.create_sphere");
+            if (ImGui::MenuItem("Plane"))
+                context.GetCommands().Execute("entity.create_plane");
+            ImGui::Separator();
+            if (ImGui::MenuItem("Test Scene"))
+                context.GetCommands().Execute("scene.create_default");
+            ImGui::EndPopup();
+        }
+
+        ImGui::SameLine();
+
+        // Delete selected entity button.
+        if (ImGui::Button("- Delete"))
+            context.GetCommands().Execute("entity.delete");
 
         ImGui::Separator();
 

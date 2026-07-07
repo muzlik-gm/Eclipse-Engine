@@ -73,6 +73,12 @@ namespace editor {
 
         // Console panel reference (for log routing).
         class ConsolePanel* m_ConsolePanel{nullptr};
+
+        // About dialog state.
+        bool m_ShowAboutDialog{false};
+
+        // Renders the About dialog.
+        void RenderAboutDialog();
     };
 
 } // namespace editor
