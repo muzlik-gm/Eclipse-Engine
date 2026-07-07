@@ -15,30 +15,27 @@ permissions:
 
 jobs:
   build-linux:
-    name: Linux (GCC ${{ matrix.gcc }})
+    name: Linux (GCC 14)
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      matrix:
-        gcc: ['13', '14']
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install GCC ${{ matrix.gcc }}
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y g++-${{ matrix.gcc }}
-          echo "CC=gcc-${{ matrix.gcc }}" >> $GITHUB_ENV
-          echo "CXX=g++-${{ matrix.gcc }}" >> $GITHUB_ENV
+          sudo apt-get install -y g++-14 ninja-build libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libxfixes-dev python3
+          echo "CC=gcc-14" >> $GITHUB_ENV
+          echo "CXX=g++-14" >> $GITHUB_ENV
 
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev libgl1-mesa-dev libxfixes-dev python3
+      - name: Cache CMake dependencies
+        uses: actions/cache@v4
+        with:
+          path: build/_deps
+          key: linux-deps-${{ hashFiles('CMake/Dependencies.cmake') }}
 
       - name: Configure
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
         run: cmake --build build --config Release -j$(nproc)
@@ -48,7 +45,6 @@ jobs:
         run: ctest --output-on-failure --timeout 60
 
       - name: Package executables
-        if: matrix.gcc == '14'
         run: |
           mkdir -p artifacts
           cp build/bin/Sandbox artifacts/
@@ -59,26 +55,34 @@ jobs:
 
       - name: Upload executables
         uses: actions/upload-artifact@v4
-        if: matrix.gcc == '14'
         with:
-          name: linux-x86_64-gcc14
+          name: linux-x86_64
           path: artifacts/
           if-no-files-found: warn
 
   build-windows:
     name: Windows (MSVC)
     runs-on: windows-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@v6
+
+      - name: Cache CMake dependencies
+        uses: actions/cache@v4
+        with:
+          path: build/_deps
+          key: windows-deps-${{ hashFiles('CMake/Dependencies.cmake') }}
+
       - name: Configure
         shell: cmd
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
+        run: call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat" && cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
         shell: cmd
-        run: cmake --build build --config Release -- /m
+        run: call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat" && cmake --build build --config Release -j%NUMBER_OF_PROCESSORS%
 
       - name: Test
         working-directory: build
@@ -88,27 +92,36 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path artifacts
-          Copy-Item build/bin/Release/Sandbox.exe artifacts/
-          Copy-Item build/bin/Release/EngineTests.exe artifacts/
-          Copy-Item build/bin/Release/EclipseEditor.exe artifacts/
+          Copy-Item build/bin/Sandbox.exe artifacts/
+          Copy-Item build/bin/EngineTests.exe artifacts/
+          Copy-Item build/bin/EclipseEditor.exe artifacts/
           Compress-Archive -Path artifacts/* -DestinationPath artifacts/eclipse-engine-windows-x86_64.zip
 
       - name: Upload executables
         uses: actions/upload-artifact@v4
         with:
-          name: windows-x86_64-msvc
+          name: windows-x86_64
           path: artifacts/
           if-no-files-found: warn
 
   build-macos:
     name: macOS (Clang)
     runs-on: macos-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install Ninja
+        run: brew install ninja
+
+      - name: Cache CMake dependencies
+        uses: actions/cache@v4
+        with:
+          path: build/_deps
+          key: macos-deps-${{ hashFiles('CMake/Dependencies.cmake') }}
+
       - name: Configure
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
         run: cmake --build build --config Release -j$(sysctl -n hw.ncpu)
@@ -129,7 +142,7 @@ jobs:
       - name: Upload executables
         uses: actions/upload-artifact@v4
         with:
-          name: macos-arm64-clang
+          name: macos-arm64
           path: artifacts/
           if-no-files-found: warn
 
@@ -149,10 +162,10 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: Eclipse Engine Latest Build
+          tag_name: v0.0.1-dev
+          name: "0.0.1 Dev Build"
           body: |
-            ## Eclipse Engine — Latest Build
+            ## Eclipse Engine — 0.0.1 Dev Build
 
             Auto-generated from the latest push to `main`.
 
