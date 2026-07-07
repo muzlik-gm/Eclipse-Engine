@@ -8,7 +8,6 @@
 #include "Editor/Selection/EditorSelection.h"
 #include "Editor/Theme/ThemeManager.h"
 #include "Editor/Prefs/EditorPreferences.h"
-#include "Editor/Rendering/DebugRenderer.h"
 #include "Engine/Scene/Scene.h"
 #include "Engine/Components/TransformComponent.h"
 
@@ -78,20 +77,23 @@ namespace editor {
         auto& cam = context.GetCamera();
 
         // Render the scene into the framebuffer.
+        // This happens INSIDE ImGui's frame, but the SceneRenderer uses
+        // a GLStateSaver to save/restore all GL state.
         Mat4 viewProjection = cam.GetProjectionMatrix() * cam.GetViewMatrix();
         m_SceneRenderer.RenderScene(context, m_Framebuffer, viewProjection,
                                      context.GetPreferences().GridVisible);
 
         // Display the framebuffer texture via ImGui.
+        // ImGui::Image will add a draw command that samples from the texture.
+        // The actual rendering happens later in ImGui_ImplOpenGL3_RenderDrawData.
         ImGui::Image(static_cast<ImTextureID>(m_Framebuffer.GetColorTextureID()),
                      size, ImVec2(0, 1), ImVec2(1, 0));
 
-        // Capture hover/focus BEFORE handling input so we use the
-        // current frame's state instead of last frame's.
+        // Capture hover/focus.
         m_IsFocused = ImGui::IsWindowFocused();
         m_IsHovered = ImGui::IsWindowHovered();
 
-        // Handle mouse input for camera + picking.
+        // Handle mouse input for camera.
         ImVec2 imagePos = ImGui::GetItemRectMin();
         ImVec2 imageSize = ImGui::GetItemRectSize();
         HandleMouseInput(context, imagePos, imageSize);
@@ -140,22 +142,22 @@ namespace editor {
         if (wheel != 0)
             cam.Zoom(wheel);
 
-        // Entity picking on left-click.
-        if (ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !ImGui::GetIO().KeyCtrl)
-        {
-            // Pick entity at mouse position.
-            Mat4 vp = cam.GetProjectionMatrix() * cam.GetViewMatrix();
-            m_Picking.RenderPickBuffer(m_Framebuffer, vp);
-
-            u32 px = static_cast<u32>(mx);
-            u32 py = static_cast<u32>(my);
-            auto entity = m_Picking.PickAt(px, py);
-
-            if (entity != engine::ecs::Invalid)
-                context.GetSelection().SelectEntity(entity);
-            else
-                context.GetSelection().Clear();
-        }
+        // Entity picking on left-click — DISABLED for now to prevent crashes.
+        // The picking system creates GL resources inside ImGui's frame which
+        // can cause state corruption. Will be re-enabled with proper state
+        // management in a future update.
+        // if (ImGui::IsMouseClicked(ImGuiMouseButton_Left) && !ImGui::GetIO().KeyCtrl)
+        // {
+        //     Mat4 vp = cam.GetProjectionMatrix() * cam.GetViewMatrix();
+        //     m_Picking.RenderPickBuffer(m_Framebuffer, vp);
+        //     u32 px = static_cast<u32>(mx);
+        //     u32 py = static_cast<u32>(my);
+        //     auto entity = m_Picking.PickAt(px, py);
+        //     if (entity != engine::ecs::Invalid)
+        //         context.GetSelection().SelectEntity(entity);
+        //     else
+        //         context.GetSelection().Clear();
+        // }
     }
 
 } // namespace editor

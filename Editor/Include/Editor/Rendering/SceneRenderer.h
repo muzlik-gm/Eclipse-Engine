@@ -12,6 +12,8 @@
 
 namespace editor {
 
+    using engine::core::u32;
+
     class EditorContext;
 
     /// @brief Renders the active scene into a viewport framebuffer.
@@ -63,6 +65,8 @@ namespace editor {
         GLint  m_uColor{-1};
         GLint  m_uViewProjGrid{-1};
         GLint  m_uGridColor{-1};
+
+        u32    m_LastMeshCount{0xFFFFFFFF}; // Track for change detection.
     };
 
 } // namespace editor

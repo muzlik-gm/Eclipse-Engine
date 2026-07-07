@@ -17,7 +17,6 @@
 #include <glad/glad.h>
 #include <vector>
 #include <cmath>
-#include <cstring>
 
 namespace editor {
 
@@ -33,11 +32,11 @@ namespace editor {
     using engine::components::VisibilityComponent;
 
     // ========================================================================
-    // Shader sources
+    // Shader sources — use 460 core to match the GL context.
     // ========================================================================
 
     static const char* kMeshVertexShader = R"GLSL(
-        #version 330 core
+        #version 460 core
         layout(location = 0) in vec3 a_Position;
         layout(location = 1) in vec3 a_Normal;
         uniform mat4 u_ViewProj;
@@ -51,7 +50,7 @@ namespace editor {
     )GLSL";
 
     static const char* kMeshFragmentShader = R"GLSL(
-        #version 330 core
+        #version 460 core
         in vec3 v_Normal;
         out vec4 FragColor;
         uniform vec4 u_Color;
@@ -64,7 +63,7 @@ namespace editor {
     )GLSL";
 
     static const char* kGridVertexShader = R"GLSL(
-        #version 330 core
+        #version 460 core
         layout(location = 0) in vec3 a_Position;
         uniform mat4 u_ViewProj;
         out float v_Dist;
@@ -76,7 +75,7 @@ namespace editor {
     )GLSL";
 
     static const char* kGridFragmentShader = R"GLSL(
-        #version 330 core
+        #version 460 core
         in float v_Dist;
         out vec4 FragColor;
         uniform vec4 u_Color;
@@ -161,7 +160,8 @@ namespace editor {
     }
 
     // ========================================================================
-    // GL state saver — saves ALL state that SceneRenderer modifies
+    // GL state saver — saves ALL state that SceneRenderer modifies.
+    // This is critical because we render INSIDE ImGui's frame.
     // ========================================================================
 
     struct GLStateSaver
@@ -178,6 +178,10 @@ namespace editor {
         GLboolean lastBlend{GL_FALSE};
         GLboolean lastCullFace{GL_FALSE};
         GLboolean lastScissorTest{GL_FALSE};
+        GLint lastActiveTexture{GL_TEXTURE0};
+        GLint lastTexture2D{0};
+        GLfloat lastClearColor[4]{0,0,0,0};
+        GLboolean lastColorMask[4]{GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE};
 
         GLStateSaver()
         {
@@ -193,10 +197,19 @@ namespace editor {
             lastBlend = glIsEnabled(GL_BLEND);
             lastCullFace = glIsEnabled(GL_CULL_FACE);
             lastScissorTest = glIsEnabled(GL_SCISSOR_TEST);
+            glGetIntegerv(GL_ACTIVE_TEXTURE, &lastActiveTexture);
+            glGetIntegerv(GL_TEXTURE_BINDING_2D, &lastTexture2D);
+            glGetFloatv(GL_COLOR_CLEAR_VALUE, lastClearColor);
+            glGetBooleanv(GL_COLOR_WRITEMASK, lastColorMask);
         }
 
         ~GLStateSaver()
         {
+            // Restore everything in reverse order.
+            glColorMask(lastColorMask[0], lastColorMask[1], lastColorMask[2], lastColorMask[3]);
+            glClearColor(lastClearColor[0], lastClearColor[1], lastClearColor[2], lastClearColor[3]);
+            glActiveTexture(lastActiveTexture);
+            glBindTexture(GL_TEXTURE_2D, lastTexture2D);
             if (lastScissorTest) glEnable(GL_SCISSOR_TEST); else glDisable(GL_SCISSOR_TEST);
             if (lastCullFace) glEnable(GL_CULL_FACE); else glDisable(GL_CULL_FACE);
             if (lastBlend) glEnable(GL_BLEND); else glDisable(GL_BLEND);
@@ -264,7 +277,6 @@ namespace editor {
             ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile/link");
         }
 
-        // Mark as compiled regardless — don't retry every frame (causes leaks).
         m_ShadersCompiled = true;
     }
 
@@ -329,19 +341,20 @@ namespace editor {
     {
         if (!m_GridShaderProgram || !m_GridVAO) return;
 
+        // Grid should render on top of everything, with blending for fade.
         glDisable(GL_CULL_FACE);
-        glDisable(GL_BLEND);
-        glDepthMask(GL_FALSE);
+        glDisable(GL_DEPTH_TEST);  // Grid always visible — no depth test.
+        glDisable(GL_BLEND);       // No blending — solid lines.
 
         glUseProgram(m_GridShaderProgram);
         glUniformMatrix4fv(m_uViewProjGrid, 1, GL_FALSE, &viewProjection[0][0]);
-        glUniform4f(m_uGridColor, 0.5f, 0.5f, 0.5f, 0.8f);
+        glUniform4f(m_uGridColor, 0.5f, 0.5f, 0.5f, 1.0f);  // Solid gray, full alpha.
 
         glBindVertexArray(m_GridVAO);
         glDrawArrays(GL_LINES, 0, m_GridLineCount);
         glBindVertexArray(0);
+        glUseProgram(0);
 
-        glDepthMask(GL_TRUE);
         ++m_DrawCalls;
     }
 
@@ -357,6 +370,8 @@ namespace editor {
 
         glDisable(GL_BLEND);
         glDisable(GL_CULL_FACE);
+        glEnable(GL_DEPTH_TEST);
+        glDepthMask(GL_TRUE);
 
         glUseProgram(m_ShaderProgram);
         glUniformMatrix4fv(m_uViewProj, 1, GL_FALSE, &viewProjection[0][0]);
@@ -402,10 +417,11 @@ namespace editor {
         glBindVertexArray(0);
         glUseProgram(0);
 
-        if (meshCount == 0)
+        // Only log when mesh count changes, not every frame.
+        if (meshCount != m_LastMeshCount)
         {
-            ENGINE_LOG_WARN("SceneRenderer::RenderMeshes — 0 meshes rendered. Scene={}",
-                           scene->GetName());
+            ENGINE_LOG_INFO("SceneRenderer — rendered {} meshes (was {})", meshCount, m_LastMeshCount);
+            m_LastMeshCount = meshCount;
         }
     }
 
@@ -422,11 +438,13 @@ namespace editor {
         EnsureCubeGeometry();
 
         // Save ALL GL state before we touch anything.
+        // This is critical because we're rendering inside ImGui's frame.
         GLStateSaver stateSaver;
 
+        // Bind our framebuffer.
         framebuffer.Bind();
 
-        // Clear.
+        // Clear the framebuffer.
         auto bg = context.GetTheme().GetColor("background");
         glClearColor(bg.x, bg.y, bg.z, bg.w);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -438,15 +456,16 @@ namespace editor {
         glDisable(GL_BLEND);
         glDisable(GL_CULL_FACE);
         glDisable(GL_SCISSOR_TEST);
+        glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
 
-        // Render grid.
+        // Render meshes first (with depth test).
+        RenderMeshes(context, viewProjection);
+
+        // Render grid on top (without depth test, so it's always visible).
         if (renderGrid && context.GetPreferences().GridVisible)
         {
             RenderGrid(viewProjection);
         }
-
-        // Render meshes.
-        RenderMeshes(context, viewProjection);
 
         // Restore is handled by GLStateSaver destructor.
     }
@@ -475,6 +494,7 @@ namespace editor {
         glDisable(GL_BLEND);
         glDisable(GL_CULL_FACE);
         glDisable(GL_SCISSOR_TEST);
+        glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
 
         auto* scene = context.GetActiveScene();
         if (scene)
@@ -512,6 +532,7 @@ namespace editor {
             }
             else
             {
+                // Default camera.
                 viewMatrix = engine::math::LookAt(Vec3(0.0f, 5.0f, 10.0f),
                                                    Vec3(0.0f, 0.0f, 0.0f),
                                                    Vec3(0.0f, 1.0f, 0.0f));
