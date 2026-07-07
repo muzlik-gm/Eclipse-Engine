@@ -29,6 +29,7 @@
 #include "Editor/Gizmos/GizmoManager.h"
 #include "Engine/Systems/TransformSystem.h"
 #include "Engine/Components/TransformComponent.h"
+#include "Engine/Scene/Scene.h"
 #include "Engine/Core/Log.h"
 
 #include <imgui.h>
@@ -184,11 +185,16 @@ namespace editor {
         m_Context.SetActiveScene(scene);
 
         // Update transforms on the active scene so world matrices are current.
+        // Use a persistent TransformSystem instance to avoid re-attaching every frame.
         if (scene)
         {
-            engine::systems::TransformSystem ts;
-            ts.OnAttach(scene->GetRegistry());
-            ts.Update(m_Context.GetDeltaTime());
+            // Only re-attach if the scene pointer changed.
+            if (m_LastScene != scene)
+            {
+                m_TransformSystem.OnAttach(scene->GetRegistry());
+                m_LastScene = scene;
+            }
+            m_TransformSystem.Update(m_Context.GetDeltaTime());
         }
 
         // Render the main window with dockspace, menu bar, and toolbar.
@@ -200,7 +206,8 @@ namespace editor {
         ImGuiWindowFlags windowFlags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking
                                      | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse
                                      | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove
-                                     | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+                                     | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus
+                                     | ImGuiWindowFlags_NoBackground;
 
         ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
         ImGui::Begin("##EditorMainFrame", nullptr, windowFlags);

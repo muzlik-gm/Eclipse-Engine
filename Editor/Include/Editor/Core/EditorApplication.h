@@ -5,6 +5,7 @@
 
 #include "Engine/Core/Types.h"
 #include "Engine/Application/Application.h"
+#include "Engine/Systems/TransformSystem.h"
 #include "Editor/Core/EditorContext.h"
 #include "Editor/Core/Dockspace.h"
 #include "Editor/Core/MenuBar.h"
@@ -65,6 +66,10 @@ namespace editor {
 
         GLFWwindow*    m_Window{nullptr};
         bool           m_Initialized{false};
+
+        // Persistent transform system (avoids re-attaching every frame).
+        engine::systems::TransformSystem m_TransformSystem;
+        engine::scene::Scene*           m_LastScene{nullptr};
 
         // Console panel reference (for log routing).
         class ConsolePanel* m_ConsolePanel{nullptr};
