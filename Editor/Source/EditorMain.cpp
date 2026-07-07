@@ -16,6 +16,12 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#ifdef _WIN32
+#include <windows.h>
+#include <dbghelp.h>
+#pragma comment(lib, "dbghelp.lib")
+#endif
+
 // Force-link the OpenGL backend so its static self-registration runs.
 // Without this, the linker strips OpenGLBackend.cpp from the static
 // Engine library and the backend is never registered.
@@ -23,12 +29,78 @@ extern "C" void ForceLinkOpenGLBackend();
 
 using namespace engine;
 using engine::core::i32;
+using engine::core::u32;
+using engine::core::u64;
 using engine::core::f64;
+
+#ifdef _WIN32
+static LONG WINAPI CrashHandler(EXCEPTION_POINTERS* ep)
+{
+    // Disable any previous filter so infinite crashes don't loop.
+    SetUnhandledExceptionFilter(nullptr);
+
+    DWORD code = ep->ExceptionRecord->ExceptionCode;
+    void* addr = ep->ExceptionRecord->ExceptionAddress;
+
+    ENGINE_LOG_CRITICAL("=== CRASH 0x{:08X} at {:p} ===", static_cast<u32>(code), addr);
+
+    // Attempt a minimal stack walk (up to 16 frames).
+    HANDLE proc = GetCurrentProcess();
+    HANDLE thread = GetCurrentThread();
+    SymInitialize(proc, nullptr, TRUE);
+
+    CONTEXT ctx = *ep->ContextRecord;
+    STACKFRAME64 frame = {};
+    frame.AddrPC.Offset = ctx.Rip;
+    frame.AddrFrame.Offset = ctx.Rbp;
+    frame.AddrStack.Offset = ctx.Rsp;
+    frame.AddrPC.Mode = AddrModeFlat;
+    frame.AddrFrame.Mode = AddrModeFlat;
+    frame.AddrStack.Mode = AddrModeFlat;
+
+#ifdef _M_X64
+    DWORD machineType = IMAGE_FILE_MACHINE_AMD64;
+#else
+    DWORD machineType = IMAGE_FILE_MACHINE_I386;
+#endif
+
+    for (int i = 0; i < 16; ++i)
+    {
+        if (!StackWalk64(machineType, proc, thread, &frame, &ctx,
+                         nullptr, SymFunctionTableAccess64, SymGetModuleBase64, nullptr))
+            break;
+
+        if (frame.AddrPC.Offset == 0)
+            break;
+
+        // Try to resolve symbol name.
+        DWORD64 displacement = 0;
+        char buf[sizeof(SYMBOL_INFO) + 256] = {};
+        auto* sym = reinterpret_cast<SYMBOL_INFO*>(buf);
+        sym->SizeOfStruct = sizeof(SYMBOL_INFO);
+        sym->MaxNameLen = 255;
+
+        if (SymFromAddr(proc, frame.AddrPC.Offset, &displacement, sym))
+            ENGINE_LOG_CRITICAL("  {:2d} {}+0x{:X}", i, sym->Name, displacement);
+        else
+            ENGINE_LOG_CRITICAL("  {:2d} {:p}", i, reinterpret_cast<void*>(frame.AddrPC.Offset));
+    }
+
+    ENGINE_LOG_CRITICAL("=== End crash dump ===");
+    core::Log::Shutdown();
+
+    return EXCEPTION_CONTINUE_SEARCH;
+}
+#endif
 
 int main(i32 argc, const char* argv[])
 {
     // Initialize logging.
     core::Log::Initialize("EclipseEditor");
+
+#ifdef _WIN32
+    SetUnhandledExceptionFilter(CrashHandler);
+#endif
 
     ENGINE_LOG_INFO("=== Eclipse Engine Editor ===");
 
@@ -113,8 +185,11 @@ int main(i32 argc, const char* argv[])
     ENGINE_LOG_INFO("Editor ready — entering main loop");
 
     // Main loop.
+    u64 frameCount = 0;
     while (!glfwWindowShouldClose(glfwWindow))
     {
+        ++frameCount;
+
         glfwPollEvents();
 
         // Calculate delta time.
@@ -124,6 +199,21 @@ int main(i32 argc, const char* argv[])
         lastTime = currentTime;
 
         editorApp.GetContext().SetDeltaTime(deltaTime);
+
+        // Log frame count every 500 frames for crash debugging.
+        if (frameCount % 500 == 0)
+            ENGINE_LOG_INFO("MainLoop — frame {}", frameCount);
+
+        // Periodic GL error check (every 300 frames).
+        if (frameCount % 300 == 0)
+        {
+            GLenum err = glGetError();
+            while (err != GL_NO_ERROR)
+            {
+                ENGINE_LOG_ERROR("MainLoop — GL error 0x{:X} at frame {}", err, frameCount);
+                err = glGetError();
+            }
+        }
 
         // Update the engine (runtime simulation).
         engineRef.GetSubsystemManager().UpdateAll(deltaTime);

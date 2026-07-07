@@ -20,36 +20,54 @@ namespace editor {
 
         ImGuiViewport* viewport = ImGui::GetMainViewport();
 
+        // Always resolve the root dockspace ID from the string.
         m_DockspaceID = ImGui::GetID("EditorDockspace");
 
         if (firstTime)
         {
             firstTime = false;
 
-            ImGui::DockBuilderRemoveNode(m_DockspaceID);
-            ImGui::DockBuilderAddNode(m_DockspaceID, ImGuiDockNodeFlags_DockSpace);
-            ImGui::DockBuilderSetNodeSize(m_DockspaceID, viewport->WorkSize);
+            // Save the root ID before any split operations overwrite it.
+            ImGuiID rootID = m_DockspaceID;
+
+            ImGui::DockBuilderRemoveNode(rootID);
+            ImGui::DockBuilderAddNode(rootID, ImGuiDockNodeFlags_DockSpace);
+            ImGui::DockBuilderSetNodeSize(rootID, viewport->WorkSize);
 
             // Default layout:
             // Hierarchy (left) | Scene+Game (center) | Inspector (right)
             // Content Browser (bottom-left) | Console (bottom-right)
-            auto dockLeft   = ImGui::DockBuilderSplitNode(m_DockspaceID, ImGuiDir_Left, 0.15f, nullptr, &m_DockspaceID);
-            auto dockRight  = ImGui::DockBuilderSplitNode(m_DockspaceID, ImGuiDir_Right, 0.20f, nullptr, &m_DockspaceID);
-            auto dockBottom = ImGui::DockBuilderSplitNode(m_DockspaceID, ImGuiDir_Down, 0.25f, nullptr, &m_DockspaceID);
+            ImGuiID dockLeft   = 0;
+            ImGuiID dockRight  = 0;
+            ImGuiID dockBottom = 0;
+            ImGuiID dockCenter = 0;
 
-            auto dockBottomLeft = ImGui::DockBuilderSplitNode(dockBottom, ImGuiDir_Left, 0.6f, nullptr, &dockBottom);
+            ImGui::DockBuilderSplitNode(rootID, ImGuiDir_Left, 0.15f, &dockLeft, &dockCenter);
+            ImGui::DockBuilderSplitNode(dockCenter, ImGuiDir_Right, 0.20f, &dockRight, &dockCenter);
+            ImGui::DockBuilderSplitNode(dockCenter, ImGuiDir_Down, 0.25f, &dockBottom, &dockCenter);
+
+            ImGuiID dockBottomLeft  = 0;
+            ImGuiID dockBottomRight = 0;
+            ImGui::DockBuilderSplitNode(dockBottom, ImGuiDir_Left, 0.6f, &dockBottomLeft, &dockBottomRight);
 
             ImGui::DockBuilderDockWindow("Hierarchy", dockLeft);
-            ImGui::DockBuilderDockWindow("Scene View", m_DockspaceID);
-            ImGui::DockBuilderDockWindow("Game View", m_DockspaceID);
-            ImGui::DockBuilderDockWindow("Inspector", dockRight);
-            ImGui::DockBuilderDockWindow("Statistics", dockRight);
-            ImGui::DockBuilderDockWindow("Content Browser", dockBottomLeft);
-            ImGui::DockBuilderDockWindow("Console", dockBottom);
-            ImGui::DockBuilderDockWindow("Profiler", dockBottom);
             ImGui::DockBuilderDockWindow("Project Browser", dockLeft);
 
-            ImGui::DockBuilderFinish(m_DockspaceID);
+            ImGui::DockBuilderDockWindow("Inspector", dockRight);
+            ImGui::DockBuilderDockWindow("Statistics", dockRight);
+
+            // Dock Scene View LAST so it becomes the active (top) tab.
+            ImGui::DockBuilderDockWindow("Game View", dockCenter);
+            ImGui::DockBuilderDockWindow("Scene View", dockCenter);
+
+            ImGui::DockBuilderDockWindow("Content Browser", dockBottomLeft);
+            ImGui::DockBuilderDockWindow("Console", dockBottomRight);
+            ImGui::DockBuilderDockWindow("Profiler", dockBottomRight);
+
+            ImGui::DockBuilderFinish(rootID);
+
+            // Keep m_DockspaceID as the root for the DockSpace() call.
+            m_DockspaceID = rootID;
         }
 
         // PassthruCentralNode lets the dockspace be transparent in the

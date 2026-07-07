@@ -7,6 +7,7 @@
 #include "Editor/Viewport/ViewportFramebuffer.h"
 #include "Editor/Rendering/SceneRenderer.h"
 #include "Editor/Picking/EntityPicking.h"
+#include <imgui.h>
 #include <string>
 
 struct ImVec2;
@@ -24,6 +25,8 @@ namespace editor {
         [[nodiscard]] const std::string& GetName() const noexcept override { return m_Name; }
         [[nodiscard]] const std::string& GetTitle() const noexcept override { return m_Title; }
         [[nodiscard]] PanelLocation GetDefaultLocation() const noexcept override { return PanelLocation::Center; }
+
+        [[nodiscard]] unsigned int GetWindowFlags() const noexcept override { return ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse; }
 
         void OnRender(EditorContext& context) override;
 

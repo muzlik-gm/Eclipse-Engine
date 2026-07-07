@@ -216,8 +216,10 @@ namespace editor {
         // Menu bar.
         m_MenuBar.Render(m_Context);
 
-        // Toolbar.
+        // Toolbar (zero vertical item spacing to eliminate gap below menu).
+        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(8, 0));
         m_Toolbar.Render(m_Context);
+        ImGui::PopStyleVar();
 
         // Dockspace (creates dockspace on the current ##EditorMainFrame window).
         m_Dockspace.Render(m_Context);

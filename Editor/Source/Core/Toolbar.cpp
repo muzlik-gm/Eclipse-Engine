@@ -14,8 +14,8 @@ namespace editor {
     void Toolbar::Render(EditorContext& context)
     {
         // The toolbar is rendered as a child window below the menu bar.
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(4, 4));
-        ImGui::BeginChild("##Toolbar", ImVec2(0, 32), false,
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(4, 1));
+        ImGui::BeginChild("##Toolbar", ImVec2(0, 28), false,
                           ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse);
 
         RenderPlayControls(context);

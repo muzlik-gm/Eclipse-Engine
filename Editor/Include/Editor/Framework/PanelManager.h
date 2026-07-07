@@ -57,6 +57,10 @@ namespace editor {
         /// @brief Returns the default dock location.
         [[nodiscard]] virtual PanelLocation GetDefaultLocation() const noexcept = 0;
 
+        /// @brief Returns additional ImGui window flags for this panel.
+        ///        Override to e.g. add ImGuiWindowFlags_NoScrollbar.
+        [[nodiscard]] virtual unsigned int GetWindowFlags() const noexcept { return 0; }
+
         /// @brief Renders the panel's content.  Called every frame
         ///        while the panel is open.
         virtual void OnRender(EditorContext& context) = 0;

@@ -166,7 +166,8 @@ namespace editor {
 
     struct GLStateSaver
     {
-        GLint lastFBO{0};
+        GLint lastDrawFBO{0};
+        GLint lastReadFBO{0};
         GLint lastViewport[4]{0,0,0,0};
         GLint lastProgram{0};
         GLint lastVAO{0};
@@ -185,7 +186,8 @@ namespace editor {
 
         GLStateSaver()
         {
-            glGetIntegerv(GL_FRAMEBUFFER_BINDING, &lastFBO);
+            glGetIntegerv(GL_DRAW_FRAMEBUFFER_BINDING, &lastDrawFBO);
+            glGetIntegerv(GL_READ_FRAMEBUFFER_BINDING, &lastReadFBO);
             glGetIntegerv(GL_VIEWPORT, lastViewport);
             glGetIntegerv(GL_CURRENT_PROGRAM, &lastProgram);
             glGetIntegerv(GL_VERTEX_ARRAY_BINDING, &lastVAO);
@@ -220,7 +222,15 @@ namespace editor {
             glBindBuffer(GL_ARRAY_BUFFER, lastArrayBuffer);
             glBindVertexArray(lastVAO);
             glUseProgram(lastProgram);
-            glBindFramebuffer(GL_FRAMEBUFFER, lastFBO);
+            // Restore draw and read framebuffers.
+            // Use GL_FRAMEBUFFER when both target the same FBO (common case).
+            if (lastDrawFBO == lastReadFBO)
+                glBindFramebuffer(GL_FRAMEBUFFER, lastDrawFBO);
+            else
+            {
+                glBindFramebuffer(GL_DRAW_FRAMEBUFFER, lastDrawFBO);
+                glBindFramebuffer(GL_READ_FRAMEBUFFER, lastReadFBO);
+            }
             glViewport(lastViewport[0], lastViewport[1], lastViewport[2], lastViewport[3]);
         }
     };
@@ -249,35 +259,40 @@ namespace editor {
         // Clear any pending GL errors.
         while (glGetError() != GL_NO_ERROR) {}
 
-        m_ShaderProgram = LinkProgram(kMeshVertexShader, kMeshFragmentShader);
-        m_GridShaderProgram = LinkProgram(kGridVertexShader, kGridFragmentShader);
+        // Compile into temporaries first to avoid leaking on retry.
+        GLuint newMesh    = LinkProgram(kMeshVertexShader, kMeshFragmentShader);
+        GLuint newGrid    = LinkProgram(kGridVertexShader, kGridFragmentShader);
 
-        if (m_ShaderProgram)
+        if (newMesh && newGrid)
         {
-            m_uViewProj = glGetUniformLocation(m_ShaderProgram, "u_ViewProj");
-            m_uModel    = glGetUniformLocation(m_ShaderProgram, "u_Model");
-            m_uColor    = glGetUniformLocation(m_ShaderProgram, "u_Color");
-            ENGINE_LOG_INFO("SceneRenderer — mesh shader compiled (program={}, vpLoc={}, modelLoc={}, colorLoc={})",
-                           m_ShaderProgram, m_uViewProj, m_uModel, m_uColor);
-        }
-        else
-        {
-            ENGINE_LOG_ERROR("SceneRenderer — mesh shader FAILED to compile/link");
-        }
+            // Both succeeded — replace old programs and mark compiled.
+            if (m_ShaderProgram) glDeleteProgram(m_ShaderProgram);
+            if (m_GridShaderProgram) glDeleteProgram(m_GridShaderProgram);
 
-        if (m_GridShaderProgram)
-        {
+            m_ShaderProgram = newMesh;
+            m_GridShaderProgram = newGrid;
+
+            m_uViewProj    = glGetUniformLocation(m_ShaderProgram, "u_ViewProj");
+            m_uModel       = glGetUniformLocation(m_ShaderProgram, "u_Model");
+            m_uColor       = glGetUniformLocation(m_ShaderProgram, "u_Color");
             m_uViewProjGrid = glGetUniformLocation(m_GridShaderProgram, "u_ViewProj");
-            m_uGridColor    = glGetUniformLocation(m_GridShaderProgram, "u_Color");
-            ENGINE_LOG_INFO("SceneRenderer — grid shader compiled (program={}, vpLoc={}, colorLoc={})",
-                           m_GridShaderProgram, m_uViewProjGrid, m_uGridColor);
+            m_uGridColor   = glGetUniformLocation(m_GridShaderProgram, "u_Color");
+
+            ENGINE_LOG_INFO("SceneRenderer — both shaders compiled (mesh={}, grid={})",
+                           m_ShaderProgram, m_GridShaderProgram);
+            m_ShadersCompiled = true;
         }
         else
         {
-            ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile/link");
-        }
+            // At least one failed — clean up temporaries and retry next frame.
+            if (newMesh) glDeleteProgram(newMesh);
+            if (newGrid) glDeleteProgram(newGrid);
 
-        m_ShadersCompiled = true;
+            if (!newMesh)
+                ENGINE_LOG_ERROR("SceneRenderer — mesh shader FAILED to compile/link");
+            if (!newGrid)
+                ENGINE_LOG_ERROR("SceneRenderer — grid shader FAILED to compile/link");
+        }
     }
 
     void SceneRenderer::EnsureGridGeometry()

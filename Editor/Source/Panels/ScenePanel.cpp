@@ -67,11 +67,21 @@ namespace editor {
         {
             m_Framebuffer.Resize(w, h);
             context.GetCamera().SetViewportSize(w, h);
+            ENGINE_LOG_DEBUG("ScenePanel — resized framebuffer to {}x{} (valid={})",
+                             w, h, m_Framebuffer.IsValid());
         }
 
         // Don't render scene or display image if framebuffer is invalid.
         if (!m_Framebuffer.IsValid())
+        {
+            // Draw a placeholder so the panel isn't blank.
+            ImDrawList* dl = ImGui::GetWindowDrawList();
+            ImVec2 p_min = ImGui::GetCursorScreenPos();
+            ImVec2 p_max = ImVec2(p_min.x + size.x, p_min.y + size.y);
+            ImU32 col = IM_COL32(20, 20, 25, 255);
+            dl->AddRectFilled(p_min, p_max, col);
             return;
+        }
 
         // Update camera.
         auto& cam = context.GetCamera();
@@ -82,6 +92,16 @@ namespace editor {
         Mat4 viewProjection = cam.GetProjectionMatrix() * cam.GetViewMatrix();
         m_SceneRenderer.RenderScene(context, m_Framebuffer, viewProjection,
                                      context.GetPreferences().GridVisible);
+
+        // Periodic GL error check — every ~1000 frames to avoid perf hit.
+        static u32 glCheckCounter = 0;
+        if (++glCheckCounter >= 1000)
+        {
+            glCheckCounter = 0;
+            GLenum err = glGetError();
+            if (err != GL_NO_ERROR)
+                ENGINE_LOG_WARN("ScenePanel — GL error 0x{:X} after scene render", err);
+        }
 
         // Display the framebuffer texture via ImGui.
         // ImGui::Image will add a draw command that samples from the texture.

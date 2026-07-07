@@ -83,7 +83,9 @@ namespace editor {
                 continue;
 
             bool open = panel->IsOpen();
-            ImGui::Begin(panel->GetName().c_str(), &open, panel->CanClose() ? 0 : ImGuiWindowFlags_NoCollapse);
+            ImGuiWindowFlags flags = panel->CanClose() ? 0 : ImGuiWindowFlags_NoCollapse;
+            flags |= panel->GetWindowFlags();
+            ImGui::Begin(panel->GetName().c_str(), &open, flags);
             panel->OnRender(context);
             if (!open && panel->CanClose())
                 panel->SetOpen(false);
