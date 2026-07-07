@@ -63,12 +63,9 @@ jobs:
   build-windows:
     name: Windows (MSVC)
     runs-on: windows-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Ninja
-        uses: seanmiddleditch/gha-setup-ninja@v6
 
       - name: Cache CMake dependencies
         uses: actions/cache@v4
@@ -77,12 +74,10 @@ jobs:
           key: windows-deps-${{ hashFiles('CMake/Dependencies.cmake') }}
 
       - name: Configure
-        shell: cmd
-        run: call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat" && cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DENGINE_BUILD_TESTS=ON -DENGINE_BUILD_SANDBOX=ON -DENGINE_BUILD_EDITOR=ON
 
       - name: Build
-        shell: cmd
-        run: call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat" && cmake --build build --config Release -j%NUMBER_OF_PROCESSORS%
+        run: cmake --build build --config Release -- /m
 
       - name: Test
         working-directory: build
@@ -92,9 +87,11 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path artifacts
-          Copy-Item build/bin/Sandbox.exe artifacts/
-          Copy-Item build/bin/EngineTests.exe artifacts/
-          Copy-Item build/bin/EclipseEditor.exe artifacts/
+          $exeDir = "build/bin/Release"
+          if (-not (Test-Path $exeDir)) { $exeDir = "build/bin" }
+          Copy-Item "$exeDir/Sandbox.exe" artifacts/ -ErrorAction SilentlyContinue
+          Copy-Item "$exeDir/EngineTests.exe" artifacts/ -ErrorAction SilentlyContinue
+          Copy-Item "$exeDir/EclipseEditor.exe" artifacts/ -ErrorAction SilentlyContinue
           Compress-Archive -Path artifacts/* -DestinationPath artifacts/eclipse-engine-windows-x86_64.zip
 
       - name: Upload executables

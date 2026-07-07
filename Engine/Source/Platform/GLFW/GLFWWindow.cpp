@@ -53,10 +53,12 @@ namespace engine::platform
 
             m_Properties = props;
 
-            // Request an OpenGL context (not GLFW_NO_API which is for Vulkan).
+            // Request an OpenGL context.
+            // Request 4.6 first, but if that fails, fall back to 4.5, then 4.3.
+            // Many older GPUs (Intel HD 5500, AMD R7 M370X) only support 4.5.
             glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_API);
             glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
             glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
             glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
             glfwWindowHint(GLFW_SAMPLES, 0);
@@ -104,7 +106,32 @@ namespace engine::platform
 
             if (!m_Window)
             {
-                ENGINE_LOG_ERROR("GLFWWindow — failed to create GLFW window");
+                // Fallback: try OpenGL 4.3 (broader GPU support).
+                ENGINE_LOG_WARN("GLFWWindow — failed with OpenGL 4.5, trying 4.3...");
+                glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+                m_Window = glfwCreateWindow(
+                    static_cast<int>(m_Properties.Width),
+                    static_cast<int>(m_Properties.Height),
+                    m_Properties.Title.c_str(),
+                    nullptr, nullptr);
+            }
+
+            if (!m_Window)
+            {
+                // Fallback: try OpenGL 3.3 (minimum for core profile).
+                ENGINE_LOG_WARN("GLFWWindow — failed with OpenGL 4.3, trying 3.3...");
+                glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+                glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+                m_Window = glfwCreateWindow(
+                    static_cast<int>(m_Properties.Width),
+                    static_cast<int>(m_Properties.Height),
+                    m_Properties.Title.c_str(),
+                    nullptr, nullptr);
+            }
+
+            if (!m_Window)
+            {
+                ENGINE_LOG_ERROR("GLFWWindow — failed to create GLFW window with any OpenGL version");
                 return;
             }
 

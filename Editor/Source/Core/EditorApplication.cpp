@@ -133,7 +133,7 @@ namespace editor {
 
         // Initialize ImGui backends.
         ImGui_ImplGlfw_InitForOpenGL(window, true);
-        ImGui_ImplOpenGL3_Init("#version 460 core");
+        ImGui_ImplOpenGL3_Init("#version 330 core");
 
         ENGINE_LOG_INFO("EditorApplication — ImGui initialized");
     }

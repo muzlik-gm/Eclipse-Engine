@@ -50,9 +50,15 @@ namespace engine::opengl {
         glGetIntegerv(GL_MINOR_VERSION, &minor);
         ENGINE_LOG_INFO("OpenGLContext — driver reports OpenGL {}.{}", major, minor);
 
-        if (major < 4 || (major == 4 && minor < 6))
+        if (major < 3 || (major == 3 && minor < 3))
         {
-            ENGINE_LOG_WARN("OpenGLContext — OpenGL {}.{} detected, 4.6 recommended",
+            ENGINE_LOG_ERROR("OpenGLContext — OpenGL {}.{} detected, minimum required is 3.3",
+                            major, minor);
+            return false;
+        }
+        else if (major < 4 || (major == 4 && minor < 5))
+        {
+            ENGINE_LOG_WARN("OpenGLContext — OpenGL {}.{} detected, 4.5+ recommended for best compatibility",
                             major, minor);
         }
 

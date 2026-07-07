@@ -36,7 +36,7 @@ namespace editor {
     // ========================================================================
 
     static const char* kMeshVertexShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         layout(location = 0) in vec3 a_Position;
         layout(location = 1) in vec3 a_Normal;
         uniform mat4 u_ViewProj;
@@ -50,7 +50,7 @@ namespace editor {
     )GLSL";
 
     static const char* kMeshFragmentShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         in vec3 v_Normal;
         out vec4 FragColor;
         uniform vec4 u_Color;
@@ -63,7 +63,7 @@ namespace editor {
     )GLSL";
 
     static const char* kGridVertexShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         layout(location = 0) in vec3 a_Position;
         uniform mat4 u_ViewProj;
         out float v_Dist;
@@ -75,7 +75,7 @@ namespace editor {
     )GLSL";
 
     static const char* kGridFragmentShader = R"GLSL(
-        #version 460 core
+        #version 330 core
         in float v_Dist;
         out vec4 FragColor;
         uniform vec4 u_Color;

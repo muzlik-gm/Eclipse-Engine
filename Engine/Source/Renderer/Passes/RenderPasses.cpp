@@ -22,7 +22,7 @@ namespace engine::renderer {
     // ========================================================================
 
     static const char* kMeshVS = R"GLSL(
-        #version 460 core
+        #version 330 core
         layout(location = 0) in vec3 a_Position;
         layout(location = 1) in vec3 a_Normal;
         uniform mat4 u_ViewProj;
@@ -35,7 +35,7 @@ namespace engine::renderer {
     )GLSL";
 
     static const char* kMeshFS = R"GLSL(
-        #version 460 core
+        #version 330 core
         in vec3 v_Normal;
         out vec4 FragColor;
         uniform vec4 u_Color;
@@ -47,7 +47,7 @@ namespace engine::renderer {
     )GLSL";
 
     static const char* kLineVS = R"GLSL(
-        #version 460 core
+        #version 330 core
         layout(location = 0) in vec3 a_Position;
         uniform mat4 u_ViewProj;
         out float v_Dist;
@@ -58,7 +58,7 @@ namespace engine::renderer {
     )GLSL";
 
     static const char* kLineFS = R"GLSL(
-        #version 460 core
+        #version 330 core
         in float v_Dist;
         out vec4 FragColor;
         uniform vec4 u_Color;
@@ -212,7 +212,7 @@ namespace engine::renderer {
         if (s_SkyShader) return;
 
         const char* skyVS = R"GLSL(
-            #version 460 core
+            #version 330 core
             out vec3 v_Dir;
             void main() {
                 vec2 pos = vec2((gl_VertexID == 2) ? 3.0 : -1.0,
@@ -223,7 +223,7 @@ namespace engine::renderer {
         )GLSL";
 
         const char* skyFS = R"GLSL(
-            #version 460 core
+            #version 330 core
             in vec3 v_Dir;
             out vec4 FragColor;
             void main() {
