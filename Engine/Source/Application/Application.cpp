@@ -114,6 +114,15 @@ namespace engine::application
             }
 
             CreateWindow();
+
+            // If window creation failed, abort.
+            if (!m_window)
+            {
+                ENGINE_LOG_ERROR("Application — window creation failed, aborting");
+                PlatformManager::Instance().Shutdown();
+                core::Log::Shutdown();
+                return false;
+            }
         }
         else
         {
@@ -358,7 +367,7 @@ namespace engine::application
         m_window = platformMgr.CreateWindow(windowProps);
         if (!m_window)
         {
-            ENGINE_LOG_ERROR("Application \u2014 failed to create window");
+            ENGINE_LOG_ERROR("Application \u2014 failed to create window (OpenGL context creation may have failed)");
             return;
         }
 

@@ -31,7 +31,7 @@ void Log::Initialize(std::string_view appName) {
     std::vector<spdlog::sink_ptr> coreSinks{consoleSink, fileSink};
     s_coreLogger = std::make_shared<spdlog::logger>("ENGINE", coreSinks.begin(), coreSinks.end());
     s_coreLogger->set_level(spdlog::level::trace);
-    s_coreLogger->flush_on(spdlog::level::critical);
+    s_coreLogger->flush_on(spdlog::level::warn);  // Flush on warnings and above
     spdlog::register_logger(s_coreLogger);
 
     // Create a separate client logger (for user/game code).
