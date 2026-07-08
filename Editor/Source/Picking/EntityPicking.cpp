@@ -2,6 +2,7 @@
 // File: Editor/Source/Picking/EntityPicking.cpp
 // ============================================================================
 #include "Editor/Picking/EntityPicking.h"
+#include "Editor/Rendering/SceneRenderer.h"
 #include "Editor/Viewport/ViewportFramebuffer.h"
 #include "Engine/Core/Log.h"
 
@@ -60,11 +61,15 @@ namespace editor {
     }
 
     void EntityPicking::RenderPickBuffer(ViewportFramebuffer& framebuffer,
-                                          const engine::math::Mat4& /*viewProjection*/)
+                                          SceneRenderer& renderer,
+                                          EditorContext& context,
+                                          const engine::math::Mat4& viewProjection)
     {
         // Save GL state.
         GLint lastFBO = 0;
+        GLint lastViewport[4] = {0, 0, 0, 0};
         glGetIntegerv(GL_FRAMEBUFFER_BINDING, &lastFBO);
+        glGetIntegerv(GL_VIEWPORT, lastViewport);
 
         EnsureSize(framebuffer.GetWidth(), framebuffer.GetHeight());
 
@@ -74,7 +79,11 @@ namespace editor {
         glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+        // Render all entities with pick IDs into the pick FBO.
+        renderer.RenderPicking(context, viewProjection);
+
         // Restore.
+        glViewport(lastViewport[0], lastViewport[1], lastViewport[2], lastViewport[3]);
         glBindFramebuffer(GL_FRAMEBUFFER, lastFBO);
     }
 

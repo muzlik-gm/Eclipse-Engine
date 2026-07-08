@@ -72,6 +72,32 @@ namespace editor {
         UpdateVectors();
     }
 
+    void EditorCamera::RotateView(f32 deltaX, f32 deltaY)
+    {
+        // Rotate the view direction in place by moving the target around
+        // the camera (inverse of Orbit: target moves, camera stays).
+        Vec3 dir = m_Target - m_Position;
+        f32 dist = engine::math::Length(dir);
+        if (dist < 0.001f) return;
+
+        f32 azimuth = std::atan2(dir.x, dir.z);
+        f32 elevation = std::asin(dir.y / dist);
+
+        azimuth -= deltaX * m_RotateSpeed * 0.01f;
+        // deltaY > 0 means the mouse moved DOWN, so the view should pitch
+        // DOWN (target drops below the camera): elevation must decrease.
+        elevation -= deltaY * m_RotateSpeed * 0.01f;
+
+        elevation = std::clamp(elevation, -1.55f, 1.55f);
+
+        m_Target.x = m_Position.x + dist * std::cos(elevation) * std::sin(azimuth);
+        m_Target.y = m_Position.y + dist * std::sin(elevation);
+        m_Target.z = m_Position.z + dist * std::cos(elevation) * std::cos(azimuth);
+
+        m_ViewDirty = true;
+        UpdateVectors();
+    }
+
     void EditorCamera::Pan(f32 deltaX, f32 deltaY)
     {
         f32 panAmount = m_PanSpeed * m_Distance;

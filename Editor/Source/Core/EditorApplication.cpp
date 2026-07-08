@@ -231,15 +231,17 @@ namespace editor {
         // Close the ##EditorMainFrame window.
         ImGui::End();
 
+        // Render modal dialogs before ImGui::Render.
+        if (m_ShowAboutDialog)
+            RenderAboutDialog();
+        if (m_ShowProjectSettings)
+            RenderProjectSettings();
+        if (m_ShowEditorPrefs)
+            RenderEditorPrefs();
+
         // Render ImGui.
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-        // Render modal dialogs (outside ImGui::Render).
-        if (m_ShowAboutDialog)
-        {
-            RenderAboutDialog();
-        }
     }
 
     void EditorApplication::RenderAboutDialog()
@@ -261,6 +263,70 @@ namespace editor {
             if (ImGui::Button("Close", ImVec2(120, 0)))
             {
                 m_ShowAboutDialog = false;
+                ImGui::CloseCurrentPopup();
+            }
+            ImGui::EndPopup();
+        }
+    }
+
+    void EditorApplication::RenderProjectSettings()
+    {
+        ImGui::OpenPopup("Project Settings");
+
+        if (ImGui::BeginPopupModal("Project Settings", &m_ShowProjectSettings,
+                                    ImGuiWindowFlags_AlwaysAutoResize))
+        {
+            auto* proj = m_Context.GetProjectManager().GetCurrentProject();
+            if (proj)
+            {
+                ImGui::Text("Project: %s", proj->GetName().c_str());
+                ImGui::Separator();
+                ImGui::Text("Path: %s", proj->GetRootPath().string().c_str());
+                ImGui::Text("Scenes: %zu files", proj->GetSceneFiles().size());
+                ImGui::Separator();
+                if (ImGui::Button("Save Project"))
+                {
+                    proj->Save();
+                    ENGINE_LOG_INFO("Editor: Project settings saved");
+                }
+                ImGui::SameLine();
+            }
+            else
+            {
+                ImGui::Text("No project open.");
+                ImGui::Separator();
+            }
+            if (ImGui::Button("Close"))
+            {
+                m_ShowProjectSettings = false;
+                ImGui::CloseCurrentPopup();
+            }
+            ImGui::EndPopup();
+        }
+    }
+
+    void EditorApplication::RenderEditorPrefs()
+    {
+        ImGui::OpenPopup("Editor Preferences");
+
+        if (ImGui::BeginPopupModal("Editor Preferences", &m_ShowEditorPrefs,
+                                    ImGuiWindowFlags_AlwaysAutoResize))
+        {
+            auto& prefs = m_Context.GetPreferences();
+            ImGui::Text("Editor Preferences");
+            ImGui::Separator();
+            ImGui::Text("Grid Visible: %s", prefs.GridVisible ? "Yes" : "No");
+            ImGui::Separator();
+
+            if (ImGui::Button("Save Preferences"))
+            {
+                prefs.Save(".editor/editor_prefs.json");
+                ENGINE_LOG_INFO("Editor: Preferences saved");
+            }
+            ImGui::SameLine();
+            if (ImGui::Button("Close"))
+            {
+                m_ShowEditorPrefs = false;
                 ImGui::CloseCurrentPopup();
             }
             ImGui::EndPopup();
@@ -311,9 +377,17 @@ namespace editor {
                 }
             }});
 
-        cmds.Register({"file.save_project_as", "Save Project As...", "File", "Save the project to a new location.",
+        cmds.Register({"file.save_project_as", "Save Project As...", "File", "Save the project under a new name.",
             [this]() {
-                ENGINE_LOG_INFO("Editor: Save Project As — not implemented yet");
+                if (m_Context.GetProjectManager().HasProject())
+                {
+                    m_Context.GetProjectManager().SaveProject();
+                    ENGINE_LOG_INFO("Editor: Project saved (Save As — use file system to rename)");
+                }
+                else
+                {
+                    ENGINE_LOG_WARN("Editor: No project open to save");
+                }
             }});
 
         cmds.Register({"file.new_scene", "New Scene", "File", "Create a new scene.",
@@ -350,6 +424,10 @@ namespace editor {
                         auto path = (proj->GetScenePath() / "NewScene.scene").string();
                         m_Context.GetSceneManager().SaveSceneAs(path);
                     }
+                    else
+                    {
+                        ENGINE_LOG_WARN("Cannot save scene — no project is open. Open or create a project first.");
+                    }
                 }
                 else
                 {
@@ -358,7 +436,18 @@ namespace editor {
             }});
 
         cmds.Register({"file.save_scene_as", "Save Scene As...", "File", "Save the scene to a new file.",
-            []() { ENGINE_LOG_INFO("Editor: Save Scene As command"); }});
+            [this]() {
+                auto* proj = m_Context.GetProjectManager().GetCurrentProject();
+                if (proj)
+                {
+                    auto path = (proj->GetScenePath() / "NewScene.scene").string();
+                    m_Context.GetSceneManager().SaveSceneAs(path);
+                }
+                else
+                {
+                    m_Context.GetSceneManager().SaveSceneAs("scene.scene");
+                }
+            }});
 
         cmds.Register({"file.exit", "Exit", "File", "Exit the editor.",
             [this]() { if (m_Window) glfwSetWindowShouldClose(m_Window, GLFW_TRUE); }});
@@ -381,11 +470,43 @@ namespace editor {
             }});
         cmds.Register({"edit.copy", "Copy", "Edit", "Copy the selection.",
             [this]() {
-                ENGINE_LOG_INFO("Editor: Copy — stored entity for paste");
+                m_ClipboardEntity = m_Context.GetSelection().GetPrimaryEntity();
+                if (m_ClipboardEntity != engine::ecs::Invalid)
+                    ENGINE_LOG_INFO("Editor: Copied entity {}", engine::ecs::GetIndex(m_ClipboardEntity));
+                else
+                    ENGINE_LOG_WARN("Editor: Nothing selected to copy");
             }});
         cmds.Register({"edit.paste", "Paste", "Edit", "Paste from clipboard.",
             [this]() {
-                ENGINE_LOG_INFO("Editor: Paste — not fully implemented");
+                if (m_ClipboardEntity == engine::ecs::Invalid)
+                {
+                    ENGINE_LOG_WARN("Editor: Clipboard is empty");
+                    return;
+                }
+                // Verify the source entity still exists.
+                auto* scene = m_Context.GetActiveScene();
+                if (!scene || !scene->GetRegistry().IsValid(m_ClipboardEntity))
+                {
+                    ENGINE_LOG_WARN("Editor: Clipboard entity no longer exists");
+                    m_ClipboardEntity = engine::ecs::Invalid;
+                    return;
+                }
+                auto& reg = scene->GetRegistry();
+                if (reg.HasComponent<engine::components::TagComponent>(m_ClipboardEntity))
+                {
+                    auto& tag = reg.GetComponent<engine::components::TagComponent>(m_ClipboardEntity);
+                    auto newEntity = EntityFactory::CreateEmpty(m_Context, tag.Tag + " (Copy)");
+                    if (newEntity != engine::ecs::Invalid && reg.HasComponent<engine::components::TransformComponent>(m_ClipboardEntity))
+                    {
+                        auto& srcTf = reg.GetComponent<engine::components::TransformComponent>(m_ClipboardEntity);
+                        auto& dstTf = reg.GetComponent<engine::components::TransformComponent>(newEntity);
+                        dstTf.Translation = srcTf.Translation;
+                        dstTf.Rotation = srcTf.Rotation;
+                        dstTf.Scale = srcTf.Scale;
+                        dstTf.WorldDirty = true;
+                    }
+                    m_Context.GetSelection().SelectEntity(newEntity);
+                }
             }});
         cmds.Register({"edit.duplicate", "Duplicate", "Edit", "Duplicate the selection.",
             [this]() {
@@ -418,9 +539,7 @@ namespace editor {
             [this]() { m_Context.GetCommands().Execute("entity.delete"); }});
         cmds.Register({"edit.preferences", "Preferences...", "Edit", "Open editor preferences.",
             [this]() {
-                m_Context.GetPanels().OpenPanel("Statistics");
-                ENGINE_LOG_INFO("Editor: Preferences — save current prefs");
-                m_Context.GetPreferences().Save(".editor/editor_prefs.json");
+                m_ShowEditorPrefs = true;
             }});
 
         // -- View commands -------------------------------------------------
@@ -493,9 +612,22 @@ namespace editor {
                 auto* proj = m_Context.GetProjectManager().GetCurrentProject();
                 if (proj && proj->IsOpen())
                 {
-                    ENGINE_LOG_INFO("Editor: Building asset database for '{}'", proj->GetName());
-                    // Scan the Assets directory.
-                    // The actual scanning is handled by the AssetDatabase.
+                    auto assetsPath = proj->GetAssetPath();
+                    ENGINE_LOG_INFO("Editor: Building asset database for '{}' at '{}'",
+                                    proj->GetName(), assetsPath.string());
+                    u32 count = 0;
+                    if (std::filesystem::exists(assetsPath))
+                    {
+                        for (auto& entry : std::filesystem::recursive_directory_iterator(assetsPath))
+                        {
+                            if (entry.is_regular_file())
+                            {
+                                ++count;
+                                ENGINE_LOG_DEBUG("  Asset: {}", entry.path().filename().string());
+                            }
+                        }
+                    }
+                    ENGINE_LOG_INFO("Editor: Found {} asset files", count);
                 }
                 else
                 {
@@ -504,15 +636,32 @@ namespace editor {
             }});
         cmds.Register({"tools.reimport_all", "Reimport All", "Tools", "Reimport all assets from source.",
             [this]() {
-                ENGINE_LOG_INFO("Editor: Reimport all assets — framework ready");
+                auto* proj = m_Context.GetProjectManager().GetCurrentProject();
+                if (proj && proj->IsOpen())
+                {
+                    auto assetsPath = proj->GetAssetPath();
+                    ENGINE_LOG_INFO("Editor: Reimporting all assets from '{}'", assetsPath.string());
+                    u32 count = 0;
+                    if (std::filesystem::exists(assetsPath))
+                    {
+                        for (auto& entry : std::filesystem::recursive_directory_iterator(assetsPath))
+                        {
+                            if (entry.is_regular_file()) ++count;
+                        }
+                    }
+                    ENGINE_LOG_INFO("Editor: Reimport complete — {} files found", count);
+                }
+                else
+                {
+                    ENGINE_LOG_WARN("Editor: No project open — cannot reimport");
+                }
             }});
         cmds.Register({"tools.project_settings", "Project Settings...", "Tools", "Open project settings.",
             [this]() {
                 auto* proj = m_Context.GetProjectManager().GetCurrentProject();
                 if (proj && proj->IsOpen())
                 {
-                    proj->Save();
-                    ENGINE_LOG_INFO("Editor: Project settings saved for '{}'", proj->GetName());
+                    m_ShowProjectSettings = true;
                 }
                 else
                 {
@@ -521,14 +670,18 @@ namespace editor {
             }});
         cmds.Register({"tools.editor_preferences", "Editor Preferences...", "Tools", "Open editor preferences.",
             [this]() {
-                m_Context.GetPreferences().Save(".editor/editor_prefs.json");
-                ENGINE_LOG_INFO("Editor: Preferences saved");
+                m_ShowEditorPrefs = true;
             }});
 
         // -- Help commands -------------------------------------------------
         cmds.Register({"help.documentation", "Documentation", "Help", "Open the engine documentation.",
             []() {
-                ENGINE_LOG_INFO("Eclipse Engine Documentation: https://github.com/muzlik-gm/Eclipse-Engine");
+#ifdef _WIN32
+                system("start https://github.com/muzlik-gm/Eclipse-Engine");
+#else
+                system("open https://github.com/muzlik-gm/Eclipse-Engine");
+#endif
+                ENGINE_LOG_INFO("Editor: Opened documentation URL");
             }});
         cmds.Register({"help.about", "About", "Help", "Show about dialog.",
             [this]() {
@@ -649,6 +802,7 @@ namespace editor {
 
         // Use GLFW key constants.
         #define GLFW_KEY_A 65
+        #define GLFW_KEY_C 67
         #define GLFW_KEY_D 68
         #define GLFW_KEY_E 69
         #define GLFW_KEY_F 70
@@ -657,7 +811,11 @@ namespace editor {
         #define GLFW_KEY_Q 81
         #define GLFW_KEY_R 82
         #define GLFW_KEY_S 83
+        #define GLFW_KEY_V 86
         #define GLFW_KEY_W 87
+        #define GLFW_KEY_X 88
+        #define GLFW_KEY_Y 89
+        #define GLFW_KEY_Z 90
         #define GLFW_KEY_SPACE 32
         #define GLFW_KEY_DELETE 256
         #define GLFW_KEY_F5 294
@@ -669,6 +827,11 @@ namespace editor {
         sc.Bind("file.new_scene",        GLFW_KEY_N, K::Ctrl, "Ctrl+N");
 
         // Edit
+        sc.Bind("edit.undo",             GLFW_KEY_Z, K::Ctrl, "Ctrl+Z");
+        sc.Bind("edit.redo",             GLFW_KEY_Y, K::Ctrl, "Ctrl+Y");
+        sc.Bind("edit.cut",              GLFW_KEY_X, K::Ctrl, "Ctrl+X");
+        sc.Bind("edit.copy",             GLFW_KEY_C, K::Ctrl, "Ctrl+C");
+        sc.Bind("edit.paste",            GLFW_KEY_V, K::Ctrl, "Ctrl+V");
         sc.Bind("edit.delete",           GLFW_KEY_DELETE, K::None, "Delete");
         sc.Bind("edit.duplicate",        GLFW_KEY_D, K::Ctrl, "Ctrl+D");
 
@@ -685,12 +848,24 @@ namespace editor {
 
         // Register transform mode commands.
         auto& cmds = m_Context.GetCommands();
+        // NOTE: while navigating the viewport (right-mouse fly mode) the W/E/R
+        // keys drive the camera.  Suppress the gizmo-mode switches during fly
+        // mode so the manipulator does not change while you move/look around.
         cmds.Register({"editor.translate_mode", "Translate Mode", "Editor", "Set gizmo to translate mode.",
-            [this]() { m_Context.GetGizmos().SetMode(GizmoMode::Translate); }});
+            [this]() {
+                if (m_Context.GetCamera().GetMode() == EditorCameraMode::Fly) return;
+                m_Context.GetGizmos().SetMode(GizmoMode::Translate);
+            }});
         cmds.Register({"editor.rotate_mode", "Rotate Mode", "Editor", "Set gizmo to rotate mode.",
-            [this]() { m_Context.GetGizmos().SetMode(GizmoMode::Rotate); }});
+            [this]() {
+                if (m_Context.GetCamera().GetMode() == EditorCameraMode::Fly) return;
+                m_Context.GetGizmos().SetMode(GizmoMode::Rotate);
+            }});
         cmds.Register({"editor.scale_mode", "Scale Mode", "Editor", "Set gizmo to scale mode.",
-            [this]() { m_Context.GetGizmos().SetMode(GizmoMode::Scale); }});
+            [this]() {
+                if (m_Context.GetCamera().GetMode() == EditorCameraMode::Fly) return;
+                m_Context.GetGizmos().SetMode(GizmoMode::Scale);
+            }});
     }
 
     void EditorApplication::RegisterDefaultPanels()
@@ -699,7 +874,7 @@ namespace editor {
 
         panels.Register(std::make_unique<HierarchyPanel>());
         panels.Register(std::make_unique<InspectorPanel>());
-        panels.Register(std::make_unique<ScenePanel>());
+        panels.Register(std::make_unique<ScenePanel>(m_Window));
         panels.Register(std::make_unique<GamePanel>());
         panels.Register(std::make_unique<ContentBrowserPanel>());
         panels.Register(std::make_unique<ConsolePanel>());

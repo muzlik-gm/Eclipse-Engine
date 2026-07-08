@@ -30,6 +30,7 @@ out/
 tool-results/
 upload/
 download/
+build*
 
 # OS files
 .DS_Store

@@ -93,7 +93,9 @@ namespace engine::serialization {
 
     static json SerializeQuat(const math::Quat& q)
     {
-        return json::array({q.x, q.y, q.z, q.w});
+        // glm::quat constructor order is (w, x, y, z) — match it so the
+        // round-trip through DeserializeQuat is lossless.
+        return json::array({q.w, q.x, q.y, q.z});
     }
 
     static math::Quat DeserializeQuat(const json& j)

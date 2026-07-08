@@ -85,6 +85,12 @@ namespace editor {
         /// @param deltaY  Vertical mouse delta (pixels).
         void Orbit(f32 deltaX, f32 deltaY);
 
+        /// @brief Rotates the view direction in place (target orbits around position).
+        ///        Use this for fly-mode mouse look instead of Orbit().
+        /// @param deltaX  Horizontal mouse delta (pixels).
+        /// @param deltaY  Vertical mouse delta (pixels).
+        void RotateView(f32 deltaX, f32 deltaY);
+
         /// @brief Pans the camera and target together.
         void Pan(f32 deltaX, f32 deltaY);
 

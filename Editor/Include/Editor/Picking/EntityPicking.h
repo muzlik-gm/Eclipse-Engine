@@ -14,6 +14,8 @@
 namespace editor {
 
     class ViewportFramebuffer;
+    class SceneRenderer;
+    class EditorContext;
 
     /// @brief GPU-based entity picking.  Renders each entity with a unique
     ///        color ID into a pick buffer, then reads back the pixel under
@@ -30,6 +32,8 @@ namespace editor {
         /// @param framebuffer The viewport framebuffer to render into.
         /// @param viewProjection The view-projection matrix.
         void RenderPickBuffer(ViewportFramebuffer& framebuffer,
+                              SceneRenderer& renderer,
+                              EditorContext& context,
                               const engine::math::Mat4& viewProjection);
 
         /// @brief Reads the pixel at @p x, @p y and returns the picked

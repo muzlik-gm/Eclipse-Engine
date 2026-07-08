@@ -4,6 +4,7 @@
 #pragma once
 
 #include "Engine/Core/Types.h"
+#include "Engine/ECS/Entity.h"
 #include "Engine/Application/Application.h"
 #include "Engine/Systems/TransformSystem.h"
 #include "Editor/Core/EditorContext.h"
@@ -77,8 +78,17 @@ namespace editor {
         // About dialog state.
         bool m_ShowAboutDialog{false};
 
-        // Renders the About dialog.
+        // Project / editor settings dialog state.
+        bool m_ShowProjectSettings{false};
+        bool m_ShowEditorPrefs{false};
+
+        // Clipboard for cut/copy/paste.
+        engine::ecs::Entity m_ClipboardEntity{engine::ecs::Invalid};
+
+        // Renders dialogs.
         void RenderAboutDialog();
+        void RenderProjectSettings();
+        void RenderEditorPrefs();
     };
 
 } // namespace editor

@@ -7,8 +7,11 @@
 #include "Editor/Viewport/ViewportFramebuffer.h"
 #include "Editor/Rendering/SceneRenderer.h"
 #include "Editor/Picking/EntityPicking.h"
+#include "Engine/Math/Math.h"
 #include <imgui.h>
 #include <string>
+
+struct GLFWwindow;
 
 struct ImVec2;
 
@@ -19,7 +22,7 @@ namespace editor {
     class ScenePanel final : public IPanel
     {
     public:
-        ScenePanel();
+        explicit ScenePanel(GLFWwindow* window = nullptr);
         ~ScenePanel() override = default;
 
         [[nodiscard]] const std::string& GetName() const noexcept override { return m_Name; }
@@ -39,6 +42,15 @@ namespace editor {
         std::string m_Title{"Scene View"};
         bool m_IsFocused{false};
         bool m_IsHovered{false};
+        bool m_IsFlying{false};
+
+        GLFWwindow* m_Window{nullptr};
+
+        // Gizmo drag interaction state.
+        int     m_GizmoDragAxis{-1};      // -1 = not dragging, 0=X, 1=Y, 2=Z
+        engine::math::Vec3 m_GizmoDragOrigin{0.0f}; // Entity position at drag start
+        engine::math::Vec3 m_GizmoDragStart{0.0f};  // Hit point at drag start
+        engine::math::Mat4 m_GizmoDragInvVP{1.0f};  // Inv VP at drag start
 
         ViewportFramebuffer m_Framebuffer;
         SceneRenderer       m_SceneRenderer;

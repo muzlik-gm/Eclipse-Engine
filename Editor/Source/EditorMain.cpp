@@ -28,6 +28,11 @@ using engine::core::u32;
 using engine::core::u64;
 using engine::core::f64;
 
+// File-scoped editor app pointer — used instead of glfwSetWindowUserPointer
+// to avoid overwriting ImGui's stored user pointer (which would crash all
+// GLFW callbacks registered by ImGui, e.g. on window maximize/restore).
+static editor::EditorApplication* g_EditorApp = nullptr;
+
 // Helper: print to BOTH stderr and the log file so the user can see
 // errors in the terminal even if spdlog doesn't flush.
 #define FATAL_ERROR(fmt, ...) \
@@ -129,6 +134,30 @@ int main(i32 argc, const char* argv[])
     {
         FATAL_ERROR("Failed to initialize editor.");
     }
+
+    // Store editor app pointer for use in C-style callbacks.
+    // NOTE: We use a file-scoped global instead of glfwSetWindowUserPointer
+    // because ImGui owns the user pointer for its own callbacks (resize, focus,
+    // etc.). Overwriting it would crash on window maximize/restore.
+    g_EditorApp = &editorApp;
+
+    // Set up keyboard shortcut callback.
+    glfwSetKeyCallback(glfwWindow, [](GLFWwindow* win, int key, int scancode, int action, int mods)
+    {
+        (void)win;
+        (void)scancode;
+        auto* app = g_EditorApp;
+        if (!app) return;
+        if (action != GLFW_PRESS && action != GLFW_REPEAT)
+            return;
+        // Convert GLFW mod bits to KeyModifiers layout (Ctrl=1, Shift=2, Alt=4, Super=8).
+        u32 editorMods = 0;
+        if (mods & GLFW_MOD_CONTROL) editorMods |= 1u;
+        if (mods & GLFW_MOD_SHIFT)   editorMods |= 2u;
+        if (mods & GLFW_MOD_ALT)     editorMods |= 4u;
+        if (mods & GLFW_MOD_SUPER)   editorMods |= 8u;
+        app->ProcessKey(static_cast<u32>(key), editorMods);
+    });
 
     ENGINE_LOG_INFO("Editor ready — entering main loop");
     std::fprintf(stderr, "Editor ready.\n");

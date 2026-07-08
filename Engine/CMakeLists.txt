@@ -44,7 +44,7 @@ set(ENGINE_SOURCES
     Source/Platform/GLFW/GLFWCursor.cpp
     Source/Platform/GLFW/GLFWDynamicLibrary.cpp
     Source/Platform/PlatformInfo.cpp
-    Source/Platform/FileDialogStub.cpp
+    Source/Platform/FileDialogWin32.cpp
     Source/Platform/Timer.cpp
     # Events (Phase 2)
     Source/Events/EventBus.cpp
